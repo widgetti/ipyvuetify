@@ -1,0 +1,225 @@
+{
+  "widgets": {
+    "VuetifyWidget": {
+      "inherits": ["DOMWidget"],
+      "properties": {
+        "_view_name": "VuetifyView",
+        "_model_name": "VuetifyWidgetModel",
+        "_view_module": "jupyter-vuetify",
+        "_model_module": "jupyter-vuetify",
+        "_view_module_version": "0.1.0",
+        "_model_module_version": "0.1.0",
+
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "widgetRef",
+            "widgetType": "DOMWidget"
+          }
+        }
+      }
+    },
+
+    "Text": {
+      "inherits": ["VuetifyWidget"],
+      "properties": {
+        "_model_name": "TextModel",
+        "value": {
+          "type": "string",
+          "default": ""
+        }
+      }
+    },
+    
+    "Icon": {
+      "inherits": ["VuetifyWidget"],
+      "properties": {
+        "_model_name": "IconModel",
+        "color": {
+          "type": "string",
+          "default": null,
+          "allowNull": true
+        },
+        "dark": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        },
+        "large": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        },
+        "left": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        },
+        "light": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        },
+        "medium": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        },
+        "right": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        },
+        "small": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        },
+        "size": {
+          "type": "int",
+          "default": null,
+          "allowNull": true
+        },
+        "value": {
+          "type": "string"
+        },
+        "xLarge": {
+          "type": "boolean",
+          "default": null,
+          "allowNull": true
+        }
+      }
+    },
+
+    "Btn": {
+      "inherits": ["VuetifyWidget"],
+      "properties": {
+         "_model_name": "BtnModel",
+          "absolute": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "block": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "bottom": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "color": {
+            "type": "string",
+            "default": null,
+            "allowNull": true
+          },
+          "dark": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "depressed": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "exact": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "fab": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "fixed": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "flat": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "href": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "icon": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "large": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "left": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "light": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "loading": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "outline": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "right": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "ripple": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "round": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "small": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "target": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "top": {
+            "type": "boolean",
+            "default": null,
+            "allowNull": true
+          },
+          "type": {
+            "type": "string",
+            "default": "button"
+          }
+       }
+    }
+  }
+}

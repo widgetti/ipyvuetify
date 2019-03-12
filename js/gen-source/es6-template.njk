@@ -1,0 +1,111 @@
+{% block header %}
+{% endblock %}
+{% block imports %}
+{% block globalimports %}
+import {
+  WidgetModel, DOMWidgetModel,
+  WidgetView, DOMWidgetView,
+  unpack_models
+} from '@jupyter-widgets/base';
+
+{# import {
+  data_union_serialization, array_serialization
+} from 'jupyter-dataserializers';
+#}
+{% endblock %}
+{% block localimports %}
+{% if outputMultiple %}
+
+{% for ref in widgets[0].localDependencies if ref !== "VuetifyWidget" %}
+import { {{ ref }}Model } from './{{ ref }}';
+{% endfor %}
+{% endif %}
+{% endblock %}
+{% endblock %}
+{% block widgets %}
+{% for widget in widgets %}
+{% block widget %}
+
+
+export
+class {{ widget.name }}Model extends {{ widget.inherits[0] }}Model {
+
+{% block widgetbody %}
+  defaults() {
+    return {...super.defaults(), ... {
+      {% if widget.properties %}
+      {% for propName, prop in widget.properties %}
+      {{ propName }}: {{ prop.default }},
+      {% endfor %}
+      {% endif %}
+    }};
+  }
+
+  {% if widget.name === "VuetifyWidget" %}
+  vueRenderChildren(createElement) {
+    return this.get("children").map(c => c.vueRender(createElement));
+  }
+  {% else %}
+  vueRender(createElement) {
+    const model = this;
+    return createElement({
+        data() {
+            return {
+                {% for propName, prop in widget.properties %}
+                {% if not r/^_.*/.test(propName) %}
+                    {{ propName }}: model.get("{{ propName }}"),
+                {% endif %}
+                {% endfor %}
+            };
+        },
+        created() {
+            {% for propName, prop in widget.properties %}
+            {% if not r/^_.*/.test(propName) %}
+            model.on("change:{{ propName }}", () => this.{{ propName }} = model.get("{{ propName }}"));
+            {% endif %}
+            {% endfor %}
+        },
+        render(createElement) {
+          {% if widget.name === "Text" %}
+            return this._v(this.value);
+          {% elif widget.name === "Icon" %}
+            return createElement('v-icon', {
+                    attrs: {
+                        {% for propName, prop in widget.properties %}
+                        {% if not r/^_.*/.test(propName) %}
+                        {{ propName }}: this.{{ propName }},
+                        {% endif %}
+                        {% endfor %}
+                    }
+            },
+            this.value);
+          {% else %}
+            return createElement('v{{ widget.name | replace(r/([A-Z][a-z]+)/g, "-$1") | lower}}', {
+                    attrs: {
+                        {% for propName, prop in widget.properties %}
+                        {% if not r/^_.*/.test(propName) %}
+                        {{ propName }}: this.{{ propName }},
+                        {% endif %}
+                        {% endfor %}
+                    }
+            },
+            model.vueRenderChildren(createElement));
+          {% endif %}
+        }
+    })
+  }
+  {% endif %}
+{% endblock %}
+}
+
+{{ widget.name }}Model.serializers = {
+    ...{{ widget.inherits[0] }}Model.serializers,
+    {% for key, serializer in widget.serializers %}
+    {{ key }}: {{ serializer }},
+    {% endfor %}
+  };
+
+{% endblock %}
+{% endfor %}
+{% endblock %}
+
