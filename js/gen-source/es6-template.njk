@@ -8,10 +8,10 @@ import {
   unpack_models
 } from '@jupyter-widgets/base';
 
-{# import {
-  data_union_serialization, array_serialization
-} from 'jupyter-dataserializers';
-#}
+import {
+    renderChildren, createContent, addListeners
+} from "../helpers"
+
 {% endblock %}
 {% block localimports %}
 {% if outputMultiple %}
@@ -26,13 +26,13 @@ import { {{ ref }}Model } from './{{ ref }}';
 {% for widget in widgets %}
 {% block widget %}
 
-
 export
 class {{ widget.name }}Model extends {{ widget.inherits[0] }}Model {
 
 {% block widgetbody %}
   defaults() {
     return {...super.defaults(), ... {
+      _model_name:  "{{ widget.name }}Model",
       {% if widget.properties %}
       {% for propName, prop in widget.properties %}
       {{ propName }}: {{ prop.default }},
@@ -43,56 +43,36 @@ class {{ widget.name }}Model extends {{ widget.inherits[0] }}Model {
 
   {% if widget.name === "VuetifyWidget" %}
   vueRenderChildren(createElement) {
-    return this.get("children").map(c => c.vueRender(createElement));
+    return this.get("children").map(c => typeof(c) === "string" ? c : c.vueRender(createElement));
   }
   {% else %}
   vueRender(createElement) {
     const model = this;
-    return createElement({
+    const elem = createElement({
         data() {
             return {
-                {% for propName, prop in widget.properties %}
-                {% if not r/^_.*/.test(propName) %}
-                    {{ propName }}: model.get("{{ propName }}"),
-                {% endif %}
-                {% endfor %}
+                v_model: model.get("v_model")
             };
         },
         created() {
-            {% for propName, prop in widget.properties %}
-            {% if not r/^_.*/.test(propName) %}
-            model.on("change:{{ propName }}", () => this.{{ propName }} = model.get("{{ propName }}"));
-            {% endif %}
-            {% endfor %}
+            addListeners(model, this);
         },
         render(createElement) {
           {% if widget.name === "Text" %}
-            return this._v(this.value);
-          {% elif widget.name === "Icon" %}
-            return createElement('v-icon', {
-                    attrs: {
-                        {% for propName, prop in widget.properties %}
-                        {% if not r/^_.*/.test(propName) %}
-                        {{ propName }}: this.{{ propName }},
-                        {% endif %}
-                        {% endfor %}
-                    }
-            },
-            this.value);
+            return this._v(model.get("value"));
           {% else %}
-            return createElement('v{{ widget.name | replace(r/([A-Z][a-z]+)/g, "-$1") | lower}}', {
-                    attrs: {
-                        {% for propName, prop in widget.properties %}
-                        {% if not r/^_.*/.test(propName) %}
-                        {{ propName }}: this.{{ propName }},
-                        {% endif %}
-                        {% endfor %}
-                    }
-            },
-            model.vueRenderChildren(createElement));
+            return createElement(
+                'v{{ widget.name | replace(r/([A-Z][a-z]+)/g, "-$1") | lower}}',
+                createContent(model, this, "{{widget.name}}"),
+                renderChildren(this, model, createElement));
+
           {% endif %}
         }
-    })
+    }, {...model.get("slot") && {slot: model.get("slot")}})
+
+    /* Impersonate the wrapped component (e.g. v-tabs uses this name to detect v-tab en v-tab-item) */
+    elem.componentOptions.Ctor.options.name = 'v{{ widget.name | replace(r/([A-Z][a-z]+)/g, "-$1") | lower}}';
+    return elem;
   }
   {% endif %}
 {% endblock %}
@@ -103,7 +83,7 @@ class {{ widget.name }}Model extends {{ widget.inherits[0] }}Model {
     {% for key, serializer in widget.serializers %}
     {{ key }}: {{ serializer }},
     {% endfor %}
-  };
+};
 
 {% endblock %}
 {% endfor %}

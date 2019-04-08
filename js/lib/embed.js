@@ -10,4 +10,3 @@
 export * from './example';
 export * from './helpers';
 export * from './index';
-export * from './VuetifyWidget';

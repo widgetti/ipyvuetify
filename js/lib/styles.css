@@ -2,3 +2,11 @@ div.application--wrap {
     min-height: unset;
     min-width: unset;
 }
+
+.v-menu__content a:hover {
+    text-decoration: none;
+}
+
+.application--wrap a:hover {
+    text-decoration: none;
+}

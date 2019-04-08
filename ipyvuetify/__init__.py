@@ -1,4 +1,11 @@
-from .VuetifyWidget import VuetifyWidget
-from .Text import Text
-from .Icon import Icon
-from .Btn import Btn
+from ._version import version_info, __version__
+from .Html import Html
+from .VuetifyTemplate import VuetifyTemplate
+
+def _jupyter_nbextension_paths():
+    return [{
+        'section': 'notebook',
+        'src': 'static',
+        'dest': 'ipyvuetify',
+        'require': 'ipyvuetify/extension'
+    }]

@@ -5,6 +5,10 @@ build/
 *.py[cod]
 node_modules/
 
+# generated code
+ipyvuetify/generated
+js/lib/generated
+
 # Compiled javascript
 ipyvuetify/static/
 

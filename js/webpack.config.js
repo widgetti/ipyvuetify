@@ -16,9 +16,12 @@ var rules = [
         use: {
             loader: 'babel-loader'
         }
+    },
+    {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: 'file-loader',
     }
 ]
-
 
 module.exports = [
     {// Notebook extension
@@ -52,7 +55,13 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base']
+        externals: ['@jupyter-widgets/base'],
+        // vue met compiler
+        resolve: {
+            alias: {
+                'vue$': 'vue/dist/vue.esm.js'
+            }
+        }
     },
     {// Embeddable jupyter-vuetify bundle
      //
@@ -80,5 +89,5 @@ module.exports = [
             rules: rules
         },
         externals: ['@jupyter-widgets/base']
-    }
+    },
 ];

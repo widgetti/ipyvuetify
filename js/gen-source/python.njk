@@ -22,10 +22,15 @@ from .{{ ref }} import {{ ref }}
 {% for widget in widgets %}
 {% block widget %}
 
+{% if widget.name === "VuetifyWidget" %}
+from ..Events import Events
+{% endif %}
 
-class {{ widget.name }}({{ widget.inherits | join(", ") }}):
+class {{ widget.name }}({{ widget.inherits | join(", ") }}{% if widget.name === "VuetifyWidget" %}, Events{% endif %}):
 
 {% block widgetbody %}
+    _model_name = Unicode('{{ widget.name }}Model').tag(sync=True)
+
     {% if widget.properties %}
     {% for propName, prop in widget.properties %}
     {{ propName }} = {{ prop.traitDef }}
@@ -34,6 +39,19 @@ class {{ widget.name }}({{ widget.inherits | join(", ") }}):
     {% else %}
     pass
     {% endif %}
+{#
+# Bug in traitlets, it doesn't set it, which triggers the bug fixed here:
+# https://github.com/jupyter-widgets/ipywidgets/pull/1675
+# which is not released yet (7.0.2 should have it)
+#}
+{% if widget.properties %}
+{% for propName, prop in widget.properties %}
+{% if 'List(None' in prop.traitDef %}
+{{ widget.name }}.{{ propName }}.default_value=None
+{% endif %}
+{% endfor %}
+{% endif %}
+
 {% endblock %}
 
 

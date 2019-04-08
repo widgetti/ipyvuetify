@@ -111,31 +111,31 @@
         "name": "appendIcon",
         "type": "string",
         "default": "'$vuetify.icons.dropdown'",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendOuterIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "appendOuterIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "attach",
         "type": "any",
         "default": false,
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "autoSelectFirst",
@@ -147,61 +147,61 @@
         "name": "autofocus",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "box",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "browserAutocomplete",
         "type": "string",
         "default": "'off'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "cacheItems",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "chips",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "clearIcon",
         "type": "string",
         "default": "'$vuetify.icons.clear'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "clearIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "clearable",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "color",
         "type": "string",
         "default": "'primary'",
-        "source": null
+        "source": "colorable"
       },
       {
         "name": "counter",
@@ -211,43 +211,43 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "deletableChips",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "dense",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "dontFillMaskBlanks",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -256,7 +256,7 @@
           "string"
         ],
         "default": 1,
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -265,7 +265,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "filter",
@@ -277,13 +277,13 @@
         "name": "flat",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "fullWidth",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "height",
@@ -292,13 +292,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideNoData",
@@ -310,13 +310,13 @@
         "name": "hideSelected",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "itemAvatar",
@@ -326,7 +326,7 @@
           "function"
         ],
         "default": "avatar",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "itemDisabled",
@@ -336,7 +336,7 @@
           "function"
         ],
         "default": "disabled",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "itemText",
@@ -346,7 +346,7 @@
           "function"
         ],
         "default": "text",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "itemValue",
@@ -356,25 +356,25 @@
           "function"
         ],
         "default": "value",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "items",
         "type": "array",
         "default": [],
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -383,7 +383,7 @@
           "string"
         ],
         "default": false,
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "mask",
@@ -392,7 +392,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "menuProps",
@@ -401,16 +401,8 @@
           "array",
           "object"
         ],
-        "default": {
-          "closeOnClick": false,
-          "closeOnContentClick": false,
-          "openOnClick": false,
-          "maxHeight": 300,
-          "offsetY": true,
-          "offsetOverflow": true,
-          "transition": false
-        },
-        "source": null
+        "default": "{\"closeOnClick\":false, \"closeOnContentClick\":false, \"openOnClick\":false, \"maxHeight\":300}",
+        "source": "v-select"
       },
       {
         "name": "messages",
@@ -419,13 +411,13 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "noDataText",
@@ -443,121 +435,121 @@
         "name": "openOnClear",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "outline",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "placeholder",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prefix",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependInnerIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prependInnerIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "returnMaskedValue",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "returnObject",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "reverse",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "searchInput",
         "type": "any",
         "default": "undefined",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "singleLine",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "smallChips",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "solo",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "soloInverted",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -566,31 +558,31 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "suffix",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "type",
         "type": "string",
         "default": "'text'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "valueComparator",
@@ -607,8 +599,12 @@
       "append",
       "prepend",
       "default",
-      "no-data",
+      "append-outer",
+      "prepend-inner",
       "label",
+      "append-item",
+      "prepend-item",
+      "no-data",
       "progress"
     ],
     "scopedSlots": [
@@ -643,6 +639,26 @@
       {
         "name": "update:searchInput",
         "value": "string"
+      },
+      {
+        "name": "click:prepend",
+        "value": "Event"
+      },
+      {
+        "name": "click:append",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "value": "Event"
       },
       {
         "name": "update:error",
@@ -734,8 +750,8 @@
     ],
     "mixins": [
       "colorable",
-      "positionable",
       "toggleable",
+      "positionable",
       "transitionable"
     ],
     "slots": [
@@ -821,8 +837,8 @@
     ],
     "mixins": [
       "applicationable",
-      "colorable",
       "positionable",
+      "colorable",
       "themeable"
     ],
     "slots": [
@@ -1272,10 +1288,10 @@
     ],
     "mixins": [
       "colorable",
-      "groupable",
-      "positionable",
       "routable",
+      "positionable",
       "themeable",
+      "groupable",
       "toggleable"
     ],
     "slots": [
@@ -1288,7 +1304,7 @@
         "name": "activeClass",
         "type": "string",
         "default": "'v-btn--active'",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "dark",
@@ -1306,7 +1322,7 @@
         "name": "mandatory",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "max",
@@ -1315,13 +1331,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "value",
@@ -1342,6 +1358,1395 @@
         "name": "change",
         "value": "any[] | any"
       }
+    ]
+  },
+  "v-calendar": {
+    "props": [
+      {
+        "name": "color",
+        "type": "string",
+        "default": "undefined",
+        "source": "colorable"
+      },
+      {
+        "name": "dark",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "dayFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-base"
+      },
+      {
+        "name": "end",
+        "type": "string",
+        "default": "'0000-00-00'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "firstInterval",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 0,
+        "source": null
+      },
+      {
+        "name": "hideHeader",
+        "type": "boolean",
+        "default": "false",
+        "source": "calendar-base"
+      },
+      {
+        "name": "intervalCount",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 24,
+        "source": null
+      },
+      {
+        "name": "intervalFormat",
+        "type": "function",
+        "default": "null",
+        "source": null
+      },
+      {
+        "name": "intervalHeight",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 40,
+        "source": null
+      },
+      {
+        "name": "intervalMinutes",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 60,
+        "source": null
+      },
+      {
+        "name": "intervalStyle",
+        "type": "function",
+        "default": "null",
+        "source": null
+      },
+      {
+        "name": "light",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "default": "'en-us'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "maxDays",
+        "type": "number",
+        "default": 7,
+        "source": null
+      },
+      {
+        "name": "minWeeks",
+        "type": "any",
+        "default": 1,
+        "source": null
+      },
+      {
+        "name": "monthFormat",
+        "type": "function",
+        "default": "null",
+        "source": null
+      },
+      {
+        "name": "now",
+        "type": "string",
+        "default": "undefined",
+        "source": "times"
+      },
+      {
+        "name": "shortIntervals",
+        "type": "boolean",
+        "default": "true",
+        "source": null
+      },
+      {
+        "name": "shortMonths",
+        "type": "boolean",
+        "default": "true",
+        "source": null
+      },
+      {
+        "name": "shortWeekdays",
+        "type": "boolean",
+        "default": "true",
+        "source": "calendar-base"
+      },
+      {
+        "name": "showIntervalLabel",
+        "type": "function",
+        "default": "null",
+        "source": null
+      },
+      {
+        "name": "showMonthOnFirst",
+        "type": "boolean",
+        "default": "true",
+        "source": null
+      },
+      {
+        "name": "start",
+        "type": "string",
+        "default": "'2019-03-16'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "default": "'month'",
+        "source": null
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "default": "undefined",
+        "source": null
+      },
+      {
+        "name": "weekdayFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-base"
+      },
+      {
+        "name": "weekdays",
+        "type": "array",
+        "default": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "source": "calendar-base"
+      }
+    ],
+    "mixins": [
+      "colorable",
+      "themeable",
+      "times",
+      "mouse"
+    ],
+    "scopedSlots": [
+      {
+        "name": "day",
+        "props": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "dayBody",
+        "props": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "dayHeader",
+        "props": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "dayLabel",
+        "props": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "dayMonth",
+        "props": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "interval",
+        "props": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      }
+    ],
+    "functions": [
+      {
+        "name": "updateTimes",
+        "signature": "(): void"
+      },
+      {
+        "name": "next",
+        "signature": "(amount: number = 1): void"
+      },
+      {
+        "name": "prev",
+        "signature": "(amount: number = 1): void"
+      },
+      {
+        "name": "move",
+        "signature": "(amount: number = 1): void"
+      },
+      {
+        "name": "timeToY",
+        "signature": "(time: number | string | { hour: number, minute: number }, clamp: boolean = true): number | false"
+      },
+      {
+        "name": "minutesToPixels",
+        "signature": "(minutes: number): number"
+      },
+      {
+        "name": "scrollToTime",
+        "signature": "(time: number | string | { hour: number, minute: number }): boolean"
+      }
+    ],
+    "events": [
+      {
+        "name": "input",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "moved",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "change",
+        "value": {
+          "start": {
+            "date": "string",
+            "time": "string",
+            "year": "number",
+            "month": "number",
+            "day": "number",
+            "hour": "number",
+            "minute": "number",
+            "weekday": "number",
+            "hasDay": "boolean",
+            "hasTime": "boolean",
+            "past": "boolean",
+            "present": "boolean",
+            "future": "boolean"
+          },
+          "end": {
+            "date": "string",
+            "time": "string",
+            "year": "number",
+            "month": "number",
+            "day": "number",
+            "hour": "number",
+            "minute": "number",
+            "weekday": "number",
+            "hasDay": "boolean",
+            "hasTime": "boolean",
+            "past": "boolean",
+            "present": "boolean",
+            "future": "boolean"
+          }
+        }
+      },
+      {
+        "name": "click:date",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "contextmenu:date",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "click:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "contextmenu:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mousedown:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mousemove:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mouseup:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mouseenter:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mouseleave:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "touchstart:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "touchmove:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "touchend:day",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "click:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "contextmenu:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mousedown:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mousemove:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mouseup:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mouseenter:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "mouseleave:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "touchstart:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "touchmove:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "touchend:time",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+        }
+      },
+      {
+        "name": "click:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "contextmenu:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "mousedown:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "mousemove:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "mouseup:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "mouseenter:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "mouseleave:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "touchstart:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "touchmove:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "touchend:interval",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      }
+    ]
+  },
+  "v-calendar-daily": {
+    "props": [
+      {
+        "name": "color",
+        "type": "string",
+        "default": "undefined",
+        "source": "colorable"
+      },
+      {
+        "name": "dark",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "dayFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-base"
+      },
+      {
+        "name": "end",
+        "type": "string",
+        "default": "'0000-00-00'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "firstInterval",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 0,
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "hideHeader",
+        "type": "boolean",
+        "default": "false",
+        "source": "calendar-base"
+      },
+      {
+        "name": "intervalCount",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 24,
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "intervalFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "intervalHeight",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 40,
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "intervalMinutes",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 60,
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "intervalStyle",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "light",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "default": "'en-us'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "maxDays",
+        "type": "number",
+        "default": 7,
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "now",
+        "type": "string",
+        "default": "undefined",
+        "source": "times"
+      },
+      {
+        "name": "shortIntervals",
+        "type": "boolean",
+        "default": "true",
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "shortWeekdays",
+        "type": "boolean",
+        "default": "true",
+        "source": "calendar-base"
+      },
+      {
+        "name": "showIntervalLabel",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "start",
+        "type": "string",
+        "default": "'2019-03-16'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "weekdayFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-base"
+      },
+      {
+        "name": "weekdays",
+        "type": "array",
+        "default": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "source": "calendar-base"
+      }
+    ],
+    "mixins": [
+      "colorable",
+      "themeable",
+      "times",
+      "mouse"
+    ]
+  },
+  "v-calendar-weekly": {
+    "props": [
+      {
+        "name": "color",
+        "type": "string",
+        "default": "undefined",
+        "source": "colorable"
+      },
+      {
+        "name": "dark",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "dayFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-base"
+      },
+      {
+        "name": "end",
+        "type": "string",
+        "default": "'0000-00-00'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "hideHeader",
+        "type": "boolean",
+        "default": "false",
+        "source": "calendar-base"
+      },
+      {
+        "name": "light",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "default": "'en-us'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "minWeeks",
+        "type": "any",
+        "default": 1,
+        "source": null
+      },
+      {
+        "name": "monthFormat",
+        "type": "function",
+        "default": "null",
+        "source": null
+      },
+      {
+        "name": "now",
+        "type": "string",
+        "default": "undefined",
+        "source": "times"
+      },
+      {
+        "name": "shortMonths",
+        "type": "boolean",
+        "default": "true",
+        "source": null
+      },
+      {
+        "name": "shortWeekdays",
+        "type": "boolean",
+        "default": "true",
+        "source": "calendar-base"
+      },
+      {
+        "name": "showMonthOnFirst",
+        "type": "boolean",
+        "default": "true",
+        "source": null
+      },
+      {
+        "name": "start",
+        "type": "string",
+        "default": "'2019-03-16'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "weekdayFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-base"
+      },
+      {
+        "name": "weekdays",
+        "type": "array",
+        "default": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "source": "calendar-base"
+      }
+    ],
+    "mixins": [
+      "colorable",
+      "themeable",
+      "times",
+      "mouse"
+    ]
+  },
+  "v-calendar-monthly": {
+    "props": [
+      {
+        "name": "color",
+        "type": "string",
+        "default": "undefined",
+        "source": "colorable"
+      },
+      {
+        "name": "dark",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "dayFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-base"
+      },
+      {
+        "name": "end",
+        "type": "string",
+        "default": "'0000-00-00'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "hideHeader",
+        "type": "boolean",
+        "default": "false",
+        "source": "calendar-base"
+      },
+      {
+        "name": "light",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "default": "'en-us'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "minWeeks",
+        "type": "any",
+        "default": 1,
+        "source": "v-calendar-weekly"
+      },
+      {
+        "name": "monthFormat",
+        "type": "function",
+        "default": "null",
+        "source": "v-calendar-weekly"
+      },
+      {
+        "name": "now",
+        "type": "string",
+        "default": "undefined",
+        "source": "times"
+      },
+      {
+        "name": "shortMonths",
+        "type": "boolean",
+        "default": "true",
+        "source": "v-calendar-weekly"
+      },
+      {
+        "name": "shortWeekdays",
+        "type": "boolean",
+        "default": "true",
+        "source": "calendar-base"
+      },
+      {
+        "name": "showMonthOnFirst",
+        "type": "boolean",
+        "default": "true",
+        "source": "v-calendar-weekly"
+      },
+      {
+        "name": "start",
+        "type": "string",
+        "default": "'2019-03-16'",
+        "source": "calendar-base"
+      },
+      {
+        "name": "weekdayFormat",
+        "type": "function",
+        "default": "null",
+        "source": "calendar-base"
+      },
+      {
+        "name": "weekdays",
+        "type": "array",
+        "default": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "source": "calendar-base"
+      }
+    ],
+    "mixins": [
+      "colorable",
+      "themeable",
+      "times",
+      "mouse"
     ]
   },
   "v-card": {
@@ -1382,7 +2787,7 @@
           "number",
           "string"
         ],
-        "default": 2,
+        "default": "undefined",
         "source": "elevatable"
       },
       {
@@ -1540,12 +2945,12 @@
       }
     ],
     "mixins": [
+      "routable",
+      "v-sheet",
       "colorable",
       "elevatable",
       "measurable",
-      "routable",
-      "themeable",
-      "v-sheet"
+      "themeable"
     ],
     "slots": [
       "default"
@@ -1557,7 +2962,7 @@
         "name": "alt",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "aspectRatio",
@@ -1566,19 +2971,19 @@
           "number"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-responsive"
       },
       {
         "name": "contain",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "gradient",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "height",
@@ -1593,7 +2998,7 @@
         "name": "lazySrc",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "maxHeight",
@@ -1635,13 +3040,13 @@
         "name": "position",
         "type": "string",
         "default": "'center center'",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "sizes",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "src",
@@ -1650,13 +3055,13 @@
           "object"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "srcset",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "transition",
@@ -1665,7 +3070,7 @@
           "string"
         ],
         "default": "fade-transition",
-        "source": null
+        "source": "v-img"
       },
       {
         "name": "width",
@@ -1690,15 +3095,24 @@
         "source": null
       }
     ],
-    "mixins": []
+    "mixins": [],
+    "slots": [
+      "default"
+    ]
   },
   "v-card-actions": {
     "props": [],
-    "mixins": []
+    "mixins": [],
+    "slots": [
+      "default"
+    ]
   },
   "v-card-text": {
     "props": [],
-    "mixins": []
+    "mixins": [],
+    "slots": [
+      "default"
+    ]
   },
   "v-carousel": {
     "props": [
@@ -1706,7 +3120,7 @@
         "name": "activeClass",
         "type": "string",
         "default": "'v-item--active'",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "cycle",
@@ -1766,7 +3180,7 @@
         "name": "mandatory",
         "type": "boolean",
         "default": "true",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "max",
@@ -1775,13 +3189,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "nextIcon",
@@ -1805,19 +3219,19 @@
         "name": "reverse",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-window"
       },
       {
         "name": "touch",
         "type": "object",
         "default": "undefined",
-        "source": null
+        "source": "v-window"
       },
       {
         "name": "touchless",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-window"
       },
       {
         "name": "value",
@@ -1829,7 +3243,7 @@
         "name": "vertical",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-window"
       }
     ],
     "mixins": [
@@ -1872,7 +3286,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-window-item"
       },
       {
         "name": "transition",
@@ -1881,13 +3295,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-window-item"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": null
+        "source": "v-window-item"
       }
     ],
     "mixins": [
@@ -1904,43 +3318,43 @@
         "name": "appendIcon",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "color",
         "type": "string",
         "default": "'accent'",
-        "source": "selectable"
+        "source": "colorable"
       },
       {
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "themeable"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -1949,7 +3363,7 @@
           "string"
         ],
         "default": 1,
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -1958,7 +3372,7 @@
           "array"
         ],
         "default": [],
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "falseValue",
@@ -1973,19 +3387,19 @@
           "string"
         ],
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "id",
@@ -2015,19 +3429,19 @@
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "themeable"
       },
       {
         "name": "loading",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "messages",
@@ -2036,7 +3450,7 @@
           "array"
         ],
         "default": [],
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "multiple",
@@ -2060,25 +3474,25 @@
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "ripple",
@@ -2093,13 +3507,13 @@
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -2108,7 +3522,7 @@
           "array"
         ],
         "default": [],
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "trueValue",
@@ -2120,13 +3534,13 @@
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "valueComparator",
@@ -2136,9 +3550,9 @@
       }
     ],
     "mixins": [
-      "comparable",
+      "selectable",
       "rippleable",
-      "selectable"
+      "comparable"
     ],
     "slots": [
       "append",
@@ -2243,31 +3657,31 @@
         "name": "appendIcon",
         "type": "string",
         "default": "'$vuetify.icons.dropdown'",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "appendOuterIcon",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "appendOuterIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "attach",
         "type": "any",
         "default": false,
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "autoSelectFirst",
@@ -2279,61 +3693,61 @@
         "name": "autofocus",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "box",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "browserAutocomplete",
         "type": "string",
         "default": "'off'",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "cacheItems",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "chips",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "clearIcon",
         "type": "string",
         "default": "'$vuetify.icons.clear'",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "clearIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "clearable",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "color",
         "type": "string",
         "default": "'primary'",
-        "source": "v-autocomplete"
+        "source": "colorable"
       },
       {
         "name": "counter",
@@ -2343,19 +3757,19 @@
           "string"
         ],
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "themeable"
       },
       {
         "name": "deletableChips",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "delimiters",
@@ -2367,25 +3781,25 @@
         "name": "dense",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "dontFillMaskBlanks",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "maskable"
       },
       {
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -2394,7 +3808,7 @@
           "string"
         ],
         "default": 1,
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -2403,7 +3817,7 @@
           "array"
         ],
         "default": [],
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "filter",
@@ -2415,13 +3829,13 @@
         "name": "flat",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "fullWidth",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "height",
@@ -2430,13 +3844,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "hideNoData",
@@ -2448,13 +3862,13 @@
         "name": "hideSelected",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "itemAvatar",
@@ -2464,7 +3878,7 @@
           "function"
         ],
         "default": "avatar",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "itemDisabled",
@@ -2474,7 +3888,7 @@
           "function"
         ],
         "default": "disabled",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "itemText",
@@ -2484,7 +3898,7 @@
           "function"
         ],
         "default": "text",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "itemValue",
@@ -2494,25 +3908,25 @@
           "function"
         ],
         "default": "value",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "items",
         "type": "array",
         "default": [],
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -2521,7 +3935,7 @@
           "string"
         ],
         "default": false,
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "mask",
@@ -2530,7 +3944,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "maskable"
       },
       {
         "name": "menuProps",
@@ -2539,16 +3953,8 @@
           "array",
           "object"
         ],
-        "default": {
-          "closeOnClick": false,
-          "closeOnContentClick": false,
-          "openOnClick": false,
-          "maxHeight": 300,
-          "offsetY": true,
-          "offsetOverflow": true,
-          "transition": false
-        },
-        "source": "v-autocomplete"
+        "default": "{\"closeOnClick\":false, \"closeOnContentClick\":false, \"openOnClick\":false, \"maxHeight\":300}",
+        "source": "v-select"
       },
       {
         "name": "messages",
@@ -2557,13 +3963,13 @@
           "array"
         ],
         "default": [],
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "noDataText",
@@ -2581,121 +3987,121 @@
         "name": "openOnClear",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "outline",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "placeholder",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "prefix",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-autocomplete"
+        "source": "v-input"
       },
       {
         "name": "prependInnerIcon",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "prependInnerIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "returnMaskedValue",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "maskable"
       },
       {
         "name": "returnObject",
         "type": "boolean",
         "default": "true",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "reverse",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "searchInput",
         "type": "any",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "singleLine",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "smallChips",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "solo",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "soloInverted",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -2704,31 +4110,31 @@
           "array"
         ],
         "default": [],
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "suffix",
         "type": "string",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "type",
         "type": "string",
         "default": "'text'",
-        "source": "v-autocomplete"
+        "source": "v-text-field"
       },
       {
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": "v-autocomplete"
+        "source": "validatable"
       },
       {
         "name": "valueComparator",
@@ -2745,8 +4151,12 @@
       "append",
       "prepend",
       "default",
-      "no-data",
+      "append-outer",
+      "prepend-inner",
       "label",
+      "append-item",
+      "prepend-item",
+      "no-data",
       "progress"
     ],
     "scopedSlots": [
@@ -2781,6 +4191,26 @@
       {
         "name": "update:searchInput",
         "value": "string"
+      },
+      {
+        "name": "click:prepend",
+        "value": "Event"
+      },
+      {
+        "name": "click:append",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "value": "Event"
       },
       {
         "name": "update:error",
@@ -3665,8 +5095,8 @@
       }
     ],
     "mixins": [
-      "colorable",
       "picker",
+      "colorable",
       "themeable"
     ],
     "events": [
@@ -3677,27 +5107,27 @@
     ],
     "functions": [
       {
-        "name": "title-date-format",
+        "name": "titleDateFormat",
         "signature": "(date: string, locale: string): string"
       },
       {
-        "name": "day-format",
+        "name": "dayFormat",
         "signature": "(date: string, locale: string): string"
       },
       {
-        "name": "header-date-format",
+        "name": "headerDateFormat",
         "signature": "(date: string, locale: string): string"
       },
       {
-        "name": "month-format",
+        "name": "monthFormat",
         "signature": "(date: string, locale: string): string"
       },
       {
-        "name": "year-format",
+        "name": "yearFormat",
         "signature": "(date: string, locale: string): string"
       },
       {
-        "name": "allowed-dates",
+        "name": "allowedDates",
         "signature": "(date: string): boolean"
       }
     ]
@@ -3850,7 +5280,7 @@
         "name": "allowedDates",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "color",
@@ -3862,7 +5292,7 @@
         "name": "current",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "dark",
@@ -3874,7 +5304,7 @@
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "eventColor",
@@ -3885,7 +5315,7 @@
           "string"
         ],
         "default": "warning",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "events",
@@ -3895,7 +5325,7 @@
           "object"
         ],
         "default": null,
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "firstDayOfWeek",
@@ -3910,7 +5340,7 @@
         "name": "format",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "light",
@@ -3922,31 +5352,31 @@
         "name": "locale",
         "type": "string",
         "default": "'en-us'",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "max",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "min",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "scrollable",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "showWeek",
@@ -3958,7 +5388,7 @@
         "name": "tableDate",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "value",
@@ -3967,7 +5397,7 @@
           "array"
         ],
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "weekdayFormat",
@@ -3977,6 +5407,7 @@
       }
     ],
     "mixins": [
+      "themeable",
       "colorable",
       "themeable"
     ]
@@ -3987,7 +5418,7 @@
         "name": "allowedDates",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "color",
@@ -3999,7 +5430,7 @@
         "name": "current",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "dark",
@@ -4011,7 +5442,7 @@
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "eventColor",
@@ -4022,7 +5453,7 @@
           "string"
         ],
         "default": "warning",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "events",
@@ -4032,13 +5463,13 @@
           "object"
         ],
         "default": null,
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "format",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "light",
@@ -4050,37 +5481,37 @@
         "name": "locale",
         "type": "string",
         "default": "'en-us'",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "max",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "min",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "scrollable",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "tableDate",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "value",
@@ -4089,10 +5520,11 @@
           "array"
         ],
         "default": "undefined",
-        "source": null
+        "source": "themeable"
       }
     ],
     "mixins": [
+      "themeable",
       "colorable",
       "themeable"
     ]
@@ -4276,9 +5708,9 @@
       }
     ],
     "mixins": [
-      "bootable",
       "dependent",
       "detachable",
+      "bootable",
       "overlayable",
       "returnable",
       "stackable",
@@ -4379,8 +5811,8 @@
       }
     ],
     "mixins": [
-      "registrable-provide",
-      "themeable"
+      "themeable",
+      "registrable-provide"
     ],
     "slots": [
       "default"
@@ -4436,9 +5868,9 @@
     ],
     "mixins": [
       "bootable",
-      "registrable-inject",
+      "toggleable",
       "rippleable",
-      "toggleable"
+      "registrable-inject"
     ],
     "slots": [
       "default",
@@ -4501,8 +5933,8 @@
     ],
     "mixins": [
       "applicationable",
-      "colorable",
       "positionable",
+      "colorable",
       "themeable"
     ],
     "slots": [
@@ -4533,6 +5965,10 @@
     "functions": [
       {
         "name": "reset",
+        "signature": "(): void"
+      },
+      {
+        "name": "resetValidation",
         "signature": "(): void"
       },
       {
@@ -5039,7 +6475,7 @@
           "number"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-responsive"
       },
       {
         "name": "contain",
@@ -5324,10 +6760,25 @@
     ],
     "mixins": [
       "colorable",
-      "colorable",
-      "registrable-inject",
       "themeable",
-      "validatable"
+      "validatable",
+      "colorable",
+      "registrable-inject"
+    ],
+    "events": [
+      {
+        "name": "click:prepend",
+        "value": "Event"
+      },
+      {
+        "name": "click:append",
+        "value": "Event"
+      }
+    ],
+    "slots": [
+      "append",
+      "prepend",
+      "default"
     ]
   },
   "v-item": {
@@ -5360,7 +6811,7 @@
         "name": "activeClass",
         "type": "string",
         "default": "'v-item--active'",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "dark",
@@ -5378,7 +6829,7 @@
         "name": "mandatory",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "max",
@@ -5387,13 +6838,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "value",
@@ -5851,8 +7302,8 @@
     "mixins": [
       "colorable",
       "routable",
-      "themeable",
-      "toggleable"
+      "toggleable",
+      "themeable"
     ],
     "slots": [
       "default"
@@ -6205,16 +7656,16 @@
       }
     ],
     "mixins": [
-      "bootable",
-      "delayable",
       "dependent",
+      "delayable",
       "detachable",
+      "bootable",
       "menuable",
       "positionable",
-      "returnable",
       "stackable",
-      "themeable",
-      "toggleable"
+      "returnable",
+      "toggleable",
+      "themeable"
     ],
     "slots": [
       "activator",
@@ -6396,9 +7847,9 @@
     ],
     "mixins": [
       "applicationable",
+      "positionable",
       "dependent",
       "overlayable",
-      "positionable",
       "ssr-bootable",
       "themeable"
     ],
@@ -6422,103 +7873,103 @@
         "name": "allowOverflow",
         "type": "boolean",
         "default": "true",
-        "source": null
+        "source": "v-autocomplete"
       },
       {
         "name": "appendIcon",
         "type": "string",
         "default": "'$vuetify.icons.dropdown'",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendOuterIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "appendOuterIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "attach",
         "type": "any",
         "default": false,
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "autoSelectFirst",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-autocomplete"
       },
       {
         "name": "autofocus",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "box",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "browserAutocomplete",
         "type": "string",
         "default": "'off'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "cacheItems",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "chips",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "clearIcon",
         "type": "string",
         "default": "'$vuetify.icons.clear'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "clearIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "clearable",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "color",
         "type": "string",
         "default": "'primary'",
-        "source": null
+        "source": "colorable"
       },
       {
         "name": "counter",
@@ -6528,37 +7979,37 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "deletableChips",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "dense",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "dontFillMaskBlanks",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "editable",
@@ -6570,7 +8021,7 @@
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -6579,7 +8030,7 @@
           "string"
         ],
         "default": 1,
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -6588,25 +8039,25 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "filter",
         "type": "function",
         "default": "(item, queryText, itemText) => {}",
-        "source": null
+        "source": "v-autocomplete"
       },
       {
         "name": "flat",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "fullWidth",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "height",
@@ -6615,31 +8066,31 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideNoData",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-autocomplete"
       },
       {
         "name": "hideSelected",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "itemAvatar",
@@ -6649,7 +8100,7 @@
           "function"
         ],
         "default": "avatar",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "itemDisabled",
@@ -6659,7 +8110,7 @@
           "function"
         ],
         "default": "disabled",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "itemText",
@@ -6669,7 +8120,7 @@
           "function"
         ],
         "default": "text",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "itemValue",
@@ -6679,25 +8130,25 @@
           "function"
         ],
         "default": "value",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "items",
         "type": "array",
         "default": [],
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -6706,7 +8157,7 @@
           "string"
         ],
         "default": false,
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "mask",
@@ -6715,7 +8166,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "menuProps",
@@ -6733,7 +8184,7 @@
           "offsetOverflow": true,
           "transition": false
         },
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "messages",
@@ -6742,13 +8193,13 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "noDataText",
@@ -6760,97 +8211,97 @@
         "name": "noFilter",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-autocomplete"
       },
       {
         "name": "openOnClear",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "outline",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "placeholder",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prefix",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependInnerIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prependInnerIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "returnMaskedValue",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "returnObject",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "reverse",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "searchInput",
         "type": "any",
         "default": "undefined",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "segmented",
@@ -6862,31 +8313,31 @@
         "name": "singleLine",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "smallChips",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-select"
       },
       {
         "name": "solo",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "soloInverted",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -6895,13 +8346,13 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "suffix",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "transition",
@@ -6913,19 +8364,19 @@
         "name": "type",
         "type": "string",
         "default": "'text'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "valueComparator",
@@ -7019,7 +8470,7 @@
         "value": "void"
       },
       {
-        "name": "right",
+        "name": "previous",
         "value": "void"
       }
     ]
@@ -7100,13 +8551,13 @@
       },
       {
         "name": "tag",
-        "type": "string",
-        "default": "'div'",
+        "type": "String",
+        "default": "div",
         "source": null
       },
       {
         "name": "tile",
-        "type": "boolean",
+        "type": "Boolean",
         "default": "false",
         "source": null
       },
@@ -7125,6 +8576,9 @@
       "elevatable",
       "measurable",
       "themeable"
+    ],
+    "slots": [
+      "default"
     ]
   },
   "v-parallax": {
@@ -7354,25 +8808,25 @@
         "name": "appendIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "color",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "colorable"
       },
       {
         "name": "column",
@@ -7384,19 +8838,19 @@
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -7405,7 +8859,7 @@
           "string"
         ],
         "default": 1,
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -7414,7 +8868,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "height",
@@ -7423,37 +8877,37 @@
           "string"
         ],
         "default": "auto",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "loading",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "mandatory",
@@ -7468,7 +8922,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "name",
@@ -7480,25 +8934,25 @@
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "row",
@@ -7510,13 +8964,13 @@
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -7525,19 +8979,19 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "valueComparator",
@@ -7635,8 +9089,8 @@
     ],
     "mixins": [
       "colorable",
-      "registrable-inject",
       "rippleable",
+      "registrable-inject",
       "themeable"
     ],
     "events": [
@@ -7658,43 +9112,43 @@
         "name": "appendIcon",
         "type": "string",
         "default": "undefined",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "color",
         "type": "string",
         "default": "undefined",
-        "source": "v-slider"
+        "source": "colorable"
       },
       {
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "themeable"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -7703,7 +9157,7 @@
           "string"
         ],
         "default": 1,
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -7712,7 +9166,7 @@
           "array"
         ],
         "default": [],
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "height",
@@ -7721,19 +9175,19 @@
           "string"
         ],
         "default": "undefined",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "inverseLabel",
@@ -7745,13 +9199,13 @@
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -7760,7 +9214,7 @@
           "string"
         ],
         "default": false,
-        "source": "loadable"
+        "source": "v-input"
       },
       {
         "name": "max",
@@ -7778,7 +9232,7 @@
           "array"
         ],
         "default": [],
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "min",
@@ -7793,31 +9247,31 @@
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-slider"
+        "source": "v-input"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "step",
@@ -7832,7 +9286,7 @@
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -7841,7 +9295,7 @@
           "array"
         ],
         "default": [],
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "thumbColor",
@@ -7901,13 +9355,13 @@
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": "v-slider"
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "array",
         "default": [],
-        "source": "v-slider"
+        "source": "validatable"
       }
     ],
     "mixins": [
@@ -7929,6 +9383,14 @@
       {
         "name": "end",
         "value": "array"
+      },
+      {
+        "name": "click:prepend",
+        "value": "Event"
+      },
+      {
+        "name": "click:append",
+        "value": "Event"
       },
       {
         "name": "update:error",
@@ -8170,25 +9632,25 @@
         "name": "appendIcon",
         "type": "string",
         "default": "'$vuetify.icons.dropdown'",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendOuterIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "appendOuterIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "attach",
@@ -8197,34 +9659,28 @@
         "source": null
       },
       {
-        "name": "autocomplete",
-        "type": "boolean",
-        "default": "false",
-        "source": null
-      },
-      {
         "name": "autofocus",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "box",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "browserAutocomplete",
         "type": "string",
         "default": "'on'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "cacheItems",
@@ -8242,31 +9698,25 @@
         "name": "clearIcon",
         "type": "string",
         "default": "'$vuetify.icons.clear'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "clearIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "clearable",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "color",
         "type": "string",
         "default": "'primary'",
-        "source": null
-      },
-      {
-        "name": "combobox",
-        "type": "boolean",
-        "default": "false",
-        "source": null
+        "source": "colorable"
       },
       {
         "name": "counter",
@@ -8276,13 +9726,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "deletableChips",
@@ -8300,25 +9750,19 @@
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "dontFillMaskBlanks",
         "type": "boolean",
         "default": "false",
-        "source": null
-      },
-      {
-        "name": "editable",
-        "type": "boolean",
-        "default": "false",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -8327,7 +9771,7 @@
           "string"
         ],
         "default": 1,
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -8336,7 +9780,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "filter",
@@ -8346,13 +9790,13 @@
         "name": "flat",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "fullWidth",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "height",
@@ -8361,13 +9805,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideSelected",
@@ -8379,7 +9823,7 @@
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "itemAvatar",
@@ -8431,13 +9875,13 @@
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -8446,7 +9890,7 @@
           "string"
         ],
         "default": false,
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "mask",
@@ -8455,7 +9899,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "menuProps",
@@ -8464,12 +9908,7 @@
           "array",
           "object"
         ],
-        "default": {
-          "closeOnClick": false,
-          "closeOnContentClick": false,
-          "openOnClick": false,
-          "maxHeight": 300
-        },
+        "default": "{\"closeOnClick\":false, \"closeOnContentClick\":false, \"openOnClick\":false, \"maxHeight\":300}",
         "source": null
       },
       {
@@ -8479,7 +9918,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "multiple",
@@ -8503,67 +9942,61 @@
         "name": "outline",
         "type": "boolean",
         "default": "false",
-        "source": null
-      },
-      {
-        "name": "overflow",
-        "type": "boolean",
-        "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "placeholder",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prefix",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependInnerIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "prependInnerIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "returnMaskedValue",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "maskable"
       },
       {
         "name": "returnObject",
@@ -8575,13 +10008,13 @@
         "name": "reverse",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "searchInput",
@@ -8590,16 +10023,10 @@
         "source": null
       },
       {
-        "name": "segmented",
-        "type": "boolean",
-        "default": "false",
-        "source": null
-      },
-      {
         "name": "singleLine",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "smallChips",
@@ -8611,19 +10038,19 @@
         "name": "solo",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "soloInverted",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -8632,37 +10059,31 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "suffix",
         "type": "string",
         "default": "undefined",
-        "source": null
-      },
-      {
-        "name": "tags",
-        "type": "boolean",
-        "default": "false",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "type",
         "type": "string",
         "default": "'text'",
-        "source": null
+        "source": "v-text-field"
       },
       {
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "valueComparator",
@@ -8679,8 +10100,12 @@
       "append",
       "prepend",
       "default",
-      "no-data",
+      "append-outer",
+      "prepend-inner",
       "label",
+      "append-item",
+      "prepend-item",
+      "no-data",
       "progress"
     ],
     "scopedSlots": [
@@ -8717,6 +10142,26 @@
         "value": "string"
       },
       {
+        "name": "click:prepend",
+        "value": "Event"
+      },
+      {
+        "name": "click:append",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "value": "Event"
+      },
+      {
         "name": "update:error",
         "value": "boolean"
       }
@@ -8734,43 +10179,43 @@
         "name": "appendIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "color",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "colorable"
       },
       {
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -8779,7 +10224,7 @@
           "string"
         ],
         "default": 1,
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -8788,7 +10233,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "height",
@@ -8797,19 +10242,19 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "inverseLabel",
@@ -8821,13 +10266,13 @@
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -8836,7 +10281,7 @@
           "string"
         ],
         "default": false,
-        "source": "loadable"
+        "source": "v-input"
       },
       {
         "name": "max",
@@ -8854,7 +10299,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "min",
@@ -8869,31 +10314,31 @@
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "step",
@@ -8908,7 +10353,7 @@
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -8917,7 +10362,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "thumbColor",
@@ -8977,7 +10422,7 @@
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "value",
@@ -8986,7 +10431,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "validatable"
       }
     ],
     "mixins": [
@@ -9008,6 +10453,14 @@
       {
         "name": "end",
         "value": "number"
+      },
+      {
+        "name": "click:prepend",
+        "value": "Event"
+      },
+      {
+        "name": "click:append",
+        "value": "Event"
       },
       {
         "name": "update:error",
@@ -9086,8 +10539,8 @@
     ],
     "mixins": [
       "colorable",
-      "positionable",
-      "toggleable"
+      "toggleable",
+      "positionable"
     ],
     "slots": [
       "default"
@@ -9114,10 +10567,22 @@
         "source": null
       },
       {
+        "name": "autoLineWidth",
+        "type": "boolean",
+        "default": "false",
+        "source": null
+      },
+      {
         "name": "color",
         "type": "string",
         "default": "'primary'",
         "source": "colorable"
+      },
+      {
+        "name": "fill",
+        "type": "boolean",
+        "default": "false",
+        "source": null
       },
       {
         "name": "gradient",
@@ -9138,6 +10603,15 @@
           "number"
         ],
         "default": 75,
+        "source": null
+      },
+      {
+        "name": "labelSize",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 7,
         "source": null
       },
       {
@@ -9178,6 +10652,12 @@
           "string"
         ],
         "default": false,
+        "source": null
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "default": "'trend'",
         "source": null
       },
       {
@@ -9470,43 +10950,43 @@
         "name": "appendIcon",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "color",
         "type": "string",
         "default": "'accent'",
-        "source": "selectable"
+        "source": "colorable"
       },
       {
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "themeable"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -9515,7 +10995,7 @@
           "string"
         ],
         "default": 1,
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -9524,7 +11004,7 @@
           "array"
         ],
         "default": [],
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "falseValue",
@@ -9539,19 +11019,19 @@
           "string"
         ],
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "id",
@@ -9569,13 +11049,13 @@
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -9584,7 +11064,7 @@
           "string"
         ],
         "default": false,
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "messages",
@@ -9593,7 +11073,7 @@
           "array"
         ],
         "default": [],
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "multiple",
@@ -9605,25 +11085,25 @@
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": "selectable"
+        "source": "v-input"
       },
       {
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "ripple",
@@ -9638,13 +11118,13 @@
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -9653,7 +11133,7 @@
           "array"
         ],
         "default": [],
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "trueValue",
@@ -9665,13 +11145,13 @@
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": "selectable"
+        "source": "validatable"
       },
       {
         "name": "valueComparator",
@@ -9681,9 +11161,9 @@
       }
     ],
     "mixins": [
-      "comparable",
+      "selectable",
       "rippleable",
-      "selectable"
+      "comparable"
     ],
     "slots": [
       "append",
@@ -9760,8 +11240,8 @@
     ],
     "mixins": [
       "applicationable",
-      "colorable",
       "positionable",
+      "colorable",
       "themeable"
     ]
   },
@@ -9771,7 +11251,7 @@
         "name": "activeClass",
         "type": "string",
         "default": "'v-tabs__item--active'",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "alignWithTitle",
@@ -9840,7 +11320,7 @@
         "name": "mandatory",
         "type": "boolean",
         "default": "true",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "max",
@@ -9849,7 +11329,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "mobileBreakPoint",
@@ -9864,7 +11344,7 @@
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "nextIcon",
@@ -9903,7 +11383,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "proxyable"
       }
     ],
     "mixins": [
@@ -9916,7 +11396,7 @@
     ],
     "events": [
       {
-        "name": "input",
+        "name": "change",
         "value": "string"
       }
     ]
@@ -10017,8 +11497,8 @@
       }
     ],
     "mixins": [
-      "groupable",
       "routable",
+      "groupable",
       "themeable"
     ],
     "slots": [
@@ -10057,7 +11537,7 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-window-item"
       },
       {
         "name": "transition",
@@ -10066,13 +11546,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-window-item"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": null
+        "source": "v-window-item"
       }
     ],
     "mixins": [
@@ -10089,7 +11569,7 @@
         "name": "activeClass",
         "type": "string",
         "default": "'v-item--active'",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "cycle",
@@ -10113,7 +11593,7 @@
         "name": "mandatory",
         "type": "boolean",
         "default": "true",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "max",
@@ -10122,31 +11602,31 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "reverse",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-window"
       },
       {
         "name": "touch",
         "type": "object",
         "default": "undefined",
-        "source": null
+        "source": "v-window"
       },
       {
         "name": "touchless",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-window"
       },
       {
         "name": "value",
@@ -10158,7 +11638,7 @@
         "name": "vertical",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-window"
       }
     ],
     "mixins": [
@@ -10170,7 +11650,7 @@
     ],
     "events": [
       {
-        "name": "input",
+        "name": "change",
         "value": "string"
       }
     ]
@@ -10194,13 +11674,13 @@
         "name": "appendIcon",
         "type": "string",
         "default": "undefined",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "appendOuterIcon",
@@ -10230,7 +11710,7 @@
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "box",
@@ -10266,7 +11746,7 @@
         "name": "color",
         "type": "string",
         "default": "'primary'",
-        "source": "v-text-field"
+        "source": "colorable"
       },
       {
         "name": "counter",
@@ -10282,13 +11762,13 @@
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "themeable"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "dontFillMaskBlanks",
@@ -10300,7 +11780,7 @@
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -10309,7 +11789,7 @@
           "string"
         ],
         "default": 1,
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -10318,7 +11798,7 @@
           "array"
         ],
         "default": [],
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "flat",
@@ -10339,31 +11819,31 @@
           "string"
         ],
         "default": "undefined",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -10372,7 +11852,7 @@
           "string"
         ],
         "default": false,
-        "source": "loadable"
+        "source": "v-input"
       },
       {
         "name": "mask",
@@ -10390,7 +11870,7 @@
           "array"
         ],
         "default": [],
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "noResize",
@@ -10408,7 +11888,7 @@
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "placeholder",
@@ -10426,13 +11906,13 @@
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": "v-text-field"
+        "source": "v-input"
       },
       {
         "name": "prependInnerIcon",
@@ -10450,7 +11930,7 @@
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "returnMaskedValue",
@@ -10486,7 +11966,7 @@
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "singleLine",
@@ -10510,7 +11990,7 @@
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -10519,7 +11999,7 @@
           "array"
         ],
         "default": [],
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "suffix",
@@ -10537,18 +12017,60 @@
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": "v-text-field"
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": "maskable"
+        "source": "validatable"
       }
     ],
     "mixins": [
-      "loadable",
-      "maskable"
+      "maskable",
+      "loadable"
+    ],
+    "events": [
+      {
+        "name": "input",
+        "value": "string"
+      },
+      {
+        "name": "change",
+        "value": "string"
+      },
+      {
+        "name": "click:prepend",
+        "value": "Event"
+      },
+      {
+        "name": "click:append",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "value": "Event"
+      },
+      {
+        "name": "update:error",
+        "value": "boolean"
+      }
+    ],
+    "slots": [
+      "append",
+      "prepend",
+      "default",
+      "append-outer",
+      "prepend-inner",
+      "label"
     ]
   },
   "v-text-field": {
@@ -10557,13 +12079,13 @@
         "name": "appendIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "appendOuterIcon",
@@ -10587,7 +12109,7 @@
         "name": "backgroundColor",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "box",
@@ -10623,7 +12145,7 @@
         "name": "color",
         "type": "string",
         "default": "'primary'",
-        "source": null
+        "source": "colorable"
       },
       {
         "name": "counter",
@@ -10639,13 +12161,13 @@
         "name": "dark",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "dontFillMaskBlanks",
@@ -10657,7 +12179,7 @@
         "name": "error",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorCount",
@@ -10666,7 +12188,7 @@
           "string"
         ],
         "default": 1,
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "errorMessages",
@@ -10675,7 +12197,7 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "flat",
@@ -10696,31 +12218,31 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hideDetails",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "hint",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "label",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "light",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "themeable"
       },
       {
         "name": "loading",
@@ -10729,7 +12251,7 @@
           "string"
         ],
         "default": false,
-        "source": "loadable"
+        "source": "v-input"
       },
       {
         "name": "mask",
@@ -10747,13 +12269,7 @@
           "array"
         ],
         "default": [],
-        "source": null
-      },
-      {
-        "name": "multiLine",
-        "type": "boolean",
-        "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "outline",
@@ -10765,7 +12281,7 @@
         "name": "persistentHint",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "placeholder",
@@ -10783,13 +12299,13 @@
         "name": "prependIcon",
         "type": "string",
         "default": "undefined",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependIconCb",
         "type": "function",
         "default": "null",
-        "source": null
+        "source": "v-input"
       },
       {
         "name": "prependInnerIcon",
@@ -10807,7 +12323,7 @@
         "name": "readonly",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "returnMaskedValue",
@@ -10825,7 +12341,7 @@
         "name": "rules",
         "type": "array",
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "singleLine",
@@ -10849,7 +12365,7 @@
         "name": "success",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "successMessages",
@@ -10858,18 +12374,12 @@
           "array"
         ],
         "default": [],
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "suffix",
         "type": "string",
         "default": "undefined",
-        "source": null
-      },
-      {
-        "name": "textarea",
-        "type": "boolean",
-        "default": "false",
         "source": null
       },
       {
@@ -10882,18 +12392,18 @@
         "name": "validateOnBlur",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "validatable"
       },
       {
         "name": "value",
         "type": "any",
         "default": "undefined",
-        "source": "maskable"
+        "source": "validatable"
       }
     ],
     "mixins": [
-      "loadable",
-      "maskable"
+      "maskable",
+      "loadable"
     ],
     "events": [
       {
@@ -10905,11 +12415,23 @@
         "value": "string"
       },
       {
-        "name": "click:prepend-inner",
+        "name": "click:prepend",
+        "value": "Event"
+      },
+      {
+        "name": "click:append",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
         "value": "Event"
       },
       {
         "name": "click:append-outer",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
         "value": "Event"
       },
       {
@@ -10918,6 +12440,11 @@
       }
     ],
     "slots": [
+      "append",
+      "prepend",
+      "default",
+      "append-outer",
+      "prepend-inner",
       "label"
     ]
   },
@@ -11147,13 +12674,29 @@
       }
     ],
     "mixins": [
-      "colorable",
       "picker",
+      "colorable",
       "themeable"
     ],
     "events": [
       {
         "name": "input",
+        "value": "string"
+      },
+      {
+        "name": "change",
+        "value": "string"
+      },
+      {
+        "name": "click:hour",
+        "value": "string"
+      },
+      {
+        "name": "click:minute",
+        "value": "string"
+      },
+      {
+        "name": "click:second",
         "value": "string"
       }
     ]
@@ -11467,8 +13010,8 @@
     ],
     "mixins": [
       "applicationable",
-      "colorable",
       "positionable",
+      "colorable",
       "ssr-bootable",
       "themeable"
     ],
@@ -11721,11 +13264,11 @@
       }
     ],
     "mixins": [
-      "bootable",
       "colorable",
       "delayable",
       "dependent",
       "detachable",
+      "bootable",
       "menuable",
       "positionable",
       "stackable",
@@ -11766,6 +13309,12 @@
         "name": "expandIcon",
         "type": "string",
         "default": "'$vuetify.icons.subgroup'",
+        "source": null
+      },
+      {
+        "name": "filter",
+        "type": "function",
+        "default": "null",
         "source": null
       },
       {
@@ -11859,6 +13408,18 @@
         "source": null
       },
       {
+        "name": "returnObject",
+        "type": "boolean",
+        "default": "false",
+        "source": null
+      },
+      {
+        "name": "search",
+        "type": "string",
+        "default": "undefined",
+        "source": null
+      },
+      {
         "name": "selectable",
         "type": "boolean",
         "default": "false",
@@ -11886,6 +13447,47 @@
     "mixins": [
       "registrable-provide",
       "themeable"
+    ],
+    "scopedSlots": [
+      {
+        "name": "prepend",
+        "props": {
+          "item": "any",
+          "leaf": "boolean",
+          "selected": "boolean",
+          "indeterminate": "boolean",
+          "active": "boolean",
+          "open": "boolean"
+        }
+      },
+      {
+        "name": "label",
+        "props": {
+          "item": "any",
+          "leaf": "boolean",
+          "selected": "boolean",
+          "indeterminate": "boolean",
+          "active": "boolean",
+          "open": "boolean"
+        }
+      },
+      {
+        "name": "append",
+        "props": {
+          "item": "any",
+          "leaf": "boolean",
+          "selected": "boolean",
+          "indeterminate": "boolean",
+          "active": "boolean",
+          "open": "boolean"
+        }
+      }
+    ],
+    "functions": [
+      {
+        "name": "updateAll",
+        "signature": "(val: boolean): void"
+      }
     ]
   },
   "v-treeview-node": {
@@ -11997,7 +13599,7 @@
         "name": "activeClass",
         "type": "string",
         "default": "'v-item--active'",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "dark",
@@ -12015,7 +13617,7 @@
         "name": "mandatory",
         "type": "boolean",
         "default": "true",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "max",
@@ -12024,13 +13626,13 @@
           "string"
         ],
         "default": "undefined",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "base-item-group"
       },
       {
         "name": "reverse",
@@ -12042,7 +13644,11 @@
         "name": "touch",
         "type": "object",
         "default": "undefined",
-        "source": null
+        "source": null,
+        "example": {
+          "left": "Function",
+          "right": "Function"
+        }
       },
       {
         "name": "touchless",
@@ -12066,6 +13672,9 @@
     "mixins": [
       "proxyable",
       "themeable"
+    ],
+    "slots": [
+      "default"
     ]
   },
   "v-window-item": {
@@ -12115,6 +13724,9 @@
     "mixins": [
       "bootable",
       "groupable"
+    ],
+    "slots": [
+      "default"
     ]
   },
   "v-bottom-sheet-transition": {
@@ -12793,6 +14405,17 @@
     ],
     "mixins": []
   },
+  "v-expand-x-transition": {
+    "props": [
+      {
+        "name": "mode",
+        "type": "string",
+        "default": "'in-out'",
+        "source": null
+      }
+    ],
+    "mixins": []
+  },
   "v-row-expand-transition": {
     "props": [
       {
@@ -12811,5 +14434,74 @@
         "signature": "(target: string | number | HTMLElement | VueComponent, options?: object) => void"
       }
     ]
+  },
+  "internationalization": {
+    "api": [
+      {
+        "name": "locales",
+        "default": "{ en: VuetifyLocale }",
+        "type": "Record<string, VuetifyLocale>"
+      },
+      {
+        "name": "current",
+        "default": "en",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "default": "(key: string, ...params: Array<string | number>): string",
+        "type": "Function"
+      }
+    ]
+  },
+  "v-ripple": {
+    "options": [
+      {
+        "name": "value",
+        "default": "{}",
+        "type": "Object"
+      }
+    ],
+    "type": "undefined"
+  },
+  "v-resize": {
+    "options": [
+      {
+        "name": "modifiers.quiet",
+        "default": "false",
+        "type": "Boolean"
+      },
+      {
+        "name": "value",
+        "default": "undefined",
+        "type": "Function"
+      }
+    ],
+    "type": "undefined"
+  },
+  "v-scroll": {
+    "options": [
+      {
+        "name": "arg:target",
+        "default": "window",
+        "type": "String"
+      },
+      {
+        "name": "value",
+        "default": "() => {}",
+        "type": "Function"
+      }
+    ],
+    "type": "undefined"
+  },
+  "v-touch": {
+    "options": [
+      {
+        "name": "value",
+        "default": "{}",
+        "type": "Object"
+      }
+    ],
+    "type": "undefined"
   }
 }

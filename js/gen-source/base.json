@@ -1,0 +1,62 @@
+{
+  "widgets": {
+    "VuetifyWidget": {
+      "inherits": ["DOMWidget"],
+      "properties": {
+        "_view_name": "VuetifyView",
+        "_view_module": "jupyter-vuetify",
+        "_model_module": "jupyter-vuetify",
+        "_view_module_version": "0.1.0",
+        "_model_module_version": "0.1.0",
+
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "union",
+            "oneOf": [{
+              "type": "widgetRef",
+              "widgetType": "DOMWidget"
+            },{
+              "type": "string"
+            }],
+            "default": null
+          }
+        },
+        "slot": {
+          "type": "string",
+          "allowNull": true,
+          "default": null
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "allowNull": true,
+          "default": null
+        },
+        "v_model": null,
+        "vstyle": {
+          "type": "string",
+          "allowNull": true,
+          "default": null
+        },
+        "vclass": {
+          "type": "string",
+          "allowNull": true,
+          "default": null
+        }
+      }
+    },
+
+    "Text": {
+      "inherits": ["VuetifyWidget"],
+      "properties": {
+        "value": {
+          "type": "string",
+          "default": ""
+        }
+      }
+    }
+  }
+}
