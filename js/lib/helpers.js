@@ -159,6 +159,6 @@ export function renderChildren(component, model, createElement) {
     const childIds = model.get("children").map(c => c.cid);
     Object.keys(component.childCache)
         .filter(key => !childIds.includes(key))
-        .forEach(key => delete this.childCache[key]);
+        .forEach(key => delete component.childCache[key]);
     return childViewModels
 }
