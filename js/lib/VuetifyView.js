@@ -20,9 +20,8 @@ export class VuetifyView extends DOMWidgetView {
                 el: this.el,
                 render(createElement) {
                     // TODO: Don't use v-app in embedded mode
-
                     if (!this.ipyvuetify_app) {
-                        this.ipyvuetify_app = createElement("v-app", [model.vueRender(createElement)]);
+                        this.ipyvuetify_app = createElement("v-app", [vueRender(createElement, model)]);
                     }
                     return this.ipyvuetify_app;
                 }
@@ -31,7 +30,31 @@ export class VuetifyView extends DOMWidgetView {
     }
 }
 
-export function eventToObject(event) {
+function vueRender(createElement, model) {
+    const tag = model.getVuetifyTag();
+    const elem = createElement({
+        data() {
+            return {
+                v_model: model.get("v_model")
+            };
+        },
+        created() {
+            addListeners(model, this);
+        },
+        render(createElement) {
+            return createElement(
+                tag,
+                createContent(model, this),
+                renderChildren(this, model, createElement));
+        }
+    }, {...model.get("slot") && {slot: model.get("slot")}});
+
+    /* Impersonate the wrapped component (e.g. v-tabs uses this name to detect v-tab en v-tab-item) */
+    elem.componentOptions.Ctor.options.name = tag;
+    return elem;
+}
+
+function eventToObject(event) {
     let props = undefined;
     switch (event.constructor) {
         case MouseEvent:
@@ -52,7 +75,7 @@ export function eventToObject(event) {
         {});
 }
 
-export function registerChangedEvents(model, component) {
+function registerChangedEvents(model, component) {
 
     const previous = model.previous("events") || [];
     const current = model.get("events");
@@ -68,7 +91,7 @@ export function registerChangedEvents(model, component) {
     });
 }
 
-export function registerAllEvents(model, component) {
+function registerAllEvents(model, component) {
     (model.get("events") || []).forEach(name => {
         component.$children[0].$on(name, (e) => {
             model.send({event: name, data: eventToObject(e)});
@@ -76,7 +99,7 @@ export function registerAllEvents(model, component) {
     });
 }
 
-export function addListeners(model, component) {
+function addListeners(model, component) {
     const listener = () => {
         component.$forceUpdate();
     };
@@ -94,7 +117,7 @@ export function addListeners(model, component) {
     });
 }
 
-export function createAttrsMapping(model) {
+function createAttrsMapping(model) {
     const useAsAttr = (key) =>
         model.get(key) !== null && !key.startsWith("_") && !["layout", "children", "slot", "events", "v_model", "vstyle", "vclass"].includes(key);
 
@@ -106,7 +129,7 @@ export function createAttrsMapping(model) {
         }, {})
 }
 
-export function createEventMapping(model) {
+function createEventMapping(model) {
     const mapping = (model.get("events") || [])
         .reduce((result, event) => {
             result[event] = (e) => {
@@ -118,7 +141,7 @@ export function createEventMapping(model) {
     return mapping;
 }
 
-export function createContent(model, vm, name) {
+function createContent(model, vm) {
     return {
         on: createEventMapping(model),
         ...model.get("vstyle") && {style: model.get("vstyle")},
@@ -141,22 +164,22 @@ export function renderChildren(component, model, createElement) {
     if (!component.childCache) {
         component.childCache = {};
     }
-    const childViewModels = model.get("children").map(c => {
-        if (typeof (c) === "string") {
-            return c;
+    const childViewModels = model.get("children").map(child => {
+        if (typeof (child) === "string") {
+            return child;
         } else {
-            if (component.childCache[c.cid]) {
-                return component.childCache[c.cid];
+            if (component.childCache[child.cid]) {
+                return component.childCache[child.cid];
             } else {
-                const vm = c.vueRender(createElement);
-                component.childCache[c.cid] = vm;
+                const vm = vueRender(createElement, child);
+                component.childCache[child.cid] = vm;
                 return vm;
             }
         }
     });
 
     /* Remove unused components */
-    const childIds = model.get("children").map(c => c.cid);
+    const childIds = model.get("children").map(child => child.cid);
     Object.keys(component.childCache)
         .filter(key => !childIds.includes(key))
         .forEach(key => delete component.childCache[key]);

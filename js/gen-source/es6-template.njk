@@ -2,29 +2,24 @@
 {% endblock %}
 {% block imports %}
 {% block globalimports %}
-import {
-  WidgetModel, DOMWidgetModel,
-  WidgetView, DOMWidgetView,
-  unpack_models
-} from '@jupyter-widgets/base';
-
-import {
-    renderChildren, createContent, addListeners
-} from "../helpers"
-
 {% endblock %}
 {% block localimports %}
-{% if outputMultiple %}
-
-{% for ref in widgets[0].localDependencies if ref !== "VuetifyWidget" %}
-import { {{ ref }}Model } from './{{ ref }}';
-{% endfor %}
-{% endif %}
 {% endblock %}
 {% endblock %}
 {% block widgets %}
 {% for widget in widgets %}
 {% block widget %}
+{% if widget.name === "VuetifyWidget" %}
+import {
+  DOMWidgetModel, unpack_models
+} from '@jupyter-widgets/base';
+{% else %}
+{% if outputMultiple %}
+{% for ref in widgets[0].localDependencies if ref !== "VuetifyWidgetModel" %}
+import { {{ ref }}Model } from './{{ ref }}';
+{% endfor %}
+{% endif %}
+{% endif %}
 
 export
 class {{ widget.name }}Model extends {{ widget.inherits[0] }}Model {
@@ -41,39 +36,10 @@ class {{ widget.name }}Model extends {{ widget.inherits[0] }}Model {
     }};
   }
 
-  {% if widget.name === "VuetifyWidget" %}
-  vueRenderChildren(createElement) {
-    return this.get("children").map(c => typeof(c) === "string" ? c : c.vueRender(createElement));
-  }
-  {% else %}
-  vueRender(createElement) {
-    const model = this;
-    const elem = createElement({
-        data() {
-            return {
-                v_model: model.get("v_model")
-            };
-        },
-        created() {
-            addListeners(model, this);
-        },
-        render(createElement) {
-          {% if widget.name === "Text" %}
-            return this._v(model.get("value"));
-          {% else %}
-            return createElement(
-                'v{{ widget.name | replace(r/([A-Z][a-z]+)/g, "-$1") | lower}}',
-                createContent(model, this, "{{widget.name}}"),
-                renderChildren(this, model, createElement));
-
-          {% endif %}
-        }
-    }, {...model.get("slot") && {slot: model.get("slot")}})
-
-    /* Impersonate the wrapped component (e.g. v-tabs uses this name to detect v-tab en v-tab-item) */
-    elem.componentOptions.Ctor.options.name = 'v{{ widget.name | replace(r/([A-Z][a-z]+)/g, "-$1") | lower}}';
-    return elem;
-  }
+  {% if widget.name !== "VuetifyWidget" %}
+    getVuetifyTag() {
+        return "v{{ widget.name | replace(r/([A-Z][a-z]+)/g, "-$1") | lower}}";
+    }
   {% endif %}
 {% endblock %}
 }

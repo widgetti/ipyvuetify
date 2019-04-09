@@ -10,7 +10,7 @@ Vue.use(Vuetify, {
     iconfont: 'md'
 });
 
-export * from './helpers';
+export {VuetifyView} from './VuetifyView';
 export * from './generated';
 export { HtmlModel } from './Html';
 export { VuetifyTemplateModel } from './VuetifyTemplate';
