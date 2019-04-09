@@ -7,6 +7,7 @@ from subprocess import check_call
 import os
 import sys
 import platform
+import glob
 
 here = os.path.dirname(os.path.abspath(__file__))
 node_root = os.path.join(here, 'js')
@@ -131,11 +132,7 @@ setup_args = {
     'long_description': LONG_DESCRIPTION,
     'include_package_data': True,
     'data_files': [
-        ('share/jupyter/nbextensions/jupyter-vuetify', [
-            'ipyvuetify/static/extension.js',
-            'ipyvuetify/static/index.js',
-            'ipyvuetify/static/index.js.map',
-        ],),
+        ('share/jupyter/nbextensions/jupyter-vuetify', glob.glob('ipyvuetify/static/*'),),
         ('etc/jupyter/nbconfig/notebook.d/' ,['jupyter-vuetify.json'])
     ],
     'install_requires': [
