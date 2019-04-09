@@ -7,7 +7,7 @@ export class VuetifyView extends DOMWidgetView {
         super.render();
         this.displayed.then(() => {
 
-            /* Set the Vuetify data-app attribute on a higher level element so overlays get renderd at the right
+            /* Set the Vuetify data-app attribute on a higher level element so overlays get rendered at the right
              * position (e.g. with v-menu and v-tooltip)
              */
             const elem = document.getElementById("site");
