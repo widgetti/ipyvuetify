@@ -10,8 +10,7 @@ class Events:
         self.on_msg(self._handle_event)
 
     def on_event(self, event, callback, remove=False):
-        if event not in self._event_handlers_map:
-            self._event_handlers_map[event]=CallbackDispatcher()
+        self._event_handlers_map[event]=CallbackDispatcher()
 
         logging.info(f"{'un' if remove else ''}register {event}")
         self._event_handlers_map[event].register_callback(callback, remove=remove)
