@@ -77,8 +77,8 @@ function eventToObject(event) {
 
 function registerChangedEvents(model, component) {
 
-    const previous = model.previous("events") || [];
-    const current = model.get("events");
+    const previous = model.previous("_events") || [];
+    const current = model.get("_events");
 
     const removed = previous.filter(e => !current.includes(e));
     const added = current.filter(e => !previous.includes(e));
@@ -92,7 +92,7 @@ function registerChangedEvents(model, component) {
 }
 
 function registerAllEvents(model, component) {
-    (model.get("events") || []).forEach(name => {
+    (model.get("_events") || []).forEach(name => {
         component.$children[0].$on(name, (e) => {
             model.send({event: name, data: eventToObject(e)});
         });
@@ -119,7 +119,7 @@ function addListeners(model, component) {
 
 function createAttrsMapping(model) {
     const useAsAttr = (key) =>
-        model.get(key) !== null && !key.startsWith("_") && !["layout", "children", "slot", "events", "v_model", "vstyle", "vclass"].includes(key);
+        model.get(key) !== null && !key.startsWith("_") && !["layout", "children", "slot", "_events", "v_model", "vstyle", "vclass"].includes(key);
 
     return model.keys()
         .filter(useAsAttr)
@@ -130,7 +130,7 @@ function createAttrsMapping(model) {
 }
 
 function createEventMapping(model) {
-    const mapping = (model.get("events") || [])
+    const mapping = (model.get("_events") || [])
         .reduce((result, event) => {
             result[event] = (e) => {
                 model.send({event: event, data: eventToObject(e)});

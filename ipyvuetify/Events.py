@@ -18,12 +18,12 @@ class Events:
         if remove and not self._event_handlers_map[event].callbacks:
             del self._event_handlers_map[event]
 
-        difference = set(self._event_handlers_map.keys()) ^ set(self.events)
+        difference = set(self._event_handlers_map.keys()) ^ set(self._events)
         logging.info(f"difference: {difference} current: {self._event_handlers_map.keys()}")
         if len(difference) != 0:
-            self.events = list(self._event_handlers_map.keys())
+            self._events = list(self._event_handlers_map.keys())
 
-        logging.info(self.events)
+        logging.info(self._events)
 
     def fire_event(self, event, data):
         logging.info(f"fir: {self} {event} {data}")

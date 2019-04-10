@@ -27,7 +27,7 @@
           "allowNull": true,
           "default": null
         },
-        "events": {
+        "_events": {
           "type": "array",
           "items": {
             "type": "string"
