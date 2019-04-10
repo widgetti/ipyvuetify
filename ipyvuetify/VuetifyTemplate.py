@@ -35,5 +35,5 @@ class VuetifyTemplate(DOMWidget, Events):
 
     components = Dict(default_value=None, allow_none=True).tag(sync=True, **widget_serialization)
 
-__all__ = ['AnyVue']
+__all__ = ['VuetifyTemplate']
 
