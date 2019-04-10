@@ -5,11 +5,6 @@ from traitlets import (
 from ipywidgets import Widget, DOMWidget
 from ipywidgets.widgets.widget import widget_serialization
 
-import logging
-logging.basicConfig(filename='log_filename.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-logging.info("init")
-
-
 class Events:
     def __init__(self):
         self.on_msg(self._handle_event)
@@ -18,12 +13,7 @@ class Events:
     def _handle_event(self, _, content, buffers):
         event = content.get("event", "")
         data = content.get("data", {})
-        logging.info(f"event: {event}, data: {data}")
         getattr(self, f'vue_{event}')(data)
-
-    def log(self, msg):
-        logging.info(msg)
-
 
 class VuetifyTemplate(DOMWidget, Events):
 
