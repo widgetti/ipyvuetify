@@ -10,3 +10,7 @@ div.application--wrap {
 .application--wrap a:hover {
     text-decoration: none;
 }
+
+.application--wrap label {
+    margin-bottom: unset;
+}
