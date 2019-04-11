@@ -31,7 +31,17 @@ export class VuetifyView extends DOMWidgetView {
 }
 
 function vueRender(createElement, model) {
-    const tag = model.getVuetifyTag();
+    let tag = model.getVuetifyTag();
+    if (tag === "html") {
+        return createElement(
+            model.get("tag"), {
+                ...model.get("vstyle") && {style: model.get("vstyle")},
+                ...model.get("vclass") && {class: model.get("vclass")},
+                ...model.get("attributes"),
+                ...model.get("slot") && {slot: model.get("slot")}
+            },
+            model.get("children").map(child => (typeof child === "string") ? child : vueRender(createElement, child)));
+    }
     const elem = createElement({
         data() {
             return {

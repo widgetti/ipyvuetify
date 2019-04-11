@@ -17,16 +17,9 @@ class HtmlModel extends VuetifyWidgetModel {
             }};
     }
 
-    vueRender(createElement) {
-        const model = this;
-        let elem = createElement(
-            model.get("tag"), {
-                ...model.get("attributes"),
-                ...model.get("slot") && {slot: model.get("slot")}
-            },
-            model.vueRenderChildren(createElement));
-        return elem;
-     }
+    getVuetifyTag() {
+        return "html"
+    }
 }
 
 HtmlModel.serializers = {
