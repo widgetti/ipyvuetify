@@ -58,6 +58,9 @@ display_values = ["inline",
                   "initial",
                   "inherit"]
 
+spacing_types = ["m", "p"]
+spacing_directions = ["t", "b", "l", "r", "x", "y", "a"]
+spacing_sizes = ["auto"] + [s for s in range(0, 6)]
 
 def make_boolean_prop(): return {"type": "boolean", "allowNull": True, "default": None}
 
@@ -73,6 +76,8 @@ def make_grid_list_props():
 def make_grit_props(prefix, start, end):
     return [(f"{prefix}{s}{n}", make_boolean_prop()) for s in sizes for n in range(start, end)]
 
+def make_spacing_props():
+    return [(f"{t}{d}_{s}", make_boolean_prop()) for t in spacing_types for d in spacing_directions for s in spacing_sizes]
 
 def make_widget(data):
     # if data[0] not in [""]:
@@ -190,6 +195,9 @@ def make_widget(data):
                                                                                                             13)
     elif widgetName == "Layout":
         supported_props += make_d_type_props()
+
+    if widgetName in ["Container", "Content", "Flex", "Layout"]:
+        supported_props += make_spacing_props()
 
     # naar template: props = [("_model_name", widgetName + "Model")] + supported_props
     props = supported_props
