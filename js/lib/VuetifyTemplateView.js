@@ -1,34 +1,9 @@
-import {DOMWidgetView} from '@jupyter-widgets/base';
+import {VuetifyBaseView} from "./VuetifyBaseView";
 
-import Vue from 'vue';
+export class VuetifyTemplateView extends VuetifyBaseView {
 
-export class VuetifyTemplateView extends DOMWidgetView {
-    render() {
-        super.render();
-        this.displayed.then(() => {
-
-            /* Set the Vuetify data-app attribute on a higher level element so overlays get rendered at the right
-             * position (e.g. with v-menu and v-tooltip)
-             */
-            const elem = document.getElementById("site");
-            if (!elem.hasAttribute("data-app")) {
-                elem.setAttribute("data-app", true);
-            }
-
-            const model = this.model;
-            this.vueApp = new Vue({
-                el: this.el,
-
-                render: createElement => {
-                    // TODO: Don't use v-app in embedded mode
-                    /* Prevent re-rendering of toplevel component. This happens on button-click in v-menu */
-                    if (!this.ipyvuetify_app) {
-                        this.ipyvuetify_app = createElement("v-app", [createElement(this.createComponentObject(model))]);
-                    }
-                    return this.ipyvuetify_app;
-                }
-            });
-        });
+    vueRender(createElement) {
+        return createElement(this.createComponentObject(this.model));
     }
 
     createComponentObject(model) {
@@ -76,7 +51,7 @@ export class VuetifyTemplateView extends DOMWidgetView {
 
     createMethods(model) {
         return model.get("events").reduce((result, event) => {
-            result[event] = (value) => model.send({event, data: value});
+            result[event] = (value) => model.send({event, data: this.eventToObject(value)});
             return result;
         }, {})
     }
