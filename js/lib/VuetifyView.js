@@ -8,6 +8,17 @@ export class VuetifyView extends VuetifyBaseView {
 
     _vueRender(createElement, model) {
         const widgetView = this;
+        if (model.get("_view_name") !== "VuetifyView") {
+            return createElement({
+                mounted() {
+                    model.widget_manager.create_view(model, {parent: widgetView}).then(view => {
+                        this.$el.parentElement.appendChild(view.el);
+                    });
+                },
+                render() {
+                }
+            });
+        }
         let tag = model.getVuetifyTag();
         if (tag === "html") {
             return createElement(

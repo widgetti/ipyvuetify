@@ -8,18 +8,27 @@ export class VuetifyTemplateView extends VuetifyBaseView {
 
     createComponentObject(model) {
         const widgetView = this;
-        return {
-            data() {
-                return widgetView.createDataMapping(model);
-            },
-            created() {
-                widgetView.addModelListeners(model, this);
-            },
-            watch: this.createWatches(model),
-            methods: this.createMethods(model),
-            components: this.createComponents(model.get("components") || {}),
-            template: model.get("template"),
-        }
+        return model.get("_view_name") === "VuetifyTemplateView"
+            ? {
+                data() {
+                    return widgetView.createDataMapping(model);
+                },
+                created() {
+                    widgetView.addModelListeners(model, this);
+                },
+                watch: this.createWatches(model),
+                methods: this.createMethods(model),
+                components: this.createComponents(model.get("components") || {}),
+                template: model.get("template"),
+            }
+            : {
+                mounted() {
+                    model.widget_manager.create_view(model, {parent: widgetView}).then(view => {
+                        this.$el.parentElement.appendChild(view.el);
+                    });
+                },
+                render() {}
+            }
     }
 
     createDataMapping(model) {
