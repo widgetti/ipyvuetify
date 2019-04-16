@@ -18,8 +18,8 @@ export class VuetifyView extends VuetifyBaseView {
             }
             return createElement(
                 model.get("tag"), {
-                    ...model.get("vstyle") && {style: model.get("vstyle")},
-                    ...model.get("vclass") && {class: model.get("vclass")},
+                    ...model.get("style_") && {style: model.get("style_")},
+                    ...model.get("class_") && {class: model.get("class_")},
                     ...model.get("slot") && {slot: model.get("slot")}
                 },
                 model.get("children").map(child => (typeof child === "string") ? child : this._vueRender(createElement, child)));
@@ -90,7 +90,7 @@ export class VuetifyView extends VuetifyBaseView {
 
     createAttrsMapping(model) {
         const useAsAttr = (key) =>
-            model.get(key) !== null && !key.startsWith("_") && !["layout", "children", "slot", "_events", "v_model", "vstyle", "vclass"].includes(key);
+            model.get(key) !== null && !key.startsWith("_") && !["layout", "children", "slot", "_events", "v_model", "style_", "class_"].includes(key);
 
         return model.keys()
             .filter(useAsAttr)
@@ -114,8 +114,8 @@ export class VuetifyView extends VuetifyBaseView {
     createContent(model, vueModel) {
         return {
             on: this.createEventMapping(model),
-            ...model.get("vstyle") && {style: model.get("vstyle")},
-            ...model.get("vclass") && {class: model.get("vclass")},
+            ...model.get("style_") && {style: model.get("style_")},
+            ...model.get("class_") && {class: model.get("class_")},
             attrs: this.createAttrsMapping(model),
             ...model.get("v_model") !== "!!disabled!!" && {
                 model: {

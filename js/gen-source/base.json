@@ -36,12 +36,12 @@
           "default": null
         },
         "v_model": null,
-        "vstyle": {
+        "style_": {
           "type": "string",
           "allowNull": true,
           "default": null
         },
-        "vclass": {
+        "class_": {
           "type": "string",
           "allowNull": true,
           "default": null
