@@ -13,6 +13,4 @@ class Html(VuetifyWidget):
 
     tag = Unicode().tag(sync=True)
 
-    attributes = Dict(None, allow_none=True).tag(sync=True)
-
 __all__ = ['Html']

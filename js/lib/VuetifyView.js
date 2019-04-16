@@ -13,11 +13,13 @@ export class VuetifyView extends VuetifyBaseView {
         }
         let tag = model.getVuetifyTag();
         if (tag === "html") {
+            if (model.get("tag").toLowerCase().includes("script")) {
+                return;
+            }
             return createElement(
                 model.get("tag"), {
                     ...model.get("vstyle") && {style: model.get("vstyle")},
                     ...model.get("vclass") && {class: model.get("vclass")},
-                    ...model.get("attributes"),
                     ...model.get("slot") && {slot: model.get("slot")}
                 },
                 model.get("children").map(child => (typeof child === "string") ? child : this._vueRender(createElement, child)));

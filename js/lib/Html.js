@@ -13,7 +13,6 @@ class HtmlModel extends VuetifyWidgetModel {
         return {...super.defaults(), ... {
                 _model_name: "HtmlModel",
                 tag: null,
-                attributes: null,
             }};
     }
 
