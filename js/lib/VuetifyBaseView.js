@@ -53,4 +53,38 @@ export class VuetifyBaseView extends DOMWidgetView {
                 return result},
             {});
     }
+
+    static createObjectForNestedModel(model, parent) {
+        const viewName = model.get("_view_name");
+        const viewPromise = parent.create_child_view(model);
+
+        let renderProxy = (cr) => undefined;
+
+        if (viewName === "VuetifyView" || viewName === "VuetifyTemplateView") {
+            return {
+                created() {
+                    viewPromise.then(view => {
+                        renderProxy = (createElement) => {
+                            return view.vueRender(createElement);
+                        };
+                        this.$forceUpdate();
+                    });
+                },
+                render(createElement) {
+                    return renderProxy(createElement);
+                }
+            };
+        } else {
+            return {
+                mounted() {
+                    viewPromise.then(view => {
+                        this.$el.appendChild(view.el);
+                    });
+                },
+                render(createElement) {
+                    return createElement('div');
+                }
+            }
+        }
+    }
 }
