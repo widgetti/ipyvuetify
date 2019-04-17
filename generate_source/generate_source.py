@@ -1,17 +1,23 @@
 import os
 import shutil
 import subprocess
+from ApiToSchema import generate_schema
 
 here = os.path.dirname(os.path.abspath(__file__))
-project_dir = here
+
+vuetify_api = f'{here}/vuetify_api_1.5.6.json'
+base_schema = f'{here}/base.json'
+build_dir = f'{here}/build'
+widget_gen_schema = f'{build_dir}/widget_gen_schema.json'
+
+widgetgen = f'{here}/node_modules/.bin/widgetgen'
+
+es6_template = f'{here}/es6-template.njk'
+python_template = f'{here}/python.njk'
+
+project_dir = f'{here}/..'
 destination_js = f'{project_dir}/js/lib/generated'
 destination_python = f'{project_dir}/ipyvuetify/generated'
-widget_gen_schema = f'{project_dir}/js/gen-source/widget_gen_schema.json'
-
-widgetgen = f'{project_dir}/js/node_modules/.bin/widgetgen'
-
-es6_template = f'{project_dir}/js/gen-source/es6-template.njk'
-python_template = f'{project_dir}/js/gen-source/python.njk'
 
 
 def reset_dir(name):
@@ -20,6 +26,13 @@ def reset_dir(name):
 
     os.mkdir(name)
 
+
+if not os.path.isdir(build_dir):
+    os.mkdir(build_dir)
+
+generate_schema(vuetify_api, base_schema, widget_gen_schema)
+
+subprocess.check_call('npm install && npm link widget-gen', cwd=here, shell=True)
 
 reset_dir(destination_js)
 subprocess.check_call(f'{widgetgen} -p json -o {destination_js} -t {es6_template} {widget_gen_schema} es6', shell=True)

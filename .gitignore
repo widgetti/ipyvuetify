@@ -3,8 +3,8 @@
 dist/
 build/
 *.py[cod]
-node_modules/
-js/gen-source/widget_gen_schema.json
+**/node_modules/
+generate_source/build
 
 # generated code
 ipyvuetify/generated

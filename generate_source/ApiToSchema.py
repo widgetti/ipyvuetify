@@ -1,9 +1,6 @@
 import json
 import re
 
-VUETIFY_API_FILE_NAME = 'vuetify_api_1.5.6.json'
-BASE_SCHEMA_FILE_NAME = 'js/gen-source/base.json'
-SCHEMA_OUTPUT_FILE_NAME = 'js/gen-source/widget_gen_schema.json'
 
 sizes = ['xs', 'sm', 'md', 'lg', 'xl']
 display_values = ['inline',
@@ -164,12 +161,13 @@ def make_widget(data):
         'properties': dict(properties)})
 
 
-api_data = json.loads(open(VUETIFY_API_FILE_NAME).read())
-base = json.loads(open(BASE_SCHEMA_FILE_NAME).read())
+def generate_schema(vuetify_api_file_name, base_schema_file_name, schema_output_file_name):
+    api_data = json.loads(open(vuetify_api_file_name).read())
+    base = json.loads(open(base_schema_file_name).read())
 
-schema_tuples = filter(identity, map(make_widget, api_data.items()))
+    schema_tuples = filter(identity, map(make_widget, api_data.items()))
 
-base['widgets'] = {**base['widgets'], **dict(schema_tuples)}
+    base['widgets'] = {**base['widgets'], **dict(schema_tuples)}
 
-with open(SCHEMA_OUTPUT_FILE_NAME, 'w') as outfile:
-    json.dump(base, outfile)
+    with open(schema_output_file_name, 'w') as outfile:
+        json.dump(base, outfile)
