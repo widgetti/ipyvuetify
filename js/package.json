@@ -44,7 +44,7 @@
     "@jupyter-widgets/base": "^1.0.0",
     "lodash": "^4.17.4",
     "vue": "^2.6.9",
-    "vuetify": "^1.5.6"
+    "vuetify": "1.5.6"
   },
   "jupyterlab": {
     "extension": "lib/labplugin"
