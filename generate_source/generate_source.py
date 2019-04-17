@@ -1,7 +1,7 @@
 import os
 import shutil
 import subprocess
-from ApiToSchema import generate_schema
+from generate_schema import generate_schema
 
 here = os.path.dirname(os.path.abspath(__file__))
 
