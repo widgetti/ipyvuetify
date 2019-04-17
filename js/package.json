@@ -20,7 +20,6 @@
     "dist/*.js"
   ],
   "scripts": {
-    "bla": "node bla.js",
     "watch": "webpack --watch",
     "clean": "rimraf dist/",
     "prepublish": "webpack",
