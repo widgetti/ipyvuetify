@@ -33,6 +33,22 @@ spacing_sizes = ['auto'] + [str(s) for s in range(0, 6)]
 
 keywords = ['for']
 
+boolean_prop = {
+    'type': 'boolean',
+    'allowNull': True,
+    'default': None}
+
+d_type_props = [(f'd_{d}', boolean_prop)
+                for d in display_values]
+
+grid_list_props = [(f'grid_list_{s}', boolean_prop)
+                   for s in sizes]
+
+spacing_props = [(f'{t}{d}_{s}', boolean_prop)
+                 for t in spacing_types
+                 for d in spacing_directions
+                 for s in spacing_sizes]
+
 
 def identity(x):
     return x
@@ -49,33 +65,10 @@ def property_to_snake_case(name):
     return re.sub('(?!^)([A-Z]+)', r'_\1', name).lower()
 
 
-def make_boolean_prop(): return {
-    'type': 'boolean',
-    'allowNull': True,
-    'default': None}
-
-
-def make_d_type_props():
-    return [(f'd_{d}', make_boolean_prop())
-            for d in display_values]
-
-
-def make_grid_list_props():
-    return [(f'grid_list_{s}', make_boolean_prop())
-            for s in sizes]
-
-
 def make_grid_props(prefix, start, end):
-    return [(f'{prefix}{s}{n}', make_boolean_prop())
+    return [(f'{prefix}{s}{n}', boolean_prop)
             for s in sizes
             for n in range(start, end)]
-
-
-def make_spacing_props():
-    return [(f'{t}{d}_{s}', make_boolean_prop())
-            for t in spacing_types
-            for d in spacing_directions
-            for s in spacing_sizes]
 
 
 def make_type(api_type):
@@ -146,14 +139,14 @@ def make_widget(data):
 
     # compressed properties like: (size)(1-12) and d-{type}
     if widget_name == 'Container':
-        properties += make_d_type_props() + make_grid_list_props()
+        properties += d_type_props + grid_list_props
     elif widget_name == 'Flex':
         properties += make_grid_props('', 1, 13) + make_grid_props('offset_', 0, 13) + make_grid_props('order_', 1, 13)
     elif widget_name == 'Layout':
-        properties += make_d_type_props()
+        properties += d_type_props
 
     if widget_name in ['Container', 'Content', 'Flex', 'Layout']:
-        properties += make_spacing_props()
+        properties += spacing_props
 
     return (widget_name, {
         'inherits': ['VuetifyWidget'],
