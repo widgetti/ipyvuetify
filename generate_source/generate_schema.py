@@ -3,33 +3,6 @@ import re
 
 
 sizes = ['xs', 'sm', 'md', 'lg', 'xl']
-display_values = ['inline',
-                  'block',
-                  'contents',
-                  'flex',
-                  'grid',
-                  'inline_block',
-                  'inline_flex',
-                  'inline_grid',
-                  'inline_table',
-                  'list_item',
-                  'run_in',
-                  'table',
-                  'table_caption',
-                  'table_column_group',
-                  'table_header_group',
-                  'table_footer_group',
-                  'table_row_group',
-                  'table_cell',
-                  'table_column',
-                  'table_row',
-                  'none',
-                  'initial',
-                  'inherit']
-
-spacing_types = ['m', 'p']
-spacing_directions = ['t', 'b', 'l', 'r', 'x', 'y', 'a']
-spacing_sizes = ['auto'] + [str(s) for s in range(0, 6)]
 
 keywords = ['for']
 
@@ -39,15 +12,37 @@ boolean_prop = {
     'default': None}
 
 d_type_props = [(f'd_{d}', boolean_prop)
-                for d in display_values]
+                for d in ['inline',
+                          'block',
+                          'contents',
+                          'flex',
+                          'grid',
+                          'inline_block',
+                          'inline_flex',
+                          'inline_grid',
+                          'inline_table',
+                          'list_item',
+                          'run_in',
+                          'table',
+                          'table_caption',
+                          'table_column_group',
+                          'table_header_group',
+                          'table_footer_group',
+                          'table_row_group',
+                          'table_cell',
+                          'table_column',
+                          'table_row',
+                          'none',
+                          'initial',
+                          'inherit']]
 
 grid_list_props = [(f'grid_list_{s}', boolean_prop)
                    for s in sizes]
 
-spacing_props = [(f'{t}{d}_{s}', boolean_prop)
-                 for t in spacing_types
-                 for d in spacing_directions
-                 for s in spacing_sizes]
+spacing_props = [(f'{type_}{direction}_{size}', boolean_prop)
+                 for type_ in ['m', 'p']
+                 for direction in ['t', 'b', 'l', 'r', 'x', 'y', 'a']
+                 for size in ['auto'] + [str(s) for s in range(0, 6)]]
 
 
 def identity(x):
