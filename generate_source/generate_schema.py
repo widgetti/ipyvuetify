@@ -65,7 +65,7 @@ def make_grid_list_props():
             for s in sizes]
 
 
-def make_grit_props(prefix, start, end):
+def make_grid_props(prefix, start, end):
     return [(f'{prefix}{s}{n}', make_boolean_prop())
             for s in sizes
             for n in range(start, end)]
@@ -148,7 +148,7 @@ def make_widget(data):
     if widget_name == 'Container':
         properties += make_d_type_props() + make_grid_list_props()
     elif widget_name == 'Flex':
-        properties += make_grit_props('', 1, 13) + make_grit_props('offset_', 0, 13) + make_grit_props('order_', 1, 13)
+        properties += make_grid_props('', 1, 13) + make_grid_props('offset_', 0, 13) + make_grid_props('order_', 1, 13)
     elif widget_name == 'Layout':
         properties += make_d_type_props()
 
