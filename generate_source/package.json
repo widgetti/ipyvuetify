@@ -1,4 +1,7 @@
 {
+  "description": "_",
+  "repository": "_",
+  "license": "MIT",
   "devDependencies": {
     "widget-gen": "^0.5.2"
   }

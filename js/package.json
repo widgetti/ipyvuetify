@@ -2,6 +2,7 @@
   "name": "jupyter-vuetify",
   "version": "0.1.0",
   "description": "Jupyter widgets based on vuetify UI components",
+  "license": "MIT",
   "author": "Mario Buikhuizen, Maarten Breddels",
   "main": "lib/index.js",
   "repository": {
@@ -22,7 +23,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "clean": "rimraf dist/",
-    "prepublish": "webpack",
+    "prepare": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -36,7 +37,8 @@
     "style-loader": "^0.23.1",
     "typeface-roboto": "0.0.54",
     "vue-loader": "^15.4.2",
-    "webpack": "^3.5.5"
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {
     "@jupyter-widgets/base": "^1.0.0",
