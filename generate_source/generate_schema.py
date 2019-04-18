@@ -78,17 +78,28 @@ def make_spacing_props():
             for s in spacing_sizes]
 
 
-def api_type_to_schema_type(api_type):
-    # Vuetify api schema contains casing errors
+def make_type(api_type):
     if type(api_type) is str:
+        # Vuetify api schema contains casing errors
         api_type = api_type.casefold()
 
-    if api_type in ['boolean', 'string', 'object', 'array', 'any']:
-        return api_type
-    if api_type == 'number':
-        return 'float'
+        if api_type == 'number':
+            api_type = 'float'
+
+    if api_type in ['boolean', 'string', 'object', 'any', 'float']:
+        return {'type': api_type}
+
+    # Type info of arrays is not included in the vuetify api json file, use any for now.
+    # TODO: Retrieve type info for arrays
+    if api_type == 'array':
+        return {'type': 'array',
+                'items': {
+                    'type': 'any'}}
+
     if type(api_type) is list:
-        return 'union'
+        return {'type': 'union',
+                'oneOf': list(filter(identity, map(make_type, api_type)))}
+
     if api_type == 'function':
         # Not supported
         return None
@@ -102,40 +113,25 @@ def make_property(data):
         return None
 
     api_name = data['name']
-    schema_name = property_to_snake_case(api_name)
-
-    if schema_name in keywords:
-        schema_name += '_'
-
-    schema_type = api_type_to_schema_type(data['type'])
-
-    if schema_type is None:
-        return None
 
     # compressed properties like: (size)(1-12) and d-{type} are handled on a higher level
     if '(' in api_name or '{' in api_name:
         return None
 
-    # TODO: Type info of arrays is not included in the vuetify api json file. Find another way to get this information
-    def add_array_items(prop_dict, t):
-        if t == "array":
-            prop_dict['items'] = {'type': 'any'}
-        return prop_dict
+    schema_name = property_to_snake_case(api_name)
 
-    property_dict = add_array_items({
-        'type': schema_type,
-        'allowNull': True,
-        'default': None
-    }, schema_type)
+    if schema_name in keywords:
+        schema_name += '_'
 
-    if schema_type == 'union':
-        union_types = [api_type_to_schema_type(t)
-                       for t in data['type']]
-        property_dict['oneOf'] = [add_array_items({'type': t}, t)
-                                  for t in union_types
-                                  if t]
+    schema_type = make_type(data['type'])
 
-    return schema_name, property_dict
+    if schema_type is None:
+        return None
+
+    schema_type['allowNull'] = True
+    schema_type['default'] = None
+
+    return schema_name, schema_type
 
 
 def make_widget(data):
