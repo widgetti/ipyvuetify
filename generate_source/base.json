@@ -35,7 +35,11 @@
           "allowNull": true,
           "default": null
         },
-        "v_model": null,
+        "v_model": {
+          "type": "any",
+          "allowNull": true,
+          "default": "!!disabled!!"
+        },
         "style_": {
           "type": "string",
           "allowNull": true,

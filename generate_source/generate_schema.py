@@ -83,7 +83,7 @@ def api_type_to_schema_type(api_type):
     if type(api_type) is str:
         api_type = api_type.casefold()
 
-    if api_type in ['boolean', 'string', 'object', 'array']:
+    if api_type in ['boolean', 'string', 'object', 'array', 'any']:
         return api_type
     if api_type == 'number':
         return 'float'
@@ -107,9 +107,6 @@ def make_property(data):
     if schema_name in keywords:
         schema_name += '_'
 
-    if data['type'] == 'any':
-        return schema_name, None
-
     schema_type = api_type_to_schema_type(data['type'])
 
     if schema_type is None:
@@ -119,16 +116,22 @@ def make_property(data):
     if '(' in api_name or '{' in api_name:
         return None
 
-    property_dict = {
+    # TODO: Type info of arrays is not included in the vuetify api json file. Find another way to get this information
+    def add_array_items(prop_dict, t):
+        if t == "array":
+            prop_dict['items'] = {'type': 'any'}
+        return prop_dict
+
+    property_dict = add_array_items({
         'type': schema_type,
         'allowNull': True,
         'default': None
-    }
+    }, schema_type)
 
     if schema_type == 'union':
         union_types = [api_type_to_schema_type(t)
                        for t in data['type']]
-        property_dict['oneOf'] = [{'type': t}
+        property_dict['oneOf'] = [add_array_items({'type': t}, t)
                                   for t in union_types
                                   if t]
 

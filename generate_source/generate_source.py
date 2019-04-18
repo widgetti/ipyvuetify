@@ -33,19 +33,10 @@ def generate():
 
     generate_schema(vuetify_api, base_schema, widget_gen_schema)
 
-    subprocess.check_call('npm install && npm link widget-gen', cwd=here, shell=True)
+    subprocess.check_call('npm install', cwd=here, shell=True)
 
     reset_dir(destination_js)
     subprocess.check_call(f'{widgetgen} -p json -o {destination_js} -t {es6_template} {widget_gen_schema} es6', shell=True)
 
     reset_dir(destination_python)
     subprocess.check_call(f'{widgetgen} -p json -o {destination_python} -t {python_template} {widget_gen_schema} python', shell=True)
-
-    # Fixme: Can't specify default value for any in widget-gen
-    with open(f'{destination_python}/VuetifyWidget.py', "r+") as f:
-        new_content = f.read().replace(
-            'v_model = Any(Undefined).tag(sync=True)',
-            'v_model = Any("!!disabled!!").tag(sync=True)')
-
-        f.seek(0)
-        f.write(new_content)
