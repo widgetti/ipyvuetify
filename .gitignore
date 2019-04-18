@@ -4,9 +4,9 @@ dist/
 build/
 *.py[cod]
 **/node_modules/
-generate_source/build
 
 # generated code
+generate_source/build
 ipyvuetify/generated
 js/lib/generated
 
