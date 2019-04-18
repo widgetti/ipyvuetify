@@ -12,11 +12,3 @@ js/lib/generated
 
 # Compiled javascript
 ipyvuetify/static/
-
-# OS X
-.DS_Store
-
-
-.idea
-
-notebooks
