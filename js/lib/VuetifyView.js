@@ -46,30 +46,6 @@ export class VuetifyView extends VuetifyBaseView {
         return elem;
     }
 
-    registerChangedEvents(model, vueModel) {
-
-        const previous = model.previous("_events") || [];
-        const current = model.get("_events");
-
-        const removed = previous.filter(e => !current.includes(e));
-        const added = current.filter(e => !previous.includes(e));
-
-        removed.forEach(e => vueModel.$children[0].$off(e));
-        added.forEach(name => {
-            vueModel.$children[0].$on(name, (e) => {
-                model.send({event: name, data: this.eventToObject(e)});
-            });
-        });
-    }
-
-    registerAllEvents(model, vueModel) {
-        (model.get("_events") || []).forEach(name => {
-            vueModel.$children[0].$on(name, (e) => {
-                model.send({event: name, data: this.eventToObject(e)});
-            });
-        });
-    }
-
     addListeners(model, vueModel) {
         const listener = () => {
             vueModel.$forceUpdate();
