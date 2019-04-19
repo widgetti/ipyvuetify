@@ -75,7 +75,7 @@ export class VuetifyView extends VuetifyBaseView {
             vueModel.$forceUpdate();
         };
         const use = (key) =>
-            !key.startsWith("_") && !["v_model"].includes(key);
+            key === "_events" || (!key.startsWith("_") && !["v_model"].includes(key));
 
         model.keys()
             .filter(use)
