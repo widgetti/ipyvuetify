@@ -1509,7 +1509,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-03-16'",
+        "default": "'2019-04-19'",
         "source": "calendar-base"
       },
       {
@@ -2490,7 +2490,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-03-16'",
+        "default": "'2019-04-19'",
         "source": "calendar-base"
       },
       {
@@ -2604,7 +2604,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-03-16'",
+        "default": "'2019-04-19'",
         "source": "calendar-base"
       },
       {
@@ -2718,7 +2718,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-03-16'",
+        "default": "'2019-04-19'",
         "source": "calendar-base"
       },
       {
@@ -7177,6 +7177,9 @@
       "bootable",
       "registrable-inject",
       "toggleable"
+    ],
+    "slots": [
+      "activator"
     ]
   },
   "v-list-tile": {
@@ -8175,15 +8178,7 @@
           "array",
           "object"
         ],
-        "default": {
-          "closeOnClick": false,
-          "closeOnContentClick": false,
-          "openOnClick": false,
-          "maxHeight": 300,
-          "offsetY": true,
-          "offsetOverflow": true,
-          "transition": false
-        },
+        "default": "{\"closeOnClick\":false, \"closeOnContentClick\":false, \"openOnClick\":false, \"maxHeight\":300, \"offsetY\":true, \"offsetOverflow\":true, \"transition\":false}",
         "source": "v-select"
       },
       {
