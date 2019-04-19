@@ -21,7 +21,7 @@
     "dist/*.js"
   ],
   "scripts": {
-    "watch": "webpack --watch",
+    "watch": "webpack --mode development --watch",
     "clean": "rimraf dist/",
     "prepare": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
