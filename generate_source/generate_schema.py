@@ -50,10 +50,8 @@ def identity(x):
 
 
 def kebab_to_camel(name):
-    return ''.join(
-        map(
-            lambda x: x.capitalize(),
-            name.split('-')[1:]))
+    return ''.join(map(lambda x: x.capitalize(),
+                       name.split('-')[1:]))
 
 
 def property_to_snake_case(name):
