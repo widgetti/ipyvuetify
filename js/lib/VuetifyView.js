@@ -66,7 +66,7 @@ export class VuetifyView extends VuetifyBaseView {
 
     createAttrsMapping(model) {
         const useAsAttr = (key) =>
-            model.get(key) !== null && !key.startsWith("_") && !["layout", "children", "slot", "_events", "v_model", "style_", "class_"].includes(key);
+            model.get(key) !== null && !key.startsWith("_") && !["layout", "children", "slot", "v_model", "style_", "class_"].includes(key);
 
         return model.keys()
             .filter(useAsAttr)
