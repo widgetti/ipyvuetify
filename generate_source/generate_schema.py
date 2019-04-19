@@ -60,10 +60,10 @@ def property_to_snake_case(name):
     return re.sub('(?!^)([A-Z]+)', r'_\1', name).lower()
 
 
-def make_grid_props(prefix, start, end):
+def make_grid_props(prefix, start):
     return [(f'{prefix}{size}{columns}', boolean_type)
             for size in sizes
-            for columns in range(start, end)]
+            for columns in range(start, 13)]
 
 
 def make_type(api_type):
@@ -136,7 +136,7 @@ def make_widget(data):
     if widget_name == 'Container':
         properties += d_type_props + grid_list_props
     elif widget_name == 'Flex':
-        properties += make_grid_props('', 1, 13) + make_grid_props('offset_', 0, 13) + make_grid_props('order_', 1, 13)
+        properties += make_grid_props('', 1) + make_grid_props('offset_', 0) + make_grid_props('order_', 1)
     elif widget_name == 'Layout':
         properties += d_type_props
 
