@@ -1,6 +1,6 @@
 import json
 import re
-
+from itertools import chain
 
 sizes = ['xs', 'sm', 'md', 'lg', 'xl']
 
@@ -94,15 +94,35 @@ def make_type(api_type):
     return None
 
 
-def make_property(data):
+def expand_property(api_name):
+    if api_name == 'd-{type}':
+        return d_type_props
+
+    if api_name == 'grid-list-{xs through xl}':
+        return grid_list_props
+
+    if api_name == '(size)(1-12)':
+        return make_grid_props('', 1)
+
+    if api_name == 'offset-(size)(0-12)':
+        return make_grid_props('offset_', 0)
+
+    if api_name == 'order-(size)(1-12)':
+        return make_grid_props('order_', 1)
+
+    print(f'Unknown compressed property: {api_name}')
+    return None
+
+
+def make_properties(data):
     if 'type' not in data.keys():
         return None
 
     api_name = data['name']
 
-    # compressed properties like: (size)(1-12) and d-{type} are handled on a higher level
+    # compressed properties like: (size)(1-12) and d-{type}
     if '(' in api_name or '{' in api_name:
-        return None
+        return expand_property(api_name)
 
     schema_name = property_to_snake_case(api_name)
 
@@ -117,7 +137,7 @@ def make_property(data):
     schema_type['allowNull'] = True
     schema_type['default'] = None
 
-    return schema_name, schema_type
+    return [(schema_name, schema_type)]
 
 
 def make_widget(data):
@@ -128,18 +148,12 @@ def make_widget(data):
         # Widgets without props are directives, internationalization or $vuetify
         return None
 
-    properties = list(filter(identity, map(make_property, attributes['props'])))
-
-    # compressed properties like: (size)(1-12) and d-{type}
-    if widget_name == 'Container':
-        properties += d_type_props + grid_list_props
-    elif widget_name == 'Flex':
-        properties += make_grid_props('', 1) + make_grid_props('offset_', 0) + make_grid_props('order_', 1)
-    elif widget_name == 'Layout':
-        properties += d_type_props
+    properties = chain(*filter(identity,
+                               map(make_properties,
+                                   attributes['props'])))
 
     if widget_name in ['Container', 'Content', 'Flex', 'Layout']:
-        properties += spacing_props
+        properties = chain(properties, spacing_props)
 
     return (widget_name, {
         'inherits': ['VuetifyWidget'],
