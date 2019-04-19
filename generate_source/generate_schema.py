@@ -6,40 +6,40 @@ sizes = ['xs', 'sm', 'md', 'lg', 'xl']
 
 keywords = ['for']
 
-boolean_prop = {
+boolean_type = {
     'type': 'boolean',
     'allowNull': True,
     'default': None}
 
-d_type_props = [(f'd_{d}', boolean_prop)
-                for d in ['inline',
-                          'block',
-                          'contents',
-                          'flex',
-                          'grid',
-                          'inline_block',
-                          'inline_flex',
-                          'inline_grid',
-                          'inline_table',
-                          'list_item',
-                          'run_in',
-                          'table',
-                          'table_caption',
-                          'table_column_group',
-                          'table_header_group',
-                          'table_footer_group',
-                          'table_row_group',
-                          'table_cell',
-                          'table_column',
-                          'table_row',
-                          'none',
-                          'initial',
-                          'inherit']]
+d_type_props = [(f'd_{display}', boolean_type)
+                for display in ['inline',
+                                'block',
+                                'contents',
+                                'flex',
+                                'grid',
+                                'inline_block',
+                                'inline_flex',
+                                'inline_grid',
+                                'inline_table',
+                                'list_item',
+                                'run_in',
+                                'table',
+                                'table_caption',
+                                'table_column_group',
+                                'table_header_group',
+                                'table_footer_group',
+                                'table_row_group',
+                                'table_cell',
+                                'table_column',
+                                'table_row',
+                                'none',
+                                'initial',
+                                'inherit']]
 
-grid_list_props = [(f'grid_list_{s}', boolean_prop)
-                   for s in sizes]
+grid_list_props = [(f'grid_list_{size}', boolean_type)
+                   for size in sizes]
 
-spacing_props = [(f'{type_}{direction}_{size}', boolean_prop)
+spacing_props = [(f'{type_}{direction}_{size}', boolean_type)
                  for type_ in ['m', 'p']
                  for direction in ['t', 'b', 'l', 'r', 'x', 'y', 'a']
                  for size in ['auto'] + [str(s) for s in range(0, 6)]]
@@ -61,9 +61,9 @@ def property_to_snake_case(name):
 
 
 def make_grid_props(prefix, start, end):
-    return [(f'{prefix}{s}{n}', boolean_prop)
-            for s in sizes
-            for n in range(start, end)]
+    return [(f'{prefix}{size}{columns}', boolean_type)
+            for size in sizes
+            for columns in range(start, end)]
 
 
 def make_type(api_type):
@@ -150,11 +150,11 @@ def make_widget(data):
 
 def generate_schema(vuetify_api_file_name, base_schema_file_name, schema_output_file_name):
     api_data = json.loads(open(vuetify_api_file_name).read())
-    base = json.loads(open(base_schema_file_name).read())
+    base_schema = json.loads(open(base_schema_file_name).read())
 
-    schema_tuples = filter(identity, map(make_widget, api_data.items()))
+    widgets = filter(identity, map(make_widget, api_data.items()))
 
-    base['widgets'] = {**base['widgets'], **dict(schema_tuples)}
+    schema = {'widgets': {**base_schema['widgets'], **dict(widgets)}}
 
     with open(schema_output_file_name, 'w') as outfile:
-        json.dump(base, outfile)
+        json.dump(schema, outfile)
