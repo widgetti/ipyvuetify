@@ -1,0 +1,3 @@
+[submodule "vuetify"]
+	path = vuetify
+	url = https://github.com/mariobuikhuizen/vuetify.git

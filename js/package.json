@@ -21,6 +21,7 @@
     "dist/*.js"
   ],
   "scripts": {
+    "postinstall": "node patch_vuetify.js",
     "watch": "webpack --mode development --watch",
     "clean": "rimraf dist/",
     "prepare": "webpack",
@@ -32,6 +33,7 @@
     "babel-loader": "^8.0.4",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
+    "fs-extra": "^7.0.1",
     "material-design-icons-iconfont": "^4.0.5",
     "rimraf": "^2.6.1",
     "style-loader": "^0.23.1",
