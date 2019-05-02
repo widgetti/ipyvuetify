@@ -6,12 +6,24 @@ export class VuetifyBaseView extends DOMWidgetView {
         super.render();
         this.displayed.then(() => {
 
-            /* Set the Vuetify data-app attribute on a higher level element so overlays get rendered at the right
-             * position (e.g. with v-menu and v-tooltip)
-             */
-            const elem = document.getElementById("site");
-            if (!elem.hasAttribute("data-app")) {
-                elem.setAttribute("data-app", true);
+            if (!document.getElementById("vuetify-styles")) {
+                const site = document.getElementById("site");
+
+                /* Scope vuetify styles for overlays to this element */
+                const vuetifyStyles = document.createElement("DIV");
+                vuetifyStyles.classList.add("vuetify-styles");
+                vuetifyStyles.setAttribute("id", "vuetify-styles");
+                site.insertBefore(vuetifyStyles, site.children[0]);
+
+                /* Overlays wil be rendered here (e.g. v-menu, v-tooltip and dialog). */
+                const overlay = document.createElement("DIV");
+                overlay.setAttribute("vuetify-overlay", true);
+                overlay.classList.add("application");
+                overlay.classList.add("theme--light");
+                vuetifyStyles.appendChild(overlay);
+
+                /* Set the Vuetify data-app attribute. Needed for Slider and closing overlays (click-outside mixin) */
+                site.setAttribute("data-app", true);
             }
 
             const model = this.model;
@@ -22,7 +34,9 @@ export class VuetifyBaseView extends DOMWidgetView {
                     // TODO: Don't use v-app in embedded mode
                     /* Prevent re-rendering of toplevel component. This happens on button-click in v-menu */
                     if (!this.ipyvuetify_app) {
-                        this.ipyvuetify_app = createElement("v-app", [this.vueRender(createElement)]);
+                        this.ipyvuetify_app = createElement('div', {class: "vuetify-styles"}, [
+                            createElement("v-app", [
+                                this.vueRender(createElement)])]);
                     }
                     return this.ipyvuetify_app;
                 }

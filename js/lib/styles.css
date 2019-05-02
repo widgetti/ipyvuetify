@@ -1,16 +1,17 @@
-div.application--wrap {
+.vuetify-styles div.application--wrap {
+    /* disable min-height: 100vh set by vuetify */
     min-height: unset;
-    min-width: unset;
 }
 
-.v-menu__content a:hover {
-    text-decoration: none;
-}
-
-.application--wrap a:hover {
-    text-decoration: none;
-}
-
-.application--wrap label {
-    margin-bottom: unset;
+.vuetify-styles {
+    /* Rules set on the html element in the vuetify styles are no longer applied after prefixing all selectors, so copy
+     * them here.
+     */
+    box-sizing: border-box;
+    font-size: 14px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: 100%; /* iOS 8+ */
 }
