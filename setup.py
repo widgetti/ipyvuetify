@@ -38,7 +38,6 @@ def js_prerelease(command, strict=False):
                 return
 
             try:
-                self.distribution.run_command('build_vuetify')
                 self.distribution.run_command('generate_source')
                 self.distribution.run_command('jsdeps')
             except Exception as e:
@@ -139,36 +138,6 @@ class GenerateSource(Command):
     def run(self):
         generate()
 
-
-class BuildVuetify(Command):
-    description = 'Build modified Vuetify'
-
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        vuetify_dir = os.path.join(here, 'vuetify')
-        dist = os.path.join(vuetify_dir, 'packages', 'vuetify', 'dist')
-
-        if os.path.exists(dist):
-            return
-
-        yarn = os.path.join(vuetify_dir, 'node_modules', '.bin', 'yarn')
-
-        if not os.path.exists(yarn):
-            check_call(['npm', 'install', 'yarn'], cwd=vuetify_dir)
-        check_call([yarn], cwd=vuetify_dir)
-        check_call(['npm', 'run', 'build'], cwd=vuetify_dir)
-
-        check_call(['git', 'checkout', '--', 'package.json', 'yarn.lock'], cwd=vuetify_dir)
-        os.remove(os.path.join(vuetify_dir, 'package-lock.json'))
-
-
 version_ns = {}
 with open(os.path.join(here, 'ipyvuetify', '_version.py')) as f:
     exec(f.read(), {}, version_ns)
@@ -194,7 +163,6 @@ setup_args = {
         'sdist': js_prerelease(sdist, strict=True),
         'jsdeps': NPM,
         'generate_source': GenerateSource,
-        'build_vuetify': BuildVuetify,
     },
 
     'author': 'Mario Buikhuizen, Maarten Breddels',

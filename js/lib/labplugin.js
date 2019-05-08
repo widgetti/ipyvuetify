@@ -1,4 +1,4 @@
-var jupyter-vuetify = require('./index');
+var jupyter_vuetify = require('./index');
 var base = require('@jupyter-widgets/base');
 
 module.exports = {
@@ -7,8 +7,8 @@ module.exports = {
   activate: function(app, widgets) {
       widgets.registerWidget({
           name: 'jupyter-vuetify',
-          version: jupyter-vuetify.version,
-          exports: jupyter-vuetify
+          version: jupyter_vuetify.version,
+          exports: jupyter_vuetify
       });
   },
   autoStart: true

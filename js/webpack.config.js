@@ -45,7 +45,7 @@ module.exports = [
      // custom widget.
      // It must be an amd module
      //
-        entry: './lib/index.js',
+        entry: './lib/notebook.js',
         output: {
             filename: 'index.js',
             path: path.resolve(__dirname, '..', 'ipyvuetify', 'static'),
