@@ -1,5 +1,6 @@
 import {DOMWidgetView} from '@jupyter-widgets/base';
 import Vue from 'vue';
+import {getContainer} from './jupyterEnvironment';
 
 export class VuetifyBaseView extends DOMWidgetView {
 
@@ -25,20 +26,11 @@ export class VuetifyBaseView extends DOMWidgetView {
         elem.setAttribute("data-app", true);
     }
 
-    getLabContainer() {
-        return document.querySelector("div#main.jp-ApplicationShell");
-    }
-
-    getNotebookContainer() {
-        return document.querySelector("body.notebook_app div#site");
-    }
-
     render() {
         super.render();
         this.displayed.then(() => {
-
             if (!document.getElementById("vuetify-styles")) {
-                this.createDivs(this.getLabContainer() || this.getNotebookContainer());
+                this.createDivs(getContainer());
             }
 
             const model = this.model;
