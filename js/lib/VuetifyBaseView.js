@@ -108,6 +108,7 @@ export class VuetifyBaseView extends DOMWidgetView {
                 mounted() {
                     viewPromise.then(view => {
                         this.$el.appendChild(view.el);
+                        view.trigger('displayed');
                     });
                 },
                 render(createElement) {
