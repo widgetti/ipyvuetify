@@ -17,7 +17,7 @@ To install use pip:
 
 For a development installation (requires npm),
 
-    $ git clone https://github.com/maartenbreddels/ipyvuetify.git
+    $ git clone https://github.com/mariobuikhuizen/ipyvuetify.git
     $ cd ipyvuetify
     $ pip install -e .
     $ jupyter nbextension install --py --symlink --sys-prefix ipyvuetify
