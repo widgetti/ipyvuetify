@@ -1,8 +1,7 @@
-from traitlets import (
-    Unicode, List, Dict
-)
-from ipywidgets import Widget, DOMWidget
+from traitlets import Unicode, List, Dict
+from ipywidgets import DOMWidget
 from ipywidgets.widgets.widget import widget_serialization
+
 
 class Events:
     def __init__(self):
@@ -13,6 +12,7 @@ class Events:
         event = content.get("event", "")
         data = content.get("data", {})
         getattr(self, f'vue_{event}')(data)
+
 
 class VuetifyTemplate(DOMWidget, Events):
 
@@ -34,5 +34,5 @@ class VuetifyTemplate(DOMWidget, Events):
 
     components = Dict(default_value=None, allow_none=True).tag(sync=True, **widget_serialization)
 
-__all__ = ['VuetifyTemplate']
 
+__all__ = ['VuetifyTemplate']

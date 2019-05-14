@@ -5,8 +5,7 @@
 
 .vuetify-styles {
     /* Rules set on the html element in the vuetify styles are no longer applied after prefixing all selectors, so copy
-     * them here.
-     */
+     * them here. */
     box-sizing: border-box;
     font-size: 14px;
     text-rendering: optimizeLegibility;

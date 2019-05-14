@@ -1,16 +1,15 @@
-var jupyter_vuetify = require('./index');
-var base = require('@jupyter-widgets/base');
+const base = require('@jupyter-widgets/base');
+const jupyterVuetify = require('./index');
 
 module.exports = {
-  id: 'jupyter-vuetify',
-  requires: [base.IJupyterWidgetRegistry],
-  activate: function(app, widgets) {
-      widgets.registerWidget({
-          name: 'jupyter-vuetify',
-          version: jupyter_vuetify.version,
-          exports: jupyter_vuetify
-      });
-  },
-  autoStart: true
+    id: 'jupyter-vuetify',
+    requires: [base.IJupyterWidgetRegistry],
+    activate(app, widgets) {
+        widgets.registerWidget({
+            name: 'jupyter-vuetify',
+            version: jupyterVuetify.version,
+            exports: jupyterVuetify,
+        });
+    },
+    autoStart: true,
 };
-

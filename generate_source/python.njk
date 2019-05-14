@@ -6,8 +6,6 @@ from traitlets import (
     Unicode, Enum, Instance, Union, Float, Int, List, Tuple, Dict,
     Undefined, Bool, Any
 )
-from ipywidgets import Widget, DOMWidget
-from ipywidgets.widgets.widget import widget_serialization
 {% endblock %}
 {% block localimports %}
 {% if outputMultiple %}
@@ -21,10 +19,12 @@ from .{{ ref }} import {{ ref }}
 {% block widgets %}
 {% for widget in widgets %}
 {% block widget %}
-
 {% if widget.name === "VuetifyWidget" %}
+from ipywidgets import DOMWidget
+from ipywidgets.widgets.widget import widget_serialization
 from ..Events import Events
 {% endif %}
+
 
 class {{ widget.name }}({{ widget.inherits | join(", ") }}{% if widget.name === "VuetifyWidget" %}, Events{% endif %}):
 
@@ -51,10 +51,7 @@ class {{ widget.name }}({{ widget.inherits | join(", ") }}{% if widget.name === 
 {% endif %}
 {% endfor %}
 {% endif %}
-
 {% endblock %}
-
-
 {% endblock %}
 {% endfor %}
 {% endblock %}

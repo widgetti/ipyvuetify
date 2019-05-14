@@ -3,7 +3,8 @@ from setuptools import setup, find_packages, Command
 from setuptools.command.sdist import sdist
 from setuptools.command.build_py import build_py
 from setuptools.command.egg_info import egg_info
-from subprocess import check_call
+from subprocess import check_call, CalledProcessError
+from distutils import log
 import os
 import sys
 import platform
@@ -17,15 +18,15 @@ is_repo = os.path.exists(os.path.join(here, '.git'))
 
 npm_path = os.pathsep.join([
     os.path.join(node_root, 'node_modules', '.bin'),
-                os.environ.get('PATH', os.defpath),
+    os.environ.get('PATH', os.defpath),
 ])
 
-from distutils import log
 log.set_verbosity(log.DEBUG)
 log.info('setup.py entered')
 log.info('$PATH=%s' % os.environ['PATH'])
 
 LONG_DESCRIPTION = 'Jupyter widgets based on vuetify UI components'
+
 
 def js_prerelease(command, strict=False):
     """decorator for building minified js/css prior to another command"""
@@ -54,6 +55,7 @@ def js_prerelease(command, strict=False):
             update_package_data(self.distribution)
     return DecoratedCommand
 
+
 def update_package_data(distribution):
     """update package_data to catch changes during setup"""
     build_py = distribution.get_command_obj('build_py')
@@ -81,36 +83,35 @@ class NPM(Command):
         pass
 
     def get_npm_name(self):
-        npmName = 'npm';
+        npmName = 'npm'
         if platform.system() == 'Windows':
-            npmName = 'npm.cmd';
-            
-        return npmName;
-    
+            npmName = 'npm.cmd'
+
+        return npmName
+
     def has_npm(self):
-        npmName = self.get_npm_name();
+        npmName = self.get_npm_name()
         try:
             check_call([npmName, '--version'])
             return True
-        except:
+        except CalledProcessError:
             return False
 
     def should_run_npm_install(self):
-        package_json = os.path.join(node_root, 'package.json')
-        node_modules_exists = os.path.exists(self.node_modules)
         return self.has_npm()
 
     def run(self):
         has_npm = self.has_npm()
         if not has_npm:
-            log.error("`npm` unavailable.  If you're running this command using sudo, make sure `npm` is available to sudo")
+            log.error("`npm` unavailable. If you're running this command using sudo, "
+                      "make sure `npm` is available to sudo")
 
         env = os.environ.copy()
         env['PATH'] = npm_path
 
         if self.should_run_npm_install():
             log.info("Installing build dependencies with npm.  This may take a while...")
-            npmName = self.get_npm_name();
+            npmName = self.get_npm_name()
             check_call([npmName, 'install'], cwd=node_root, stdout=sys.stdout, stderr=sys.stderr)
             os.utime(self.node_modules, None)
 
@@ -123,6 +124,7 @@ class NPM(Command):
 
         # update package data in case this created new files
         update_package_data(self.distribution)
+
 
 class GenerateSource(Command):
     description = 'Generate source from api specification'
@@ -138,6 +140,7 @@ class GenerateSource(Command):
     def run(self):
         generate()
 
+
 version_ns = {}
 with open(os.path.join(here, 'ipyvuetify', '_version.py')) as f:
     exec(f.read(), {}, version_ns)
@@ -149,8 +152,8 @@ setup_args = {
     'long_description': LONG_DESCRIPTION,
     'include_package_data': True,
     'data_files': [
-        ('share/jupyter/nbextensions/jupyter-vuetify', glob.glob('ipyvuetify/static/*'),),
-        ('etc/jupyter/nbconfig/notebook.d/' ,['jupyter-vuetify.json'])
+        ('share/jupyter/nbextensions/jupyter-vuetify', glob.glob('ipyvuetify/static/*')),
+        ('etc/jupyter/nbconfig/notebook.d/', ['jupyter-vuetify.json'])
     ],
     'install_requires': [
         'ipywidgets>=7.0.0',

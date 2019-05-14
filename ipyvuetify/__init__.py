@@ -1,7 +1,8 @@
-from ._version import version_info, __version__
-from .Html import Html
-from .VuetifyTemplate import VuetifyTemplate
-from .generated import *
+from ._version import version_info, __version__  # noqa: F401
+from .Html import Html  # noqa: F401
+from .VuetifyTemplate import VuetifyTemplate  # noqa: F401
+from .generated import *  # noqa: F401, F403
+
 
 def _jupyter_nbextension_paths():
     return [{

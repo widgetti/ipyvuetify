@@ -1,12 +1,13 @@
 from ipywidgets.widgets.widget import CallbackDispatcher
 
+
 class Events:
     def __init__(self):
         self._event_handlers_map = {}
         self.on_msg(self._handle_event)
 
     def on_event(self, event, callback, remove=False):
-        self._event_handlers_map[event]=CallbackDispatcher()
+        self._event_handlers_map[event] = CallbackDispatcher()
 
         self._event_handlers_map[event].register_callback(callback, remove=remove)
 

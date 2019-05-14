@@ -36,7 +36,21 @@ def generate():
     subprocess.check_call('npm install', cwd=here, shell=True)
 
     reset_dir(destination_js)
-    subprocess.check_call(f'{widgetgen} -p json -o {destination_js} -t {es6_template} {widget_gen_schema} es6', shell=True)
+    subprocess.check_call(
+        f'{widgetgen} -p json -o {destination_js} -t {es6_template} {widget_gen_schema} es6',
+        shell=True)
+    with open(f'{destination_js}/.eslintrc.js', 'w') as f:
+        f.write('''
+            module.exports = {
+                rules: {
+                    camelcase: 'off',
+                    quotes: 'off'
+                },
+            };
+        ''')
 
     reset_dir(destination_python)
-    subprocess.check_call(f'{widgetgen} -p json -o {destination_python} -t {python_template} {widget_gen_schema} python', shell=True)
+    subprocess.check_call(
+        f'{widgetgen} -p json -o {destination_python} -t {python_template} '
+        f'{widget_gen_schema} python',
+        shell=True)

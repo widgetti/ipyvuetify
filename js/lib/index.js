@@ -6,13 +6,13 @@ import '@mariobuikhuizen/vuetify/dist/vuetify.min.css';
 import './styles.css';
 
 Vue.use(Vuetify, {
-    iconfont: 'md'
+    iconfont: 'md',
 });
 
-export {VuetifyView} from './VuetifyView';
+export { VuetifyView } from './VuetifyView';
 export * from './generated';
 export { HtmlModel } from './Html';
 export { VuetifyTemplateModel } from './VuetifyTemplate';
 export { VuetifyTemplateView } from './VuetifyTemplateView';
 
-export let version = require('../package.json').version;
+export const { version } = require('../package.json'); // eslint-disable-line global-require
