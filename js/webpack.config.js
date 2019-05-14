@@ -37,7 +37,8 @@ module.exports = [
             filename: 'extension.js',
             path: path.resolve(__dirname, '..', 'ipyvuetify', 'static'),
             libraryTarget: 'amd'
-        }
+        },
+        mode: 'production',
     },
     {// Bundle for the notebook containing the custom widget views and models
      //
@@ -61,7 +62,12 @@ module.exports = [
             alias: {
                 'vue$': 'vue/dist/vue.esm.js'
             }
-        }
+        },
+        mode: 'production',
+        performance: {
+            maxEntrypointSize: 1400000,
+            maxAssetSize: 1400000
+        },
     },
     {// Embeddable jupyter-vuetify bundle
      //
@@ -88,6 +94,11 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base']
+        externals: ['@jupyter-widgets/base'],
+        mode: 'production',
+        performance: {
+            maxEntrypointSize: 1400000,
+            maxAssetSize: 1400000
+        },
     },
 ];
