@@ -21,6 +21,7 @@
     "dist/*.js",
     "styles.css"
   ],
+  "browserslist": ">0.8%, not ie 11, not op_mini all, not dead",
   "scripts": {
     "watch": "webpack --mode development --watch",
     "clean": "rimraf dist/",
