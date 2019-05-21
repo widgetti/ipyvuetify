@@ -1,5 +1,6 @@
 import { DOMWidgetView } from '@jupyter-widgets/base';
 import Vue from 'vue';
+import { Widget } from '@phosphor/widgets';
 import { getContainer } from './jupyterEnvironment';
 
 export class VuetifyBaseView extends DOMWidgetView {
@@ -33,8 +34,11 @@ export class VuetifyBaseView extends DOMWidgetView {
                 this.createDivs(getContainer());
             }
 
+            const vueEl = document.createElement('div');
+            this.el.appendChild(vueEl);
+
             this.vueApp = new Vue({
-                el: this.el,
+                el: vueEl,
 
                 render: (createElement) => {
                     // TODO: Don't use v-app in embedded mode
@@ -96,10 +100,7 @@ export class VuetifyBaseView extends DOMWidgetView {
         }
         return {
             mounted() {
-                viewPromise.then((view) => {
-                    this.$el.appendChild(view.el);
-                    view.trigger('displayed');
-                });
+                viewPromise.then(view => Widget.attach(view.pWidget, this.$el));
             },
             render(createElement) {
                 return createElement('div');
