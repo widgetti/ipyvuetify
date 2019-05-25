@@ -1,10 +1,11 @@
 ipyvuetify
 ===============================
 
+[![Version](https://img.shields.io/pypi/v/ipyvuetify.svg)](https://pypi.python.org/mariobuikhuizen/ipyvuetify)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mariobuikhuizen/ipyvuetify/master?filepath=examples%2FExamples.ipynb)
+
 Jupyter widgets based on [vuetify UI components](https://vuetifyjs.com) which implement Google's 
 [Material Design Spec](https://material.io/) with the [Vue.js framework](https://vuejs.org/).
-
-Try it in on [binder](https://mybinder.org/v2/gh/mariobuikhuizen/ipyvuetify/master?filepath=examples%2FExamples.ipynb).
 
 Installation
 ------------
