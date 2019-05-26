@@ -1,6 +1,5 @@
-import { DOMWidgetView } from '@jupyter-widgets/base';
+import { DOMWidgetView, JupyterPhosphorWidget } from '@jupyter-widgets/base';
 import Vue from 'vue';
-import { Widget } from '@phosphor/widgets';
 import { getContainer } from './jupyterEnvironment';
 
 export class VuetifyBaseView extends DOMWidgetView {
@@ -100,7 +99,7 @@ export class VuetifyBaseView extends DOMWidgetView {
         }
         return {
             mounted() {
-                viewPromise.then(view => Widget.attach(view.pWidget, this.$el));
+                viewPromise.then(view => JupyterPhosphorWidget.attach(view.pWidget, this.$el));
             },
             render(createElement) {
                 return createElement('div');
