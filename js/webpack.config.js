@@ -69,6 +69,20 @@ module.exports = [
             maxAssetSize: 1400000
         },
     },
+    {
+        entry: './lib/nodeps.js',
+        output: {
+            filename: 'nodeps.js',
+            path: path.resolve(__dirname, '..', 'ipyvuetify', 'static'),
+            libraryTarget: 'amd'
+        },
+        devtool: 'source-map',
+        module: {
+            rules: rules
+        },
+        externals: ['@jupyter-widgets/base', 'vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
+        mode: 'production',
+    },
     {// Embeddable jupyter-vuetify bundle
      //
      // This bundle is generally almost identical to the notebook bundle

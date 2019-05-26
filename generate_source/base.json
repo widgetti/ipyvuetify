@@ -9,6 +9,11 @@
         "_view_module_version": "0.1.0",
         "_model_module_version": "0.1.0",
 
+        "_metadata": {
+          "type": "object",
+          "allowNull": true,
+          "default": null
+        },
         "children": {
           "type": "array",
           "items": {
