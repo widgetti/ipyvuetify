@@ -153,7 +153,7 @@ setup_args = {
     'include_package_data': True,
     'data_files': [
         ('share/jupyter/nbextensions/jupyter-vuetify', glob.glob('ipyvuetify/static/*')),
-        ('etc/jupyter/nbconfig/notebook.d/', ['jupyter-vuetify.json'])
+        ('etc/jupyter/nbconfig/notebook.d', ['jupyter-vuetify.json'])
     ],
     'install_requires': [
         'ipywidgets>=7.0.0',

@@ -1,5 +1,6 @@
 import os
 import shutil
+import platform
 import subprocess
 from .generate_schema import generate_schema
 
@@ -27,13 +28,18 @@ def reset_dir(name):
     os.mkdir(name)
 
 
+npm = 'npm'
+if platform.system() == 'Windows':
+    npm = 'npm.cmd'
+
+
 def generate():
     if not os.path.isdir(build_dir):
         os.mkdir(build_dir)
 
     generate_schema(vuetify_api, base_schema, widget_gen_schema)
 
-    subprocess.check_call('npm install', cwd=here, shell=True)
+    subprocess.check_call(f'{npm} install', cwd=here, shell=False)
 
     reset_dir(destination_js)
     subprocess.check_call(
