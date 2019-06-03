@@ -39,7 +39,7 @@ def generate():
 
     generate_schema(vuetify_api, base_schema, widget_gen_schema)
 
-    subprocess.check_call(f'{npm} install', cwd=here, shell=False)
+    subprocess.check_call(f'{npm} install', cwd=here, shell=True)
 
     reset_dir(destination_js)
     subprocess.check_call(
