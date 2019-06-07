@@ -57,6 +57,9 @@ export class VuetifyBaseView extends DOMWidgetView {
     vueRender(createElement) {} // eslint-disable-line no-unused-vars
 
     eventToObject(event) {
+        if (event == null) {
+            return event;
+        }
         let props;
         switch (event.constructor) {
             case MouseEvent:
