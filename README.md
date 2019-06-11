@@ -10,6 +10,8 @@ Jupyter widgets based on [vuetify UI components](https://vuetifyjs.com) which im
 Installation
 ------------
 
+> Note: Python 3.6 or higher is required
+
 To install use pip:
 
     $ pip install ipyvuetify
