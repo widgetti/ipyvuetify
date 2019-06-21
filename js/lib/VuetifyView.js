@@ -89,7 +89,6 @@ export class VuetifyView extends VuetifyBaseView {
             .reduce((result, event) => {
                 result[event] = (e) => { // eslint-disable-line no-param-reassign
                     model.send({ event, data: this.eventToObject(e) });
-                    model.save_changes();
                 };
                 return result;
             }, {});
