@@ -74,7 +74,21 @@ module.exports = [
         output: {
             filename: 'nodeps.js',
             path: path.resolve(__dirname, '..', 'ipyvuetify', 'static'),
-            libraryTarget: 'amd'
+            libraryTarget: 'amd',
+        },
+        devtool: 'source-map',
+        module: {
+            rules: rules
+        },
+        externals: ['@jupyter-widgets/base', 'vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
+        mode: 'production',
+    },{
+        entry: './lib/nodepsEmbed.js',
+        output: {
+            filename: 'nodeps.js',
+            path: path.resolve(__dirname, 'dist'),
+            libraryTarget: 'amd',
+            publicPath: 'https://unpkg.com/jupyter-vuetify@' + version + '/dist/'
         },
         devtool: 'source-map',
         module: {
