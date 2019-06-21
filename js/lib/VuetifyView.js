@@ -88,7 +88,7 @@ export class VuetifyView extends VuetifyBaseView {
         return (model.get('_events') || [])
             .reduce((result, event) => {
                 result[event] = (e) => { // eslint-disable-line no-param-reassign
-                    model.send({ event, data: this.eventToObject(e) });
+                    model.send({ event, data: this.eventToObject(e) }, model.callbacks(this));
                 };
                 return result;
             }, {});
@@ -105,7 +105,7 @@ export class VuetifyView extends VuetifyBaseView {
                     value: vueModel.v_model,
                     callback: (v) => {
                         model.set('v_model', v === undefined ? null : v);
-                        model.save_changes();
+                        model.save_changes(model.callbacks(this));
                     },
                     expression: 'v_model',
                 },

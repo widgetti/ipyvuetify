@@ -46,7 +46,7 @@ export class VuetifyTemplateView extends VuetifyBaseView {
             .reduce((result, prop) => {
                 result[prop] = (value) => { // eslint-disable-line no-param-reassign
                     model.set(prop, value === undefined ? null : value);
-                    model.save_changes();
+                    model.save_changes(model.callbacks(this));
                 };
                 return result;
             }, {});
@@ -55,7 +55,7 @@ export class VuetifyTemplateView extends VuetifyBaseView {
     createMethods(model) {
         return model.get('events').reduce((result, event) => {
             // eslint-disable-next-line no-param-reassign
-            result[event] = value => model.send({ event, data: this.eventToObject(value) });
+            result[event] = value => model.send({ event, data: this.eventToObject(value) }, model.callbacks(this));
             return result;
         }, {});
     }
