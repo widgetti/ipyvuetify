@@ -18,7 +18,7 @@
   ],
   "files": [
     "lib/**/*.js",
-    "dist/*.js",
+    "dist/",
     "styles.css"
   ],
   "browserslist": ">0.8%, not ie 11, not op_mini all, not dead",
