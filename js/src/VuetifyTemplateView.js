@@ -1,21 +1,36 @@
 import { VuetifyBaseView } from './VuetifyBaseView';
+import { RenderFns } from "./VuetifyView";
 
 export class VuetifyTemplateView extends VuetifyBaseView {
     vueRender(createElement) {
-        return createElement(this.createComponentObject(this.model));
+        return createElement(new TemplateRenderFns(this).createComponentObject(this.model));
+    }
+}
+
+export class TemplateRenderFns {
+    constructor(view) {
+        this.view = view;
     }
 
     createComponentObject(model) {
-        const widgetView = this;
+        const self = this;
+        if (model.get('_view_name') === 'VuetifyView') {
+            const vuetifyViewFns = new RenderFns(this.view);
+            return {
+                render(createElement) {
+                    return vuetifyViewFns._vueRender(createElement, model);
+                }
+            }
+        }
         if (model.get('_view_name') !== 'VuetifyTemplateView') {
-            return VuetifyBaseView.createObjectForNestedModel(model, widgetView);
+            return VuetifyBaseView.createObjectForNestedModel(model, self.view);
         }
         return {
             data() {
-                return widgetView.createDataMapping(model);
+                return self.createDataMapping(model);
             },
             created() {
-                widgetView.addModelListeners(model, this);
+                self.addModelListeners(model, this);
             },
             watch: this.createWatches(model),
             methods: this.createMethods(model),

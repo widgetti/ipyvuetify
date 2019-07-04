@@ -92,22 +92,11 @@ export class VuetifyBaseView extends DOMWidgetView {
 
         let renderProxy = () => undefined;
 
-        if (viewName === 'VuetifyView' || viewName === 'VuetifyTemplateView') {
-            return {
-                created() {
-                    viewPromise.then((view) => {
-                        renderProxy = createElement => view.vueRender(createElement);
-                        this.$forceUpdate();
-                    });
-                },
-                render(createElement) {
-                    return renderProxy(createElement);
-                },
-            };
-        }
         return {
             mounted() {
-                viewPromise.then(view => JupyterPhosphorWidget.attach(view.pWidget, this.$el));
+                viewPromise.then(view => {
+                    JupyterPhosphorWidget.attach(view.pWidget, this.$el);
+                });
             },
             render(createElement) {
                 return createElement('div', {style: {display: 'flex'}});

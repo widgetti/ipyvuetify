@@ -1,16 +1,25 @@
 /* eslint camelcase: ['error', {allow: ['v_model']}] */
 import { VuetifyBaseView } from './VuetifyBaseView';
+import { TemplateRenderFns } from "./VuetifyTemplateView";
 
 export class VuetifyView extends VuetifyBaseView {
     vueRender(createElement) {
-        return this._vueRender(createElement, this.model);
+        return new RenderFns(this)._vueRender(createElement, this.model);
     }
+}
 
+export class RenderFns {
+    constructor(view) {
+        this.view = view;
+    }
     _vueRender(createElement, model) {
-        const widgetView = this;
+        const self = this;
 
+        if (model.get('_view_name') === 'VuetifyTemplateView') {
+            return createElement(new TemplateRenderFns(this.view).createComponentObject(model));
+        }
         if (model.get('_view_name') !== 'VuetifyView') {
-            return createElement(VuetifyBaseView.createObjectForNestedModel(model, widgetView));
+            return createElement(VuetifyBaseView.createObjectForNestedModel(model, self.view));
         }
 
         const tag = model.getVuetifyTag();
@@ -20,9 +29,9 @@ export class VuetifyView extends VuetifyBaseView {
             }
             return createElement(
                 model.get('tag'), {
-                    ...model.get('style_') && { style: model.get('style_') },
-                    ...model.get('class_') && { class: model.get('class_') },
-                    ...model.get('slot') && { slot: model.get('slot') },
+                    ...model.get('style_') && {style: model.get('style_')},
+                    ...model.get('class_') && {class: model.get('class_')},
+                    ...model.get('slot') && {slot: model.get('slot')},
                 },
                 model.get('children').map(child => (typeof child === 'string'
                     ? child
@@ -37,16 +46,16 @@ export class VuetifyView extends VuetifyBaseView {
                 };
             },
             created() {
-                widgetView.addListeners(model, this);
+                self.addListeners(model, this);
             },
             render(createElement2) {
                 return createElement2(
                     tag,
-                    widgetView.createContent(model, this),
-                    widgetView.renderChildren(createElement2, model, this),
+                    self.createContent(model, this),
+                    self.renderChildren(createElement2, model, this),
                 );
             },
-        }, { ...model.get('slot') && { slot: model.get('slot') } });
+        }, {...model.get('slot') && {slot: model.get('slot')}});
 
         /* Impersonate the wrapped component (e.g. v-tabs uses this name to detect v-tab and
          * v-tab-item) */
@@ -88,7 +97,7 @@ export class VuetifyView extends VuetifyBaseView {
         return (model.get('_events') || [])
             .reduce((result, event) => {
                 result[event] = (e) => { // eslint-disable-line no-param-reassign
-                    model.send({ event, data: this.eventToObject(e) }, model.callbacks(this));
+                    model.send({event, data: this.eventToObject(e)}, model.callbacks(this.view));
                 };
                 return result;
             }, {});
@@ -97,15 +106,15 @@ export class VuetifyView extends VuetifyBaseView {
     createContent(model, vueModel) {
         return {
             on: this.createEventMapping(model),
-            ...model.get('style_') && { style: model.get('style_') },
-            ...model.get('class_') && { class: model.get('class_') },
+            ...model.get('style_') && {style: model.get('style_')},
+            ...model.get('class_') && {class: model.get('class_')},
             attrs: this.createAttrsMapping(model),
             ...model.get('v_model') !== '!!disabled!!' && {
                 model: {
                     value: vueModel.v_model,
                     callback: (v) => {
                         model.set('v_model', v === undefined ? null : v);
-                        model.save_changes(model.callbacks(this));
+                        model.save_changes(model.callbacks(this.view));
                     },
                     expression: 'v_model',
                 },
