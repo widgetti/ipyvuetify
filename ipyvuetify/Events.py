@@ -1,8 +1,8 @@
 from ipywidgets.widgets.widget import CallbackDispatcher
 
 
-class Events:
-    def __init__(self):
+class Events(object):
+    def __init__(self, **kwargs):
         self._event_handlers_map = {}
         self.on_msg(self._handle_event)
 

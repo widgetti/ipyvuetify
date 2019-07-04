@@ -3,15 +3,15 @@ from ipywidgets import DOMWidget
 from ipywidgets.widgets.widget import widget_serialization
 
 
-class Events:
-    def __init__(self):
+class Events(object):
+    def __init__(self, **kwargs):
         self.on_msg(self._handle_event)
         self.events = [item[4:] for item in dir(self) if item.startswith("vue_")]
 
     def _handle_event(self, _, content, buffers):
         event = content.get("event", "")
         data = content.get("data", {})
-        getattr(self, f'vue_{event}')(data)
+        getattr(self, 'vue_' + event)(data)
 
 
 class VuetifyTemplate(DOMWidget, Events):

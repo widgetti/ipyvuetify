@@ -10,8 +10,6 @@ import sys
 import platform
 import glob
 
-from generate_source import generate
-
 here = os.path.dirname(os.path.abspath(__file__))
 node_root = os.path.join(here, 'js')
 is_repo = os.path.exists(os.path.join(here, '.git'))
@@ -138,6 +136,7 @@ class GenerateSource(Command):
         pass
 
     def run(self):
+        from generate_source import generate
         generate()
 
 
@@ -158,7 +157,7 @@ setup_args = {
     'install_requires': [
         'ipywidgets>=7.0.0',
     ],
-    'packages': find_packages(),
+    'packages': find_packages(exclude=['generate_source']),
     'zip_safe': False,
     'cmdclass': {
         'build_py': js_prerelease(build_py),
@@ -182,9 +181,14 @@ setup_args = {
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
         'Topic :: Multimedia :: Graphics',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    'python_requires': '>=3.6',
 }
 
 setup(**setup_args)
