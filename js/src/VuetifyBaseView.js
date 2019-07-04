@@ -110,7 +110,7 @@ export class VuetifyBaseView extends DOMWidgetView {
                 viewPromise.then(view => JupyterPhosphorWidget.attach(view.pWidget, this.$el));
             },
             render(createElement) {
-                return createElement('div');
+                return createElement('div', {style: {display: 'flex'}});
             },
         };
     }
