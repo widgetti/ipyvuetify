@@ -1,2 +1,3 @@
+include LICENSE
 recursive-include ipyvuetify/static *.*
 include jupyter-vuetify.json
