@@ -47,3 +47,10 @@ and Vuetify template syntax, but there are some differences:
 | Regular HTML tags can made with the Html class | `<div>...</div>` | `Html(tag='div', children=[...])` |
 | The attributes class and style need to be suffixed with an underscore | `<v-btn class="mr-3" style="..." >` | `Btn(class_='mr-3', style_='...')` |
 
+
+Alternate usage
+---------------
+
+For a more web development centric way of development and a closer match to the Vue/Vuetify api, VuetifyTemplate can be used. See the [example](examples/Examples%20template.ipynb) or [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mariobuikhuizen/ipyvuetify/master?filepath=examples%2FExamples%20template.ipynb).
+
+Make a sub class of VuetifyTemplate, define your own traitlets and set a template string. The traitlets will be accessible from the template as if they were in a vue-model. Methods can be called by defining a method with a prefix `vue_` e.g. `def vue_button_click(self, data)` and calling it from the template e.g. `@click="button_click(e)"`.
