@@ -5,7 +5,7 @@ import { getContainer } from './jupyterEnvironment';
 export class VuetifyBaseView extends DOMWidgetView {
     createDivs(elem) {
         if (!elem) {
-            return;
+            elem = document.body;
         }
 
         /* Scope vuetify styles for overlays to this element */
