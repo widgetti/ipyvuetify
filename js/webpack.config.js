@@ -11,13 +11,6 @@ var rules = [
         loader: 'vue-loader'
     },
     {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader'
-        }
-    },
-    {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         loader: 'file-loader',
     }

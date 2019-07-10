@@ -17,7 +17,7 @@ es6_template = f'{here}/es6-template.njk'
 python_template = f'{here}/python.njk'
 
 project_dir = f'{here}/..'
-destination_js = f'{project_dir}/js/lib/generated'
+destination_js = f'{project_dir}/js/src/generated'
 destination_python = f'{project_dir}/ipyvuetify/generated'
 
 
