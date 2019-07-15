@@ -3,6 +3,11 @@ import Vue from 'vue';
 import { getContainer } from './jupyterEnvironment';
 
 export class VuetifyBaseView extends DOMWidgetView {
+    remove() {
+        this.vueApp.$destroy();
+        return super.remove();
+    }
+
     createDivs(elem) {
         if (!elem) {
             elem = document.body;
