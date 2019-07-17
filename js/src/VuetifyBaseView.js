@@ -1,4 +1,4 @@
-import { DOMWidgetView, JupyterPhosphorWidget } from '@jupyter-widgets/base';
+import { DOMWidgetView } from '@jupyter-widgets/base';
 import Vue from 'vue';
 import { getContainer } from './jupyterEnvironment';
 
@@ -60,47 +60,4 @@ export class VuetifyBaseView extends DOMWidgetView {
     }
 
     vueRender(createElement) {} // eslint-disable-line no-unused-vars
-
-    eventToObject(event) {
-        if (event == null) {
-            return event;
-        }
-        let props;
-        switch (event.constructor) {
-            case MouseEvent:
-                props = ['altKey', 'ctrlKey', 'metaKey', 'shiftKey', 'offsetX', 'offsetY', 'clientX', 'clientY', 'pageX', 'pageY', 'screenX', 'screenY', 'shiftKey', 'x', 'y'];
-                break;
-            case WheelEvent:
-                props = ['altKey', 'ctrlKey', 'metaKey', 'shiftKey', 'offsetX', 'offsetY', 'clientX', 'clientY', 'pageX', 'pageY', 'screenX', 'screenY', 'shiftKey', 'x', 'y', 'wheelDelta', 'wheelDeltaX', 'wheelDeltaY'];
-                break;
-            // TODO: More events
-            default:
-                return event;
-        }
-
-        return props.reduce(
-            (result, key) => {
-                result[key] = event[key]; // eslint-disable-line no-param-reassign
-                return result;
-            }, {},
-        );
-    }
-
-    static createObjectForNestedModel(model, parent) {
-        const viewName = model.get('_view_name');
-        const viewPromise = parent.create_child_view(model);
-
-        let renderProxy = () => undefined;
-
-        return {
-            mounted() {
-                viewPromise.then(view => {
-                    JupyterPhosphorWidget.attach(view.pWidget, this.$el);
-                });
-            },
-            render(createElement) {
-                return createElement('div', {style: {display: 'flex'}});
-            },
-        };
-    }
 }

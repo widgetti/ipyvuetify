@@ -20,6 +20,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'camelcase': ["error", {allow: ['__webpack_public_path__', 'load_ipython_extension', '_model_name']}],
     'no-underscore-dangle': 'off',
-    'class-methods-use-this': 'off'
+    'class-methods-use-this': 'off',
+    'no-use-before-define': 'off'
 },
 };
