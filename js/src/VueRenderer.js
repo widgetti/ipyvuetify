@@ -1,6 +1,8 @@
 /* eslint camelcase: ['error', {allow: ['v_model']}] */
 import { JupyterPhosphorWidget } from '@jupyter-widgets/base';
 import { vueTemplateRender } from './VueTemplateRenderer'; // eslint-disable-line import/no-cycle
+import { VuetifyWidgetModel } from './generated';
+import { VuetifyTemplateModel } from './VuetifyTemplate';
 
 export function createObjectForNestedModel(model, parentView) {
     const viewPromise = parentView.create_child_view(model);
@@ -41,10 +43,10 @@ export function eventToObject(event) {
 }
 
 export function vueRender(createElement, model, parentView) {
-    if (model.get('_view_name') === 'VuetifyTemplateView') {
+    if (model instanceof VuetifyTemplateModel) {
         return vueTemplateRender(createElement, model, parentView);
     }
-    if (model.get('_view_name') !== 'VuetifyView') {
+    if (!(model instanceof VuetifyWidgetModel)) {
         return createElement(createObjectForNestedModel(model, parentView));
     }
     const tag = model.getVuetifyTag();

@@ -1,18 +1,20 @@
 import { createObjectForNestedModel, eventToObject, vueRender } from './VueRenderer'; // eslint-disable-line import/no-cycle
+import { VuetifyWidgetModel } from './generated';
+import { VuetifyTemplateModel } from './VuetifyTemplate';
 
 export function vueTemplateRender(createElement, model, parentView) {
     return createElement(createComponentObject(model, parentView));
 }
 
 function createComponentObject(model, parentView) {
-    if (model.get('_view_name') === 'VuetifyView') {
+    if (model instanceof VuetifyWidgetModel) {
         return {
             render(createElement) {
                 return vueRender(createElement, model, parentView);
             },
         };
     }
-    if (model.get('_view_name') !== 'VuetifyTemplateView') {
+    if (!(model instanceof VuetifyTemplateModel)) {
         return createObjectForNestedModel(model, parentView);
     }
     return {

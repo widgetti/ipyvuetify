@@ -18,15 +18,15 @@ class VuetifyTemplate(DOMWidget, Events):
 
     _model_name = Unicode('VuetifyTemplateModel').tag(sync=True)
 
-    _view_name = Unicode('VuetifyTemplateView').tag(sync=True)
+    _view_name = Unicode('VuetifyView').tag(sync=True)
 
     _view_module = Unicode('jupyter-vuetify').tag(sync=True)
 
     _model_module = Unicode('jupyter-vuetify').tag(sync=True)
 
-    _view_module_version = Unicode('0.1.0').tag(sync=True)
+    _view_module_version = Unicode('^0.1.6').tag(sync=True)
 
-    _model_module_version = Unicode('0.1.0').tag(sync=True)
+    _model_module_version = Unicode('^0.1.6').tag(sync=True)
 
     template = Unicode(None, allow_none=True).tag(sync=True)
 
