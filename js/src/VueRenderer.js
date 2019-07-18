@@ -50,21 +50,6 @@ export function vueRender(createElement, model, parentView) {
         return createElement(createObjectForNestedModel(model, parentView));
     }
     const tag = model.getVuetifyTag();
-    if (tag === 'html') {
-        if (model.get('tag').toLowerCase().includes('script')) {
-            return undefined;
-        }
-        return createElement(
-            model.get('tag'), {
-                ...model.get('style_') && { style: model.get('style_') },
-                ...model.get('class_') && { class: model.get('class_') },
-                ...model.get('slot') && { slot: model.get('slot') },
-            },
-            model.get('children').map(child => (typeof child === 'string'
-                ? child
-                : vueRender(createElement, child, parentView))),
-        );
-    }
 
     const elem = createElement({
         data() {

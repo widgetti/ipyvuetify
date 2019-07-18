@@ -13,7 +13,10 @@ class HtmlModel extends VuetifyWidgetModel {
     }
 
     getVuetifyTag() { // eslint-disable-line class-methods-use-this
-        return 'html';
+        if (this.get('tag').toLowerCase().includes('script')) {
+            return undefined;
+        }
+        return this.get('tag');
     }
 }
 
