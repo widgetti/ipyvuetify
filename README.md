@@ -6,7 +6,7 @@ ipyvuetify
 [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ipyvuetify.svg)](https://anaconda.org/conda-forge/ipyvuetify)
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mariobuikhuizen/ipyvuetify/master?filepath=examples%2FExamples.ipynb)
 
-Jupyter widgets based on [vuetify UI components](https://vuetifyjs.com) which implement Google's 
+Jupyter widgets based on [vuetify UI components](https://v15.vuetifyjs.com/en/) which implement Google's 
 [Material Design Spec](https://material.io/) with the [Vue.js framework](https://vuejs.org/).
 
 Installation
@@ -31,7 +31,7 @@ Usage
 
 For examples see the [example notebook](examples/Examples.ipynb).
 
-The [Vuetify documentation](https://vuetifyjs.com/en/components/buttons#button) can be used to find all available 
+The [Vuetify documentation](https://v15.vuetifyjs.com/en/components/buttons#buttons) can be used to find all available 
 components and attributes (in the left side bar or use the search field). Ipyvuetify tries to stay close to the Vue.js 
 and Vuetify template syntax, but there are some differences:
 
