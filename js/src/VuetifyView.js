@@ -59,4 +59,8 @@ export class VuetifyView extends DOMWidgetView {
             });
         });
     }
+
+    vueRender(createElement) {
+        return vueRender(createElement, this.model, this);
+    }
 }
