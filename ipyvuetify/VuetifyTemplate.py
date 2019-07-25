@@ -24,9 +24,9 @@ class VuetifyTemplate(DOMWidget, Events):
 
     _model_module = Unicode('jupyter-vuetify').tag(sync=True)
 
-    _view_module_version = Unicode('^0.1.7').tag(sync=True)
+    _view_module_version = Unicode('^0.1.8').tag(sync=True)
 
-    _model_module_version = Unicode('^0.1.7').tag(sync=True)
+    _model_module_version = Unicode('^0.1.8').tag(sync=True)
 
     template = Unicode(None, allow_none=True).tag(sync=True)
 
