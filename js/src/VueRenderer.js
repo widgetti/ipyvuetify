@@ -12,7 +12,7 @@ export function createObjectForNestedModel(model, parentView) {
             viewPromise.then(view => JupyterPhosphorWidget.attach(view.pWidget, this.$el));
         },
         render(createElement) {
-            return createElement('div', { style: { display: 'flex' } });
+            return createElement('div');
         },
     };
 }
