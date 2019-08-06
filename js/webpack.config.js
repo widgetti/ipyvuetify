@@ -116,6 +116,12 @@ module.exports = [
             rules: rules
         },
         externals: ['@jupyter-widgets/base'],
+        /* vue with compiler */
+        resolve: {
+            alias: {
+                'vue$': 'vue/dist/vue.esm.js'
+            }
+        },
         mode: 'production',
         performance: {
             maxEntrypointSize: 1400000,
