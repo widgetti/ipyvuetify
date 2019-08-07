@@ -26,7 +26,7 @@ function createComponentObject(model, parentView) {
         },
         watch: createWatches(model, parentView),
         methods: createMethods(model, parentView),
-        components: createComponents(model.get('components') || {}),
+        components: createComponents(model.get('components') || {}, parentView),
         template: model.get('template'),
     };
 }
