@@ -48,6 +48,23 @@ and Vuetify template syntax, but there are some differences:
 | Regular HTML tags can made with the Html class | `<div>...</div>` | `Html(tag='div', children=[...])` |
 | The attributes class and style need to be suffixed with an underscore | `<v-btn class="mr-3" style="..." >` | `Btn(class_='mr-3', style_='...')` |
 
+### Advanced usage
+#### .sync
+The .sync property modifier functionality can be achieved by using an event named:  
+`update:[propertyNameInCamelCase]`.
+##### Vuetify:
+```HTML
+<v-navigation-drawer :mini-variant.sync=...
+```
+##### ipyvuetify:
+```python
+drawer = v.NavigationDrawer(mini_variant=True, ...)
+
+def update_mini(widget, event, data):
+    drawer.mini_variant = data`
+
+drawer.on_event('update:miniVariant', update_mini)
+```
 
 Alternate usage
 ---------------
