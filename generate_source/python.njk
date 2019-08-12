@@ -20,13 +20,12 @@ from .{{ ref }} import {{ ref }}
 {% for widget in widgets %}
 {% block widget %}
 {% if widget.name === "VuetifyWidget" %}
-from ipywidgets import DOMWidget
+from ipyvue import VueWidget
 from ipywidgets.widgets.widget import widget_serialization
-from ..Events import Events
 {% endif %}
 
 
-class {{ widget.name }}({{ widget.inherits | join(", ") }}{% if widget.name === "VuetifyWidget" %}, Events{% endif %}):
+class {{ widget.name }}({{ widget.inherits | join(", ") }}):
 
 {% block widgetbody %}
     _model_name = Unicode('{{ widget.name }}Model').tag(sync=True)

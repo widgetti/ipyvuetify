@@ -10,9 +10,7 @@
 {% for widget in widgets %}
 {% block widget %}
 {% if widget.name === "VuetifyWidget" %}
-import {
-    DOMWidgetModel, unpack_models,
-} from '@jupyter-widgets/base';
+import { VueModel as VueWidgetModel } from 'jupyter-vue';
 {% else %}
 {% if outputMultiple %}
 {% for ref in widgets[0].localDependencies if ref !== "VuetifyWidgetModel" %}
@@ -38,7 +36,7 @@ export class {{ widget.name }}Model extends {{ widget.inherits[0] }}Model {
     }
     {% if widget.name !== "VuetifyWidget" %}
 
-    getVuetifyTag() { // eslint-disable-line class-methods-use-this
+    getVueTag() { // eslint-disable-line class-methods-use-this
         return 'v{{ widget.name | replace(r/([A-Z][a-z]+)/g, "-$1") | lower}}';
     }
     {% endif %}
