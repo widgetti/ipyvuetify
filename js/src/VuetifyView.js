@@ -10,10 +10,6 @@ export class VuetifyView extends DOMWidgetView {
     }
 
     createDivs(elem) {
-        if (!elem) {
-            elem = document.body;
-        }
-
         /* Scope vuetify styles for overlays to this element */
         const vuetifyStyles = document.createElement('DIV');
         vuetifyStyles.classList.add('vuetify-styles');
@@ -36,7 +32,7 @@ export class VuetifyView extends DOMWidgetView {
         super.render();
         this.displayed.then(() => {
             if (!document.getElementById('vuetify-styles')) {
-                this.createDivs(getContainer());
+                this.createDivs(getContainer() || document.body);
             }
 
             const vueEl = document.createElement('div');
