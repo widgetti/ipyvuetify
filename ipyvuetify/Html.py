@@ -3,6 +3,7 @@
 
 from traitlets import Unicode
 from ipyvue import Html as VueHtml
+from ._version import semver
 
 
 class Html(VueHtml):
@@ -15,9 +16,9 @@ class Html(VueHtml):
 
     _model_module = Unicode('jupyter-vuetify').tag(sync=True)
 
-    _view_module_version = Unicode('^0.1.11').tag(sync=True)
+    _view_module_version = Unicode(semver).tag(sync=True)
 
-    _model_module_version = Unicode('^0.1.11').tag(sync=True)
+    _model_module_version = Unicode(semver).tag(sync=True)
 
 
 __all__ = ['Html']

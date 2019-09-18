@@ -3,6 +3,7 @@
 
 from traitlets import Unicode
 from ipyvue import VueTemplate
+from ._version import semver
 
 
 class VuetifyTemplate(VueTemplate):
@@ -15,9 +16,9 @@ class VuetifyTemplate(VueTemplate):
 
     _model_module = Unicode('jupyter-vuetify').tag(sync=True)
 
-    _view_module_version = Unicode('^0.1.11').tag(sync=True)
+    _view_module_version = Unicode(semver).tag(sync=True)
 
-    _model_module_version = Unicode('^0.1.11').tag(sync=True)
+    _model_module_version = Unicode(semver).tag(sync=True)
 
 
 __all__ = ['VuetifyTemplate']
