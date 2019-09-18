@@ -6,11 +6,6 @@ var version = require('./package.json').version;
 var rules = [
     { test: /\.css$/, use: ['style-loader', 'css-loader']},
     {
-        test: /\.vue$/,
-        exclude: /node_modules/,
-        loader: 'vue-loader'
-    },
-    {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         loader: 'file-loader',
     }
@@ -49,11 +44,10 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base'],
-        // vue met compiler
+        externals: ['@jupyter-widgets/base', 'jupyter-vue'],
         resolve: {
             alias: {
-                'vue$': 'vue/dist/vue.esm.js'
+                vue$: path.resolve(__dirname, 'lib', 'vue_alias'),
             }
         },
         mode: 'production',
@@ -73,7 +67,7 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base', 'vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
+        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
         mode: 'production',
     },{
         entry: './lib/nodepsEmbed.js',
@@ -87,7 +81,7 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base', 'vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
+        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
         mode: 'production',
     },
     {// Embeddable jupyter-vuetify bundle
@@ -115,11 +109,10 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base'],
-        /* vue with compiler */
+        externals: ['@jupyter-widgets/base', 'jupyter-vue'],
         resolve: {
             alias: {
-                'vue$': 'vue/dist/vue.esm.js'
+                vue$: path.resolve(__dirname, 'lib', 'vue_alias'),
             }
         },
         mode: 'production',

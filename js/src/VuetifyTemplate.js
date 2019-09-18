@@ -1,25 +1,22 @@
 /* eslint camelcase: off */
-import { DOMWidgetModel, unpack_models } from '@jupyter-widgets/base';
+import { VueTemplateModel } from 'jupyter-vue';
 
-export class VuetifyTemplateModel extends DOMWidgetModel {
+export class VuetifyTemplateModel extends VueTemplateModel {
     defaults() {
         return {
             ...super.defaults(),
             ...{
                 _model_name: 'VuetifyTemplateModel',
-                _view_name: 'VuetifyTemplateView',
+                _view_name: 'VuetifyView',
                 _view_module: 'jupyter-vuetify',
                 _model_module: 'jupyter-vuetify',
                 _view_module_version: '0.1.0',
                 _model_module_version: '0.1.0',
-                template: null,
-                events: null,
             },
         };
     }
 }
 
 VuetifyTemplateModel.serializers = {
-    ...DOMWidgetModel.serializers,
-    components: { deserialize: unpack_models },
+    ...VueTemplateModel.serializers,
 };

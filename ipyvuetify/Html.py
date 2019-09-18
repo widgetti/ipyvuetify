@@ -1,12 +1,23 @@
+# This subclass is needed to use VuetifyView instead of VueView so CSS workarounds for Vuetify are
+# added in the frontend.
+
 from traitlets import Unicode
-from .generated.VuetifyWidget import VuetifyWidget
+from ipyvue import Html as VueHtml
 
 
-class Html(VuetifyWidget):
+class Html(VueHtml):
 
     _model_name = Unicode('HtmlModel').tag(sync=True)
 
-    tag = Unicode().tag(sync=True)
+    _view_name = Unicode('VuetifyView').tag(sync=True)
+
+    _view_module = Unicode('jupyter-vuetify').tag(sync=True)
+
+    _model_module = Unicode('jupyter-vuetify').tag(sync=True)
+
+    _view_module_version = Unicode('^0.1.11').tag(sync=True)
+
+    _model_module_version = Unicode('^0.1.11').tag(sync=True)
 
 
 __all__ = ['Html']

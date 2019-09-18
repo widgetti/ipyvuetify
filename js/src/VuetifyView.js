@@ -1,6 +1,6 @@
 import { DOMWidgetView } from '@jupyter-widgets/base';
-import Vue from 'vue';
-import { vueRender } from './VueRenderer';
+import Vue from 'vue'; // eslint-disable-line import/no-extraneous-dependencies
+import { vueRender } from 'jupyter-vue';
 import { getContainer } from './jupyterEnvironment';
 
 export class VuetifyView extends DOMWidgetView {

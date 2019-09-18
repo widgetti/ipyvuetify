@@ -1,25 +1,22 @@
-import { VuetifyWidgetModel } from './generated/VuetifyWidget';
+/* eslint camelcase: off */
+import { HtmlModel as VueHtmlModel } from 'jupyter-vue';
 
-export
-class HtmlModel extends VuetifyWidgetModel {
+export class HtmlModel extends VueHtmlModel {
     defaults() {
         return {
             ...super.defaults(),
             ...{
                 _model_name: 'HtmlModel',
-                tag: null,
+                _view_name: 'VuetifyView',
+                _view_module: 'jupyter-vuetify',
+                _model_module: 'jupyter-vuetify',
+                _view_module_version: '0.1.11',
+                _model_module_version: '0.1.11',
             },
         };
-    }
-
-    getVuetifyTag() { // eslint-disable-line class-methods-use-this
-        if (this.get('tag').toLowerCase().includes('script')) {
-            return undefined;
-        }
-        return this.get('tag');
     }
 }
 
 HtmlModel.serializers = {
-    ...VuetifyWidgetModel.serializers,
+    ...VueHtmlModel.serializers,
 };
