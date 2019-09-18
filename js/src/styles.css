@@ -1,4 +1,10 @@
-.vuetify-styles div.application--wrap {
+html {
+    /* font sizes in vuetify are in rem units. To get the correct font size, the html tag has to have a font size of 
+     * 16px */
+    font-size: 16px;
+}
+
+.vuetify-styles div.v-application--wrap {
     /* disable min-height: 100vh set by vuetify */
     min-height: unset;
 }
@@ -6,11 +12,9 @@
 .vuetify-styles {
     /* Rules set on the html element in the vuetify styles are no longer applied after prefixing all selectors, so copy
      * them here. */
-    box-sizing: border-box;
-    font-size: 14px;
+    overflow-x: hidden;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-text-size-adjust: 100%; /* iOS 8+ */
 }

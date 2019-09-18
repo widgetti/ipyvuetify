@@ -6,7 +6,7 @@ ipyvuetify
 [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ipyvuetify.svg)](https://anaconda.org/conda-forge/ipyvuetify)
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mariobuikhuizen/ipyvuetify/master?filepath=examples%2FExamples.ipynb)
 
-Jupyter widgets based on [vuetify UI components](https://v15.vuetifyjs.com/en/) which implement Google's 
+Jupyter widgets based on [vuetify UI components](https://vuetifyjs.com/) which implement Google's
 [Material Design Spec](https://material.io/) with the [Vue.js framework](https://vuejs.org/).
 
 Installation
@@ -31,7 +31,7 @@ Usage
 
 For examples see the [example notebook](examples/Examples.ipynb).
 
-The [Vuetify documentation](https://v15.vuetifyjs.com/en/components/buttons#buttons) can be used to find all available 
+The [Vuetify documentation](https://vuetifyjs.com/components/buttons#buttons) can be used to find all available
 components and attributes (in the left side bar or use the search field). Ipyvuetify tries to stay close to the Vue.js 
 and Vuetify template syntax, but there are some differences:
 
@@ -42,7 +42,6 @@ and Vuetify template syntax, but there are some differences:
 | Flag attributes require a boolean value | `<v-btn round ...` | `Btn(round=True ...` |
 | Attributes are snake_case | `<v-menu offset-y ..` | `Menu(offset_y=True ...` |
 | The v_model attribute (value in ipywidgets) contains the value directly | `<v-slider v-model="some_property" ...` | `Slider(v_model=25...` |
-| Scoped slots are not yet implemented, use slot instead | `<v-menu><template slot:activator="{ on }"><v-btn v-on=on>` | `Menu(children=[Btn(slot='activator',...), ...]` 
 | Event listeners are defined with on_event | `<v-btn @click='someMethod()' ...` | `button.on_event('click', some_method)` |
 | | | `def some_method(widget, event, data):` |
 | Regular HTML tags can made with the Html class | `<div>...</div>` | `Html(tag='div', children=[...])` |
@@ -65,6 +64,30 @@ def update_mini(widget, event, data):
 
 drawer.on_event('update:miniVariant', update_mini)
 ```
+
+### (scoped) slots
+##### Vuetify:
+```HTML
+<v-menu>
+  <template slot:activator="{ on }">
+    <v-btn v-on="on">...</v-btn>
+  </template>
+  <v-list>
+    ...
+  </v-list>
+</v-menu>
+```
+##### ipyvuetify:
+```python
+Menu(v_slots=[{
+    'name': 'activator',
+    'variable': 'x',
+    'children': Btn(v_on='x.on', children=[...])
+}], children=[
+    List(...)
+])
+```
+For non scoped slots `'scope': 'x'` and `v_on` can be omitted.
 
 Alternate usage
 ---------------

@@ -2,6 +2,7 @@ import { DOMWidgetView } from '@jupyter-widgets/base';
 import Vue from 'vue'; // eslint-disable-line import/no-extraneous-dependencies
 import { vueRender } from 'jupyter-vue';
 import { getContainer } from './jupyterEnvironment';
+import vuetify from './plugins/vuetify';
 
 export class VuetifyView extends DOMWidgetView {
     remove() {
@@ -19,7 +20,7 @@ export class VuetifyView extends DOMWidgetView {
         /* Overlays wil be rendered here (e.g. v-menu, v-tooltip and dialog). */
         const overlay = document.createElement('DIV');
         overlay.setAttribute('vuetify-overlay', true);
-        overlay.classList.add('application');
+        overlay.classList.add('v-application');
         overlay.classList.add('theme--light');
         vuetifyStyles.appendChild(overlay);
 
@@ -39,6 +40,7 @@ export class VuetifyView extends DOMWidgetView {
             this.el.appendChild(vueEl);
 
             this.vueApp = new Vue({
+                vuetify,
                 el: vueEl,
 
                 render: (createElement) => {
