@@ -69,6 +69,9 @@ module.exports = [
         },
         externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
         mode: 'production',
+        resolve: {
+            alias: { './VuetifyView$': path.resolve(__dirname, 'src/nodepsVuetifyView.js') },
+        },
     },{
         entry: './lib/nodepsEmbed.js',
         output: {
@@ -83,6 +86,9 @@ module.exports = [
         },
         externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
         mode: 'production',
+        resolve: {
+            alias: { './VuetifyView$': path.resolve(__dirname, 'src/nodepsVuetifyView.js') },
+        },
     },
     {// Embeddable jupyter-vuetify bundle
      //
