@@ -16,6 +16,9 @@ To install use pip:
 
     $ pip install ipyvuetify
     $ jupyter nbextension enable --py --sys-prefix ipyvuetify
+    
+    # for Jupyter Lab
+    $ jupyter labextension install jupyter-vuetify
 
 
 For a development installation (requires npm),
