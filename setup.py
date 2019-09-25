@@ -155,7 +155,7 @@ setup_args = {
         ('etc/jupyter/nbconfig/notebook.d', ['jupyter-vuetify.json'])
     ],
     'install_requires': [
-        'ipyvue>=1.0.0',
+        'ipyvue>=1.0.0,<2',
     ],
     'packages': find_packages(exclude=['generate_source']),
     'zip_safe': False,
