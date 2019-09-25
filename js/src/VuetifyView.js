@@ -21,6 +21,7 @@ export class VuetifyView extends DOMWidgetView {
         const overlay = document.createElement('DIV');
         overlay.setAttribute('vuetify-overlay', true);
         overlay.classList.add('v-application');
+        overlay.classList.add('v-application--is-ltr');
         overlay.classList.add('theme--light');
         vuetifyStyles.appendChild(overlay);
 
