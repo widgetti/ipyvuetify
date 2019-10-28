@@ -6,7 +6,7 @@ from .generate_schema import generate_schema
 
 here = os.path.dirname(os.path.abspath(__file__))
 
-vuetify_api = f'{here}/vuetify_api_2.0.17.json'
+vuetify_api = f'{here}/vuetify_api.json'
 base_schema = f'{here}/base.json'
 build_dir = f'{here}/build'
 widget_gen_schema = f'{build_dir}/widget_gen_schema.json'

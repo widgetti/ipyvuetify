@@ -553,7 +553,7 @@
       {
         "name": "appendIcon",
         "type": "string",
-        "default": "'$vuetify.icons.dropdown'",
+        "default": "'$dropdown'",
         "source": "v-input"
       },
       {
@@ -601,7 +601,7 @@
       {
         "name": "clearIcon",
         "type": "string",
-        "default": "'$vuetify.icons.clear'",
+        "default": "'$clear'",
         "source": "v-text-field"
       },
       {
@@ -642,7 +642,7 @@
         "name": "dense",
         "type": "boolean",
         "default": "false",
-        "source": "v-select"
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -1085,6 +1085,10 @@
       {
         "name": "update:search-input",
         "value": "string"
+      },
+      {
+        "name": "update:list-index",
+        "value": "number"
       },
       {
         "name": "click:prepend",
@@ -1752,6 +1756,21 @@
         "source": "v-dialog"
       },
       {
+        "name": "overlayColor",
+        "type": "string",
+        "default": "undefined",
+        "source": "overlayable"
+      },
+      {
+        "name": "overlayOpacity",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "overlayable"
+      },
+      {
         "name": "persistent",
         "type": "boolean",
         "default": "false",
@@ -2190,6 +2209,12 @@
         "source": "routable"
       },
       {
+        "name": "retainFocusOnClick",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-btn"
+      },
+      {
         "name": "right",
         "type": "boolean",
         "default": "false",
@@ -2319,6 +2344,18 @@
         "source": "base-item-group"
       },
       {
+        "name": "backgroundColor",
+        "type": "string",
+        "default": "undefined",
+        "source": "v-btn-toggle"
+      },
+      {
+        "name": "borderless",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-btn-toggle"
+      },
+      {
         "name": "color",
         "type": "string",
         "default": "undefined",
@@ -2329,6 +2366,18 @@
         "type": "boolean",
         "default": "false",
         "source": "themeable"
+      },
+      {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-btn-toggle"
+      },
+      {
+        "name": "group",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-btn-toggle"
       },
       {
         "name": "light",
@@ -2359,6 +2408,18 @@
       },
       {
         "name": "rounded",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-btn-toggle"
+      },
+      {
+        "name": "shaped",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-btn-toggle"
+      },
+      {
+        "name": "tile",
         "type": "boolean",
         "default": "false",
         "source": "v-btn-toggle"
@@ -2621,7 +2682,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-09-17'",
+        "default": "'2019-10-28'",
         "source": "calendar-base"
       },
       {
@@ -2777,6 +2838,10 @@
       }
     ],
     "functions": [
+      {
+        "name": "checkChange",
+        "signature": "(): void"
+      },
       {
         "name": "updateTimes",
         "signature": "(): void"
@@ -3603,7 +3668,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-09-17'",
+        "default": "'2019-10-28'",
         "source": "calendar-base"
       },
       {
@@ -3718,7 +3783,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-09-17'",
+        "default": "'2019-10-28'",
         "source": "calendar-base"
       },
       {
@@ -3833,7 +3898,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-09-17'",
+        "default": "'2019-10-28'",
         "source": "calendar-base"
       },
       {
@@ -4054,6 +4119,12 @@
         "source": "routable"
       },
       {
+        "name": "shaped",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-card"
+      },
+      {
         "name": "tag",
         "type": "string",
         "default": "'div'",
@@ -4114,15 +4185,6 @@
       }
     ]
   },
-  "v-card-title": {
-    "props": [],
-    "mixins": [],
-    "slots": [
-      {
-        "name": "default"
-      }
-    ]
-  },
   "v-card-actions": {
     "props": [],
     "mixins": [],
@@ -4132,7 +4194,20 @@
       }
     ]
   },
+  "v-card-subtitle": {
+    "props": [],
+    "mixins": []
+  },
   "v-card-text": {
+    "props": [],
+    "mixins": [],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ]
+  },
+  "v-card-title": {
     "props": [],
     "mixins": [],
     "slots": [
@@ -4170,7 +4245,7 @@
       {
         "name": "delimiterIcon",
         "type": "string",
-        "default": "'$vuetify.icons.delimiter'",
+        "default": "'$delimiter'",
         "source": "v-carousel"
       },
       {
@@ -4236,7 +4311,7 @@
           "boolean",
           "string"
         ],
-        "default": "$vuetify.icons.next",
+        "default": "$next",
         "source": "v-window"
       },
       {
@@ -4245,7 +4320,7 @@
           "boolean",
           "string"
         ],
-        "default": "$vuetify.icons.prev",
+        "default": "$prev",
         "source": "v-window"
       },
       {
@@ -4484,6 +4559,12 @@
         "source": "themeable"
       },
       {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
+      },
+      {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
@@ -4555,7 +4636,7 @@
       {
         "name": "indeterminateIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxIndeterminate'",
+        "default": "'$checkboxIndeterminate'",
         "source": "v-checkbox"
       },
       {
@@ -4600,13 +4681,13 @@
       {
         "name": "offIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxOff'",
+        "default": "'$checkboxOff'",
         "source": "v-checkbox"
       },
       {
         "name": "onIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxOn'",
+        "default": "'$checkboxOn'",
         "source": "v-checkbox"
       },
       {
@@ -4705,6 +4786,10 @@
     ],
     "events": [
       {
+        "name": "change",
+        "value": "any"
+      },
+      {
         "name": "update:indeterminate",
         "value": "boolean"
       }
@@ -4739,7 +4824,7 @@
       {
         "name": "indeterminateIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxIndeterminate'",
+        "default": "'$checkboxIndeterminate'",
         "source": "v-simple-checkbox"
       },
       {
@@ -4751,13 +4836,13 @@
       {
         "name": "offIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxOff'",
+        "default": "'$checkboxOff'",
         "source": "v-simple-checkbox"
       },
       {
         "name": "onIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxOn'",
+        "default": "'$checkboxOn'",
         "source": "v-simple-checkbox"
       },
       {
@@ -4804,7 +4889,7 @@
       {
         "name": "closeIcon",
         "type": "string",
-        "default": "'$vuetify.icons.delete'",
+        "default": "'$delete'",
         "source": "v-chip"
       },
       {
@@ -4852,7 +4937,7 @@
       {
         "name": "filterIcon",
         "type": "string",
-        "default": "'$vuetify.icons.complete'",
+        "default": "'$complete'",
         "source": "v-chip"
       },
       {
@@ -5082,13 +5167,13 @@
       {
         "name": "nextIcon",
         "type": "string",
-        "default": "'$vuetify.icons.next'",
+        "default": "'$next'",
         "source": "base-slide-group"
       },
       {
         "name": "prevIcon",
         "type": "string",
-        "default": "'$vuetify.icons.prev'",
+        "default": "'$prev'",
         "source": "base-slide-group"
       },
       {
@@ -5638,7 +5723,7 @@
       {
         "name": "appendIcon",
         "type": "string",
-        "default": "'$vuetify.icons.dropdown'",
+        "default": "'$dropdown'",
         "source": "v-input"
       },
       {
@@ -5686,7 +5771,7 @@
       {
         "name": "clearIcon",
         "type": "string",
-        "default": "'$vuetify.icons.clear'",
+        "default": "'$clear'",
         "source": "v-text-field"
       },
       {
@@ -5733,7 +5818,7 @@
         "name": "dense",
         "type": "boolean",
         "default": "false",
-        "source": "v-select"
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -6176,6 +6261,10 @@
       {
         "name": "update:search-input",
         "value": "string"
+      },
+      {
+        "name": "update:list-index",
+        "value": "number"
       },
       {
         "name": "click:prepend",
@@ -6911,6 +7000,11 @@
         "name": "item-expanded",
         "source": "v-data-iterator",
         "value": "{ item: any, value: boolean }"
+      },
+      {
+        "name": "toggle-select-all",
+        "source": "v-data-iterator",
+        "value": "{ value: boolean }"
       }
     ]
   },
@@ -6931,7 +7025,7 @@
       {
         "name": "firstIcon",
         "type": "string",
-        "default": "'$vuetify.icons.first'",
+        "default": "'$first'",
         "source": "v-data-footer"
       },
       {
@@ -6960,13 +7054,13 @@
       {
         "name": "lastIcon",
         "type": "string",
-        "default": "'$vuetify.icons.last'",
+        "default": "'$last'",
         "source": "v-data-footer"
       },
       {
         "name": "nextIcon",
         "type": "string",
-        "default": "'$vuetify.icons.next'",
+        "default": "'$next'",
         "source": "v-data-footer"
       },
       {
@@ -6986,6 +7080,12 @@
         }
       },
       {
+        "name": "pageText",
+        "type": "string",
+        "default": "'$vuetify.dataFooter.pageText'",
+        "source": "v-data-footer"
+      },
+      {
         "name": "pagination",
         "type": "object",
         "default": "undefined",
@@ -7002,7 +7102,7 @@
       {
         "name": "prevIcon",
         "type": "string",
-        "default": "'$vuetify.icons.prev'",
+        "default": "'$prev'",
         "source": "v-data-footer"
       },
       {
@@ -7107,7 +7207,7 @@
       {
         "name": "expandIcon",
         "type": "string",
-        "default": "'$vuetify.icons.expand'",
+        "default": "'$expand'",
         "source": "v-data-table"
       },
       {
@@ -7162,6 +7262,7 @@
           "value": "string",
           "align?": "'start' | 'center' | 'end'",
           "sortable?": "boolean",
+          "filterable?": "boolean",
           "divider?": "boolean",
           "class?": "string | string[]",
           "width?": "string | number",
@@ -7610,29 +7711,12 @@
       {
         "name": "group.header",
         "props": {
+          "group": "(value: string) => void",
+          "groupedBy": "string[]",
           "items": "any[]",
-          "pagination": {
-            "page": "number",
-            "itemsPerPage": "number",
-            "pageStart": "number",
-            "pageStop": "number",
-            "pageCount": "number",
-            "itemsLength": "number"
-          },
-          "options": {
-            "page": "number",
-            "itemsPerPage": "number",
-            "sortBy": "string[]",
-            "sortDesc": "boolean[]",
-            "groupBy": "string[]",
-            "groupDesc": "boolean[]",
-            "multiSort": "boolean",
-            "mustSort": "boolean"
-          },
-          "groupedItems": "Record<string, any[]>",
-          "updateOptions": "(obj: any) => void",
-          "sort": "(value: string) => void",
-          "group": "(value: string) => void"
+          "headers": "TableHeader[]",
+          "toggle": "() => void",
+          "remove": "() => void"
         }
       },
       {
@@ -7826,6 +7910,11 @@
         "name": "item-expanded",
         "source": "v-data-iterator",
         "value": "{ item: any, value: boolean }"
+      },
+      {
+        "name": "toggle-select-all",
+        "source": "v-data-iterator",
+        "value": "{ value: boolean }"
       }
     ]
   },
@@ -8167,7 +8256,7 @@
       {
         "name": "nextIcon",
         "type": "string",
-        "default": "'$vuetify.icons.next'",
+        "default": "'$next'",
         "source": "v-date-picker"
       },
       {
@@ -8185,7 +8274,13 @@
       {
         "name": "prevIcon",
         "type": "string",
-        "default": "'$vuetify.icons.prev'",
+        "default": "'$prev'",
+        "source": "v-date-picker"
+      },
+      {
+        "name": "range",
+        "type": "boolean",
+        "default": "false",
         "source": "v-date-picker"
       },
       {
@@ -8425,13 +8520,13 @@
       {
         "name": "nextIcon",
         "type": "string",
-        "default": "'$vuetify.icons.next'",
+        "default": "'$next'",
         "source": "v-date-picker-header"
       },
       {
         "name": "prevIcon",
         "type": "string",
-        "default": "'$vuetify.icons.prev'",
+        "default": "'$prev'",
         "source": "v-date-picker-header"
       },
       {
@@ -8546,6 +8641,12 @@
         "name": "min",
         "type": "string",
         "default": "undefined",
+        "source": "themeable"
+      },
+      {
+        "name": "range",
+        "type": "boolean",
+        "default": "false",
         "source": "themeable"
       },
       {
@@ -8676,6 +8777,12 @@
         "name": "min",
         "type": "string",
         "default": "undefined",
+        "source": "themeable"
+      },
+      {
+        "name": "range",
+        "type": "boolean",
+        "default": "false",
         "source": "themeable"
       },
       {
@@ -8878,6 +8985,21 @@
         "type": "string",
         "default": "'center center'",
         "source": "v-dialog"
+      },
+      {
+        "name": "overlayColor",
+        "type": "string",
+        "default": "undefined",
+        "source": "overlayable"
+      },
+      {
+        "name": "overlayOpacity",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "overlayable"
       },
       {
         "name": "persistent",
@@ -9132,7 +9254,7 @@
       {
         "name": "expandIcon",
         "type": "string",
-        "default": "'$vuetify.icons.expand'",
+        "default": "'$expand'",
         "source": "v-expansion-panel-header"
       },
       {
@@ -9159,7 +9281,10 @@
         "name": "actions"
       },
       {
-        "name": "default"
+        "name": "default",
+        "props": {
+          "open": "boolean"
+        }
       }
     ],
     "events": [
@@ -9223,7 +9348,7 @@
       {
         "name": "clearIcon",
         "type": "string",
-        "default": "'$vuetify.icons.clear'",
+        "default": "'$clear'",
         "source": "v-text-field"
       },
       {
@@ -9265,6 +9390,12 @@
         "type": "boolean",
         "default": "false",
         "source": "themeable"
+      },
+      {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -9413,7 +9544,7 @@
       {
         "name": "prependIcon",
         "type": "string",
-        "default": "'$vuetify.icons.file'",
+        "default": "'$file'",
         "source": "v-input"
       },
       {
@@ -9717,7 +9848,9 @@
         "source": "v-form"
       }
     ],
-    "mixins": [],
+    "mixins": [
+      "registrable-provide"
+    ],
     "functions": [
       {
         "name": "reset",
@@ -9792,6 +9925,12 @@
           "number"
         ],
         "default": false,
+        "source": "v-col"
+      },
+      {
+        "name": "justifySelf",
+        "type": "string",
+        "default": "undefined",
         "source": "v-col"
       },
       {
@@ -10442,6 +10581,12 @@
         "source": "v-img"
       },
       {
+        "name": "eager",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-img"
+      },
+      {
         "name": "gradient",
         "type": "string",
         "default": "undefined",
@@ -10497,6 +10642,12 @@
         ],
         "default": "undefined",
         "source": "measurable"
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "default": {},
+        "source": "v-img"
       },
       {
         "name": "position",
@@ -10591,6 +10742,12 @@
         "type": "boolean",
         "default": "false",
         "source": "themeable"
+      },
+      {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -10924,6 +11081,43 @@
       "themeable"
     ]
   },
+  "v-lazy": {
+    "props": [
+      {
+        "name": "minHeight",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "VLazy"
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "default": {},
+        "source": "VLazy"
+      },
+      {
+        "name": "transition",
+        "type": "string",
+        "default": "'fade-transition'",
+        "source": "VLazy"
+      },
+      {
+        "name": "value",
+        "type": "any",
+        "default": "undefined",
+        "source": "toggleable"
+      }
+    ],
+    "mixins": [
+      "toggleable"
+    ],
+    "slots": [
+      "default"
+    ]
+  },
   "v-list-item-action-text": {
     "props": [],
     "mixins": [],
@@ -11139,7 +11333,7 @@
       {
         "name": "appendIcon",
         "type": "string",
-        "default": "'$vuetify.icons.expand'",
+        "default": "'$expand'",
         "source": "v-list-group"
       },
       {
@@ -11330,6 +11524,12 @@
         ],
         "default": "undefined",
         "source": "routable"
+      },
+      {
+        "name": "selectable",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-list-item"
       },
       {
         "name": "tag",
@@ -12054,6 +12254,21 @@
         "source": "v-navigation-drawer"
       },
       {
+        "name": "overlayColor",
+        "type": "string",
+        "default": "undefined",
+        "source": "overlayable"
+      },
+      {
+        "name": "overlayOpacity",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "overlayable"
+      },
+      {
         "name": "permanent",
         "type": "boolean",
         "default": "false",
@@ -12167,7 +12382,7 @@
       {
         "name": "appendIcon",
         "type": "string",
-        "default": "'$vuetify.icons.dropdown'",
+        "default": "'$dropdown'",
         "source": "v-input"
       },
       {
@@ -12215,7 +12430,7 @@
       {
         "name": "clearIcon",
         "type": "string",
-        "default": "'$vuetify.icons.clear'",
+        "default": "'$clear'",
         "source": "v-text-field"
       },
       {
@@ -12256,7 +12471,7 @@
         "name": "dense",
         "type": "boolean",
         "default": "false",
-        "source": "v-select"
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -12713,6 +12928,10 @@
         "value": "string"
       },
       {
+        "name": "update:list-index",
+        "value": "number"
+      },
+      {
         "name": "click:prepend",
         "value": "Event"
       },
@@ -12849,13 +13068,13 @@
       {
         "name": "nextIcon",
         "type": "string",
-        "default": "'$vuetify.icons.next'",
+        "default": "'$next'",
         "source": "v-pagination"
       },
       {
         "name": "prevIcon",
         "type": "string",
-        "default": "'$vuetify.icons.prev'",
+        "default": "'$prev'",
         "source": "v-pagination"
       },
       {
@@ -13337,6 +13556,12 @@
         "source": "themeable"
       },
       {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
+      },
+      {
         "name": "disabled",
         "type": "boolean",
         "default": "false",
@@ -13597,13 +13822,13 @@
       {
         "name": "offIcon",
         "type": "string",
-        "default": "'$vuetify.icons.radioOff'",
+        "default": "'$radioOff'",
         "source": "v-radio"
       },
       {
         "name": "onIcon",
         "type": "string",
-        "default": "'$vuetify.icons.radioOn'",
+        "default": "'$radioOn'",
         "source": "v-radio"
       },
       {
@@ -13636,8 +13861,21 @@
     ],
     "events": [
       {
+        "name": "blur",
+        "value": "Event"
+      },
+      {
         "name": "change",
         "value": "any"
+      },
+      {
+        "name": "focus",
+        "value": "Event"
+      }
+    ],
+    "slots": [
+      {
+        "name": "label"
       }
     ]
   },
@@ -13666,6 +13904,12 @@
         "type": "boolean",
         "default": "false",
         "source": "themeable"
+      },
+      {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -14026,19 +14270,19 @@
       {
         "name": "emptyIcon",
         "type": "string",
-        "default": "'$vuetify.icons.ratingEmpty'",
+        "default": "'$ratingEmpty'",
         "source": "v-rating"
       },
       {
         "name": "fullIcon",
         "type": "string",
-        "default": "'$vuetify.icons.ratingFull'",
+        "default": "'$ratingFull'",
         "source": "v-rating"
       },
       {
         "name": "halfIcon",
         "type": "string",
-        "default": "'$vuetify.icons.ratingHalf'",
+        "default": "'$ratingHalf'",
         "source": "v-rating"
       },
       {
@@ -14243,7 +14487,7 @@
       {
         "name": "appendIcon",
         "type": "string",
-        "default": "'$vuetify.icons.dropdown'",
+        "default": "'$dropdown'",
         "source": "v-input"
       },
       {
@@ -14285,7 +14529,7 @@
       {
         "name": "clearIcon",
         "type": "string",
-        "default": "'$vuetify.icons.clear'",
+        "default": "'$clear'",
         "source": "v-text-field"
       },
       {
@@ -14326,7 +14570,7 @@
         "name": "dense",
         "type": "boolean",
         "default": "false",
-        "source": "v-select"
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -14751,6 +14995,10 @@
         "value": "string"
       },
       {
+        "name": "update:list-index",
+        "value": "number"
+      },
+      {
         "name": "click:prepend",
         "value": "Event"
       },
@@ -14784,6 +15032,158 @@
       }
     ]
   },
+  "v-skeleton-loader": {
+    "props": [
+      {
+        "name": "boilerplate",
+        "type": "boolean",
+        "default": "false",
+        "source": "VSkeletonLoader"
+      },
+      {
+        "name": "dark",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "elevation",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "elevatable"
+      },
+      {
+        "name": "height",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "measurable"
+      },
+      {
+        "name": "light",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "default": "false",
+        "source": "VSkeletonLoader"
+      },
+      {
+        "name": "maxHeight",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "measurable"
+      },
+      {
+        "name": "maxWidth",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "measurable"
+      },
+      {
+        "name": "minHeight",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "measurable"
+      },
+      {
+        "name": "minWidth",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "measurable"
+      },
+      {
+        "name": "tile",
+        "type": "boolean",
+        "default": "false",
+        "source": "VSkeletonLoader"
+      },
+      {
+        "name": "transition",
+        "type": "string",
+        "default": "undefined",
+        "source": "VSkeletonLoader"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "default": "undefined",
+        "source": "VSkeletonLoader",
+        "options": {
+          "actions": "button@2",
+          "article": "heading, paragraph",
+          "avatar": "avatar",
+          "button": "button",
+          "card": "image, card-heading",
+          "card-avatar": "image, list-item-avatar",
+          "card-heading": "heading",
+          "chip": "chip",
+          "date-picker": "list-item, card-heading, divider, date-picker-options, date-picker-days, actions",
+          "date-picker-options": "text, avatar@2",
+          "date-picker-days": "avatar@28",
+          "heading": "heading",
+          "image": "image",
+          "list-item": "text",
+          "list-item-avatar": "avatar, text",
+          "list-item-two-line": "sentences",
+          "list-item-avatar-two-line": "avatar, sentences",
+          "list-item-three-line": "paragraph",
+          "list-item-avatar-three-line": "avatar, paragraph",
+          "paragraph": "text@3",
+          "sentences": "text@2",
+          "table": "table-heading, table-thead, table-tbody, table-tfoot",
+          "table-heading": "heading, text",
+          "table-thead": "heading@6",
+          "table-tbody": "table-row-divider@6",
+          "table-row-divider": "table-row, divider",
+          "table-row": "table-cell@6",
+          "table-cell": "text",
+          "table-tfoot": "text@2, avatar@2",
+          "text": "text"
+        }
+      },
+      {
+        "name": "types",
+        "type": "object",
+        "default": {},
+        "source": "VSkeletonLoader"
+      },
+      {
+        "name": "width",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "measurable"
+      }
+    ],
+    "mixins": [
+      "elevatable",
+      "measurable",
+      "themeable"
+    ]
+  },
   "v-slider": {
     "props": [
       {
@@ -14809,6 +15209,12 @@
         "type": "boolean",
         "default": "false",
         "source": "themeable"
+      },
+      {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -15184,13 +15590,13 @@
       {
         "name": "nextIcon",
         "type": "string",
-        "default": "'$vuetify.icons.next'",
+        "default": "'$next'",
         "source": "base-slide-group"
       },
       {
         "name": "prevIcon",
         "type": "string",
-        "default": "'$vuetify.icons.prev'",
+        "default": "'$prev'",
         "source": "base-slide-group"
       },
       {
@@ -15365,6 +15771,12 @@
         "source": "colorable"
       },
       {
+        "name": "dark",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
         "name": "fill",
         "type": "boolean",
         "default": "false",
@@ -15405,6 +15817,12 @@
         "type": "array",
         "default": [],
         "source": "VSparkline"
+      },
+      {
+        "name": "light",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
       },
       {
         "name": "lineWidth",
@@ -15463,7 +15881,8 @@
       }
     ],
     "mixins": [
-      "colorable"
+      "colorable",
+      "themeable"
     ],
     "slots": [
       {
@@ -15654,13 +16073,13 @@
       {
         "name": "completeIcon",
         "type": "string",
-        "default": "'$vuetify.icons.complete'",
+        "default": "'$complete'",
         "source": "v-stepper-step"
       },
       {
         "name": "editIcon",
         "type": "string",
-        "default": "'$vuetify.icons.edit'",
+        "default": "'$edit'",
         "source": "v-stepper-step"
       },
       {
@@ -15672,7 +16091,7 @@
       {
         "name": "errorIcon",
         "type": "string",
-        "default": "'$vuetify.icons.error'",
+        "default": "'$error'",
         "source": "v-stepper-step"
       },
       {
@@ -15780,6 +16199,12 @@
         "type": "boolean",
         "default": "false",
         "source": "themeable"
+      },
+      {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -15991,6 +16416,12 @@
         "name": "prepend"
       },
       "label"
+    ],
+    "events": [
+      {
+        "name": "change",
+        "value": "any"
+      }
     ]
   },
   "v-system-bar": {
@@ -16155,7 +16586,7 @@
       {
         "name": "nextIcon",
         "type": "string",
-        "default": "'$vuetify.icons.next'",
+        "default": "'$next'",
         "source": "v-tabs"
       },
       {
@@ -16167,7 +16598,7 @@
       {
         "name": "prevIcon",
         "type": "string",
-        "default": "'$vuetify.icons.prev'",
+        "default": "'$prev'",
         "source": "v-tabs"
       },
       {
@@ -16335,6 +16766,10 @@
     ],
     "events": [
       {
+        "name": "change",
+        "value": "void"
+      },
+      {
         "name": "click",
         "value": "ClickEvent"
       },
@@ -16462,7 +16897,7 @@
           "boolean",
           "string"
         ],
-        "default": "$vuetify.icons.next",
+        "default": "$next",
         "source": "v-window"
       },
       {
@@ -16471,7 +16906,7 @@
           "boolean",
           "string"
         ],
-        "default": "$vuetify.icons.prev",
+        "default": "$prev",
         "source": "v-window"
       },
       {
@@ -16581,7 +17016,7 @@
       {
         "name": "clearIcon",
         "type": "string",
-        "default": "'$vuetify.icons.clear'",
+        "default": "'$clear'",
         "source": "v-text-field"
       },
       {
@@ -16611,6 +17046,12 @@
         "type": "boolean",
         "default": "false",
         "source": "themeable"
+      },
+      {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -16974,7 +17415,7 @@
       {
         "name": "clearIcon",
         "type": "string",
-        "default": "'$vuetify.icons.clear'",
+        "default": "'$clear'",
         "source": "v-text-field"
       },
       {
@@ -17004,6 +17445,12 @@
         "type": "boolean",
         "default": "false",
         "source": "themeable"
+      },
+      {
+        "name": "dense",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-input"
       },
       {
         "name": "disabled",
@@ -18288,7 +18735,7 @@
       {
         "name": "expandIcon",
         "type": "string",
-        "default": "'$vuetify.icons.subgroup'",
+        "default": "'$subgroup'",
         "source": "v-treeview"
       },
       {
@@ -18306,7 +18753,7 @@
       {
         "name": "indeterminateIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxIndeterminate'",
+        "default": "'$checkboxIndeterminate'",
         "source": "v-treeview"
       },
       {
@@ -18354,7 +18801,7 @@
       {
         "name": "loadingIcon",
         "type": "string",
-        "default": "'$vuetify.icons.loading'",
+        "default": "'$loading'",
         "source": "v-treeview"
       },
       {
@@ -18366,13 +18813,13 @@
       {
         "name": "offIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxOff'",
+        "default": "'$checkboxOff'",
         "source": "v-treeview"
       },
       {
         "name": "onIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxOn'",
+        "default": "'$checkboxOn'",
         "source": "v-treeview"
       },
       {
@@ -18531,13 +18978,13 @@
       {
         "name": "expandIcon",
         "type": "string",
-        "default": "'$vuetify.icons.subgroup'",
+        "default": "'$subgroup'",
         "source": "v-treeview-node"
       },
       {
         "name": "indeterminateIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxIndeterminate'",
+        "default": "'$checkboxIndeterminate'",
         "source": "v-treeview-node"
       },
       {
@@ -18579,19 +19026,19 @@
       {
         "name": "loadingIcon",
         "type": "string",
-        "default": "'$vuetify.icons.loading'",
+        "default": "'$loading'",
         "source": "v-treeview-node"
       },
       {
         "name": "offIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxOff'",
+        "default": "'$checkboxOff'",
         "source": "v-treeview-node"
       },
       {
         "name": "onIcon",
         "type": "string",
-        "default": "'$vuetify.icons.checkboxOn'",
+        "default": "'$checkboxOn'",
         "source": "v-treeview-node"
       },
       {
@@ -18689,7 +19136,7 @@
           "boolean",
           "string"
         ],
-        "default": "$vuetify.icons.next",
+        "default": "$next",
         "source": "v-window"
       },
       {
@@ -18698,7 +19145,7 @@
           "boolean",
           "string"
         ],
-        "default": "$vuetify.icons.prev",
+        "default": "$prev",
         "source": "v-window"
       },
       {
@@ -19490,6 +19937,70 @@
         "type": "Function"
       }
     ]
+  },
+  "v-mutate": {
+    "options": [
+      {
+        "name": "modifiers.once",
+        "default": false,
+        "type": "boolean",
+        "snippet": "html_directive_mutate_once"
+      },
+      {
+        "name": "modifiers.attr",
+        "default": true,
+        "type": "boolean",
+        "snippet": "html_directive_mutate_attr"
+      },
+      {
+        "name": "modifiers.char",
+        "default": true,
+        "type": "boolean",
+        "snippet": "html_directive_mutate_char"
+      },
+      {
+        "name": "modifiers.child",
+        "default": true,
+        "type": "boolean",
+        "snippet": "html_directive_mutate_child"
+      },
+      {
+        "name": "modifiers.sub",
+        "default": true,
+        "type": "boolean",
+        "snippet": "html_directive_mutate_sub"
+      },
+      {
+        "name": "value",
+        "default": "(): {}",
+        "type": "function | object",
+        "snippet": "html_directive_mutate"
+      }
+    ],
+    "type": "undefined"
+  },
+  "v-intersect": {
+    "options": [
+      {
+        "name": "modifiers.once",
+        "default": false,
+        "type": "boolean",
+        "snippet": "html_directive_intersect_once"
+      },
+      {
+        "name": "modifiers.quiet",
+        "default": false,
+        "type": "boolean",
+        "snippet": "html_directive_intersect_quiet"
+      },
+      {
+        "name": "value",
+        "default": "{}",
+        "type": "object",
+        "snippet": "html_directive_intersect"
+      }
+    ],
+    "type": "undefined"
   },
   "v-ripple": {
     "options": [
