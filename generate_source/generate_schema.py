@@ -4,7 +4,7 @@ from itertools import chain
 
 sizes = ['xs', 'sm', 'md', 'lg', 'xl']
 
-keywords = ['for']
+keywords = ['for', 'open']
 
 boolean_type = {
     'type': 'boolean',
