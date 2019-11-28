@@ -37,8 +37,9 @@ def js_prerelease(command, strict=False):
                 return
 
             try:
-                self.distribution.run_command('generate_source')
-                self.distribution.run_command('jsdeps')
+                if 'NO_BUILD' not in os.environ:
+                    self.distribution.run_command('generate_source')
+                    self.distribution.run_command('jsdeps')
             except Exception as e:
                 missing = [t for t in jsdeps.targets if not os.path.exists(t)]
                 if strict or missing:
@@ -111,6 +112,7 @@ class NPM(Command):
             log.info("Installing build dependencies with npm.  This may take a while...")
             npmName = self.get_npm_name()
             check_call([npmName, 'install'], cwd=node_root, stdout=sys.stdout, stderr=sys.stderr)
+            check_call([npmName, 'run', 'build'], cwd=node_root, stdout=sys.stdout, stderr=sys.stderr)
             os.utime(self.node_modules, None)
 
         for t in self.targets:

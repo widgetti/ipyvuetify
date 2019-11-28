@@ -1,0 +1,64 @@
+name: Release Test
+on:
+  push:
+    tags:
+      - test_v*
+    paths-ignore:
+      - '**/README.md'
+      - 'examples/*'
+
+jobs:
+  Release:
+    name: Release Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+      - name: Build requirements
+        run: |
+          cat <<EOT >> build_requirements.txt
+          wheel
+          twine
+          EOT
+      - uses: actions/cache@v1
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('build_requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install build dependencies
+        run: pip install -r build_requirements.txt;
+      - name: Generate source
+        run: python setup.py generate_source
+      - name: Build js
+        working-directory: ./js
+        run: npm install && npm run build
+      - name: Build Python source distribution
+        env:
+          NO_BUILD: True
+        run: python setup.py sdist
+      - name: Build Python wheel
+        env:
+          NO_BUILD: True
+        run: python setup.py bdist_wheel
+      - name: Test wheel
+        run: pip install `find dist| grep ".whl"`;python -c "import ipyvuetify;print('import ok!')"
+      - name: Publish package to TestPyPI
+        env:
+          TWINE_USERNAME: "__token__"
+          TWINE_PASSWORD: "${{ secrets.test_pypi_password }}"
+          TWINE_REPOSITORY_URL: "https://test.pypi.org/legacy/"
+        run: twine upload dist/*
+      - name: Publish package to NPM (--dry-run)
+        env:
+          NPM_TOKEN: "${{ secrets.npm_token }}"
+        working-directory: ./js
+        run: npm publish --dry-run
