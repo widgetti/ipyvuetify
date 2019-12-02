@@ -2,7 +2,7 @@ ipyvuetify
 ===============================
 
 [![Version](https://img.shields.io/npm/v/jupyter-vuetify.svg)](https://www.npmjs.com/package/jupyter-vuetify)
-[![Version](https://img.shields.io/pypi/v/ipyvuetify.svg)](https://pypi.python.org/mariobuikhuizen/ipyvuetify)
+[![Version](https://img.shields.io/pypi/v/ipyvuetify.svg)](https://pypi.python.org/project/ipyvuetify)
 [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ipyvuetify.svg)](https://anaconda.org/conda-forge/ipyvuetify)
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mariobuikhuizen/ipyvuetify/master?filepath=examples%2FExamples.ipynb)
 
