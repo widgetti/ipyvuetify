@@ -92,6 +92,12 @@ Menu(v_slots=[{
 ```
 For non scoped slots `'scope': 'x'` and `v_on` can be omitted.
 
+### Notes:
+ * When using a Dialog with inputs, keyboard events are captured by the notebook and processed as
+ commands in stead of appearing in the dialog inputs. This can be prevented by stopping event
+ propagation with `dialog.on_event('keydown.stop', lambda *args: None)`. An example can be found in
+ the [example notebook](examples/Examples.ipynb).
+
 Alternate usage
 ---------------
 
