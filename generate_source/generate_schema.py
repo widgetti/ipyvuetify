@@ -77,7 +77,7 @@ def make_type(api_type):
 
     # Type info of arrays is not included in the vuetify api json file, use any for now.
     # TODO: Retrieve type info for arrays
-    if api_type == 'array':
+    if api_type in ['array', 'tableheader[]']:
         return {'type': 'array',
                 'items': {
                     'type': 'any'}}
