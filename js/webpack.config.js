@@ -67,7 +67,7 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
+        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font'],
         mode: 'production',
         resolve: {
             alias: { './VuetifyView$': path.resolve(__dirname, 'src/nodepsVuetifyView.js') },
@@ -84,7 +84,7 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto'],
+        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font'],
         mode: 'production',
         resolve: {
             alias: { './VuetifyView$': path.resolve(__dirname, 'src/nodepsVuetifyView.js') },
