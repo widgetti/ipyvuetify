@@ -92,6 +92,12 @@ Menu(v_slots=[{
 ```
 For non scoped slots `'scope': 'x'` and `v_on` can be omitted.
 
+### Icons
+
+Available icons:
+ * https://material.io/resources/icons/ (deprecated)
+ * https://materialdesignicons.com/ (since v1.2.0)
+
 ### Notes:
  * When using a Dialog with inputs, keyboard events are captured by the notebook and processed as
  commands in stead of appearing in the dialog inputs. This can be prevented by stopping event
