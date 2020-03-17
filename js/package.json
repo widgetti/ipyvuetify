@@ -51,7 +51,7 @@
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
-    "@jupyter-widgets/base": "^1.0.0 || ^2.0.0",
+    "@jupyter-widgets/base": "^1.0.0 || ^2.0.0 || ^3.0.0",
     "@mariobuikhuizen/vuetify": "2.1.7-alpha.0",
     "@mdi/font": "^5.0.45",
     "core-js": "^3.0.1",
