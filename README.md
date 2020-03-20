@@ -96,7 +96,7 @@ For non scoped slots `'scope': 'x'` and `v_on` can be omitted.
 
 Available icons:
  * https://material.io/resources/icons/ (deprecated)
- * https://materialdesignicons.com/ (since v1.2.0)
+ * https://cdn.materialdesignicons.com/4.5.95/ (since v1.2.0)
 
 ### Notes:
  * When using a Dialog with inputs, keyboard events are captured by the notebook and processed as
