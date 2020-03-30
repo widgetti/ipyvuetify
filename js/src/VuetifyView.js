@@ -1,6 +1,6 @@
 import { DOMWidgetView } from '@jupyter-widgets/base';
 import Vue from 'vue'; // eslint-disable-line import/no-extraneous-dependencies
-import { vueRender } from 'jupyter-vue';
+import { vueRender, createViewContext } from 'jupyter-vue';
 import { getContainer } from './jupyterEnvironment';
 import vuetify from './plugins/vuetify';
 
@@ -43,7 +43,9 @@ export class VuetifyView extends DOMWidgetView {
             this.vueApp = new Vue({
                 vuetify,
                 el: vueEl,
-
+                provide: {
+                    viewCtx: createViewContext(this),
+                },
                 render: (createElement) => {
                     // TODO: Don't use v-app in embedded mode
                     /* Prevent re-rendering of toplevel component. This happens on button-click in
@@ -60,6 +62,13 @@ export class VuetifyView extends DOMWidgetView {
     }
 
     vueRender(createElement) {
-        return vueRender(createElement, this.model, this);
+        return createElement({
+            provide: {
+                viewCtx: createViewContext(this),
+            },
+            render: () => {
+                return vueRender(createElement, this.model, this)
+            },
+        });
     }
 }
