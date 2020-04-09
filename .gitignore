@@ -14,3 +14,7 @@ js/src/generated
 # Compiled javascript
 ipyvuetify/static/
 js/lib
+
+#readthedocs
+_build/
+

@@ -1,0 +1,4 @@
+ipyvuetify>=1.2.2<2
+jupyter-sphinx>=0.2.3,<0.3
+sphinx_rtd_theme
+
