@@ -1,2 +1,0 @@
-Translating Vuetify to ipyvuetify
-=================================

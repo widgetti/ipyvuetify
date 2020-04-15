@@ -2,7 +2,8 @@ Usage
 =====
 
 This page shows how to use ipyvuetify and explains how it is different from other widget libraries you may know such as
-ipywidgets.
+ipywidgets. It also explains how to use the Vuetify documentation. Most examples display real widgets which have
+animations and behavior.
 
 Create an ipyvuetify widget
 ---------------------------
@@ -32,8 +33,8 @@ What widgets are available and how they look can be found in the
 `Vuetify documentation <https://vuetifyjs.com/components/selects/>`_. Browse the side bar on the left hand side and
 select a widget, then click <> on the right hand side on an example to see the source code for it. The HTML code may
 seem unfamiliar at first, but this documentation will guide you through it. For starters to translate the Vuetify widget
-names, which are starting with :code:`v-`, to ipyvuetify, remove the :code:`v-` prefix and capitalize the remaining
-name. E.g :code:`v-select` becomes Select.
+names, which are starting with :code:`v-`, to ipyvuetify, remove the :code:`v-` prefix and CamelCase the remaining
+name. E.g :code:`v-select` becomes code:`Select` and :code:`v-list-item` becomes code:`ListItem`.
 
 Equivalent Vuetify syntax of the example above:
 
@@ -218,6 +219,9 @@ Events are specified with :code:`.on_event(event_name, callback_fn)` instead of 
         btn
     ])
 
+    # The output of this example intentionally left out, because
+    # it will not work without an active kernel.
+
 The three arguments in the callback function are:
 
 * widget: the widget the event originates from. This is useful when using the same callback for multiple widgets.
@@ -308,6 +312,8 @@ Layout (HBox/VBox alternative)
 
 In ipywidgets you would layout a grid of widgets with HBox and VBox.
 
+.. TODO: fix CSS conflict which is removing the spacing in the example below
+
 .. jupyter-execute::
 
     import ipywidgets as widgets
@@ -339,16 +345,122 @@ This can be done in ipyvuetify with the help of some classes described in
         ]),
     ])
 
-Responsive Layout
------------------
+Icons
+-----
 
+Icons can be displayed with the Icon widget:
 
-Event modifiers
----------------
+.. jupyter-execute::
+
+    v.Icon(children=['mdi-thumb-up'])
+
+In some widgets icons are specified by setting an attribute:
+
+.. jupyter-execute::
+
+    v.Select(prepend_icon='mdi-thumb-up')
+
+See `materialdesignicons.com/4.5.95 <https://cdn.materialdesignicons.com/4.5.95/>`_ for a list of available icons.
+
+Advanced
+--------
 
 (Scoped) Slots
---------------
+``````````````
 
+Slots are used to add content at a certain location in a widget. You can find out what slots a widget supports by using
+the Vuetify documentation. If you want to know what slots :code:`Select` has, search for :code:`v-select` on the
+`Vuetify API explorer <https://vuetifyjs.com/components/api-explorer/>`_ or for this example use the `direct link
+<https://vuetifyjs.com/en/components/selects/#api>`_. On the left-hand side of list of attributes you will find a tab
+'slots'.
 
-Summary
--------
+An example for using the slot 'no-data', which changes what the Select widget shows when it has no items:
+
+Vuetify:
+
+.. code-block:: html
+
+    <v-select>
+      <template v-slot:no-data>
+        <v-list-item>
+          <v-list-item-title>
+            My custom no data message
+          </v-list-item-title>
+        </v-list-item>
+      </template>
+    </v-select>
+
+ipyvuetify:
+
+.. jupyter-execute::
+
+    v.Select(v_slots=[{
+        'name': 'no-data',
+        'children': [
+            v.ListItem(children=[
+                v.ListItemTitle(children=['My custom no data message'])])]
+    }])
+
+Scoped slots are used if the parent widget needs to share its scope with the content. In the example below the events
+of the parent widget are used in the slot content.
+
+Vuetify:
+
+.. code-block:: html
+
+    <v-tooltip>
+        <template v-slot:activator="tooltip">
+            <v-btn v-on="tooltip.on" color="primary">
+                button with tooltip
+            </v-btn>
+        </template>
+        Insert tooltip text here
+    </v-tooltip>
+
+ipyvuetify:
+
+.. jupyter-execute::
+
+    v.Container(children=[
+        v.Tooltip(bottom=True, v_slots=[{
+            'name': 'activator',
+            'variable': 'tooltip',
+            'children': v.Btn(v_on='tooltip.on', color='primary', children=[
+                'button with tooltip'
+            ]),
+        }], children=['Insert tooltip text here'])
+    ])
+
+In the Vuetify examples you will actually see:
+
+.. code-block:: html
+
+    ...
+    <template v-slot:activator="{ on }">
+        <v-btn v-on="on">
+    ...
+
+Instead of the functionally equivalent (like used in the example above):
+
+.. code-block:: html
+
+    ...
+    <template v-slot:activator="tooltip">
+        <v-btn v-on="tooltip.on">
+    ...
+
+The :code:`{ on }` is JavaScript syntax for destructuring an object. It takes the 'on' attribute from an object and
+exposes it as the 'on' variable.
+
+.. note::
+
+    The 'default' slot can be ignored, this is where the content defined in the :code:`children` attribute goes.
+
+Responsive Layout
+`````````````````
+
+Event modifiers
+```````````````
+
+.sync
+`````

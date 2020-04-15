@@ -1,4 +1,4 @@
-ipyvuetify: Jupyter widgets based on vuetify UI components
+ipyvuetify: Jupyter widgets based on Vuetify UI components
 ==========================================================
 
 .. toctree::
@@ -18,9 +18,3 @@ ipyvuetify: Jupyter widgets based on vuetify UI components
     :maxdepth: 2
 
     usage
-
-.. toctree::
-    :caption: Translating Vuetify to ipyvuetify
-    :maxdepth: 2
-
-    translating_vuetify

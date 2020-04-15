@@ -6,17 +6,14 @@ Ipyvuetify is a widget library for making modern looking GUI's in Jupyter notebo
 <https://material.io/design/introduction>`_ best known from the Android user interface.
 
 A large set of widgets is provided with many widgets having multiple variants. a few of which are displayed below.
-[TODO: fix CSS collisions with rtd_theme]
+
+.. TODO: fix CSS collisions with rtd_theme
 
 .. jupyter-execute:: showcase.py
     :hide-code:
 
-Many widgets are composable:
-<TODO: Composability example>
-
 There is support for responsive layouts, which are not that useful in a notebook because of the fixed width, but come in
 handy when making dashboards with Voilà, making your dashboard usable on tablets and phones.
-<TODO: responsive example?>
 
 When comparing ipyvuetify to `ipywidgets <https://ipywidgets.readthedocs.io/en/stable/examples/Widget%20Basics.html>`_,
 the standard widget library of Jupyter, ipyvuetify has a lot more widgets which are also more customizable and
