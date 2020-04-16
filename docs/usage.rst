@@ -34,7 +34,7 @@ What widgets are available and how they look can be found in the
 select a widget, then click <> on the right hand side on an example to see the source code for it. The HTML code may
 seem unfamiliar at first, but this documentation will guide you through it. For starters to translate the Vuetify widget
 names, which are starting with :code:`v-`, to ipyvuetify, remove the :code:`v-` prefix and CamelCase the remaining
-name. E.g :code:`v-select` becomes code:`Select` and :code:`v-list-item` becomes code:`ListItem`.
+name. E.g :code:`v-select` becomes :code:`Select` and :code:`v-list-item` becomes :code:`ListItem`.
 
 Equivalent Vuetify syntax of the example above:
 
