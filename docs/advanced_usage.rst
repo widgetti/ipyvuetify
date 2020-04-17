@@ -158,7 +158,24 @@ For example when you have two nested elements and want a different click handler
 
 When you see ``.sync`` appended to an attribute in Vuetify syntax, it means the attribute has a `two-way binding
 <https://vuejs.org/v2/guide/components-custom-events.html#sync-Modifier>`_ (like ``v-model``). This is shorthand in Vue
-that automatically listens to an event named ``update:<attribute-name>``.
+that automatically listens to an event named ``update:<attributeNameInCamelCase>``.
 
 We can achieve the same manually in ipyvuetify by setting an event handler
-``<widget>.on_event('update:<attribute-name>', <function>)``
+``<widget>.on_event('update:<attributeNameInCamelCase>', <function>)``
+
+Vuetify:
+
+..  code-block::
+
+    <v-navigation-drawer :mini-variant.sync="someProperty" ...
+
+ipyvuetify:
+
+.. code-block::
+
+    drawer = v.NavigationDrawer(mini_variant=True, ...)
+
+    def update_mini(widget, event, data):
+        drawer.mini_variant = data
+
+    drawer.on_event('update:miniVariant', update_mini)
