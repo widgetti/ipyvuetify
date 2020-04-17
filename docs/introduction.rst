@@ -30,4 +30,4 @@ In :doc:`usage` al concepts and how they differ from ipywidgets will be explaine
 To explore which widgets are available and how to use them we defer to the
 `Vuetify documentation <https://vuetifyjs.com/nl-NL/components/buttons/>`_. You can browse examples on the left-hand
 side and see the source code by clicking on '< >' of the example on the top right-hand side of the example. By reading
-:doc:`usage` and :doc:`translating_vuetify` you will be able to translate the examples to ipyvuetify.
+:doc:`usage` you will be able to translate the examples to ipyvuetify.

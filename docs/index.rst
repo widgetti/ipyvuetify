@@ -18,3 +18,9 @@ ipyvuetify: Jupyter widgets based on Vuetify UI components
     :maxdepth: 2
 
     usage
+
+.. toctree::
+    :caption: Advanced usage
+    :maxdepth: 2
+
+    advanced_usage

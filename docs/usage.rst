@@ -219,7 +219,7 @@ Events are specified with :code:`.on_event(event_name, callback_fn)` instead of 
         btn
     ])
 
-    # The output of this example intentionally left out, because
+    # The output of this example is intentionally left out, because
     # it will not work without an active kernel.
 
 The three arguments in the callback function are:
@@ -229,9 +229,12 @@ The three arguments in the callback function are:
 * data: data for the event. For e.g. :code:`click` of :code:`Btn` this contains which modifier keys are pressed and some
   information on the position of the mouse.
 
-To find out what events are supported by a widget, the
-`Vuetify API explorer <https://vuetifyjs.com/components/api-explorer/>`_ can be used. Search for a component and on the
-left-hand side of list of attributes you will find a tab for the events.
+All `HTML events <https://www.w3schools.com/tags/ref_eventattributes.asp>`_ can be used. The ``on`` prefix must be
+omitted.
+
+Widgets can have custom events, to find out which, the `Vuetify API explorer
+<https://vuetifyjs.com/components/api-explorer/>`_ can be used. Search for a component and on the left-hand side of list
+of attributes you will find a tab for the events.
 
 In Vuetify events are defined as attributes with an :code:`@` prefix. The equivalent Vuetify syntax of the example above
 is:
@@ -362,105 +365,78 @@ In some widgets icons are specified by setting an attribute:
 
 See `materialdesignicons.com/4.5.95 <https://cdn.materialdesignicons.com/4.5.95/>`_ for a list of available icons.
 
-Advanced
---------
+Summary
+-------
 
-(Scoped) Slots
-``````````````
+Below you will find a summary of all concepts of Vuetify and how they translate to ipyvuetify to help with the
+translation from Vuetify examples to ipyvuetify.
 
-Slots are used to add content at a certain location in a widget. You can find out what slots a widget supports by using
-the Vuetify documentation. If you want to know what slots :code:`Select` has, search for :code:`v-select` on the
-`Vuetify API explorer <https://vuetifyjs.com/components/api-explorer/>`_ or for this example use the `direct link
-<https://vuetifyjs.com/en/components/selects/#api>`_. On the left-hand side of list of attributes you will find a tab
-'slots'.
+- Component names convert to CamelCase and the v- prefix is stripped
 
-An example for using the slot 'no-data', which changes what the Select widget shows when it has no items:
+  +------------+------------------------+
+  | Vuetify    | ``<v-list-tile .../>`` |
+  +------------+------------------------+
+  | ipyvuetify | ``ListTitle(...)``     |
+  +------------+------------------------+
 
-Vuetify:
+- Attributes
 
-.. code-block:: html
+  - convert to snake_case
 
-    <v-select>
-      <template v-slot:no-data>
-        <v-list-item>
-          <v-list-item-title>
-            My custom no data message
-          </v-list-item-title>
-        </v-list-item>
-      </template>
-    </v-select>
+    +------------+----------------------------+
+    | Vuetify    | ``<v-menu offset-y ...``   |
+    +------------+----------------------------+
+    | ipyvuetify | ``Menu(offset_y=True ...`` |
+    +------------+----------------------------+
 
-ipyvuetify:
+  - must have a value
 
-.. jupyter-execute::
+    +------------+------------------------+
+    | Vuetify    | ``<v-btn round ...``   |
+    +------------+------------------------+
+    | ipyvuetify | ``Btn(round=True ...`` |
+    +------------+------------------------+
 
-    v.Select(v_slots=[{
-        'name': 'no-data',
-        'children': [
-            v.ListItem(children=[
-                v.ListItemTitle(children=['My custom no data message'])])]
-    }])
+  - with naming conflicts, ``style``, ``class``, ``open`` and ``for``, are suffixed with an ``_``
 
-Scoped slots are used if the parent widget needs to share its scope with the content. In the example below the events
-of the parent widget are used in the slot content.
+    +------------+---------------------------------------+
+    | Vuetify    | ``<v-btn class="mr-3" style="..." >`` |
+    +------------+---------------------------------------+
+    | ipyvuetify | ``Btn(class_='mr-3', style_='...')``  |
+    +------------+---------------------------------------+
 
-Vuetify:
+- v-model (value in ipywidgets) contains the value directly
 
-.. code-block:: html
+  +------------+-----------------------------------------------+
+  | Vuetify    | ``<v-slider v-model="some_property" ...``     |
+  +------------+-----------------------------------------------+
+  | ipyvuetify | ``myslider = Slider(v_model=25...``           |
+  |            |                                               |
+  |            | ``jslink((myslider, 'v_model'), (..., ...))`` |
+  +------------+-----------------------------------------------+
 
-    <v-tooltip>
-        <template v-slot:activator="tooltip">
-            <v-btn v-on="tooltip.on" color="primary">
-                button with tooltip
-            </v-btn>
-        </template>
-        Insert tooltip text here
-    </v-tooltip>
+- Child components and text are defined in the children attribute
 
-ipyvuetify:
+  +------------+--------------------------------------------+
+  | Vuetify    | ``<v-btn>text <v-icon>...</icon></v-btn>`` |
+  +------------+--------------------------------------------+
+  | ipyvuetify | ``Btn(children=['text', Icon(...)])``      |
+  +------------+--------------------------------------------+
 
-.. jupyter-execute::
+- Event listeners are defined with on_event
 
-    v.Container(children=[
-        v.Tooltip(bottom=True, v_slots=[{
-            'name': 'activator',
-            'variable': 'tooltip',
-            'children': v.Btn(v_on='tooltip.on', color='primary', children=[
-                'button with tooltip'
-            ]),
-        }], children=['Insert tooltip text here'])
-    ])
+  +------------+--------------------------------------------+
+  | Vuetify    | ``<v-btn @click='someMethod()' ...``       |
+  +------------+--------------------------------------------+
+  | ipyvuetify | ``def some_method(widget, event, data):``  |
+  |            |                                            |
+  |            | ``button.on_event('click', some_method)``  |
+  +------------+--------------------------------------------+
 
-In the Vuetify examples you will actually see:
+- Regular HTML tags can made with the Html widget
 
-.. code-block:: html
-
-    ...
-    <template v-slot:activator="{ on }">
-        <v-btn v-on="on">
-    ...
-
-Instead of the functionally equivalent (like used in the example above):
-
-.. code-block:: html
-
-    ...
-    <template v-slot:activator="tooltip">
-        <v-btn v-on="tooltip.on">
-    ...
-
-The :code:`{ on }` is JavaScript syntax for destructuring an object. It takes the 'on' attribute from an object and
-exposes it as the 'on' variable.
-
-.. note::
-
-    The 'default' slot can be ignored, this is where the content defined in the :code:`children` attribute goes.
-
-Responsive Layout
-`````````````````
-
-Event modifiers
-```````````````
-
-.sync
-`````
+  +------------+-------------------------------------+
+  | Vuetify    | ``<div>...</div>``                  |
+  +------------+-------------------------------------+
+  | ipyvuetify | ``Html(tag='div', children=[...])`` |
+  +------------+-------------------------------------+
