@@ -12,6 +12,7 @@ Jupyter widgets based on [vuetify UI components](https://vuetifyjs.com/) which i
 [Material Design Spec](https://material.io/) with the [Vue.js framework](https://vuejs.org/).
 
 A small selection of widgets:
+
 ![ipyvuetify](https://user-images.githubusercontent.com/46192475/79730684-78954880-82f1-11ea-855b-43a2b619ca04.gif)
 
 Installation
