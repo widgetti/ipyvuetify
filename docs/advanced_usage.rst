@@ -165,13 +165,13 @@ We can achieve the same manually in ipyvuetify by setting an event handler
 
 Vuetify:
 
-..  code-block::
+..  code-block:: none
 
     <v-navigation-drawer :mini-variant.sync="someProperty" ...
 
 ipyvuetify:
 
-.. code-block::
+.. code-block:: none
 
     drawer = v.NavigationDrawer(mini_variant=True, ...)
 
