@@ -40,7 +40,7 @@ Documentation
 
 To get started with using ipyvuetify, check out the full documentation
 
-https://ipyleaflet.readthedocs.io/
+https://ipyvuetify.readthedocs.io/
 
 Usage
 -----
