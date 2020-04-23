@@ -365,6 +365,43 @@ In some widgets icons are specified by setting an attribute:
 
 See `materialdesignicons.com/4.5.95 <https://cdn.materialdesignicons.com/4.5.95/>`_ for a list of available icons.
 
+Themes
+------
+
+To enable the dark theme:
+
+.. code-block:: python
+
+    v.theme.dark = True
+
+To customize the themes:
+
+.. code-block:: python
+
+    v.theme.themes.light.primary = '#b71c1c'
+
+    v.theme.themes.dark.primary = '#a71c1c'
+
+
+Also, the `pre-defined material colors <https://vuetifyjs.com/en/styles/colors/#sass-color-pack>`_  are supported:
+
+.. code-block:: python
+
+    v.theme.themes.light.primary = 'colors.teal'
+
+    v.theme.themes.light.secondary = 'colors.teal.lighten4'
+
+Available theme properties:
+
+- primary
+- secondary
+- accent
+- error
+- info
+- success
+- warning
+- anchor
+
 Summary
 -------
 

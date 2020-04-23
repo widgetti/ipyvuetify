@@ -67,10 +67,13 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font'],
+        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font', 'vuetify'],
         mode: 'production',
         resolve: {
-            alias: { './VuetifyView$': path.resolve(__dirname, 'src/nodepsVuetifyView.js') },
+            alias: {
+                './VuetifyView$': path.resolve(__dirname, 'src/nodepsVuetifyView.js'),
+                './plugins/vuetify$': path.resolve(__dirname, 'src/plugins/nodepsVuetify.js')
+            },
         },
     },{
         entry: './lib/nodepsEmbed.js',
@@ -84,10 +87,13 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font'],
+        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font', 'vuetify'],
         mode: 'production',
         resolve: {
-            alias: { './VuetifyView$': path.resolve(__dirname, 'src/nodepsVuetifyView.js') },
+            alias: {
+                './VuetifyView$': path.resolve(__dirname, 'src/nodepsVuetifyView.js'),
+                './plugins/vuetify$': path.resolve(__dirname, 'src/plugins/nodepsVuetify.js')
+            },
         },
     },
     {// Embeddable jupyter-vuetify bundle
