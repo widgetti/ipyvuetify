@@ -4,6 +4,7 @@ from .VuetifyTemplate import VuetifyTemplate  # noqa: F401
 from .generated import *  # noqa: F401, F403
 from .Themes import theme  # noqa: F401
 
+
 def _jupyter_nbextension_paths():
     return [{
         'section': 'notebook',

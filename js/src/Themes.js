@@ -1,7 +1,7 @@
 /* eslint camelcase: off */
 import { WidgetModel } from '@jupyter-widgets/base';
+import colors from '@mariobuikhuizen/vuetify/lib/util/colors';
 import vuetify from './plugins/vuetify';
-import colors from '@mariobuikhuizen/vuetify/lib/util/colors'
 
 export class ThemeModel extends WidgetModel {
     defaults() {
@@ -19,14 +19,14 @@ export class ThemeModel extends WidgetModel {
 
     constructor(...args) {
         super(...args);
-        console.log('vuetify:', vuetify);
+
         if (!vuetify) {
             return;
         }
         vuetify.framework.theme.dark = this.get('dark');
         this.on('change:dark', () => {
             vuetify.framework.theme.dark = this.get('dark');
-        })
+        });
     }
 }
 
@@ -67,11 +67,11 @@ export class ThemeColorsModel extends WidgetModel {
 
         this.keys()
             .filter(prop => !prop.startsWith('_'))
-            .forEach(prop => {
+            .forEach((prop) => {
                 vuetify.framework.theme.themes[themeName][prop] = convertColor(this.get(prop));
                 this.on(`change:${prop}`, () => {
                     vuetify.framework.theme.themes[themeName][prop] = convertColor(this.get(prop));
-                })
+                });
             });
     }
 }
@@ -81,7 +81,7 @@ ThemeColorsModel.serializers = {
 };
 
 function convertColor(colorStr) {
-    if(colorStr == null) {
+    if (colorStr == null) {
         return null;
     }
 
@@ -90,7 +90,7 @@ function convertColor(colorStr) {
         let result = colors;
 
         parts.forEach(part => {
-            result = result[part]
+            result = result[part];
         });
 
         return result;
