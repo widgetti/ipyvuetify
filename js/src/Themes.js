@@ -20,6 +20,9 @@ export class ThemeModel extends WidgetModel {
     constructor(...args) {
         super(...args);
         console.log('vuetify:', vuetify);
+        if (!vuetify) {
+            return;
+        }
         vuetify.framework.theme.dark = this.get('dark');
         this.on('change:dark', () => {
             vuetify.framework.theme.dark = this.get('dark');
@@ -55,6 +58,10 @@ export class ThemeColorsModel extends WidgetModel {
 
     constructor(...args) {
         super(...args);
+
+        if (!vuetify) {
+            return;
+        }
 
         const themeName = this.get('_theme_name');
 

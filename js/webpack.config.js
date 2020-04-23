@@ -67,7 +67,7 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font', 'vuetify'],
+        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify/dist/vuetify.min.css', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font', 'vuetify'],
         mode: 'production',
         resolve: {
             alias: {
@@ -87,7 +87,7 @@ module.exports = [
         module: {
             rules: rules
         },
-        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font', 'vuetify'],
+        externals: ['@jupyter-widgets/base', 'jupyter-vue', '@mariobuikhuizen/vuetify/dist/vuetify.min.css', 'material-design-icons-iconfont', 'typeface-roboto', '@mdi/font', 'vuetify'],
         mode: 'production',
         resolve: {
             alias: {
