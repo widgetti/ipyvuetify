@@ -4,8 +4,4 @@ import '@mariobuikhuizen/vuetify/dist/vuetify.min.css';
 
 Vue.use(Vuetify);
 
-export default new Vuetify({
-    icons: {
-        iconfont: 'md',
-    },
-});
+export default new Vuetify();

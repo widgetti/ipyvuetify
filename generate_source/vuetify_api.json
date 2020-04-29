@@ -285,16 +285,16 @@
       }
     ],
     "mixins": [
-      "applicationable",
+      "v-toolbar",
       "colorable",
       "elevatable",
       "measurable",
-      "positionable",
+      "themeable",
       "scrollable",
       "ssr-bootable",
-      "themeable",
       "toggleable",
-      "v-toolbar"
+      "applicationable",
+      "positionable"
     ],
     "slots": [
       {
@@ -504,13 +504,13 @@
       }
     ],
     "mixins": [
+      "v-sheet",
       "colorable",
       "elevatable",
       "measurable",
       "themeable",
       "toggleable",
-      "transitionable",
-      "v-sheet"
+      "transitionable"
     ],
     "slots": [
       {
@@ -627,6 +627,12 @@
         "source": "v-text-field"
       },
       {
+        "name": "counterValue",
+        "type": "function",
+        "default": "null",
+        "source": "v-text-field"
+      },
+      {
         "name": "dark",
         "type": "boolean",
         "default": "false",
@@ -645,10 +651,17 @@
         "source": "v-input"
       },
       {
-        "name": "disabled",
+        "name": "disableLookup",
         "type": "boolean",
         "default": "false",
-        "source": "validatable"
+        "source": "v-select"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "eager",
@@ -690,7 +703,7 @@
         "name": "filter",
         "type": "function",
         "default": "(item: object, queryText: string, itemText: string): boolean",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "flat",
@@ -715,8 +728,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -792,7 +808,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -826,7 +841,7 @@
           "array",
           "object"
         ],
-        "default": "{\"closeOnClick\":false, \"closeOnContentClick\":false, \"openOnClick\":false, \"maxHeight\":300, \"offsetY\":true, \"offsetOverflow\":true, \"transition\":false}",
+        "default": "{ \"closeOnClick\": false, \"closeOnContentClick\": false, \"disableKeys\": true, \"openOnClick\": false, \"maxHeight\": 304 }",
         "source": "v-select"
       },
       {
@@ -901,8 +916,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "returnObject",
@@ -1000,66 +1016,167 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       },
       {
         "name": "valueComparator",
         "type": "function",
         "default": "(a: any, b: any): boolean",
-        "source": "comparable"
+        "source": "v-select"
       }
     ],
     "mixins": [
+      "v-text-field",
+      "v-input",
+      "validatable",
       "colorable",
-      "comparable",
-      "filterable",
-      "loadable",
       "registrable-inject",
       "themeable",
-      "v-input",
-      "v-text-field",
-      "validatable"
+      "intersectable",
+      "loadable",
+      "comparable",
+      "filterable"
+    ],
+    "events": [
+      {
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
+      },
+      {
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "blur",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "focus",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "change",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "input",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "keydown",
+        "source": "v-text-field",
+        "value": "KeyboardEvent"
+      },
+      {
+        "name": "update:search-input",
+        "source": "v-select",
+        "value": "string"
+      },
+      {
+        "name": "update:list-index",
+        "source": "v-select",
+        "value": "number"
+      }
     ],
     "slots": [
       {
-        "name": "append"
+        "name": "append",
+        "source": "v-input"
       },
       {
-        "name": "default"
+        "name": "default",
+        "source": "v-input"
       },
       {
-        "name": "prepend"
+        "name": "prepend",
+        "source": "v-input"
       },
       {
-        "name": "append-outer"
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
       },
       {
-        "name": "label"
+        "name": "append-outer",
+        "source": "v-text-field"
       },
       {
-        "name": "progress"
+        "name": "label",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-inner"
+        "name": "prepend-inner",
+        "source": "v-text-field"
       },
       {
-        "name": "append-item"
+        "name": "progress",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-item"
+        "name": "append-item",
+        "source": "v-select"
+      },
+      {
+        "name": "prepend-item",
+        "source": "v-select"
       },
       {
         "name": "item",
         "props": {
           "parent": "VueComponent",
           "item": "object",
-          "on": "object",
-          "attrs": "object"
-        }
+          "on": "object // Only needed when providing your own v-list-item",
+          "attrs": "object // Only needed when providing your own v-list-item"
+        },
+        "source": "v-select"
       },
       {
-        "name": "no-data"
+        "name": "no-data",
+        "source": "v-select"
       },
       {
         "name": "selection",
@@ -1070,57 +1187,8 @@
           "select": "function",
           "selected": "boolean",
           "disabled": "boolean"
-        }
-      }
-    ],
-    "events": [
-      {
-        "name": "input",
-        "value": "any"
-      },
-      {
-        "name": "change",
-        "value": "any"
-      },
-      {
-        "name": "update:search-input",
-        "value": "string"
-      },
-      {
-        "name": "update:list-index",
-        "value": "number"
-      },
-      {
-        "name": "click:prepend",
-        "value": "Event"
-      },
-      {
-        "name": "click:append",
-        "value": "Event"
-      },
-      {
-        "name": "click:clear",
-        "value": "Event"
-      },
-      {
-        "name": "click:append-outer",
-        "value": "Event"
-      },
-      {
-        "name": "click:prepend-inner",
-        "value": "Event"
-      },
-      {
-        "name": "update:error",
-        "value": "boolean"
-      },
-      {
-        "name": "blur",
-        "value": "boolean"
-      },
-      {
-        "name": "focus",
-        "value": "boolean"
+        },
+        "source": "v-select"
       }
     ]
   },
@@ -1227,6 +1295,18 @@
   "v-badge": {
     "props": [
       {
+        "name": "avatar",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-badge"
+      },
+      {
+        "name": "bordered",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-badge"
+      },
+      {
         "name": "bottom",
         "type": "boolean",
         "default": "false",
@@ -1239,16 +1319,76 @@
         "source": "colorable"
       },
       {
+        "name": "content",
+        "type": "any",
+        "default": "undefined",
+        "source": "v-badge"
+      },
+      {
+        "name": "dark",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "dot",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-badge"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "default": "undefined",
+        "source": "v-badge"
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-badge"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "default": "'$vuetify.badge'",
+        "source": "v-badge"
+      },
+      {
         "name": "left",
         "type": "boolean",
         "default": "false",
         "source": "positionable"
       },
       {
+        "name": "light",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
         "name": "mode",
         "type": "string",
         "default": "undefined",
         "source": "transitionable"
+      },
+      {
+        "name": "offsetX",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "v-badge"
+      },
+      {
+        "name": "offsetY",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": "undefined",
+        "source": "v-badge"
       },
       {
         "name": "origin",
@@ -1263,9 +1403,15 @@
         "source": "v-badge"
       },
       {
+        "name": "tile",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-badge"
+      },
+      {
         "name": "transition",
         "type": "string",
-        "default": "'fab-transition'",
+        "default": "'scale-rotate-transition'",
         "source": "transitionable"
       },
       {
@@ -1278,6 +1424,7 @@
     "mixins": [
       "colorable",
       "positionable",
+      "themeable",
       "toggleable",
       "transitionable"
     ],
@@ -1292,6 +1439,12 @@
   },
   "v-banner": {
     "props": [
+      {
+        "name": "app",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-banner"
+      },
       {
         "name": "color",
         "type": "string",
@@ -1426,12 +1579,12 @@
       }
     ],
     "mixins": [
+      "v-sheet",
       "colorable",
       "elevatable",
       "measurable",
       "themeable",
-      "toggleable",
-      "v-sheet"
+      "toggleable"
     ],
     "slots": [
       {
@@ -1618,13 +1771,13 @@
     ],
     "mixins": [
       "applicationable",
+      "positionable",
       "colorable",
       "measurable",
-      "positionable",
+      "toggleable",
       "proxyable",
       "scrollable",
-      "themeable",
-      "toggleable"
+      "themeable"
     ],
     "events": [
       {
@@ -1818,14 +1971,14 @@
     ],
     "mixins": [
       "activatable",
-      "bootable",
       "delayable",
+      "toggleable",
       "dependent",
       "detachable",
+      "bootable",
       "overlayable",
       "returnable",
       "stackable",
-      "toggleable",
       "toggleable"
     ],
     "slots": [
@@ -2315,16 +2468,16 @@
       }
     ],
     "mixins": [
+      "v-sheet",
       "colorable",
       "elevatable",
-      "groupable",
       "measurable",
-      "positionable",
-      "routable",
-      "sizeable",
       "themeable",
-      "toggleable",
-      "v-sheet"
+      "routable",
+      "positionable",
+      "sizeable",
+      "groupable",
+      "toggleable"
     ],
     "slots": [
       {
@@ -2332,6 +2485,12 @@
       },
       {
         "name": "default"
+      }
+    ],
+    "events": [
+      {
+        "name": "click",
+        "value": "Event"
       }
     ]
   },
@@ -2433,9 +2592,9 @@
     ],
     "mixins": [
       "button-group",
-      "colorable",
       "proxyable",
-      "themeable"
+      "themeable",
+      "colorable"
     ],
     "events": [
       {
@@ -2481,7 +2640,7 @@
           "string",
           "function"
         ],
-        "default": "secondary",
+        "default": "primary",
         "source": "calendar-with-events"
       },
       {
@@ -2524,8 +2683,20 @@
         "source": "calendar-with-events"
       },
       {
+        "name": "eventOverlapMode",
+        "type": [
+          "string",
+          "function"
+        ],
+        "default": "stack",
+        "source": "calendar-with-events"
+      },
+      {
         "name": "eventOverlapThreshold",
-        "type": "number",
+        "type": [
+          "string",
+          "number"
+        ],
         "default": 60,
         "source": "calendar-with-events"
       },
@@ -2595,7 +2766,7 @@
           "number",
           "string"
         ],
-        "default": 40,
+        "default": 48,
         "source": "v-calendar"
       },
       {
@@ -2611,6 +2782,15 @@
         "name": "intervalStyle",
         "type": "function",
         "default": "null",
+        "source": "v-calendar"
+      },
+      {
+        "name": "intervalWidth",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 60,
         "source": "v-calendar"
       },
       {
@@ -2682,7 +2862,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-10-28'",
+        "default": "'2020-04-29'",
         "source": "calendar-base"
       },
       {
@@ -2705,7 +2885,10 @@
       },
       {
         "name": "weekdays",
-        "type": "array",
+        "type": [
+          "array",
+          "string"
+        ],
         "default": [
           0,
           1,
@@ -2727,8 +2910,71 @@
     ],
     "slots": [
       {
+        "name": "event",
+        "props": {
+          "event": "any",
+          "day": {
+            "outside": "boolean",
+            "index": "number",
+            "week": [
+              {
+                "date": "string",
+                "time": "string",
+                "year": "number",
+                "month": "number",
+                "day": "number",
+                "hour": "number",
+                "minute": "number",
+                "weekday": "number",
+                "hasDay": "boolean",
+                "hasTime": "boolean",
+                "past": "boolean",
+                "present": "boolean",
+                "future": "boolean"
+              }
+            ],
+            "date": "string",
+            "time": "string",
+            "year": "number",
+            "month": "number",
+            "day": "number",
+            "hour": "number",
+            "minute": "number",
+            "weekday": "number",
+            "hasDay": "boolean",
+            "hasTime": "boolean",
+            "past": "boolean",
+            "present": "boolean",
+            "future": "boolean"
+          },
+          "outside": "boolean",
+          "start": "boolean",
+          "end": "boolean",
+          "timed": "boolean"
+        }
+      },
+      {
         "name": "day",
         "props": {
+          "outside": "boolean",
+          "index": "number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ],
           "date": "string",
           "time": "string",
           "year": "number",
@@ -2760,7 +3006,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -2778,11 +3042,48 @@
           "hasTime": "boolean",
           "past": "boolean",
           "present": "boolean",
-          "future": "boolean"
+          "future": "boolean",
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
         "name": "day-label",
+        "props": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
+        }
+      },
+      {
+        "name": "day-label-header",
         "props": {
           "date": "string",
           "time": "string",
@@ -2833,7 +3134,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       }
     ],
@@ -2869,6 +3188,10 @@
       {
         "name": "scrollToTime",
         "signature": "(time: number | string | { hour: number, minute: number }): boolean"
+      },
+      {
+        "name": "getVisibleEvents",
+        "signature": "(): CalendarEventParsed[]"
       }
     ],
     "events": [
@@ -2959,7 +3282,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -2978,7 +3319,43 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
+        }
+      },
+      {
+        "name": "click:more",
+        "value": {
+          "date": "string",
+          "time": "string",
+          "year": "number",
+          "month": "number",
+          "day": "number",
+          "hour": "number",
+          "minute": "number",
+          "weekday": "number",
+          "hasDay": "boolean",
+          "hasTime": "boolean",
+          "past": "boolean",
+          "present": "boolean",
+          "future": "boolean"
         }
       },
       {
@@ -2997,7 +3374,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3016,7 +3411,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3035,7 +3448,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3054,7 +3485,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3073,7 +3522,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3092,7 +3559,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3111,7 +3596,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3130,7 +3633,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3149,7 +3670,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3168,7 +3707,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3187,7 +3744,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3206,7 +3781,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3225,7 +3818,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3244,7 +3855,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3263,7 +3892,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3282,7 +3929,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3301,7 +3966,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3320,7 +4003,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3339,7 +4040,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3358,7 +4077,25 @@
           "past": "boolean",
           "present": "boolean",
           "future": "boolean",
-          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number"
+          "timeToY": "(time: string | number | {hour: number, minute: number}, clamp: boolean = false): number",
+          "minutesToPixels": "(minutes: number): number",
+          "week": [
+            {
+              "date": "string",
+              "time": "string",
+              "year": "number",
+              "month": "number",
+              "day": "number",
+              "hour": "number",
+              "minute": "number",
+              "weekday": "number",
+              "hasDay": "boolean",
+              "hasTime": "boolean",
+              "past": "boolean",
+              "present": "boolean",
+              "future": "boolean"
+            }
+          ]
         }
       },
       {
@@ -3605,7 +4342,7 @@
           "number",
           "string"
         ],
-        "default": 40,
+        "default": 48,
         "source": "calendar-with-intervals"
       },
       {
@@ -3621,6 +4358,15 @@
         "name": "intervalStyle",
         "type": "function",
         "default": "null",
+        "source": "calendar-with-intervals"
+      },
+      {
+        "name": "intervalWidth",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 60,
         "source": "calendar-with-intervals"
       },
       {
@@ -3668,7 +4414,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-10-28'",
+        "default": "'2020-04-29'",
         "source": "calendar-base"
       },
       {
@@ -3679,7 +4425,10 @@
       },
       {
         "name": "weekdays",
-        "type": "array",
+        "type": [
+          "array",
+          "string"
+        ],
         "default": [
           0,
           1,
@@ -3783,7 +4532,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-10-28'",
+        "default": "'2020-04-29'",
         "source": "calendar-base"
       },
       {
@@ -3794,7 +4543,10 @@
       },
       {
         "name": "weekdays",
-        "type": "array",
+        "type": [
+          "array",
+          "string"
+        ],
         "default": [
           0,
           1,
@@ -3898,7 +4650,7 @@
       {
         "name": "start",
         "type": "string",
-        "default": "'2019-10-28'",
+        "default": "'2020-04-29'",
         "source": "calendar-base"
       },
       {
@@ -3909,7 +4661,10 @@
       },
       {
         "name": "weekdays",
-        "type": "array",
+        "type": [
+          "array",
+          "string"
+        ],
         "default": [
           0,
           1,
@@ -4162,13 +4917,13 @@
       }
     ],
     "mixins": [
+      "loadable",
+      "routable",
+      "v-sheet",
       "colorable",
       "elevatable",
-      "loadable",
       "measurable",
-      "routable",
-      "themeable",
-      "v-sheet"
+      "themeable"
     ],
     "events": [
       {
@@ -4196,7 +4951,12 @@
   },
   "v-card-subtitle": {
     "props": [],
-    "mixins": []
+    "mixins": [],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ]
   },
   "v-card-text": {
     "props": [],
@@ -4390,7 +5150,7 @@
     ],
     "events": [
       {
-        "name": "input",
+        "name": "change",
         "value": "number"
       }
     ],
@@ -4521,10 +5281,10 @@
       }
     ],
     "mixins": [
+      "v-window-item",
       "bootable",
       "groupable",
-      "routable",
-      "v-window-item"
+      "routable"
     ],
     "slots": [
       {
@@ -4567,8 +5327,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -4611,8 +5372,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -4648,7 +5412,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -4705,8 +5468,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "ripple",
@@ -4753,8 +5517,7 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       },
       {
         "name": "valueComparator",
@@ -4764,34 +5527,73 @@
       }
     ],
     "mixins": [
-      "colorable",
-      "comparable",
-      "registrable-inject",
-      "rippleable",
-      "themeable",
       "v-input",
-      "validatable"
-    ],
-    "slots": [
-      {
-        "name": "append"
-      },
-      {
-        "name": "default"
-      },
-      {
-        "name": "prepend"
-      },
-      "label"
+      "validatable",
+      "colorable",
+      "registrable-inject",
+      "themeable",
+      "rippleable",
+      "comparable"
     ],
     "events": [
       {
-        "name": "change",
-        "value": "any"
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
+      },
+      {
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
       },
       {
         "name": "update:indeterminate",
         "value": "boolean"
+      }
+    ],
+    "slots": [
+      {
+        "name": "append",
+        "source": "v-input"
+      },
+      {
+        "name": "default",
+        "source": "v-input"
+      },
+      {
+        "name": "prepend",
+        "source": "v-input"
+      },
+      {
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
+      },
+      {
+        "name": "label"
       }
     ]
   },
@@ -4858,7 +5660,13 @@
         "source": "v-simple-checkbox"
       }
     ],
-    "mixins": []
+    "mixins": [],
+    "events": [
+      {
+        "name": "input",
+        "value": "Event"
+      }
+    ]
   },
   "v-chip": {
     "props": [
@@ -5066,10 +5874,10 @@
     ],
     "mixins": [
       "colorable",
-      "groupable",
-      "routable",
       "sizeable",
+      "routable",
       "themeable",
+      "groupable",
       "toggleable"
     ],
     "events": [
@@ -5190,11 +5998,17 @@
       }
     ],
     "mixins": [
-      "base-item-group",
       "base-slide-group",
-      "colorable",
+      "base-item-group",
       "proxyable",
-      "themeable"
+      "themeable",
+      "colorable"
+    ],
+    "events": [
+      {
+        "name": "change",
+        "value": "any[] | any"
+      }
     ],
     "slots": [
       {
@@ -5797,6 +6611,12 @@
         "source": "v-text-field"
       },
       {
+        "name": "counterValue",
+        "type": "function",
+        "default": "null",
+        "source": "v-text-field"
+      },
+      {
         "name": "dark",
         "type": "boolean",
         "default": "false",
@@ -5821,10 +6641,17 @@
         "source": "v-input"
       },
       {
-        "name": "disabled",
+        "name": "disableLookup",
         "type": "boolean",
         "default": "false",
-        "source": "validatable"
+        "source": "v-select"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "eager",
@@ -5866,7 +6693,7 @@
         "name": "filter",
         "type": "function",
         "default": "(item: object, queryText: string, itemText: string): boolean",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "flat",
@@ -5891,8 +6718,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -5968,7 +6798,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -6002,7 +6831,7 @@
           "array",
           "object"
         ],
-        "default": "{\"closeOnClick\":false, \"closeOnContentClick\":false, \"openOnClick\":false, \"maxHeight\":300, \"offsetY\":true, \"offsetOverflow\":true, \"transition\":false}",
+        "default": "{ \"closeOnClick\": false, \"closeOnContentClick\": false, \"disableKeys\": true, \"openOnClick\": false, \"maxHeight\": 304 }",
         "source": "v-select"
       },
       {
@@ -6077,8 +6906,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "returnObject",
@@ -6176,66 +7006,167 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       },
       {
         "name": "valueComparator",
         "type": "function",
         "default": "(a: any, b: any): boolean",
-        "source": "comparable"
+        "source": "v-select"
       }
     ],
     "mixins": [
+      "v-text-field",
+      "v-input",
+      "validatable",
       "colorable",
-      "comparable",
-      "filterable",
-      "loadable",
       "registrable-inject",
       "themeable",
-      "v-input",
-      "v-text-field",
-      "validatable"
+      "intersectable",
+      "loadable",
+      "comparable",
+      "filterable"
+    ],
+    "events": [
+      {
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
+      },
+      {
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "blur",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "focus",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "change",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "input",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "keydown",
+        "source": "v-text-field",
+        "value": "KeyboardEvent"
+      },
+      {
+        "name": "update:search-input",
+        "source": "v-select",
+        "value": "string"
+      },
+      {
+        "name": "update:list-index",
+        "source": "v-select",
+        "value": "number"
+      }
     ],
     "slots": [
       {
-        "name": "append"
+        "name": "append",
+        "source": "v-input"
       },
       {
-        "name": "default"
+        "name": "default",
+        "source": "v-input"
       },
       {
-        "name": "prepend"
+        "name": "prepend",
+        "source": "v-input"
       },
       {
-        "name": "append-outer"
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
       },
       {
-        "name": "label"
+        "name": "append-outer",
+        "source": "v-text-field"
       },
       {
-        "name": "progress"
+        "name": "label",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-inner"
+        "name": "prepend-inner",
+        "source": "v-text-field"
       },
       {
-        "name": "append-item"
+        "name": "progress",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-item"
+        "name": "append-item",
+        "source": "v-select"
+      },
+      {
+        "name": "prepend-item",
+        "source": "v-select"
       },
       {
         "name": "item",
         "props": {
           "parent": "VueComponent",
           "item": "object",
-          "on": "object",
-          "attrs": "object"
-        }
+          "on": "object // Only needed when providing your own v-list-item",
+          "attrs": "object // Only needed when providing your own v-list-item"
+        },
+        "source": "v-select"
       },
       {
-        "name": "no-data"
+        "name": "no-data",
+        "source": "v-select"
       },
       {
         "name": "selection",
@@ -6246,57 +7177,8 @@
           "select": "function",
           "selected": "boolean",
           "disabled": "boolean"
-        }
-      }
-    ],
-    "events": [
-      {
-        "name": "input",
-        "value": "any"
-      },
-      {
-        "name": "change",
-        "value": "any"
-      },
-      {
-        "name": "update:search-input",
-        "value": "string"
-      },
-      {
-        "name": "update:list-index",
-        "value": "number"
-      },
-      {
-        "name": "click:prepend",
-        "value": "Event"
-      },
-      {
-        "name": "click:append",
-        "value": "Event"
-      },
-      {
-        "name": "click:clear",
-        "value": "Event"
-      },
-      {
-        "name": "click:append-outer",
-        "value": "Event"
-      },
-      {
-        "name": "click:prepend-inner",
-        "value": "Event"
-      },
-      {
-        "name": "update:error",
-        "value": "boolean"
-      },
-      {
-        "name": "blur",
-        "value": "boolean"
-      },
-      {
-        "name": "focus",
-        "value": "boolean"
+        },
+        "source": "v-select"
       }
     ]
   },
@@ -6343,6 +7225,12 @@
         "name": "customFilter",
         "type": "function",
         "default": "(items: any[], search: string) => any[]",
+        "source": "v-data"
+      },
+      {
+        "name": "customGroup",
+        "type": "function",
+        "default": "(items: any[], groupBy: string[], groupDesc: boolean[]) => Record<string, any[]>",
         "source": "v-data"
       },
       {
@@ -6423,9 +7311,19 @@
       },
       {
         "name": "options",
-        "type": "object",
+        "type": "DataOptions",
         "default": {},
-        "source": "v-data"
+        "source": "v-data",
+        "example": {
+          "page": "number",
+          "itemsPerPage": "number",
+          "sortBy": "string[]",
+          "sortDesc": "boolean[]",
+          "groupBy": "string[]",
+          "groupDesc": "boolean[]",
+          "multiSort": "boolean",
+          "mustSort": "boolean"
+        }
       },
       {
         "name": "page",
@@ -6583,6 +7481,12 @@
         "source": "v-data"
       },
       {
+        "name": "customGroup",
+        "type": "function",
+        "default": "(items: any[], groupBy: string[], groupDesc: boolean[]) => Record<string, any[]>",
+        "source": "v-data"
+      },
+      {
         "name": "customSort",
         "type": "function",
         "default": "(items: any[], sortBy: string[], sortDesc: boolean[], locale: string, customSorters?: Record<string, compareFn>) => any[]",
@@ -6694,6 +7598,15 @@
         "source": "v-data"
       },
       {
+        "name": "mobileBreakpoint",
+        "type": [
+          "number",
+          "string"
+        ],
+        "default": 600,
+        "source": "v-data-iterator"
+      },
+      {
         "name": "multiSort",
         "type": "boolean",
         "default": "false",
@@ -6719,9 +7632,19 @@
       },
       {
         "name": "options",
-        "type": "object",
+        "type": "DataOptions",
         "default": {},
-        "source": "v-data"
+        "source": "v-data",
+        "example": {
+          "page": "number",
+          "itemsPerPage": "number",
+          "sortBy": "string[]",
+          "sortDesc": "boolean[]",
+          "groupBy": "string[]",
+          "groupDesc": "boolean[]",
+          "multiSort": "boolean",
+          "mustSort": "boolean"
+        }
       },
       {
         "name": "page",
@@ -6734,6 +7657,12 @@
         "type": "string",
         "default": "undefined",
         "source": "v-data"
+      },
+      {
+        "name": "selectableKey",
+        "type": "string",
+        "default": "'isSelectable'",
+        "source": "v-data-iterator"
       },
       {
         "name": "serverItemsLength",
@@ -7004,7 +7933,7 @@
       {
         "name": "toggle-select-all",
         "source": "v-data-iterator",
-        "value": "{ value: boolean }"
+        "value": "{ items: any[], value: boolean }"
       }
     ]
   },
@@ -7169,6 +8098,12 @@
         "source": "v-data"
       },
       {
+        "name": "customGroup",
+        "type": "function",
+        "default": "(items: any[], groupBy: string[], groupDesc: boolean[]) => Record<string, any[]>",
+        "source": "v-data"
+      },
+      {
         "name": "customSort",
         "type": "function",
         "default": "(items: any[], sortBy: string[], sortDesc: boolean[], locale: string, customSorters?: Record<string, compareFn>) => any[]",
@@ -7255,7 +8190,7 @@
       {
         "name": "headers",
         "type": "TableHeader[]",
-        "default": "undefined",
+        "default": [],
         "source": "v-data-table",
         "example": {
           "text": "string",
@@ -7344,9 +8279,12 @@
       },
       {
         "name": "mobileBreakpoint",
-        "type": "number",
+        "type": [
+          "number",
+          "string"
+        ],
         "default": 600,
-        "source": "v-data-table"
+        "source": "v-data-iterator"
       },
       {
         "name": "multiSort",
@@ -7374,9 +8312,19 @@
       },
       {
         "name": "options",
-        "type": "object",
+        "type": "DataOptions",
         "default": {},
-        "source": "v-data"
+        "source": "v-data",
+        "example": {
+          "page": "number",
+          "itemsPerPage": "number",
+          "sortBy": "string[]",
+          "sortDesc": "boolean[]",
+          "groupBy": "string[]",
+          "groupDesc": "boolean[]",
+          "multiSort": "boolean",
+          "mustSort": "boolean"
+        }
       },
       {
         "name": "page",
@@ -7389,6 +8337,12 @@
         "type": "string",
         "default": "undefined",
         "source": "v-data"
+      },
+      {
+        "name": "selectableKey",
+        "type": "string",
+        "default": "'isSelectable'",
+        "source": "v-data-iterator"
       },
       {
         "name": "serverItemsLength",
@@ -7480,7 +8434,11 @@
           "sort": "(value: string) => void",
           "group": "(value: string) => void",
           "headers": "TableHeader[]",
-          "isMobile": "boolean"
+          "isMobile": "boolean",
+          "isSelected": "(item: any) => boolean",
+          "select": "(item: any, value: boolean) => void",
+          "isExpanded": "(item: any) => boolean",
+          "expand": "(item: any, value: boolean) => void"
         }
       },
       {
@@ -7510,7 +8468,11 @@
           "sort": "(value: string) => void",
           "group": "(value: string) => void",
           "headers": "TableHeader[]",
-          "isMobile": "boolean"
+          "isMobile": "boolean",
+          "isSelected": "(item: any) => boolean",
+          "select": "(item: any, value: boolean) => void",
+          "isExpanded": "(item: any) => boolean",
+          "expand": "(item: any, value: boolean) => void"
         }
       },
       {
@@ -7540,35 +8502,40 @@
           "sort": "(value: string) => void",
           "group": "(value: string) => void",
           "headers": "TableHeader[]",
-          "isMobile": "boolean"
+          "isMobile": "boolean",
+          "isSelected": "(item: any) => boolean",
+          "select": "(item: any, value: boolean) => void",
+          "isExpanded": "(item: any) => boolean",
+          "expand": "(item: any, value: boolean) => void"
         }
       },
       {
         "name": "footer",
         "props": {
-          "items": "any[]",
-          "pagination": {
-            "page": "number",
-            "itemsPerPage": "number",
-            "pageStart": "number",
-            "pageStop": "number",
-            "pageCount": "number",
-            "itemsLength": "number"
+          "props": {
+            "options": {
+              "page": "number",
+              "itemsPerPage": "number",
+              "sortBy": "string[]",
+              "sortDesc": "boolean[]",
+              "groupBy": "string[]",
+              "groupDesc": "boolean[]",
+              "multiSort": "boolean",
+              "mustSort": "boolean"
+            },
+            "pagination": {
+              "page": "number",
+              "itemsPerPage": "number",
+              "pageStart": "number",
+              "pageStop": "number",
+              "pageCount": "number",
+              "itemsLength": "number"
+            },
+            "itemsPerPageText": "string"
           },
-          "options": {
-            "page": "number",
-            "itemsPerPage": "number",
-            "sortBy": "string[]",
-            "sortDesc": "boolean[]",
-            "groupBy": "string[]",
-            "groupDesc": "boolean[]",
-            "multiSort": "boolean",
-            "mustSort": "boolean"
-          },
-          "groupedItems": "Record<string, any[]>",
-          "updateOptions": "(obj: any) => void",
-          "sort": "(value: string) => void",
-          "group": "(value: string) => void"
+          "on": "{}",
+          "headers": "TableHeader[]",
+          "widths": "[]"
         }
       },
       {
@@ -7683,15 +8650,7 @@
       {
         "name": "group",
         "props": {
-          "items": "any[]",
-          "pagination": {
-            "page": "number",
-            "itemsPerPage": "number",
-            "pageStart": "number",
-            "pageStop": "number",
-            "pageCount": "number",
-            "itemsLength": "number"
-          },
+          "group": "string",
           "options": {
             "page": "number",
             "itemsPerPage": "number",
@@ -7702,19 +8661,18 @@
             "multiSort": "boolean",
             "mustSort": "boolean"
           },
-          "groupedItems": "Record<string, any[]>",
-          "updateOptions": "(obj: any) => void",
-          "sort": "(value: string) => void",
-          "group": "(value: string) => void"
+          "items": "any[]",
+          "headers": "TableHeader[]"
         }
       },
       {
         "name": "group.header",
         "props": {
-          "group": "(value: string) => void",
-          "groupedBy": "string[]",
+          "group": "string",
+          "groupBy": "string[]",
           "items": "any[]",
           "headers": "TableHeader[]",
+          "isOpen": "boolean",
           "toggle": "() => void",
           "remove": "() => void"
         }
@@ -7722,29 +8680,12 @@
       {
         "name": "group.summary",
         "props": {
+          "group": "string",
+          "groupBy": "string[]",
           "items": "any[]",
-          "pagination": {
-            "page": "number",
-            "itemsPerPage": "number",
-            "pageStart": "number",
-            "pageStop": "number",
-            "pageCount": "number",
-            "itemsLength": "number"
-          },
-          "options": {
-            "page": "number",
-            "itemsPerPage": "number",
-            "sortBy": "string[]",
-            "sortDesc": "boolean[]",
-            "groupBy": "string[]",
-            "groupDesc": "boolean[]",
-            "multiSort": "boolean",
-            "mustSort": "boolean"
-          },
-          "groupedItems": "Record<string, any[]>",
-          "updateOptions": "(obj: any) => void",
-          "sort": "(value: string) => void",
-          "group": "(value: string) => void"
+          "headers": "TableHeader[]",
+          "isOpen": "boolean",
+          "toggle": "() => void"
         }
       },
       {
@@ -7813,7 +8754,7 @@
       {
         "name": "click:row",
         "source": "v-data-table",
-        "value": "any"
+        "value": "any, { select: (value: boolean) => void, isSelected: boolean, expand: (value: boolean) => void, isExpanded: boolean }"
       },
       {
         "name": "current-items",
@@ -7914,7 +8855,7 @@
       {
         "name": "toggle-select-all",
         "source": "v-data-iterator",
-        "value": "{ value: boolean }"
+        "value": "{ items: any[], value: boolean }"
       }
     ]
   },
@@ -8127,8 +9068,8 @@
       }
     ],
     "mixins": [
-      "themeable",
-      "v-simple-table"
+      "v-simple-table",
+      "themeable"
     ]
   },
   "v-date-picker": {
@@ -8228,6 +9169,15 @@
         "type": "string",
         "default": "undefined",
         "source": "localable"
+      },
+      {
+        "name": "localeFirstDayOfYear",
+        "type": [
+          "string",
+          "number"
+        ],
+        "default": 0,
+        "source": "v-date-picker"
       },
       {
         "name": "max",
@@ -8372,9 +9322,9 @@
       }
     ],
     "mixins": [
-      "colorable",
       "localable",
       "picker",
+      "colorable",
       "themeable"
     ],
     "events": [
@@ -8405,6 +9355,11 @@
       {
         "name": "dblclick:month",
         "value": "string"
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
       }
     ]
   },
@@ -8632,6 +9587,15 @@
         "source": "localable"
       },
       {
+        "name": "localeFirstDayOfYear",
+        "type": [
+          "string",
+          "number"
+        ],
+        "default": 0,
+        "source": "v-date-picker-date-table"
+      },
+      {
         "name": "max",
         "type": "string",
         "default": "undefined",
@@ -8690,9 +9654,9 @@
       }
     ],
     "mixins": [
+      "themeable",
       "colorable",
       "localable",
-      "themeable",
       "themeable"
     ]
   },
@@ -8814,9 +9778,9 @@
       }
     ],
     "mixins": [
+      "themeable",
       "colorable",
       "localable",
-      "themeable",
       "themeable"
     ]
   },
@@ -9052,14 +10016,14 @@
     ],
     "mixins": [
       "activatable",
-      "bootable",
       "delayable",
+      "toggleable",
       "dependent",
       "detachable",
+      "bootable",
       "overlayable",
       "returnable",
       "stackable",
-      "toggleable",
       "toggleable"
     ],
     "slots": [
@@ -9077,7 +10041,11 @@
     "events": [
       {
         "name": "click:outside",
-        "value": "void"
+        "value": "MouseEvent"
+      },
+      {
+        "name": "input",
+        "value": "Boolean"
       },
       {
         "name": "keydown",
@@ -9141,7 +10109,19 @@
         "source": "v-expansion-panels"
       },
       {
+        "name": "flat",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-expansion-panels"
+      },
+      {
         "name": "focusable",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-expansion-panels"
+      },
+      {
+        "name": "hover",
         "type": "boolean",
         "default": "false",
         "source": "v-expansion-panels"
@@ -9187,6 +10167,12 @@
       },
       {
         "name": "readonly",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-expansion-panels"
+      },
+      {
+        "name": "tile",
         "type": "boolean",
         "default": "false",
         "source": "v-expansion-panels"
@@ -9246,6 +10232,12 @@
   "v-expansion-panel-header": {
     "props": [
       {
+        "name": "color",
+        "type": "string",
+        "default": "undefined",
+        "source": "colorable"
+      },
+      {
         "name": "disableIconRotate",
         "type": "boolean",
         "default": "false",
@@ -9274,6 +10266,7 @@
       }
     ],
     "mixins": [
+      "colorable",
       "registrable-inject"
     ],
     "slots": [
@@ -9297,6 +10290,12 @@
   "v-expansion-panel-content": {
     "props": [
       {
+        "name": "color",
+        "type": "string",
+        "default": "undefined",
+        "source": "colorable"
+      },
+      {
         "name": "eager",
         "type": "boolean",
         "default": "false",
@@ -9305,6 +10304,7 @@
     ],
     "mixins": [
       "bootable",
+      "colorable",
       "registrable-inject"
     ],
     "slots": [
@@ -9386,6 +10386,12 @@
         "source": "v-file-input"
       },
       {
+        "name": "counterValue",
+        "type": "function",
+        "default": "null",
+        "source": "v-text-field"
+      },
+      {
         "name": "dark",
         "type": "boolean",
         "default": "false",
@@ -9400,8 +10406,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -9456,8 +10463,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -9475,7 +10485,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -9515,7 +10524,7 @@
         "name": "multiple",
         "type": "boolean",
         "default": "false",
-        "source": null
+        "source": "v-file-input"
       },
       {
         "name": "outlined",
@@ -9556,8 +10565,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "reverse",
@@ -9661,19 +10671,127 @@
       {
         "name": "value",
         "type": "any",
-        "default": [],
-        "source": "validatable"
+        "source": "v-input"
       }
     ],
     "mixins": [
+      "v-input",
+      "validatable",
       "colorable",
-      "loadable",
       "registrable-inject",
       "themeable",
-      "v-input",
-      "validatable"
+      "intersectable",
+      "loadable"
+    ],
+    "events": [
+      {
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
+      },
+      {
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "blur",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "focus",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "change",
+        "source": "v-text-field",
+        "value": "File[]"
+      },
+      {
+        "name": "input",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "keydown",
+        "source": "v-text-field",
+        "value": "KeyboardEvent"
+      }
     ],
     "slots": [
+      {
+        "name": "append",
+        "source": "v-input"
+      },
+      {
+        "name": "default",
+        "source": "v-input"
+      },
+      {
+        "name": "prepend",
+        "source": "v-input"
+      },
+      {
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
+      },
+      {
+        "name": "append-outer",
+        "source": "v-text-field"
+      },
+      {
+        "name": "label",
+        "source": "v-text-field"
+      },
+      {
+        "name": "prepend-inner",
+        "source": "v-text-field"
+      },
+      {
+        "name": "progress",
+        "source": "v-text-field"
+      },
       {
         "name": "selection",
         "props": {
@@ -9681,13 +10799,8 @@
           "index": "number",
           "multiple": "boolean",
           "text": "string"
-        }
-      }
-    ],
-    "events": [
-      {
-        "name": "change",
-        "value": "File[]"
+        },
+        "source": "v-file-input"
       }
     ]
   },
@@ -9818,14 +10931,14 @@
       }
     ],
     "mixins": [
-      "applicationable",
+      "v-sheet",
       "colorable",
       "elevatable",
       "measurable",
-      "positionable",
-      "ssr-bootable",
       "themeable",
-      "v-sheet"
+      "applicationable",
+      "positionable",
+      "ssr-bootable"
     ],
     "slots": [
       {
@@ -9925,12 +11038,6 @@
           "number"
         ],
         "default": false,
-        "source": "v-col"
-      },
-      {
-        "name": "justifySelf",
-        "type": "string",
-        "default": "undefined",
         "source": "v-col"
       },
       {
@@ -10202,57 +11309,57 @@
     "props": [
       {
         "name": "alignBaseline",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "alignCenter",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "alignContentCenter",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "alignContentEnd",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "alignContentSpaceAround",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "alignContentSpaceBetween",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "alignContentStart",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "alignEnd",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "alignStart",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "column",
@@ -10262,15 +11369,15 @@
       },
       {
         "name": "d-{type}",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "fillHeight",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "id",
@@ -10280,33 +11387,33 @@
       },
       {
         "name": "justifyCenter",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "justifyEnd",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "justifySpaceAround",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "justifySpaceBetween",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "justifyStart",
-        "type": "Boolean",
         "default": "false",
-        "source": null
+        "source": null,
+        "type": "Boolean"
       },
       {
         "name": "reverse",
@@ -10752,8 +11859,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -10790,8 +11898,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -10809,7 +11920,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -10848,8 +11958,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "rules",
@@ -10881,49 +11992,67 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       }
     ],
     "mixins": [
+      "validatable",
       "colorable",
       "registrable-inject",
-      "themeable",
-      "validatable"
+      "themeable"
     ],
     "events": [
       {
-        "name": "click:prepend",
-        "value": "Event"
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
       },
       {
-        "name": "click:append",
-        "value": "Event"
-      },
-      {
-        "name": "click",
-        "value": "MouseEvent"
+        "name": "change",
+        "value": "any"
       },
       {
         "name": "mousedown",
+        "source": "v-input",
         "value": "MouseEvent"
       },
       {
         "name": "mouseup",
+        "source": "v-input",
         "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
       }
     ],
     "slots": [
       {
-        "name": "append"
+        "name": "append",
+        "source": "v-input"
       },
       {
-        "name": "default"
+        "name": "default",
+        "source": "v-input"
       },
       {
-        "name": "prepend"
+        "name": "prepend",
+        "source": "v-input"
       },
-      "label"
+      {
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
+      }
     ]
   },
   "v-item": {
@@ -10951,7 +12080,11 @@
     ],
     "slots": [
       {
-        "name": "default"
+        "name": "default",
+        "props": {
+          "active": "boolean",
+          "toggle": "Function"
+        }
       }
     ]
   },
@@ -11006,6 +12139,12 @@
     "mixins": [
       "proxyable",
       "themeable"
+    ],
+    "events": [
+      {
+        "name": "change",
+        "value": "any[] | any"
+      }
     ]
   },
   "v-label": {
@@ -11096,6 +12235,12 @@
         "name": "options",
         "type": "object",
         "default": {},
+        "source": "VLazy"
+      },
+      {
+        "name": "tag",
+        "type": "string",
+        "default": "'div'",
         "source": "VLazy"
       },
       {
@@ -11573,9 +12718,9 @@
     ],
     "mixins": [
       "colorable",
-      "groupable",
       "routable",
       "themeable",
+      "groupable",
       "toggleable"
     ],
     "slots": [
@@ -11784,9 +12929,15 @@
     ],
     "mixins": [
       "base-item-group",
-      "colorable",
       "proxyable",
-      "themeable"
+      "themeable",
+      "colorable"
+    ],
+    "events": [
+      {
+        "name": "change",
+        "value": "any[] | any"
+      }
     ],
     "slots": [
       {
@@ -12080,19 +13231,19 @@
       }
     ],
     "mixins": [
-      "delayable",
       "dependent",
       "delayable",
-      "bootable",
-      "activatable",
       "detachable",
+      "bootable",
       "menuable",
-      "positionable",
-      "returnable",
       "stackable",
-      "themeable",
+      "positionable",
+      "activatable",
+      "delayable",
       "toggleable",
-      "toggleable"
+      "returnable",
+      "toggleable",
+      "themeable"
     ],
     "slots": [
       {
@@ -12241,7 +13392,7 @@
           "number",
           "string"
         ],
-        "default": 80,
+        "default": 56,
         "source": "v-navigation-drawer"
       },
       {
@@ -12331,10 +13482,10 @@
     ],
     "mixins": [
       "applicationable",
+      "positionable",
       "colorable",
       "dependent",
       "overlayable",
-      "positionable",
       "ssr-bootable",
       "themeable"
     ],
@@ -12456,6 +13607,12 @@
         "source": "v-text-field"
       },
       {
+        "name": "counterValue",
+        "type": "function",
+        "default": "null",
+        "source": "v-text-field"
+      },
+      {
         "name": "dark",
         "type": "boolean",
         "default": "false",
@@ -12474,10 +13631,17 @@
         "source": "v-input"
       },
       {
-        "name": "disabled",
+        "name": "disableLookup",
         "type": "boolean",
         "default": "false",
-        "source": "validatable"
+        "source": "v-select"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "eager",
@@ -12525,7 +13689,7 @@
         "name": "filter",
         "type": "function",
         "default": "(item: object, queryText: string, itemText: string): boolean",
-        "source": "v-autocomplete"
+        "source": "v-select"
       },
       {
         "name": "flat",
@@ -12550,8 +13714,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -12627,7 +13794,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -12661,7 +13827,7 @@
           "array",
           "object"
         ],
-        "default": "{\"closeOnClick\":false, \"closeOnContentClick\":false, \"openOnClick\":false, \"maxHeight\":300, \"offsetY\":true, \"offsetOverflow\":true, \"transition\":false}",
+        "default": "{ \"closeOnClick\": false, \"closeOnContentClick\": false, \"disableKeys\": true, \"openOnClick\": false, \"maxHeight\": 304 }",
         "source": "v-select"
       },
       {
@@ -12736,8 +13902,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "returnObject",
@@ -12841,66 +14008,167 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       },
       {
         "name": "valueComparator",
         "type": "function",
         "default": "(a: any, b: any): boolean",
-        "source": "comparable"
+        "source": "v-select"
       }
     ],
     "mixins": [
+      "v-text-field",
+      "v-input",
+      "validatable",
       "colorable",
-      "comparable",
-      "filterable",
-      "loadable",
       "registrable-inject",
       "themeable",
-      "v-input",
-      "v-text-field",
-      "validatable"
+      "intersectable",
+      "loadable",
+      "comparable",
+      "filterable"
+    ],
+    "events": [
+      {
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
+      },
+      {
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "blur",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "focus",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "change",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "input",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "keydown",
+        "source": "v-text-field",
+        "value": "KeyboardEvent"
+      },
+      {
+        "name": "update:search-input",
+        "source": "v-select",
+        "value": "string"
+      },
+      {
+        "name": "update:list-index",
+        "source": "v-select",
+        "value": "number"
+      }
     ],
     "slots": [
       {
-        "name": "append"
+        "name": "append",
+        "source": "v-input"
       },
       {
-        "name": "default"
+        "name": "default",
+        "source": "v-input"
       },
       {
-        "name": "prepend"
+        "name": "prepend",
+        "source": "v-input"
       },
       {
-        "name": "append-outer"
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
       },
       {
-        "name": "label"
+        "name": "append-outer",
+        "source": "v-text-field"
       },
       {
-        "name": "progress"
+        "name": "label",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-inner"
+        "name": "prepend-inner",
+        "source": "v-text-field"
       },
       {
-        "name": "append-item"
+        "name": "progress",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-item"
+        "name": "append-item",
+        "source": "v-select"
+      },
+      {
+        "name": "prepend-item",
+        "source": "v-select"
       },
       {
         "name": "item",
         "props": {
           "parent": "VueComponent",
           "item": "object",
-          "on": "object",
-          "attrs": "object"
-        }
+          "on": "object // Only needed when providing your own v-list-item",
+          "attrs": "object // Only needed when providing your own v-list-item"
+        },
+        "source": "v-select"
       },
       {
-        "name": "no-data"
+        "name": "no-data",
+        "source": "v-select"
       },
       {
         "name": "selection",
@@ -12911,57 +14179,8 @@
           "select": "function",
           "selected": "boolean",
           "disabled": "boolean"
-        }
-      }
-    ],
-    "events": [
-      {
-        "name": "input",
-        "value": "any"
-      },
-      {
-        "name": "change",
-        "value": "any"
-      },
-      {
-        "name": "update:search-input",
-        "value": "string"
-      },
-      {
-        "name": "update:list-index",
-        "value": "number"
-      },
-      {
-        "name": "click:prepend",
-        "value": "Event"
-      },
-      {
-        "name": "click:append",
-        "value": "Event"
-      },
-      {
-        "name": "click:clear",
-        "value": "Event"
-      },
-      {
-        "name": "click:append-outer",
-        "value": "Event"
-      },
-      {
-        "name": "click:prepend-inner",
-        "value": "Event"
-      },
-      {
-        "name": "update:error",
-        "value": "boolean"
-      },
-      {
-        "name": "blur",
-        "value": "boolean"
-      },
-      {
-        "name": "focus",
-        "value": "boolean"
+        },
+        "source": "v-select"
       }
     ]
   },
@@ -13095,6 +14314,7 @@
     ],
     "mixins": [
       "colorable",
+      "intersectable",
       "themeable"
     ],
     "events": [
@@ -13564,8 +14784,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -13602,8 +14823,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -13621,7 +14845,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -13687,8 +14910,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "row",
@@ -13726,8 +14950,7 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "proxyable"
+        "source": "v-input"
       },
       {
         "name": "valueComparator",
@@ -13737,36 +14960,67 @@
       }
     ],
     "mixins": [
-      "base-item-group",
-      "colorable",
       "comparable",
+      "base-item-group",
       "proxyable",
-      "registrable-inject",
-      "themeable",
       "themeable",
       "v-input",
-      "validatable"
-    ],
-    "slots": [
-      {
-        "name": "append"
-      },
-      {
-        "name": "default"
-      },
-      {
-        "name": "prepend"
-      },
-      "label"
+      "validatable",
+      "colorable",
+      "registrable-inject",
+      "themeable"
     ],
     "events": [
+      {
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
+      },
       {
         "name": "change",
         "value": "any"
       },
       {
-        "name": "update:error",
-        "value": "boolean"
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      }
+    ],
+    "slots": [
+      {
+        "name": "append",
+        "source": "v-input"
+      },
+      {
+        "name": "default",
+        "source": "v-input"
+      },
+      {
+        "name": "prepend",
+        "source": "v-input"
+      },
+      {
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
       }
     ]
   },
@@ -13792,8 +15046,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "groupable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "id",
@@ -13804,8 +15059,7 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
-        "source": "v-radio"
+        "source": "v-input"
       },
       {
         "name": "light",
@@ -13834,8 +15088,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "v-radio"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "ripple",
@@ -13849,27 +15104,43 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "v-radio"
+        "source": "v-input"
       }
     ],
     "mixins": [
       "colorable",
-      "groupable",
       "rippleable",
+      "groupable",
       "themeable"
     ],
     "events": [
       {
-        "name": "blur",
-        "value": "Event"
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "change",
         "value": "any"
       },
       {
-        "name": "focus",
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
         "value": "Event"
       }
     ],
@@ -13914,8 +15185,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -13952,8 +15224,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -13977,7 +15252,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -14046,8 +15320,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "rules",
@@ -14147,12 +15422,8 @@
       },
       {
         "name": "value",
-        "type": "array",
-        "default": [
-          0,
-          0
-        ],
-        "source": "validatable"
+        "type": "any",
+        "source": "v-input"
       },
       {
         "name": "vertical",
@@ -14166,40 +15437,44 @@
     ],
     "events": [
       {
-        "name": "input",
-        "value": "number"
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
       },
       {
-        "name": "change",
-        "value": "number"
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
       },
       {
         "name": "start",
+        "source": "v-slider",
         "value": "number"
       },
       {
         "name": "end",
+        "source": "v-slider",
         "value": "number"
-      },
-      {
-        "name": "click:prepend",
-        "value": "Event"
-      },
-      {
-        "name": "click:append",
-        "value": "Event"
-      },
-      {
-        "name": "update:error",
-        "value": "boolean"
-      },
-      {
-        "name": "blur",
-        "value": "boolean"
-      },
-      {
-        "name": "focus",
-        "value": "boolean"
       }
     ],
     "slots": [
@@ -14208,7 +15483,7 @@
         "source": "v-input"
       },
       {
-        "name": "label",
+        "name": "default",
         "source": "v-input"
       },
       {
@@ -14216,13 +15491,23 @@
         "source": "v-input"
       },
       {
-        "name": "progress"
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
+      },
+      {
+        "name": "progress",
+        "source": "v-slider"
       },
       {
         "name": "thumb-label",
         "props": {
           "value": "number | string"
-        }
+        },
+        "source": "v-slider"
       }
     ]
   },
@@ -14555,6 +15840,12 @@
         "source": "v-text-field"
       },
       {
+        "name": "counterValue",
+        "type": "function",
+        "default": "null",
+        "source": "v-text-field"
+      },
+      {
         "name": "dark",
         "type": "boolean",
         "default": "false",
@@ -14573,10 +15864,17 @@
         "source": "v-input"
       },
       {
-        "name": "disabled",
+        "name": "disableLookup",
         "type": "boolean",
         "default": "false",
-        "source": "validatable"
+        "source": "v-select"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "eager",
@@ -14616,7 +15914,8 @@
       },
       {
         "name": "filter",
-        "default": "(item: object, queryText: string, itemText: string): boolean"
+        "default": "(item: object, queryText: string, itemText: string): boolean",
+        "source": "v-select"
       },
       {
         "name": "flat",
@@ -14641,8 +15940,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -14712,7 +16014,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -14746,7 +16047,7 @@
           "array",
           "object"
         ],
-        "default": "{\"closeOnClick\":false, \"closeOnContentClick\":false, \"openOnClick\":false, \"maxHeight\":300, \"offsetY\":true, \"offsetOverflow\":true, \"transition\":false}",
+        "default": "{ \"closeOnClick\": false, \"closeOnContentClick\": false, \"disableKeys\": true, \"openOnClick\": false, \"maxHeight\": 304 }",
         "source": "v-select"
       },
       {
@@ -14815,8 +16116,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "returnObject",
@@ -14908,66 +16210,167 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       },
       {
         "name": "valueComparator",
         "type": "function",
         "default": "(a: any, b: any): boolean",
-        "source": "comparable"
+        "source": "v-select"
       }
     ],
     "mixins": [
+      "v-text-field",
+      "v-input",
+      "validatable",
       "colorable",
-      "comparable",
-      "filterable",
-      "loadable",
       "registrable-inject",
       "themeable",
-      "v-input",
-      "v-text-field",
-      "validatable"
+      "intersectable",
+      "loadable",
+      "comparable",
+      "filterable"
+    ],
+    "events": [
+      {
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
+      },
+      {
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "blur",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:clear",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:append-outer",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend-inner",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "focus",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "change",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "input",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "keydown",
+        "source": "v-text-field",
+        "value": "KeyboardEvent"
+      },
+      {
+        "name": "update:search-input",
+        "source": "v-select",
+        "value": "string"
+      },
+      {
+        "name": "update:list-index",
+        "source": "v-select",
+        "value": "number"
+      }
     ],
     "slots": [
       {
-        "name": "append"
+        "name": "append",
+        "source": "v-input"
       },
       {
-        "name": "default"
+        "name": "default",
+        "source": "v-input"
       },
       {
-        "name": "prepend"
+        "name": "prepend",
+        "source": "v-input"
       },
       {
-        "name": "append-outer"
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
       },
       {
-        "name": "label"
+        "name": "append-outer",
+        "source": "v-text-field"
       },
       {
-        "name": "progress"
+        "name": "label",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-inner"
+        "name": "prepend-inner",
+        "source": "v-text-field"
       },
       {
-        "name": "append-item"
+        "name": "progress",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-item"
+        "name": "append-item",
+        "source": "v-select"
+      },
+      {
+        "name": "prepend-item",
+        "source": "v-select"
       },
       {
         "name": "item",
         "props": {
           "parent": "VueComponent",
           "item": "object",
-          "on": "object",
-          "attrs": "object"
-        }
+          "on": "object // Only needed when providing your own v-list-item",
+          "attrs": "object // Only needed when providing your own v-list-item"
+        },
+        "source": "v-select"
       },
       {
-        "name": "no-data"
+        "name": "no-data",
+        "source": "v-select"
       },
       {
         "name": "selection",
@@ -14978,57 +16381,8 @@
           "select": "function",
           "selected": "boolean",
           "disabled": "boolean"
-        }
-      }
-    ],
-    "events": [
-      {
-        "name": "input",
-        "value": "any"
-      },
-      {
-        "name": "change",
-        "value": "any"
-      },
-      {
-        "name": "update:search-input",
-        "value": "string"
-      },
-      {
-        "name": "update:list-index",
-        "value": "number"
-      },
-      {
-        "name": "click:prepend",
-        "value": "Event"
-      },
-      {
-        "name": "click:append",
-        "value": "Event"
-      },
-      {
-        "name": "click:clear",
-        "value": "Event"
-      },
-      {
-        "name": "click:append-outer",
-        "value": "Event"
-      },
-      {
-        "name": "click:prepend-inner",
-        "value": "Event"
-      },
-      {
-        "name": "update:error",
-        "value": "boolean"
-      },
-      {
-        "name": "blur",
-        "value": "boolean"
-      },
-      {
-        "name": "focus",
-        "value": "boolean"
+        },
+        "source": "v-select"
       }
     ]
   },
@@ -15219,8 +16573,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -15257,8 +16612,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -15282,7 +16640,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -15351,8 +16708,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "rules",
@@ -15452,12 +16810,8 @@
       },
       {
         "name": "value",
-        "type": [
-          "number",
-          "string"
-        ],
-        "default": "undefined",
-        "source": "validatable"
+        "type": "any",
+        "source": "v-input"
       },
       {
         "name": "vertical",
@@ -15471,40 +16825,44 @@
     ],
     "events": [
       {
-        "name": "input",
-        "value": "number"
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
       },
       {
-        "name": "change",
-        "value": "number"
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
       },
       {
         "name": "start",
+        "source": "v-slider",
         "value": "number"
       },
       {
         "name": "end",
+        "source": "v-slider",
         "value": "number"
-      },
-      {
-        "name": "click:prepend",
-        "value": "Event"
-      },
-      {
-        "name": "click:append",
-        "value": "Event"
-      },
-      {
-        "name": "update:error",
-        "value": "boolean"
-      },
-      {
-        "name": "blur",
-        "value": "boolean"
-      },
-      {
-        "name": "focus",
-        "value": "boolean"
       }
     ],
     "slots": [
@@ -15513,7 +16871,7 @@
         "source": "v-input"
       },
       {
-        "name": "label",
+        "name": "default",
         "source": "v-input"
       },
       {
@@ -15521,13 +16879,23 @@
         "source": "v-input"
       },
       {
-        "name": "progress"
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
+      },
+      {
+        "name": "progress",
+        "source": "v-slider"
       },
       {
         "name": "thumb-label",
         "props": {
           "value": "number | string"
-        }
+        },
+        "source": "v-slider"
       }
     ]
   },
@@ -15618,6 +16986,10 @@
       "themeable"
     ],
     "events": [
+      {
+        "name": "change",
+        "value": "any[] | any"
+      },
       {
         "name": "click:location",
         "value": "void"
@@ -15729,8 +17101,14 @@
     ],
     "mixins": [
       "colorable",
-      "positionable",
-      "toggleable"
+      "toggleable",
+      "positionable"
+    ],
+    "events": [
+      {
+        "name": "input",
+        "value": "boolean"
+      }
     ],
     "slots": [
       {
@@ -15769,12 +17147,6 @@
         "type": "string",
         "default": "'primary'",
         "source": "colorable"
-      },
-      {
-        "name": "dark",
-        "type": "boolean",
-        "default": "false",
-        "source": "themeable"
       },
       {
         "name": "fill",
@@ -15817,12 +17189,6 @@
         "type": "array",
         "default": [],
         "source": "VSparkline"
-      },
-      {
-        "name": "light",
-        "type": "boolean",
-        "default": "false",
-        "source": "themeable"
       },
       {
         "name": "lineWidth",
@@ -15881,8 +17247,7 @@
       }
     ],
     "mixins": [
-      "colorable",
-      "themeable"
+      "colorable"
     ],
     "slots": [
       {
@@ -16019,13 +17384,13 @@
       }
     ],
     "mixins": [
-      "proxyable",
       "registrable-provide",
+      "proxyable",
       "themeable"
     ],
     "events": [
       {
-        "name": "input",
+        "name": "change",
         "value": "number"
       }
     ],
@@ -16209,8 +17574,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -16259,8 +17625,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -16290,7 +17659,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -16338,8 +17706,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "ripple",
@@ -16386,8 +17755,7 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       },
       {
         "name": "valueComparator",
@@ -16397,30 +17765,68 @@
       }
     ],
     "mixins": [
-      "colorable",
-      "comparable",
-      "registrable-inject",
-      "rippleable",
-      "themeable",
       "v-input",
-      "validatable"
-    ],
-    "slots": [
-      {
-        "name": "append"
-      },
-      {
-        "name": "default"
-      },
-      {
-        "name": "prepend"
-      },
-      "label"
+      "validatable",
+      "colorable",
+      "registrable-inject",
+      "themeable",
+      "rippleable",
+      "comparable"
     ],
     "events": [
       {
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
+      },
+      {
         "name": "change",
         "value": "any"
+      },
+      {
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
+      },
+      {
+        "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      }
+    ],
+    "slots": [
+      {
+        "name": "append",
+        "source": "v-input"
+      },
+      {
+        "name": "default",
+        "source": "v-input"
+      },
+      {
+        "name": "prepend",
+        "source": "v-input"
+      },
+      {
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
+      },
+      {
+        "name": "label"
       }
     ]
   },
@@ -16486,8 +17892,8 @@
     ],
     "mixins": [
       "applicationable",
-      "colorable",
       "positionable",
+      "colorable",
       "themeable"
     ]
   },
@@ -16760,8 +18166,8 @@
       }
     ],
     "mixins": [
-      "groupable",
       "routable",
+      "groupable",
       "themeable"
     ],
     "events": [
@@ -17042,6 +18448,12 @@
         "source": "v-text-field"
       },
       {
+        "name": "counterValue",
+        "type": "function",
+        "default": "null",
+        "source": "v-text-field"
+      },
+      {
         "name": "dark",
         "type": "boolean",
         "default": "false",
@@ -17056,8 +18468,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -17112,8 +18525,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -17131,7 +18547,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -17212,8 +18627,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "reverse",
@@ -17311,78 +18727,127 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       }
     ],
     "mixins": [
+      "v-text-field",
+      "v-input",
+      "validatable",
       "colorable",
-      "loadable",
       "registrable-inject",
       "themeable",
-      "v-input",
-      "v-text-field",
-      "validatable"
+      "intersectable",
+      "loadable"
     ],
     "events": [
       {
-        "name": "input",
-        "value": "string"
+        "name": "update:error",
+        "source": "validatable",
+        "value": "boolean"
       },
       {
-        "name": "change",
-        "value": "string"
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
       },
       {
-        "name": "keydown",
-        "value": "KeyboardEvent"
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
       },
       {
-        "name": "click:prepend",
-        "value": "Event"
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
       },
       {
         "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "blur",
+        "source": "v-text-field",
         "value": "Event"
       },
       {
         "name": "click:clear",
+        "source": "v-text-field",
         "value": "Event"
       },
       {
         "name": "click:append-outer",
+        "source": "v-text-field",
         "value": "Event"
       },
       {
         "name": "click:prepend-inner",
+        "source": "v-text-field",
         "value": "Event"
       },
       {
-        "name": "update:error",
-        "value": "boolean"
+        "name": "focus",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "change",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "input",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "keydown",
+        "source": "v-text-field",
+        "value": "KeyboardEvent"
       }
     ],
     "slots": [
       {
-        "name": "append"
+        "name": "append",
+        "source": "v-input"
       },
       {
-        "name": "default"
+        "name": "default",
+        "source": "v-input"
       },
       {
-        "name": "prepend"
+        "name": "prepend",
+        "source": "v-input"
       },
       {
-        "name": "append-outer"
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
       },
       {
-        "name": "label"
+        "name": "append-outer",
+        "source": "v-text-field"
       },
       {
-        "name": "progress"
+        "name": "label",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-inner"
+        "name": "prepend-inner",
+        "source": "v-text-field"
+      },
+      {
+        "name": "progress",
+        "source": "v-text-field"
       }
     ]
   },
@@ -17441,6 +18906,12 @@
         "source": "v-text-field"
       },
       {
+        "name": "counterValue",
+        "type": "function",
+        "default": "null",
+        "source": "v-text-field"
+      },
+      {
         "name": "dark",
         "type": "boolean",
         "default": "false",
@@ -17455,8 +18926,9 @@
       {
         "name": "disabled",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "error",
@@ -17511,8 +18983,11 @@
       },
       {
         "name": "hideDetails",
-        "type": "boolean",
-        "default": "false",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -17530,7 +19005,6 @@
       {
         "name": "label",
         "type": "string",
-        "default": "undefined",
         "source": "v-input"
       },
       {
@@ -17605,8 +19079,9 @@
       {
         "name": "readonly",
         "type": "boolean",
-        "default": "false",
-        "source": "validatable"
+        "default": false,
+        "source": "validatable",
+        "value": "boolean"
       },
       {
         "name": "reverse",
@@ -17686,87 +19161,151 @@
       {
         "name": "value",
         "type": "any",
-        "default": "undefined",
-        "source": "validatable"
+        "source": "v-input"
       }
     ],
     "mixins": [
+      "v-input",
+      "validatable",
       "colorable",
-      "loadable",
       "registrable-inject",
       "themeable",
-      "v-input",
-      "validatable"
+      "intersectable",
+      "loadable"
     ],
     "events": [
       {
-        "name": "input",
-        "value": "string"
-      },
-      {
-        "name": "change",
-        "value": "string"
-      },
-      {
-        "name": "blur",
+        "name": "update:error",
+        "source": "validatable",
         "value": "boolean"
       },
       {
-        "name": "focus",
-        "value": "boolean"
+        "name": "click",
+        "source": "v-input",
+        "value": "MouseEvent"
       },
       {
-        "name": "keydown",
-        "value": "KeyboardEvent"
+        "name": "mousedown",
+        "source": "v-input",
+        "value": "MouseEvent"
       },
       {
-        "name": "click:prepend",
-        "value": "Event"
+        "name": "mouseup",
+        "source": "v-input",
+        "value": "MouseEvent"
       },
       {
         "name": "click:append",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "click:prepend",
+        "source": "v-input",
+        "value": "Event"
+      },
+      {
+        "name": "blur",
+        "source": "v-text-field",
         "value": "Event"
       },
       {
         "name": "click:clear",
+        "source": "v-text-field",
         "value": "Event"
       },
       {
         "name": "click:append-outer",
+        "source": "v-text-field",
         "value": "Event"
       },
       {
         "name": "click:prepend-inner",
+        "source": "v-text-field",
         "value": "Event"
       },
       {
-        "name": "update:error",
-        "value": "boolean"
+        "name": "focus",
+        "source": "v-text-field",
+        "value": "Event"
+      },
+      {
+        "name": "change",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "input",
+        "source": "v-text-field",
+        "value": "any"
+      },
+      {
+        "name": "keydown",
+        "source": "v-text-field",
+        "value": "KeyboardEvent"
       }
     ],
     "slots": [
       {
-        "name": "append"
+        "name": "append",
+        "source": "v-input"
       },
       {
-        "name": "default"
+        "name": "default",
+        "source": "v-input"
       },
       {
-        "name": "prepend"
+        "name": "prepend",
+        "source": "v-input"
       },
       {
-        "name": "append-outer"
+        "name": "message",
+        "props": {
+          "key": "number, // the messages index",
+          "message": "string, // the message"
+        },
+        "source": "v-input"
       },
       {
-        "name": "label"
+        "name": "append-outer",
+        "source": "v-text-field"
       },
       {
-        "name": "progress"
+        "name": "label",
+        "source": "v-text-field"
       },
       {
-        "name": "prepend-inner"
+        "name": "prepend-inner",
+        "source": "v-text-field"
+      },
+      {
+        "name": "progress",
+        "source": "v-text-field"
       }
     ]
+  },
+  "v-theme-provider": {
+    "props": [
+      {
+        "name": "dark",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "light",
+        "type": "boolean",
+        "default": "false",
+        "source": "themeable"
+      },
+      {
+        "name": "root",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-theme-provider"
+      }
+    ],
+    "mixins": []
   },
   "v-timeline": {
     "props": [
@@ -18031,11 +19570,11 @@
       }
     ],
     "mixins": [
-      "colorable",
-      "colorable",
-      "colorable",
       "picker",
-      "themeable"
+      "colorable",
+      "themeable",
+      "colorable",
+      "colorable"
     ],
     "events": [
       {
@@ -18057,6 +19596,15 @@
       {
         "name": "click:second",
         "value": "string"
+      },
+      {
+        "name": "update:period",
+        "value": "string"
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
       }
     ]
   },
@@ -18162,6 +19710,12 @@
     "props": [
       {
         "name": "ampm",
+        "type": "boolean",
+        "default": "false",
+        "source": "v-time-picker-title"
+      },
+      {
+        "name": "ampmReadonly",
         "type": "boolean",
         "default": "false",
         "source": "v-time-picker-title"
@@ -18668,16 +20222,16 @@
       }
     ],
     "mixins": [
-      "activatable",
       "colorable",
-      "bootable",
-      "delayable",
       "delayable",
       "dependent",
       "detachable",
+      "bootable",
       "menuable",
-      "positionable",
       "stackable",
+      "positionable",
+      "activatable",
+      "delayable",
       "toggleable",
       "toggleable"
     ],
@@ -19018,6 +20572,12 @@
         "source": "v-treeview-node"
       },
       {
+        "name": "level",
+        "type": "number",
+        "default": "undefined",
+        "source": "v-treeview-node"
+      },
+      {
         "name": "loadChildren",
         "type": "function",
         "default": "null",
@@ -19198,6 +20758,12 @@
     "mixins": [
       "proxyable",
       "themeable"
+    ],
+    "events": [
+      {
+        "name": "change",
+        "value": "number"
+      }
     ],
     "slots": [
       {

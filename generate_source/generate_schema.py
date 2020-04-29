@@ -72,6 +72,9 @@ def make_type(api_type):
         if api_type == 'number':
             api_type = 'float'
 
+        if api_type == 'dataoptions':
+            api_type = 'object'
+
     if api_type in ['boolean', 'string', 'object', 'any', 'float']:
         return {'type': api_type}
 
