@@ -23,6 +23,15 @@ export class VuetifyView extends DOMWidgetView {
         overlay.classList.add('v-application');
         overlay.classList.add('v-application--is-ltr');
         overlay.classList.add('theme--light');
+
+        /* Prevent the notebook from capturing keyboard events in overlay components (e.g. Menu and
+         * Dialog). The captured events were executed as commands, messing up the notebook and
+         * prevented the events from reaching the designated component within the overlay. */
+
+        overlay.addEventListener("keydown", (event) => {
+            event.stopPropagation();
+        });
+
         vuetifyStyles.appendChild(overlay);
 
         /* Set the Vuetify data-app attribute. Needed for Slider and closing overlays

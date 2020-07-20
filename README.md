@@ -111,12 +111,6 @@ Available icons:
  * https://material.io/resources/icons/ (deprecated)
  * https://cdn.materialdesignicons.com/4.5.95/ (since v1.2.0)
 
-### Notes:
- * When using a Dialog with inputs, keyboard events are captured by the notebook and processed as
- commands in stead of appearing in the dialog inputs. This can be prevented by stopping event
- propagation with `dialog.on_event('keydown.stop', lambda *args: None)`. An example can be found in
- the [example notebook](examples/Examples.ipynb).
-
 Alternate usage
 ---------------
 
