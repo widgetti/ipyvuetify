@@ -16,13 +16,14 @@ def load_template(filename):
 
 class SeqClientSideFile(io.RawIOBase):
 
-    def __init__(self, widget, file_index):
+    def __init__(self, widget, file_index, timeout=30):
         global chunk_listener_id
         self.id = chunk_listener_id
         self.widget = widget
         self.version = widget.version
         self.widget = widget
         self.file_index = file_index
+        self.timeout = timeout
         self.valid = True
         self.offset = 0
         self.size = widget.file_info[file_index]['size']
@@ -91,6 +92,8 @@ class SeqClientSideFile(io.RawIOBase):
         ipython = IPython.get_ipython()
         chunk_size = self.chunk_size
 
+        sleep_interval = 0.01
+        max_iterations = self.timeout / sleep_interval
         while bytes_read < size:
             self._manage_chunks()
 
@@ -102,11 +105,11 @@ class SeqClientSideFile(io.RawIOBase):
                 if self.version != self.widget.version:
                     self.valid = False
                     raise Exception('File changed')
-                if iterations > 200:
+                if iterations > max_iterations:
                     self.valid = False
                     raise Exception('Timeout')
 
-                time.sleep(0.01)
+                time.sleep(sleep_interval)
                 ipython.kernel.do_one_iteration()
 
             self.waits += iterations
@@ -178,11 +181,11 @@ class FileInput(v.VuetifyTemplate):
             self.total_progress_inner = percent
             self.total_progress = percent
 
-    def get_files(self):
+    def get_files(self, timeout=30):
         files = []
         for index, file in enumerate(self.file_info):
             file = copy.deepcopy(self.file_info[index])
-            file['file_obj'] = SeqClientSideFile(self, index)
+            file['file_obj'] = SeqClientSideFile(self, index, timeout=timeout)
             files.append(file)
         return files
 
