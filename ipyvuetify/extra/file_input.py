@@ -14,24 +14,18 @@ def load_template(filename):
         return f.read()
 
 
-class SeqClientSideFile(io.RawIOBase):
+class ClientSideFile(io.RawIOBase):
 
     def __init__(self, widget, file_index, timeout=30):
         global chunk_listener_id
         self.id = chunk_listener_id
         self.widget = widget
         self.version = widget.version
-        self.widget = widget
         self.file_index = file_index
         self.timeout = timeout
         self.valid = True
         self.offset = 0
         self.size = widget.file_info[file_index]['size']
-
-        self.chunk_buffer_size = 7
-        self.chunk_size = 2 * 1024 * 1024
-        self.chunk_req_counter = 0
-        self.chunk_resp_counter = 0
 
         self.chunk_queue = []
 
@@ -41,44 +35,27 @@ class SeqClientSideFile(io.RawIOBase):
         self.waits = 0
 
     def handle_chunk(self, content, buffer):
-        self.chunk_queue.append({
-            'offset': content['offset'],
-            'buffer': buffer
-        })
-        self.chunk_resp_counter += 1
+        content['buffer'] = buffer
+        self.chunk_queue.append(content)
 
     def readable(self):
         return True
 
     def seekable(self):
-        return False
+        return True
+
+    def seek(self, offset, whence=io.SEEK_SET):
+        if whence == io.SEEK_SET:
+            self.offset = offset
+        elif whence == io.SEEK_CUR:
+            self.offset = self.offset + offset
+        elif whence == io.SEEK_END:
+            self.offset = self.size + offset
+        else:
+            raise ValueError(f'whence {whence} invalid')
 
     def tell(self):
         return self.offset
-
-    def _manage_chunks(self):
-        while self.chunk_queue and self.chunk_queue[0]['offset'] + self.chunk_size <= self.offset:
-            self.chunk_queue.pop(0)
-
-        pending = self.chunk_req_counter - self.chunk_resp_counter
-        offset = self.chunk_req_counter * self.chunk_size
-
-        while self.chunk_buffer_size - len(self.chunk_queue) - pending > 0 and offset < self.size:
-            remaining = self.size - offset
-            length = min(remaining, self.chunk_size)
-            self.widget.send({
-                'method': 'send_chunk',
-                'args': [{
-                    'file_index': self.file_index,
-                    'offset': offset,
-                    'length': length,
-                    'id': self.id
-                }]
-            })
-
-            self.chunk_req_counter += 1
-            pending = self.chunk_req_counter - self.chunk_resp_counter
-            offset = self.chunk_req_counter * self.chunk_size
 
     def readinto(self, buffer):
         if not self.valid:
@@ -86,18 +63,23 @@ class SeqClientSideFile(io.RawIOBase):
         bytes_read = 0
         mem = memoryview(buffer)
 
-        remaining = self.size - self.offset
+        remaining = max(0, self.size - self.offset)
         size = min(len(buffer), remaining)
 
         ipython = IPython.get_ipython()
-        chunk_size = self.chunk_size
+        self.widget.send({
+            'method': 'read',
+            'args': [{
+                'file_index': self.file_index,
+                'offset': self.offset,
+                'length': size,
+                'id': self.id
+            }]
+        })
 
         sleep_interval = 0.01
         max_iterations = self.timeout / sleep_interval
         while bytes_read < size:
-            self._manage_chunks()
-
-            ipython.kernel.do_one_iteration()
             iterations = 0
             while not self.chunk_queue:
                 iterations += 1
@@ -115,25 +97,20 @@ class SeqClientSideFile(io.RawIOBase):
             self.waits += iterations
 
             chunk = self.chunk_queue[0]
-            chunk_offset = self.offset - chunk['offset']
+            chunk_size = chunk['length']
 
-            bytes_remaining = size - bytes_read
-            chunk_bytes_available = chunk_size - chunk_offset
+            mem[bytes_read:bytes_read + chunk_size] = chunk['buffer']
 
-            to_read = min(bytes_remaining, chunk_bytes_available)
+            self.chunk_queue.pop(0)
+            bytes_read += chunk_size
+            self.offset += chunk_size
 
-            mem[bytes_read:bytes_read + to_read] = \
-                chunk['buffer'][chunk_offset:chunk_offset + to_read]
-
-            bytes_read += to_read
-            self.offset += to_read
-
-            self.widget.update_stats(self.file_index, self.offset)
+            self.widget.update_stats(self.file_index, chunk_size)
+            ipython.kernel.do_one_iteration()
 
         return size
 
     def read(self, size=-1):
-
         remaining = self.size - self.offset
 
         if remaining <= 0:
@@ -147,7 +124,10 @@ class SeqClientSideFile(io.RawIOBase):
         buffer = bytearray(num_bytes)
         self.readinto(buffer)
 
-        return buffer
+        return bytes(buffer)
+
+    def readall(self):
+        return self.read()
 
 
 class FileInput(v.VuetifyTemplate):
@@ -159,6 +139,8 @@ class FileInput(v.VuetifyTemplate):
     multiple = traitlets.Bool(True).tag(sync=True)
     disabled = traitlets.Bool(False).tag(sync=True)
     total_progress = traitlets.Int(0).tag(sync=True)
+    show_progress = traitlets.Bool(True).tag(sync=True)
+    progress_indeterminate = traitlets.Bool(False).tag(sync=True)
 
     total_progress_inner = 0
     total_size_inner = 0
@@ -174,7 +156,7 @@ class FileInput(v.VuetifyTemplate):
         self.reset_stats()
 
     def update_stats(self, file_index, bytes_read):
-        self.stats[file_index] = bytes_read
+        self.stats[file_index] += bytes_read
         tot = sum(self.stats)
         percent = round((tot / self.total_size_inner) * 100)
         if percent != self.total_progress_inner:
@@ -185,7 +167,7 @@ class FileInput(v.VuetifyTemplate):
         files = []
         for index, file in enumerate(self.file_info):
             file = copy.deepcopy(self.file_info[index])
-            file['file_obj'] = SeqClientSideFile(self, index, timeout=timeout)
+            file['file_obj'] = ClientSideFile(self, index, timeout=timeout)
             files.append(file)
         return files
 
