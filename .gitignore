@@ -12,7 +12,8 @@ ipyvuetify/generated
 js/src/generated
 
 # Compiled javascript
-ipyvuetify/static/
+ipyvuetify/labextension/
+ipyvuetify/nbextension/
 js/lib
 
 #readthedocs
