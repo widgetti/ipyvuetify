@@ -48,6 +48,7 @@ export class VuetifyView extends DOMWidgetView {
 
             const vueEl = document.createElement('div');
             this.el.appendChild(vueEl);
+            const view = this;
 
             this.vueApp = new Vue({
                 vuetify,
@@ -55,16 +56,23 @@ export class VuetifyView extends DOMWidgetView {
                 provide: {
                     viewCtx: createViewContext(this),
                 },
-                render: (createElement) => {
+                created() {
+                    const original_$forceUpdate = this.$forceUpdate.bind(this);
+                    this.$forceUpdate = (() => {
+                        view.ipyvuetifyApp = undefined;
+                        original_$forceUpdate();
+                    });
+                },
+                render(createElement) {
                     // TODO: Don't use v-app in embedded mode
                     /* Prevent re-rendering of toplevel component. This happens on button-click in
                      * v-menu */
-                    if (!this.ipyvuetifyApp) {
-                        this.ipyvuetifyApp = createElement('div', { class: 'vuetify-styles' }, [
-                            createElement('v-app', [vueRender(createElement, this.model, this)]),
+                    if (!view.ipyvuetifyApp) {
+                        view.ipyvuetifyApp = createElement('div', { class: 'vuetify-styles' }, [
+                            createElement('v-app', [vueRender(createElement, view.model, view)]),
                         ]);
                     }
-                    return this.ipyvuetifyApp;
+                    return view.ipyvuetifyApp;
                 },
             });
         });
