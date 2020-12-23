@@ -253,13 +253,14 @@ Regular HTML tags
 -----------------
 
 Sometimes some regular HTML tags are needed. For this the Html widget can be used.
+The attributes of the HTML tag can be accessed through the :code:`attributes` trait.
 
 Vuetify:
 
 .. code-block:: html
 
     <v-container>
-        <h1>My heading</h1>
+        <h1 title="a title">My heading</h1>
     </v-container>
 
 ipyvuetify
@@ -267,7 +268,11 @@ ipyvuetify
 .. jupyter-execute::
 
     v.Container(children=[
-        v.Html(tag='h1', children=['My heading'])
+        v.Html(
+            tag='h1', 
+            attributes={'title': 'a title'},
+            children=['My heading']
+        )
     ])
 
 Styling
