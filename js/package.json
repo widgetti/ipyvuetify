@@ -26,6 +26,8 @@
   "scripts": {
     "build:babel": "babel src --out-dir lib --copy-files",
     "watch:babel": "babel src --watch --out-dir lib --copy-files --verbose",
+    "build:labextension": "jupyter labextension build .",
+    "watch:labextension": "jupyter labextension watch .",
     "build:webpack": "webpack",
     "watch:webpack": "webpack --mode development --watch",
     "watch": "run-p watch:*",
@@ -37,6 +39,7 @@
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "@jupyterlab/builder": "^3",
     "ajv": "^6.10.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
@@ -51,7 +54,7 @@
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
-    "@jupyter-widgets/base": "^1.0.0 || ^2.0.0 || ^3.0.0",
+    "@jupyter-widgets/base": "^1 || ^2 || ^3 || ^4",
     "@mariobuikhuizen/vuetify": "2.2.26-rc.0",
     "@mdi/font": "^4.9.95",
     "core-js": "^3.0.1",
@@ -61,6 +64,18 @@
     "typeface-roboto": "0.0.54"
   },
   "jupyterlab": {
-    "extension": "lib/labplugin"
+    "extension": "lib/labplugin",
+    "outputDir": "../ipyvuetify/labextension",
+    "webpackConfig": "webpack.config.lab3.js",
+    "sharedPackages": {
+      "@jupyter-widgets/base": {
+        "bundled": false,
+        "singleton": true
+      },
+      "jupyter-vue": {
+        "bundled": false,
+        "singleton": true
+      }
+    }
   }
 }
