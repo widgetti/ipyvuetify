@@ -35,7 +35,7 @@ class Theme(Widget):
 
     _model_module_version = Unicode(semver).tag(sync=True)
 
-    dark = Bool(False).tag(sync=True)
+    dark = Bool(None, allow_none=True).tag(sync=True)
 
     def __init__(self):
         super().__init__()

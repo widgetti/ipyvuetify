@@ -23,7 +23,20 @@ export class ThemeModel extends WidgetModel {
         if (!vuetify) {
             return;
         }
-        vuetify.framework.theme.dark = this.get('dark');
+
+        if (ThemeModel.themeManager) {
+            ThemeModel.themeManager.themeChanged.connect(() => {
+                if (this.get('dark') === null) {
+                    vuetify.framework.theme.dark = document.body.dataset.jpThemeLight === 'false';
+                }
+            }, this);
+        }
+
+        if (this.get('dark') !== null) {
+            vuetify.framework.theme.dark = this.get('dark');
+        } else if (document.body.dataset.jpThemeLight) {
+            vuetify.framework.theme.dark = document.body.dataset.jpThemeLight === 'false';
+        }
         this.on('change:dark', () => {
             vuetify.framework.theme.dark = this.get('dark');
         });
