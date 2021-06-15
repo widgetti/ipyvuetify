@@ -19,9 +19,6 @@ npm_path = os.pathsep.join([
     os.environ.get('PATH', os.defpath),
 ])
 
-log.set_verbosity(log.DEBUG)
-log.info('setup.py entered')
-log.info('$PATH=%s' % os.environ['PATH'])
 
 LONG_DESCRIPTION = 'Jupyter widgets based on vuetify UI components'
 

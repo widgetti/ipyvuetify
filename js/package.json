@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@jupyter-widgets/base": "^1 || ^2 || ^3 || ^4",
+    "@jupyterlab/apputils": "^3",
     "@mariobuikhuizen/vuetify": "2.2.26-rc.0",
     "@mdi/font": "^4.9.95",
     "core-js": "^3.0.1",
@@ -69,6 +70,10 @@
     "webpackConfig": "webpack.config.lab3.js",
     "sharedPackages": {
       "@jupyter-widgets/base": {
+        "bundled": false,
+        "singleton": true
+      },
+      "@jupyterlab/apputils": {
         "bundled": false,
         "singleton": true
       },
