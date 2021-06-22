@@ -36,7 +36,7 @@
     }
 </style>
 <script>
-    module.export = {
+    module.exports = {
         methods: {
             addBanana() {
                 this.fruits.push('Banana');
