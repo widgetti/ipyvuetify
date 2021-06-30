@@ -109,7 +109,7 @@ For non scoped slots `'scope': 'x'` and `v_on` can be omitted.
 
 Available icons:
  * https://material.io/resources/icons/ (deprecated)
- * https://cdn.materialdesignicons.com/4.5.95/ (since v1.2.0)
+ * https://pictogrammers.github.io/@mdi/font/4.5.95/ (since v1.2.0)
 
 Alternate usage
 ---------------
