@@ -118,6 +118,8 @@ class FileInput(v.VuetifyTemplate):
     version = traitlets.Int(0).tag(sync=True)
     multiple = traitlets.Bool(True).tag(sync=True)
     disabled = traitlets.Bool(False).tag(sync=True)
+    directory = traitlets.Bool(False).tag(sync=True)
+    accept = traitlets.Unicode().tag(sync=True)
     total_progress = traitlets.Int(0).tag(sync=True)
     show_progress = traitlets.Bool(True).tag(sync=True)
     progress_indeterminate = traitlets.Bool(False).tag(sync=True)

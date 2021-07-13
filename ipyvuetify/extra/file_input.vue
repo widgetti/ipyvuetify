@@ -1,6 +1,7 @@
 <template>
     <div>
-        <v-file-input v-model="myfiles" :disabled="disabled" :multiple="multiple" show-size show-counter clearable chips :counter="multiple" @change="setFiles"/>
+        <v-file-input v-model="myfiles" :disabled="disabled" :multiple="multiple" show-size show-counter clearable chips :counter="multiple" @change="setFiles"
+                      :webkitdirectory="directory" :directory="directory" :accept="accept"/>
         <v-progress-linear
                 v-if="(total_progress > 0 || progress_indeterminate) && show_progress"
                 :indeterminate="progress_indeterminate"
