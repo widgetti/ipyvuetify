@@ -110,6 +110,10 @@ class ClientSideFile(io.RawIOBase):
 
         return size
 
+    def readall(self):
+        return self.read(self.size - self.offset)
+
+
 class FileInput(v.VuetifyTemplate):
     template = traitlets.Unicode(load_template('file_input.vue')).tag(sync=True)
     data = traitlets.Unicode('{myfiles: undefined}').tag(sync=True)
