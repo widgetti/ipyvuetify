@@ -151,3 +151,46 @@ A demonstration in a screen capture:
 
 .. note::
     For this feature we require the watchdog packages. Install it using ``pip install "watchdog>=2.0"`` or ``conda install -c conda-forge "watchdog>=2.0"``
+
+Embed ipywidgets
+----------------
+
+Other ipywidgets can be embedded by setting them in a trait and adding widget_serialization, accessing them in the with the `jupyter-widget` tag:
+
+.. code-block:: python
+
+    import ipyvuetify as v
+    import ipywidgets as widgets
+    import traitlets
+
+    slider1 = widgets.IntSlider(description='Slider 1', value=20)
+    slider2 = v.Slider(label="Slider 2", v_model="8")
+
+    class MyComponent(v.VuetifyTemplate):
+
+        items = traitlets.List([{
+            'title': 'Title 1',
+            'content': slider1
+        }, {
+            'title': 'Title 2',
+            'content': slider2
+        }]).tag(sync=True, **widgets.widget_serialization)
+
+        single_widget = traitlets.Any(
+            widgets.IntSlider(description='Single slider', value=40)
+        ).tag(sync=True, **widgets.widget_serialization)
+
+        @traitlets.default('template')
+        def _template(self):
+            return """
+            <template>
+                <div>
+                    <div v-for="item in items" :key="item.title + item.content">
+                        {{ item.title }}: <jupyter-widget :widget="item.content" />
+                    </div>
+                    Single widget: <jupyter-widget :widget="single_widget" />
+                </div>
+            </template>
+            """
+
+    MyComponent()
