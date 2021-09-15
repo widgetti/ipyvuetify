@@ -155,7 +155,7 @@ A demonstration in a screen capture:
 Embed ipywidgets
 ----------------
 
-Other ipywidgets can be embedded by setting them in a trait and adding widget_serialization, accessing them in the with the `jupyter-widget` tag:
+Any ipywidget can be embedded by setting them in a trait and adding widget_serialization, accessing them in the template with the `jupyter-widget` tag:
 
 .. code-block:: python
 
@@ -164,7 +164,7 @@ Other ipywidgets can be embedded by setting them in a trait and adding widget_se
     import traitlets
 
     slider1 = widgets.IntSlider(description='Slider 1', value=20)
-    slider2 = v.Slider(label="Slider 2", v_model="8")
+    slider2 = v.Slider(label='Slider 2', v_model=8)
 
     class MyComponent(v.VuetifyTemplate):
 
@@ -176,13 +176,16 @@ Other ipywidgets can be embedded by setting them in a trait and adding widget_se
             'content': slider2
         }]).tag(sync=True, **widgets.widget_serialization)
 
-        single_widget = traitlets.Any(
-            widgets.IntSlider(description='Single slider', value=40)
-        ).tag(sync=True, **widgets.widget_serialization)
+        single_widget = traitlets.Any().tag(sync=True, **widgets.widget_serialization)
+    
+        def __init__(self, **kwargs):
+            self.single_widget = widgets.IntSlider(description='Single slider', value=40)
+            self.single_widget.__init__(**kwargs)
+            super().__init__()        
 
         @traitlets.default('template')
         def _template(self):
-            return """
+            return '''
             <template>
                 <div>
                     <div v-for="item in items" :key="item.title + item.content">
@@ -191,6 +194,6 @@ Other ipywidgets can be embedded by setting them in a trait and adding widget_se
                     Single widget: <jupyter-widget :widget="single_widget" />
                 </div>
             </template>
-            """
+            '''
 
     MyComponent()
