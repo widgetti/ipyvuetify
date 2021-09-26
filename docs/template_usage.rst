@@ -178,9 +178,12 @@ Any ipywidget can be embedded by setting them in a trait and adding widget_seria
 
         single_widget = traitlets.Any().tag(sync=True, **widgets.widget_serialization)
     
-        def __init__(self, **kwargs):
-            self.single_widget = widgets.IntSlider(description='Single slider', value=40)
-            self.single_widget.__init__(**kwargs)
+        def __init__(self, description='Single slider', value=40, **kwargs):
+            self.single_widget = widgets.IntSlider(
+                description=description, 
+                value=value, 
+                **kwargs
+            )
             super().__init__()        
 
         @traitlets.default('template')
