@@ -194,3 +194,62 @@ Other ipywidgets can be embedded by setting them in a trait and adding widget_se
             """
 
     MyComponent()
+    
+Composing with templates
+------------------------
+
+Just as ipywidgets can be embedded into a component, components can be embedded into each other by setting them in a ``components`` dictionary trait and adding class_component_serialization, accessing them under their component name:
+
+.. code-block:: python
+
+    import ipyvuetify as v
+    import traitlets
+
+    class FruitSelector(v.VuetifyTemplate):
+        fruits = traitlets.List(traitlets.Unicode(), default_value=['Apple', 'Pear']).tag(sync=True)
+        selected = traitlets.Unicode(default_value=None, allow_none=True).tag(sync=True)
+        @traitlets.default('template')
+        def _template(self):
+            return '''
+            <template>
+                <div>
+                    <v-select label="Fruits" :items="fruits" v-model="selected"/>
+                </div>
+            </template>
+            '''
+            
+    class MyComponent(v.VuetifyTemplate):
+
+        components = traitlets.Dict(
+            {
+                'fruit-selector': FruitSelector()
+            }
+            ).tag(sync=True, **v.VuetifyTemplate.class_component_serialization)
+
+        @traitlets.default('template')
+        def _template(self):
+            return """
+            <template>
+                <div>
+                    <v-card
+                      class="mx-auto my-12"
+                      max-width="374"
+                    >
+                      <v-card-title>
+                          Nested Components
+                      </v-card-title>
+                      <v-card-text>
+                          <fruit-selector/>
+                      </v-card-text>
+
+                        <v-card-actions>
+                          <v-btn>
+                            Accept
+                          </v-btn>
+                        </v-card-actions>
+                      </v-card>
+                </div>
+            </template>
+            """
+
+    MyComponent()
