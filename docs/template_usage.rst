@@ -168,14 +168,7 @@ Any ipywidget can be embedded by setting them in a trait and adding widget_seria
 
     class MyComponent(v.VuetifyTemplate):
 
-        items = traitlets.List([{
-            'title': 'Title 1',
-            'content': slider1
-        }, {
-            'title': 'Title 2',
-            'content': slider2
-        }]).tag(sync=True, **widgets.widget_serialization)
-
+        items = traitlets.List().tag(sync=True, **widgets.widget_serialization)
         single_widget = traitlets.Any().tag(sync=True, **widgets.widget_serialization)
     
         def __init__(self, description='Single slider', value=40, **kwargs):
@@ -199,4 +192,13 @@ Any ipywidget can be embedded by setting them in a trait and adding widget_seria
             </template>
             '''
 
-    MyComponent()
+    MyComponent(
+        items=[{
+            'title': 'Title 1',
+            'content': slider1
+        }, {
+            'title': 'Title 2',
+            'content': slider2
+        }],
+        single_widget=widgets.IntSlider(description='Single slider', value=40))
+    )
