@@ -101,6 +101,44 @@ see an example of this. To look at how that variable is initialized you select t
 If it's an expression it's mostly used to set a List or a Dict, as is done with :code:`items` in the examples above.
 This can be the same in ipyvuetify.
 
+ClassList attribute
+-------------------
+
+The :code:`class` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods: 
+
+-   :code:`add(*args)`: add class elements to the class\_ trait of the widget
+    
+    .. jupyter-execute::
+    
+        w = v.Btn(children=["click"])
+        w.class_list.add("red", "white--text")
+        w
+
+-   :code:`remove(*args)`: remove class elements from the class\_ trait of the widget
+    
+    .. jupyter-execute::
+    
+        w = v.Btn(children=["click"], class_="red white--text")
+        w.class_list.remove("white--text")
+        w
+        
+-   :code:`replace(src, dst)`: replace class elements in the class\_ trait of the widget
+    
+    .. jupyter-execute::
+    
+        w = v.Btn(children=["click"], class_="red white--text")
+        w.class_list.replace("red", "orange")
+        w
+        
+-   :code:`toggle(arg)`: toggle class elements from the class\_ trait of the widget
+    
+    .. jupyter-execute::
+    
+        w = v.Btn(children=["click"], class_="red white--text")
+        w.class_list.toggle("blue", "red")
+        w
+
+
 Reading the value
 -----------------
 
