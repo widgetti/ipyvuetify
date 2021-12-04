@@ -138,7 +138,6 @@ The :code:`class` attribute of a Vuetify DOM elements give access to the built-i
         w.class_list.toggle("blue", "red")
         w
 
-
 Reading the value
 -----------------
 
@@ -444,6 +443,24 @@ Available theme properties:
 - success
 - warning
 - anchor
+
+Visiblity
+---------
+
+ipyvuetify widgets visibility can be changed using the built-in methods :code:`hide()` and :code:`show()`.
+Using :code:`hide` will add the :code:`d-none` class to the widget and :code:`show` will remove it, hidding and showing the widget to the end user without removing it from the notebook. 
+
+.. jupyter-execute::
+
+    w = v.Icon(children=['mdi-eye-off'])
+    w.hide()
+    w
+    
+.. jupyter-execute::
+
+    w = v.Icon(children=['mdi-eye'], class_="d-none")
+    w.show()
+    w
 
 Summary
 -------
