@@ -370,8 +370,6 @@ Using :code:`hide` will add the :code:`d-none` class to the widget and :code:`sh
     w.show()
     w
 
-
-
 Layout (HBox/VBox alternative)
 ------------------------------
 
