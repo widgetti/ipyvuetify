@@ -101,6 +101,29 @@ see an example of this. To look at how that variable is initialized you select t
 If it's an expression it's mostly used to set a List or a Dict, as is done with :code:`items` in the examples above.
 This can be the same in ipyvuetify.
 
+for non-vuetify related attributes, the ones from the HTML tag, can be accessed through the :code:`attributes` trait.
+
+Vuetify: 
+
+.. code-block:: html 
+
+    <v-btn class="ma-2" outlined href="file.pdf" download>
+        Download PDF
+    </v-btn>
+    
+ipyvuetify:
+
+.. jupyter-execute::
+
+    v.Btn(
+        class_="ma-2", 
+        outlined=True, 
+        href="file.pdf", 
+        attributes={"download": True}, 
+        children=["Download PDF"]
+    )
+    
+
 Reading the value
 -----------------
 
