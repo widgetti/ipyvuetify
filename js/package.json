@@ -1,6 +1,6 @@
 {
   "name": "jupyter-vuetify",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "Jupyter widgets based on vuetify UI components",
   "license": "MIT",
   "author": "Mario Buikhuizen, Maarten Breddels",
