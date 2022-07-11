@@ -1,17 +1,43 @@
 import ipyvuetify as v
 import traitlets
-import time
 import io
 import os
 import IPython
 import copy
+import asyncio
+import nest_asyncio
+import sys
 
 chunk_listener_id = 0
+
+nest_asyncio.apply()
 
 
 def load_template(filename):
     with open(os.path.join(os.path.dirname(__file__), filename)) as f:
         return f.read()
+
+
+async def process_messages():
+    ipython = IPython.get_ipython()
+    original_parent_ident = ipython.kernel._parent_ident
+    original_parent_header = ipython.kernel._parent_header
+    original_set_parent = ipython.set_parent
+
+    def set_parent_sink(*args):
+        pass
+
+    try:
+        ipython.set_parent = set_parent_sink
+        while not ipython.kernel.msg_queue.empty():
+            await ipython.kernel.do_one_iteration()
+    finally:
+        # reset parent header to original execute request
+        ipython.kernel.set_parent(original_parent_ident, original_parent_header)  # for execution count indicator
+        sys.stdout.parent_header = original_parent_header  # for print statements
+        sys.stderr.parent_header = original_parent_header  # for errors
+        ipython.display_pub.parent_header = original_parent_header  # for display()
+        ipython.set_parent = original_set_parent  # for displaying execution result
 
 
 class ClientSideFile(io.RawIOBase):
@@ -60,13 +86,11 @@ class ClientSideFile(io.RawIOBase):
     def readinto(self, buffer):
         if not self.valid:
             raise Exception('Invalid file state')
-        bytes_read = 0
         mem = memoryview(buffer)
 
         remaining = max(0, self.size - self.offset)
         size = min(len(buffer), remaining)
 
-        ipython = IPython.get_ipython()
         self.widget.send({
             'method': 'read',
             'args': [{
@@ -79,35 +103,39 @@ class ClientSideFile(io.RawIOBase):
 
         sleep_interval = 0.01
         max_iterations = self.timeout / sleep_interval
-        while bytes_read < size:
-            iterations = 0
-            while not self.chunk_queue:
-                iterations += 1
 
-                if self.version != self.widget.version:
-                    self.valid = False
-                    raise Exception('File changed')
-                if iterations > max_iterations:
-                    self.valid = False
-                    raise Exception('Timeout')
+        async def read_all():
+            bytes_read = 0
+            while bytes_read < size:
+                iterations = 0
+                while not self.chunk_queue:
+                    iterations += 1
 
-                time.sleep(sleep_interval)
-                ipython.kernel.do_one_iteration()
+                    if self.version != self.widget.version:
+                        self.valid = False
+                        raise Exception('File changed')
+                    if iterations > max_iterations:
+                        self.valid = False
+                        raise Exception('Timeout')
 
-            self.waits += iterations
+                    await asyncio.sleep(sleep_interval)
+                    await process_messages()
 
-            chunk = self.chunk_queue[0]
-            chunk_size = chunk['length']
+                self.waits += iterations
 
-            mem[bytes_read:bytes_read + chunk_size] = chunk['buffer']
+                chunk = self.chunk_queue[0]
+                chunk_size = chunk['length']
 
-            self.chunk_queue.pop(0)
-            bytes_read += chunk_size
-            self.offset += chunk_size
+                mem[bytes_read:bytes_read + chunk_size] = chunk['buffer']
 
-            self.widget.update_stats(self.file_index, chunk_size)
-            ipython.kernel.do_one_iteration()
+                self.chunk_queue.pop(0)
+                bytes_read += chunk_size
+                self.offset += chunk_size
 
+                self.widget.update_stats(self.file_index, chunk_size)
+                await process_messages()
+
+        asyncio.run(read_all())
         return size
 
     def readall(self):

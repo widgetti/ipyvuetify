@@ -1,6 +1,6 @@
 {
   "name": "jupyter-vuetify",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "Jupyter widgets based on vuetify UI components",
   "license": "MIT",
   "author": "Mario Buikhuizen, Maarten Breddels",
@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@jupyter-widgets/base": "^1 || ^2 || ^3 || ^4",
-    "@jupyterlab/apputils": "^3",
+    "@jupyterlab/apputils": "^2 || ^3",
     "@mariobuikhuizen/vuetify": "2.2.26-rc.0",
     "@mdi/font": "^4.9.95",
     "core-js": "^3.0.1",
