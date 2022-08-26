@@ -10,8 +10,6 @@ import sys
 
 chunk_listener_id = 0
 
-nest_asyncio.apply()
-
 
 def load_template(filename):
     with open(os.path.join(os.path.dirname(__file__), filename)) as f:
@@ -163,6 +161,9 @@ class FileInput(v.VuetifyTemplate):
         self.chunk_listeners = {}
         self.stats = []
         super().__init__(**kwargs)
+        kernel = IPython.get_ipython().kernel
+        if kernel.implementation == "ipython":
+            nest_asyncio.apply()
 
     @traitlets.observe('file_info')
     def _file_info_changed(self, _):
