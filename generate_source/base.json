@@ -6,8 +6,8 @@
         "_view_name": "VuetifyView",
         "_view_module": "jupyter-vuetify",
         "_model_module": "jupyter-vuetify",
-        "_view_module_version": "^1.8.2",
-        "_model_module_version": "^1.8.2",
+        "_view_module_version": "^1.8.3",
+        "_model_module_version": "^1.8.3",
 
         "_metadata": {
           "type": "object",
