@@ -446,7 +446,7 @@ In some widgets icons are specified by setting an attribute:
 
     v.Select(prepend_icon='mdi-thumb-up')
 
-See `materialdesignicons.com/4.5.95 <https://cdn.materialdesignicons.com/4.5.95/>`_ for a list of available icons.
+See `@mdi/font/4.9.95/ <https://pictogrammers.github.io/@mdi/font/4.9.95/>`_ for a list of available icons.
 
 Themes
 ------
