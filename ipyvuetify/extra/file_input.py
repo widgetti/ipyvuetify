@@ -161,6 +161,9 @@ class FileInput(v.VuetifyTemplate):
         self.chunk_listeners = {}
         self.stats = []
         super().__init__(**kwargs)
+
+        if not hasattr(IPython.get_ipython(), 'kernel'):
+            return
         kernel = IPython.get_ipython().kernel
         if kernel.implementation == "ipython":
             nest_asyncio.apply()
