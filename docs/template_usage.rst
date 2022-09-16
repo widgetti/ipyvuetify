@@ -155,7 +155,7 @@ A demonstration in a screen capture:
 Embed ipywidgets
 ----------------
 
-Any ipywidget can be embedded by setting them in a trait and adding widget_serialization, accessing them in the template with the `jupyter-widget` tag:
+Any ipywidget can be embedded by setting them in a trait and adding widget_serialization, accessing them in the template with the ``jupyter-widget`` tag:
 
 .. code-block:: python
 
