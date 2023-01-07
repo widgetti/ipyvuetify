@@ -170,7 +170,7 @@ setup_args = {
 
     'author': 'Mario Buikhuizen, Maarten Breddels',
     'author_email': 'mbuikhuizen@gmail.com, maartenbreddels@gmail.com',
-    'url': 'https://github.com/mariobuikhuizen/ipyvuetify',
+    'url': 'https://github.com/widgetti/ipyvuetify',
     'keywords': [
         'ipython',
         'jupyter',
