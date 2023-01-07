@@ -12,4 +12,4 @@ ignore = [
     #"E203", # whitespace before ':' | Black take care of it
 ]
 line-length = 100
-select = ["E", "W", "F", "Q"]
+select = ["E", "W", "F", "Q", "I"]
