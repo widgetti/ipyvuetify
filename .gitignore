@@ -16,6 +16,9 @@ ipyvuetify/labextension/
 ipyvuetify/nbextension/
 js/lib
 
-#readthedocs
+# readthedocs
 _build/
+
+# vs code 
+.vscode/
 
