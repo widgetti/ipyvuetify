@@ -4,8 +4,9 @@
 [![Version](https://img.shields.io/npm/v/jupyter-vuetify.svg)](https://www.npmjs.com/package/jupyter-vuetify)
 [![Version](https://img.shields.io/pypi/v/ipyvuetify.svg)](https://pypi.python.org/project/ipyvuetify)
 [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ipyvuetify.svg)](https://anaconda.org/conda-forge/ipyvuetify)
-
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mariobuikhuizen/ipyvuetify/master?filepath=examples%2FExamples.ipynb)
+[![Black badge](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![conventional commit](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 Jupyter widgets based on [vuetify UI components](https://vuetifyjs.com/) which implement Google's
 [Material Design Spec](https://material.io/) with the [Vue.js framework](https://vuejs.org/).
