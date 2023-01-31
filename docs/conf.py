@@ -31,7 +31,7 @@ release = '1.2.2'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'jupyter_sphinx.execute',
+    'jupyter_sphinx',
     'sphinx_rtd_theme'
 ]
 

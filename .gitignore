@@ -17,5 +17,8 @@ ipyvuetify/nbextension/
 js/lib
 
 #readthedocs
-_build/
+docs/_build/
+
+# Unit test / coverage reports
+.nox
 

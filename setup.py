@@ -190,6 +190,13 @@ setup_args = {
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
+    'extras_require': {
+        'doc': [
+            'sphinx',
+            'jupyter-sphinx',
+            'sphinx-rtd-theme',
+        ]
+    }
 }
 
 setup(**setup_args)
