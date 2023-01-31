@@ -10,6 +10,9 @@ build:
   tools:
     python: "3.9"
     nodejs: "16"
+  jobs:
+    pre_install:
+      - pip install jupyterlab
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:

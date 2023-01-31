@@ -192,7 +192,6 @@ setup_args = {
     ],
     'extras_require': {
         'doc': [
-            'jupyterlab',
             'sphinx',
             'jupyter-sphinx',
             'sphinx-rtd-theme',
