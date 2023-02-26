@@ -178,7 +178,7 @@ setup(
         ),
         ("etc/jupyter/nbconfig/notebook.d", ["jupyter-vuetify.json"]),
     ],
-    'install_requires': [
+    install_requires = [
         'ipyvue>=1.7,<2',
     ],
     packages=find_packages(exclude=["generate_source"]),
