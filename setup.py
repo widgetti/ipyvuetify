@@ -157,13 +157,13 @@ version_ns = {}
 with open(os.path.join(here, "ipyvuetify", "_version.py")) as f:
     exec(f.read(), {}, version_ns)
 
-setup_args = {
-    "name": "ipyvuetify",
-    "version": version_ns["__version__"],
-    "description": "Jupyter widgets based on vuetify UI components",
-    "long_description": LONG_DESCRIPTION,
-    "include_package_data": True,
-    "data_files": [
+setup(
+    name="ipyvuetify",
+    version=version_ns["__version__"],
+    description="Jupyter widgets based on vuetify UI components",
+    long_description=LONG_DESCRIPTION,
+    include_package_data=True,
+    data_files=[
         (
             "share/jupyter/nbextensions/jupyter-vuetify",
             glob.glob("ipyvuetify/nbextension/*"),
@@ -178,40 +178,36 @@ setup_args = {
         ),
         ("etc/jupyter/nbconfig/notebook.d", ["jupyter-vuetify.json"]),
     ],
-    "install_requires": [
+    install_requires=[
         "ipyvue>=1.5,<2",
     ],
-    "packages": find_packages(exclude=["generate_source"]),
-    "zip_safe": False,
-    "cmdclass": {
+    packages=find_packages(exclude=["generate_source"]),
+    zip_safe=False,
+    cmdclass={
         "build_py": js_prerelease(build_py),
         "egg_info": js_prerelease(egg_info),
         "sdist": js_prerelease(sdist, strict=True),
         "jsdeps": NPM,
         "generate_source": GenerateSource,
     },
-    "author": "Mario Buikhuizen, Maarten Breddels",
-    "author_email": "mbuikhuizen@gmail.com, maartenbreddels@gmail.com",
-    "url": "https://github.com/mariobuikhuizen/ipyvuetify",
-    "keywords": [
+    author="Mario Buikhuizen, Maarten Breddels",
+    author_email="mbuikhuizen@gmail.com, maartenbreddels@gmail.com",
+    url="https://github.com/widgetti/ipyvuetify",
+    keywords=[
         "ipython",
         "jupyter",
         "widgets",
     ],
-    "classifiers": [
-        "Development Status :: 4 - Beta",
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
         "Framework :: IPython",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",
         "Topic :: Multimedia :: Graphics",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.3",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
     ],
-}
-
-setup(**setup_args)
+)
