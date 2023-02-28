@@ -7,7 +7,7 @@ var rules = [
   { test: /\.css$/, use: ["style-loader", "css-loader"] },
   {
     test: /\.(woff|woff2|eot|ttf|otf)$/,
-    loader: "file-loader",
+    type: "asset/resource",
   },
 ];
 
@@ -26,6 +26,7 @@ module.exports = [
       filename: "extension.js",
       path: path.resolve(__dirname, "..", "ipyvuetify", "nbextension"),
       libraryTarget: "amd",
+      publicPath: "",
     },
     mode: "production",
   },
@@ -41,6 +42,7 @@ module.exports = [
       filename: "index.js",
       path: path.resolve(__dirname, "..", "ipyvuetify", "nbextension"),
       libraryTarget: "amd",
+      publicPath: "",
     },
     devtool: "source-map",
     module: {
@@ -64,6 +66,7 @@ module.exports = [
       filename: "nodeps.js",
       path: path.resolve(__dirname, "..", "ipyvuetify", "nbextension"),
       libraryTarget: "amd",
+      publicPath: "",
     },
     devtool: "source-map",
     module: {
