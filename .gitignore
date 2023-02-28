@@ -19,6 +19,3 @@ js/lib
 # readthedocs
 _build/
 
-# vs code 
-.vscode/
-
