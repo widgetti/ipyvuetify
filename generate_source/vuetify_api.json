@@ -20,9 +20,7 @@
         "source": "themeable"
       }
     ],
-    "mixins": [
-      "themeable"
-    ],
+    "mixins": ["themeable"],
     "slots": [
       {
         "name": "default"
@@ -99,10 +97,7 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
@@ -114,10 +109,7 @@
       },
       {
         "name": "extensionHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 48,
         "source": "v-toolbar"
       },
@@ -147,10 +139,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -174,37 +163,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -228,10 +205,7 @@
       },
       {
         "name": "scrollThreshold",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "scrollable"
       },
@@ -249,10 +223,7 @@
       },
       {
         "name": "src",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "v-toolbar"
       },
@@ -276,10 +247,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
@@ -366,28 +334,19 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "icon",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-alert"
       },
@@ -399,37 +358,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -495,10 +442,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
@@ -618,11 +562,7 @@
       },
       {
         "name": "counter",
-        "type": [
-          "boolean",
-          "number",
-          "string"
-        ],
+        "type": ["boolean", "number", "string"],
         "default": "undefined",
         "source": "v-text-field"
       },
@@ -677,19 +617,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -719,19 +653,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -767,31 +695,19 @@
       },
       {
         "name": "itemDisabled",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "disabled",
         "source": "v-select"
       },
       {
         "name": "itemText",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "text",
         "source": "v-select"
       },
       {
         "name": "itemValue",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "value",
         "source": "v-select"
       },
@@ -818,38 +734,25 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "menuProps",
-        "type": [
-          "string",
-          "array",
-          "object"
-        ],
+        "type": ["string", "array", "object"],
         "default": "{ \"closeOnClick\": false, \"closeOnContentClick\": false, \"disableKeys\": true, \"openOnClick\": false, \"maxHeight\": 304 }",
         "source": "v-select"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -988,10 +891,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -1202,10 +1102,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -1217,37 +1114,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -1259,10 +1144,7 @@
       },
       {
         "name": "size",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 48,
         "source": "v-avatar"
       },
@@ -1274,18 +1156,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
     ],
-    "mixins": [
-      "colorable",
-      "measurable"
-    ],
+    "mixins": ["colorable", "measurable"],
     "slots": [
       {
         "name": "default"
@@ -1374,19 +1250,13 @@
       },
       {
         "name": "offsetX",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-badge"
       },
       {
         "name": "offsetY",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-badge"
       },
@@ -1459,19 +1329,13 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -1495,46 +1359,31 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "mobileBreakPoint",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 960,
         "source": "v-banner"
       },
@@ -1570,10 +1419,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
@@ -1659,10 +1505,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 56,
         "source": "measurable"
       },
@@ -1698,37 +1541,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -1740,10 +1571,7 @@
       },
       {
         "name": "scrollThreshold",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "scrollable"
       },
@@ -1761,10 +1589,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
@@ -1811,10 +1636,7 @@
       },
       {
         "name": "closeDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -1874,10 +1696,7 @@
       },
       {
         "name": "maxWidth",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "auto",
         "source": "v-dialog"
       },
@@ -1889,10 +1708,7 @@
       },
       {
         "name": "openDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -1916,10 +1732,7 @@
       },
       {
         "name": "overlayOpacity",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "overlayable"
       },
@@ -1961,10 +1774,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "auto",
         "source": "v-dialog"
       }
@@ -2037,9 +1847,7 @@
         "source": "themeable"
       }
     ],
-    "mixins": [
-      "themeable"
-    ],
+    "mixins": ["themeable"],
     "slots": [
       {
         "name": "divider"
@@ -2089,10 +1897,7 @@
       },
       {
         "name": "href",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -2116,10 +1921,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": false,
         "source": "routable"
       },
@@ -2137,17 +1939,12 @@
       },
       {
         "name": "to",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       }
     ],
-    "mixins": [
-      "routable"
-    ],
+    "mixins": ["routable"],
     "slots": [
       {
         "name": "default"
@@ -2216,10 +2013,7 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
@@ -2249,19 +2043,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "href",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -2309,37 +2097,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -2375,10 +2151,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -2420,10 +2193,7 @@
       },
       {
         "name": "to",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -2447,10 +2217,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -2552,10 +2319,7 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
@@ -2590,12 +2354,7 @@
         "source": "proxyable"
       }
     ],
-    "mixins": [
-      "button-group",
-      "proxyable",
-      "themeable",
-      "colorable"
-    ],
+    "mixins": ["button-group", "proxyable", "themeable", "colorable"],
     "events": [
       {
         "name": "change",
@@ -2636,10 +2395,7 @@
       },
       {
         "name": "eventColor",
-        "type": [
-          "string",
-          "function"
-        ],
+        "type": ["string", "function"],
         "default": "primary",
         "source": "calendar-with-events"
       },
@@ -2675,37 +2431,25 @@
       },
       {
         "name": "eventName",
-        "type": [
-          "string",
-          "function"
-        ],
+        "type": ["string", "function"],
         "default": "name",
         "source": "calendar-with-events"
       },
       {
         "name": "eventOverlapMode",
-        "type": [
-          "string",
-          "function"
-        ],
+        "type": ["string", "function"],
         "default": "stack",
         "source": "calendar-with-events"
       },
       {
         "name": "eventOverlapThreshold",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 60,
         "source": "calendar-with-events"
       },
       {
         "name": "eventRipple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": "undefined",
         "source": "calendar-with-events"
       },
@@ -2717,10 +2461,7 @@
       },
       {
         "name": "eventTextColor",
-        "type": [
-          "string",
-          "function"
-        ],
+        "type": ["string", "function"],
         "default": "white",
         "source": "calendar-with-events"
       },
@@ -2732,10 +2473,7 @@
       },
       {
         "name": "firstInterval",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "v-calendar"
       },
@@ -2747,10 +2485,7 @@
       },
       {
         "name": "intervalCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 24,
         "source": "v-calendar"
       },
@@ -2762,19 +2497,13 @@
       },
       {
         "name": "intervalHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 48,
         "source": "v-calendar"
       },
       {
         "name": "intervalMinutes",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 60,
         "source": "v-calendar"
       },
@@ -2786,10 +2515,7 @@
       },
       {
         "name": "intervalWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 60,
         "source": "v-calendar"
       },
@@ -2885,29 +2611,12 @@
       },
       {
         "name": "weekdays",
-        "type": [
-          "array",
-          "string"
-        ],
-        "default": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
+        "type": ["array", "string"],
+        "default": [0, 1, 2, 3, 4, 5, 6],
         "source": "calendar-base"
       }
     ],
-    "mixins": [
-      "colorable",
-      "localable",
-      "mouse",
-      "themeable",
-      "times"
-    ],
+    "mixins": ["colorable", "localable", "mouse", "themeable", "times"],
     "slots": [
       {
         "name": "event",
@@ -4308,10 +4017,7 @@
       },
       {
         "name": "firstInterval",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "calendar-with-intervals"
       },
@@ -4323,10 +4029,7 @@
       },
       {
         "name": "intervalCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 24,
         "source": "calendar-with-intervals"
       },
@@ -4338,19 +4041,13 @@
       },
       {
         "name": "intervalHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 48,
         "source": "calendar-with-intervals"
       },
       {
         "name": "intervalMinutes",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 60,
         "source": "calendar-with-intervals"
       },
@@ -4362,10 +4059,7 @@
       },
       {
         "name": "intervalWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 60,
         "source": "calendar-with-intervals"
       },
@@ -4425,29 +4119,12 @@
       },
       {
         "name": "weekdays",
-        "type": [
-          "array",
-          "string"
-        ],
-        "default": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
+        "type": ["array", "string"],
+        "default": [0, 1, 2, 3, 4, 5, 6],
         "source": "calendar-base"
       }
     ],
-    "mixins": [
-      "colorable",
-      "localable",
-      "mouse",
-      "themeable",
-      "times"
-    ]
+    "mixins": ["colorable", "localable", "mouse", "themeable", "times"]
   },
   "v-calendar-weekly": {
     "props": [
@@ -4543,29 +4220,12 @@
       },
       {
         "name": "weekdays",
-        "type": [
-          "array",
-          "string"
-        ],
-        "default": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
+        "type": ["array", "string"],
+        "default": [0, 1, 2, 3, 4, 5, 6],
         "source": "calendar-base"
       }
     ],
-    "mixins": [
-      "colorable",
-      "localable",
-      "mouse",
-      "themeable",
-      "times"
-    ]
+    "mixins": ["colorable", "localable", "mouse", "themeable", "times"]
   },
   "v-calendar-monthly": {
     "props": [
@@ -4661,29 +4321,12 @@
       },
       {
         "name": "weekdays",
-        "type": [
-          "array",
-          "string"
-        ],
-        "default": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
+        "type": ["array", "string"],
+        "default": [0, 1, 2, 3, 4, 5, 6],
         "source": "calendar-base"
       }
     ],
-    "mixins": [
-      "colorable",
-      "localable",
-      "mouse",
-      "themeable",
-      "times"
-    ]
+    "mixins": ["colorable", "localable", "mouse", "themeable", "times"]
   },
   "v-card": {
     "props": [
@@ -4719,10 +4362,7 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
@@ -4746,10 +4386,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -4761,10 +4398,7 @@
       },
       {
         "name": "href",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -4788,55 +4422,37 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 4,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "loadable"
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -4866,10 +4482,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -4899,19 +4512,13 @@
       },
       {
         "name": "to",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
@@ -5010,10 +4617,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 500,
         "source": "v-carousel"
       },
@@ -5031,10 +4635,7 @@
       },
       {
         "name": "interval",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 6000,
         "source": "v-carousel"
       },
@@ -5052,10 +4653,7 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
@@ -5067,19 +4665,13 @@
       },
       {
         "name": "nextIcon",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "$next",
         "source": "v-window"
       },
       {
         "name": "prevIcon",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "$prev",
         "source": "v-window"
       },
@@ -5144,10 +4736,7 @@
         "source": "v-carousel"
       }
     ],
-    "mixins": [
-      "proxyable",
-      "themeable"
-    ],
+    "mixins": ["proxyable", "themeable"],
     "events": [
       {
         "name": "change",
@@ -5200,10 +4789,7 @@
       },
       {
         "name": "href",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -5227,19 +4813,13 @@
       },
       {
         "name": "reverseTransition",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-window-item"
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -5257,19 +4837,13 @@
       },
       {
         "name": "to",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
       {
         "name": "transition",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-window-item"
       },
@@ -5280,12 +4854,7 @@
         "source": "v-window-item"
       }
     ],
-    "mixins": [
-      "v-window-item",
-      "bootable",
-      "groupable",
-      "routable"
-    ],
+    "mixins": ["v-window-item", "bootable", "groupable", "routable"],
     "slots": [
       {
         "name": "default"
@@ -5339,19 +4908,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -5363,19 +4926,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -5428,10 +4985,7 @@
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -5474,10 +5028,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": true,
         "source": "rippleable"
       },
@@ -5495,10 +5046,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -5750,10 +5298,7 @@
       },
       {
         "name": "href",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -5813,10 +5358,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -5846,10 +5388,7 @@
       },
       {
         "name": "to",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -5950,19 +5489,13 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
       {
         "name": "mobileBreakPoint",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1264,
         "source": "base-slide-group"
       },
@@ -6020,10 +5553,7 @@
     "props": [
       {
         "name": "canvasHeight",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 150,
         "source": "v-color-picker"
       },
@@ -6041,10 +5571,7 @@
       },
       {
         "name": "dotSize",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 10,
         "source": "v-color-picker"
       },
@@ -6098,35 +5625,24 @@
       },
       {
         "name": "swatchesMaxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 150,
         "source": "v-color-picker"
       },
       {
         "name": "value",
-        "type": [
-          "object",
-          "string"
-        ],
+        "type": ["object", "string"],
         "default": "undefined",
         "source": "v-color-picker"
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 300,
         "source": "v-color-picker"
       }
     ],
-    "mixins": [
-      "themeable"
-    ],
+    "mixins": ["themeable"],
     "events": [
       {
         "name": "input",
@@ -6187,19 +5703,13 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-color-picker-swatches"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-color-picker-swatches"
       },
@@ -6435,18 +5945,12 @@
             "#f5f5f5",
             "#fafafa"
           ],
-          [
-            "#000000",
-            "#ffffff",
-            "transparent"
-          ]
+          ["#000000", "#ffffff", "transparent"]
         ],
         "source": "v-color-picker-swatches"
       }
     ],
-    "mixins": [
-      "themeable"
-    ]
+    "mixins": ["themeable"]
   },
   "v-color-picker-canvas": {
     "props": [
@@ -6487,28 +5991,19 @@
       },
       {
         "name": "dotSize",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 10,
         "source": "v-color-picker-canvas"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 150,
         "source": "v-color-picker-canvas"
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 300,
         "source": "v-color-picker-canvas"
       }
@@ -6602,11 +6097,7 @@
       },
       {
         "name": "counter",
-        "type": [
-          "boolean",
-          "number",
-          "string"
-        ],
+        "type": ["boolean", "number", "string"],
         "default": "undefined",
         "source": "v-text-field"
       },
@@ -6667,19 +6158,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -6709,19 +6194,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -6757,31 +6236,19 @@
       },
       {
         "name": "itemDisabled",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "disabled",
         "source": "v-select"
       },
       {
         "name": "itemText",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "text",
         "source": "v-select"
       },
       {
         "name": "itemValue",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "value",
         "source": "v-select"
       },
@@ -6808,38 +6275,25 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "menuProps",
-        "type": [
-          "string",
-          "array",
-          "object"
-        ],
+        "type": ["string", "array", "object"],
         "default": "{ \"closeOnClick\": false, \"closeOnContentClick\": false, \"disableKeys\": true, \"openOnClick\": false, \"maxHeight\": 304 }",
         "source": "v-select"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -6978,10 +6432,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -7198,26 +6649,18 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-counter"
       },
       {
         "name": "value",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-counter"
       }
     ],
-    "mixins": [
-      "themeable"
-    ]
+    "mixins": ["themeable"]
   },
   "v-data": {
     "props": [
@@ -7259,19 +6702,13 @@
       },
       {
         "name": "groupBy",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "v-data"
       },
       {
         "name": "groupDesc",
-        "type": [
-          "boolean",
-          "array"
-        ],
+        "type": ["boolean", "array"],
         "default": [],
         "source": "v-data"
       },
@@ -7345,19 +6782,13 @@
       },
       {
         "name": "sortBy",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "v-data"
       },
       {
         "name": "sortDesc",
-        "type": [
-          "boolean",
-          "array"
-        ],
+        "type": ["boolean", "array"],
         "default": [],
         "source": "v-data"
       }
@@ -7530,19 +6961,13 @@
       },
       {
         "name": "groupBy",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "v-data"
       },
       {
         "name": "groupDesc",
-        "type": [
-          "boolean",
-          "array"
-        ],
+        "type": ["boolean", "array"],
         "default": [],
         "source": "v-data"
       },
@@ -7578,10 +7003,7 @@
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-data-iterator"
       },
@@ -7599,10 +7021,7 @@
       },
       {
         "name": "mobileBreakpoint",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 600,
         "source": "v-data-iterator"
       },
@@ -7684,19 +7103,13 @@
       },
       {
         "name": "sortBy",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "v-data"
       },
       {
         "name": "sortDesc",
-        "type": [
-          "boolean",
-          "array"
-        ],
+        "type": ["boolean", "array"],
         "default": [],
         "source": "v-data"
       },
@@ -7966,12 +7379,7 @@
       {
         "name": "itemsPerPageOptions",
         "type": "array",
-        "default": [
-          5,
-          10,
-          15,
-          -1
-        ],
+        "default": [5, 10, 15, -1],
         "source": "v-data-footer"
       },
       {
@@ -8165,19 +7573,13 @@
       },
       {
         "name": "groupBy",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "v-data"
       },
       {
         "name": "groupDesc",
-        "type": [
-          "boolean",
-          "array"
-        ],
+        "type": ["boolean", "array"],
         "default": [],
         "source": "v-data"
       },
@@ -8213,10 +7615,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-data-table"
       },
@@ -8258,10 +7657,7 @@
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-data-iterator"
       },
@@ -8279,10 +7675,7 @@
       },
       {
         "name": "mobileBreakpoint",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 600,
         "source": "v-data-iterator"
       },
@@ -8382,19 +7775,13 @@
       },
       {
         "name": "sortBy",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "v-data"
       },
       {
         "name": "sortDesc",
-        "type": [
-          "boolean",
-          "array"
-        ],
+        "type": ["boolean", "array"],
         "default": [],
         "source": "v-data"
       },
@@ -8916,10 +8303,7 @@
         "source": "v-edit-dialog"
       }
     ],
-    "mixins": [
-      "returnable",
-      "themeable"
-    ],
+    "mixins": ["returnable", "themeable"],
     "slots": [
       {
         "name": "input"
@@ -8984,10 +8368,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-simple-table"
       },
@@ -8998,9 +8379,7 @@
         "source": "themeable"
       }
     ],
-    "mixins": [
-      "themeable"
-    ],
+    "mixins": ["themeable"],
     "slots": [
       {
         "name": "default"
@@ -9041,10 +8420,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-simple-table"
       },
@@ -9067,10 +8443,7 @@
         "source": "v-virtual-table"
       }
     ],
-    "mixins": [
-      "v-simple-table",
-      "themeable"
-    ]
+    "mixins": ["v-simple-table", "themeable"]
   },
   "v-date-picker": {
     "props": [
@@ -9106,31 +8479,19 @@
       },
       {
         "name": "eventColor",
-        "type": [
-          "array",
-          "function",
-          "object",
-          "string"
-        ],
+        "type": ["array", "function", "object", "string"],
         "default": "warning",
         "source": "v-date-picker"
       },
       {
         "name": "events",
-        "type": [
-          "array",
-          "function",
-          "object"
-        ],
+        "type": ["array", "function", "object"],
         "default": null,
         "source": "v-date-picker"
       },
       {
         "name": "firstDayOfWeek",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 0,
         "source": "v-date-picker"
       },
@@ -9172,10 +8533,7 @@
       },
       {
         "name": "localeFirstDayOfYear",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 0,
         "source": "v-date-picker"
       },
@@ -9259,10 +8617,7 @@
       },
       {
         "name": "showCurrent",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": true,
         "source": "v-date-picker"
       },
@@ -9286,10 +8641,7 @@
       },
       {
         "name": "value",
-        "type": [
-          "array",
-          "string"
-        ],
+        "type": ["array", "string"],
         "default": "undefined",
         "source": "v-date-picker"
       },
@@ -9301,10 +8653,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 290,
         "source": "picker"
       },
@@ -9321,12 +8670,7 @@
         "source": "v-date-picker"
       }
     ],
-    "mixins": [
-      "localable",
-      "picker",
-      "colorable",
-      "themeable"
-    ],
+    "mixins": ["localable", "picker", "colorable", "themeable"],
     "events": [
       {
         "name": "input",
@@ -9403,10 +8747,7 @@
       },
       {
         "name": "year",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-date-picker-title"
       },
@@ -9417,10 +8758,7 @@
         "source": "v-date-picker-title"
       }
     ],
-    "mixins": [
-      "colorable",
-      "colorable"
-    ]
+    "mixins": ["colorable", "colorable"]
   },
   "v-date-picker-header": {
     "props": [
@@ -9492,19 +8830,12 @@
       },
       {
         "name": "value",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-date-picker-header"
       }
     ],
-    "mixins": [
-      "colorable",
-      "localable",
-      "themeable"
-    ]
+    "mixins": ["colorable", "localable", "themeable"]
   },
   "v-date-picker-date-table": {
     "props": [
@@ -9540,31 +8871,19 @@
       },
       {
         "name": "eventColor",
-        "type": [
-          "array",
-          "function",
-          "object",
-          "string"
-        ],
+        "type": ["array", "function", "object", "string"],
         "default": "warning",
         "source": "themeable"
       },
       {
         "name": "events",
-        "type": [
-          "array",
-          "function",
-          "object"
-        ],
+        "type": ["array", "function", "object"],
         "default": null,
         "source": "themeable"
       },
       {
         "name": "firstDayOfWeek",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 0,
         "source": "v-date-picker-date-table"
       },
@@ -9588,10 +8907,7 @@
       },
       {
         "name": "localeFirstDayOfYear",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 0,
         "source": "v-date-picker-date-table"
       },
@@ -9639,10 +8955,7 @@
       },
       {
         "name": "value",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": "undefined",
         "source": "themeable"
       },
@@ -9653,12 +8966,7 @@
         "source": "v-date-picker-date-table"
       }
     ],
-    "mixins": [
-      "themeable",
-      "colorable",
-      "localable",
-      "themeable"
-    ]
+    "mixins": ["themeable", "colorable", "localable", "themeable"]
   },
   "v-date-picker-month-table": {
     "props": [
@@ -9694,22 +9002,13 @@
       },
       {
         "name": "eventColor",
-        "type": [
-          "array",
-          "function",
-          "object",
-          "string"
-        ],
+        "type": ["array", "function", "object", "string"],
         "default": "warning",
         "source": "themeable"
       },
       {
         "name": "events",
-        "type": [
-          "array",
-          "function",
-          "object"
-        ],
+        "type": ["array", "function", "object"],
         "default": null,
         "source": "themeable"
       },
@@ -9769,20 +9068,12 @@
       },
       {
         "name": "value",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": "undefined",
         "source": "themeable"
       }
     ],
-    "mixins": [
-      "themeable",
-      "colorable",
-      "localable",
-      "themeable"
-    ]
+    "mixins": ["themeable", "colorable", "localable", "themeable"]
   },
   "v-date-picker-years": {
     "props": [
@@ -9806,19 +9097,13 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-date-picker-years"
       },
       {
         "name": "min",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-date-picker-years"
       },
@@ -9830,18 +9115,12 @@
       },
       {
         "name": "value",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-date-picker-years"
       }
     ],
-    "mixins": [
-      "colorable",
-      "localable"
-    ]
+    "mixins": ["colorable", "localable"]
   },
   "v-dialog": {
     "props": [
@@ -9859,10 +9138,7 @@
       },
       {
         "name": "closeDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -9916,10 +9192,7 @@
       },
       {
         "name": "maxWidth",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "none",
         "source": "v-dialog"
       },
@@ -9931,10 +9204,7 @@
       },
       {
         "name": "openDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -9958,10 +9228,7 @@
       },
       {
         "name": "overlayOpacity",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "overlayable"
       },
@@ -9991,10 +9258,7 @@
       },
       {
         "name": "transition",
-        "type": [
-          "string",
-          "boolean"
-        ],
+        "type": ["string", "boolean"],
         "default": "dialog-transition",
         "source": "v-dialog"
       },
@@ -10006,10 +9270,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "auto",
         "source": "v-dialog"
       }
@@ -10146,10 +9407,7 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
@@ -10184,10 +9442,7 @@
         "source": "proxyable"
       }
     ],
-    "mixins": [
-      "proxyable",
-      "themeable"
-    ]
+    "mixins": ["proxyable", "themeable"]
   },
   "v-expansion-panel": {
     "props": [
@@ -10209,10 +9464,7 @@
         "source": "v-expansion-panel"
       }
     ],
-    "mixins": [
-      "groupable",
-      "registrable-provide"
-    ],
+    "mixins": ["groupable", "registrable-provide"],
     "events": [
       {
         "name": "change",
@@ -10257,18 +9509,12 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": false,
         "source": "v-expansion-panel-header"
       }
     ],
-    "mixins": [
-      "colorable",
-      "registrable-inject"
-    ],
+    "mixins": ["colorable", "registrable-inject"],
     "slots": [
       {
         "name": "actions"
@@ -10302,11 +9548,7 @@
         "source": "bootable"
       }
     ],
-    "mixins": [
-      "bootable",
-      "colorable",
-      "registrable-inject"
-    ],
+    "mixins": ["bootable", "colorable", "registrable-inject"],
     "slots": [
       {
         "name": "default"
@@ -10365,11 +9607,7 @@
       },
       {
         "name": "counter",
-        "type": [
-          "boolean",
-          "number",
-          "string"
-        ],
+        "type": ["boolean", "number", "string"],
         "default": "undefined",
         "source": "v-text-field"
       },
@@ -10418,19 +9656,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -10454,19 +9686,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -10495,28 +9721,19 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -10595,10 +9812,7 @@
       },
       {
         "name": "showSize",
-        "type": [
-          "boolean",
-          "number"
-        ],
+        "type": ["boolean", "number"],
         "default": false,
         "source": "v-file-input"
       },
@@ -10634,10 +9848,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -10649,10 +9860,7 @@
       },
       {
         "name": "truncateLength",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 22,
         "source": "v-file-input"
       },
@@ -10832,10 +10040,7 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
@@ -10847,10 +10052,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "auto",
         "source": "measurable"
       },
@@ -10868,37 +10070,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -10922,10 +10112,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
@@ -10961,9 +10148,7 @@
         "source": "v-form"
       }
     ],
-    "mixins": [
-      "registrable-provide"
-    ],
+    "mixins": ["registrable-provide"],
     "functions": [
       {
         "name": "reset",
@@ -11032,131 +10217,85 @@
       },
       {
         "name": "cols",
-        "type": [
-          "boolean",
-          "string",
-          "number"
-        ],
+        "type": ["boolean", "string", "number"],
         "default": false,
         "source": "v-col"
       },
       {
         "name": "lg",
-        "type": [
-          "boolean",
-          "string",
-          "number"
-        ],
+        "type": ["boolean", "string", "number"],
         "default": false,
         "source": "v-col"
       },
       {
         "name": "md",
-        "type": [
-          "boolean",
-          "string",
-          "number"
-        ],
+        "type": ["boolean", "string", "number"],
         "default": false,
         "source": "v-col"
       },
       {
         "name": "offset",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "offsetLg",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "offsetMd",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "offsetSm",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "offsetXl",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "order",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "orderLg",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "orderMd",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "orderSm",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "orderXl",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-col"
       },
       {
         "name": "sm",
-        "type": [
-          "boolean",
-          "string",
-          "number"
-        ],
+        "type": ["boolean", "string", "number"],
         "default": false,
         "source": "v-col"
       },
@@ -11168,19 +10307,13 @@
       },
       {
         "name": "xl",
-        "type": [
-          "boolean",
-          "string",
-          "number"
-        ],
+        "type": ["boolean", "string", "number"],
         "default": false,
         "source": "v-col"
       }
     ],
     "mixins": [],
-    "slots": [
-      "default"
-    ]
+    "slots": ["default"]
   },
   "v-row": {
     "props": [
@@ -11294,16 +10427,12 @@
       }
     ],
     "mixins": [],
-    "slots": [
-      "default"
-    ]
+    "slots": ["default"]
   },
   "v-spacer": {
     "props": [],
     "mixins": [],
-    "slots": [
-      "default"
-    ]
+    "slots": ["default"]
   },
   "v-layout": {
     "props": [
@@ -11527,10 +10656,7 @@
     "props": [
       {
         "name": "closeDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -11542,10 +10668,7 @@
       },
       {
         "name": "openDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -11556,10 +10679,7 @@
         "source": "toggleable"
       }
     ],
-    "mixins": [
-      "delayable",
-      "toggleable"
-    ],
+    "mixins": ["delayable", "toggleable"],
     "slots": [
       {
         "name": "default",
@@ -11621,10 +10741,7 @@
       },
       {
         "name": "size",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-icon"
       },
@@ -11653,11 +10770,7 @@
         "source": "sizeable"
       }
     ],
-    "mixins": [
-      "colorable",
-      "sizeable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "sizeable", "themeable"],
     "slots": [
       {
         "name": "default"
@@ -11674,10 +10787,7 @@
       },
       {
         "name": "aspectRatio",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-responsive"
       },
@@ -11701,10 +10811,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -11716,37 +10823,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -11770,10 +10865,7 @@
       },
       {
         "name": "src",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "v-img"
       },
@@ -11785,26 +10877,18 @@
       },
       {
         "name": "transition",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "fade-transition",
         "source": "v-img"
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
     ],
-    "mixins": [
-      "measurable"
-    ],
+    "mixins": ["measurable"],
     "slots": [
       {
         "name": "placeholder"
@@ -11871,37 +10955,25 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -11936,10 +11008,7 @@
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -11976,10 +11045,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -11995,12 +11061,7 @@
         "source": "v-input"
       }
     ],
-    "mixins": [
-      "validatable",
-      "colorable",
-      "registrable-inject",
-      "themeable"
-    ],
+    "mixins": ["validatable", "colorable", "registrable-inject", "themeable"],
     "events": [
       {
         "name": "update:error",
@@ -12075,9 +11136,7 @@
         "source": "groupable"
       }
     ],
-    "mixins": [
-      "groupable"
-    ],
+    "mixins": ["groupable"],
     "slots": [
       {
         "name": "default",
@@ -12116,10 +11175,7 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
@@ -12136,10 +11192,7 @@
         "source": "proxyable"
       }
     ],
-    "mixins": [
-      "proxyable",
-      "themeable"
-    ],
+    "mixins": ["proxyable", "themeable"],
     "events": [
       {
         "name": "change",
@@ -12187,10 +11240,7 @@
       },
       {
         "name": "left",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "v-label"
       },
@@ -12202,10 +11252,7 @@
       },
       {
         "name": "right",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "auto",
         "source": "v-label"
       },
@@ -12216,18 +11263,13 @@
         "source": "v-label"
       }
     ],
-    "mixins": [
-      "themeable"
-    ]
+    "mixins": ["themeable"]
   },
   "v-lazy": {
     "props": [
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "VLazy"
       },
@@ -12256,12 +11298,8 @@
         "source": "toggleable"
       }
     ],
-    "mixins": [
-      "toggleable"
-    ],
-    "slots": [
-      "default"
-    ]
+    "mixins": ["toggleable"],
+    "slots": ["default"]
   },
   "v-list-item-action-text": {
     "props": [],
@@ -12327,10 +11365,7 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
@@ -12348,10 +11383,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -12363,37 +11395,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -12447,20 +11467,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
     ],
-    "mixins": [
-      "colorable",
-      "elevatable",
-      "measurable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "elevatable", "measurable", "themeable"],
     "slots": [
       {
         "name": "default"
@@ -12519,10 +11531,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": true,
         "source": "v-list-group"
       },
@@ -12539,12 +11548,7 @@
         "source": "toggleable"
       }
     ],
-    "mixins": [
-      "bootable",
-      "colorable",
-      "registrable-inject",
-      "toggleable"
-    ],
+    "mixins": ["bootable", "colorable", "registrable-inject", "toggleable"],
     "slots": [
       {
         "name": "activator"
@@ -12618,10 +11622,7 @@
       },
       {
         "name": "href",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -12663,10 +11664,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -12696,10 +11694,7 @@
       },
       {
         "name": "to",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -12716,13 +11711,7 @@
         "source": "v-list-item"
       }
     ],
-    "mixins": [
-      "colorable",
-      "routable",
-      "themeable",
-      "groupable",
-      "toggleable"
-    ],
+    "mixins": ["colorable", "routable", "themeable", "groupable", "toggleable"],
     "slots": [
       {
         "name": "default",
@@ -12768,10 +11757,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -12789,37 +11775,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -12831,10 +11805,7 @@
       },
       {
         "name": "size",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 40,
         "source": "v-avatar"
       },
@@ -12846,18 +11817,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
     ],
-    "mixins": [
-      "colorable",
-      "measurable"
-    ],
+    "mixins": ["colorable", "measurable"],
     "slots": [
       {
         "name": "default"
@@ -12907,10 +11872,7 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
@@ -12927,12 +11889,7 @@
         "source": "proxyable"
       }
     ],
-    "mixins": [
-      "base-item-group",
-      "proxyable",
-      "themeable",
-      "colorable"
-    ],
+    "mixins": ["base-item-group", "proxyable", "themeable", "colorable"],
     "events": [
       {
         "name": "change",
@@ -12985,10 +11942,7 @@
       },
       {
         "name": "closeDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -13060,73 +12014,49 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "auto",
         "source": "v-menu"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "auto",
         "source": "menuable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "menuable"
       },
       {
         "name": "nudgeBottom",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
       {
         "name": "nudgeLeft",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
       {
         "name": "nudgeRight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
       {
         "name": "nudgeTop",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
       {
         "name": "nudgeWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
@@ -13150,10 +12080,7 @@
       },
       {
         "name": "openDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -13207,10 +12134,7 @@
       },
       {
         "name": "transition",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "v-menu-transition",
         "source": "v-menu"
       },
@@ -13222,10 +12146,7 @@
       },
       {
         "name": "zIndex",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "menuable"
       }
@@ -13286,10 +12207,7 @@
         "source": "v-messages"
       }
     ],
-    "mixins": [
-      "colorable",
-      "themeable"
-    ]
+    "mixins": ["colorable", "themeable"]
   },
   "v-navigation-drawer": {
     "props": [
@@ -13361,10 +12279,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "100%",
         "source": "v-navigation-drawer"
       },
@@ -13388,19 +12303,13 @@
       },
       {
         "name": "miniVariantWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 56,
         "source": "v-navigation-drawer"
       },
       {
         "name": "mobileBreakPoint",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1264,
         "source": "v-navigation-drawer"
       },
@@ -13412,10 +12321,7 @@
       },
       {
         "name": "overlayOpacity",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "overlayable"
       },
@@ -13433,10 +12339,7 @@
       },
       {
         "name": "src",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "v-navigation-drawer"
       },
@@ -13472,10 +12375,7 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 256,
         "source": "v-navigation-drawer"
       }
@@ -13598,11 +12498,7 @@
       },
       {
         "name": "counter",
-        "type": [
-          "boolean",
-          "number",
-          "string"
-        ],
+        "type": ["boolean", "number", "string"],
         "default": "undefined",
         "source": "v-text-field"
       },
@@ -13663,19 +12559,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -13705,19 +12595,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -13753,31 +12637,19 @@
       },
       {
         "name": "itemDisabled",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "disabled",
         "source": "v-select"
       },
       {
         "name": "itemText",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "text",
         "source": "v-select"
       },
       {
         "name": "itemValue",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "value",
         "source": "v-select"
       },
@@ -13804,38 +12676,25 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "menuProps",
-        "type": [
-          "string",
-          "array",
-          "object"
-        ],
+        "type": ["string", "array", "object"],
         "default": "{ \"closeOnClick\": false, \"closeOnContentClick\": false, \"disableKeys\": true, \"openOnClick\": false, \"maxHeight\": 304 }",
         "source": "v-select"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -13980,10 +12839,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -14212,10 +13068,7 @@
       },
       {
         "name": "opacity",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0.46,
         "source": "v-overlay"
       },
@@ -14227,19 +13080,12 @@
       },
       {
         "name": "zIndex",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 5,
         "source": "v-overlay"
       }
     ],
-    "mixins": [
-      "colorable",
-      "themeable",
-      "toggleable"
-    ],
+    "mixins": ["colorable", "themeable", "toggleable"],
     "slots": [
       {
         "name": "default"
@@ -14298,10 +13144,7 @@
       },
       {
         "name": "totalVisible",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-pagination"
       },
@@ -14312,11 +13155,7 @@
         "source": "v-pagination"
       }
     ],
-    "mixins": [
-      "colorable",
-      "intersectable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "intersectable", "themeable"],
     "events": [
       {
         "name": "input",
@@ -14348,19 +13187,13 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -14372,37 +13205,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -14420,20 +13241,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
     ],
-    "mixins": [
-      "colorable",
-      "elevatable",
-      "measurable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "elevatable", "measurable", "themeable"],
     "slots": [
       {
         "name": "default"
@@ -14450,10 +13263,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 500,
         "source": "translatable"
       },
@@ -14464,9 +13274,7 @@
         "source": "v-parallax"
       }
     ],
-    "mixins": [
-      "translatable"
-    ],
+    "mixins": ["translatable"],
     "slots": [
       {
         "name": "default"
@@ -14519,18 +13327,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 290,
         "source": "v-picker"
       }
     ],
-    "mixins": [
-      "colorable",
-      "themeable"
-    ]
+    "mixins": ["colorable", "themeable"]
   },
   "v-progress-circular": {
     "props": [
@@ -14554,37 +13356,25 @@
       },
       {
         "name": "rotate",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "v-progress-circular"
       },
       {
         "name": "size",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 32,
         "source": "v-progress-circular"
       },
       {
         "name": "value",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "v-progress-circular"
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 4,
         "source": "v-progress-circular"
       }
@@ -14621,10 +13411,7 @@
       },
       {
         "name": "backgroundOpacity",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-progress-linear"
       },
@@ -14636,10 +13423,7 @@
       },
       {
         "name": "bufferValue",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 100,
         "source": "v-progress-linear"
       },
@@ -14663,10 +13447,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 4,
         "source": "v-progress-linear"
       },
@@ -14714,20 +13495,12 @@
       },
       {
         "name": "value",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "proxyable"
       }
     ],
-    "mixins": [
-      "colorable",
-      "positionable",
-      "proxyable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "positionable", "proxyable", "themeable"],
     "slots": [
       {
         "name": "default",
@@ -14796,37 +13569,25 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "auto",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -14867,19 +13628,13 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -14934,10 +13689,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -15094,10 +13846,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": true,
         "source": "rippleable"
       },
@@ -15107,12 +13856,7 @@
         "source": "v-input"
       }
     ],
-    "mixins": [
-      "colorable",
-      "rippleable",
-      "groupable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "rippleable", "groupable", "themeable"],
     "events": [
       {
         "name": "update:error",
@@ -15197,37 +13941,25 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -15262,46 +13994,31 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 100,
         "source": "v-slider"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
       {
         "name": "min",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "v-slider"
       },
@@ -15332,10 +14049,7 @@
       },
       {
         "name": "step",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "v-slider"
       },
@@ -15347,10 +14061,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -15362,19 +14073,13 @@
       },
       {
         "name": "thumbLabel",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-slider"
       },
       {
         "name": "thumbSize",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 32,
         "source": "v-slider"
       },
@@ -15386,19 +14091,13 @@
       },
       {
         "name": "tickSize",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "v-slider"
       },
       {
         "name": "ticks",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-slider"
       },
@@ -15432,9 +14131,7 @@
         "source": "v-slider"
       }
     ],
-    "mixins": [
-      "loadable"
-    ],
+    "mixins": ["loadable"],
     "events": [
       {
         "name": "update:error",
@@ -15527,10 +14224,7 @@
       },
       {
         "name": "closeDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -15590,10 +14284,7 @@
       },
       {
         "name": "length",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 5,
         "source": "v-rating"
       },
@@ -15605,10 +14296,7 @@
       },
       {
         "name": "openDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -15620,19 +14308,13 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": true,
         "source": "rippleable"
       },
       {
         "name": "size",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-rating"
       },
@@ -15661,13 +14343,7 @@
         "source": "sizeable"
       }
     ],
-    "mixins": [
-      "colorable",
-      "delayable",
-      "rippleable",
-      "sizeable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "delayable", "rippleable", "sizeable", "themeable"],
     "events": [
       {
         "name": "input",
@@ -15696,71 +14372,48 @@
     "props": [
       {
         "name": "aspectRatio",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": "undefined",
         "source": "v-responsive"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
     ],
-    "mixins": [
-      "measurable"
-    ],
+    "mixins": ["measurable"],
     "slots": [
       {
         "name": "default"
@@ -15831,11 +14484,7 @@
       },
       {
         "name": "counter",
-        "type": [
-          "boolean",
-          "number",
-          "string"
-        ],
+        "type": ["boolean", "number", "string"],
         "default": "undefined",
         "source": "v-text-field"
       },
@@ -15890,19 +14539,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -15931,19 +14574,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -15973,31 +14610,19 @@
       },
       {
         "name": "itemDisabled",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "disabled",
         "source": "v-select"
       },
       {
         "name": "itemText",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "text",
         "source": "v-select"
       },
       {
         "name": "itemValue",
-        "type": [
-          "string",
-          "array",
-          "function"
-        ],
+        "type": ["string", "array", "function"],
         "default": "value",
         "source": "v-select"
       },
@@ -16024,38 +14649,25 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "menuProps",
-        "type": [
-          "string",
-          "array",
-          "object"
-        ],
+        "type": ["string", "array", "object"],
         "default": "{ \"closeOnClick\": false, \"closeOnContentClick\": false, \"disableKeys\": true, \"openOnClick\": false, \"maxHeight\": 304 }",
         "source": "v-select"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -16182,10 +14794,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -16402,19 +15011,13 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -16432,37 +15035,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -16524,19 +15115,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
     ],
-    "mixins": [
-      "elevatable",
-      "measurable",
-      "themeable"
-    ]
+    "mixins": ["elevatable", "measurable", "themeable"]
   },
   "v-slider": {
     "props": [
@@ -16585,37 +15169,25 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -16650,46 +15222,31 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 100,
         "source": "v-slider"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
       {
         "name": "min",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "v-slider"
       },
@@ -16720,10 +15277,7 @@
       },
       {
         "name": "step",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "v-slider"
       },
@@ -16735,10 +15289,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -16750,19 +15301,13 @@
       },
       {
         "name": "thumbLabel",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-slider"
       },
       {
         "name": "thumbSize",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 32,
         "source": "v-slider"
       },
@@ -16774,19 +15319,13 @@
       },
       {
         "name": "tickSize",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "v-slider"
       },
       {
         "name": "ticks",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-slider"
       },
@@ -16820,9 +15359,7 @@
         "source": "v-slider"
       }
     ],
-    "mixins": [
-      "loadable"
-    ],
+    "mixins": ["loadable"],
     "events": [
       {
         "name": "update:error",
@@ -16933,19 +15470,13 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
       {
         "name": "mobileBreakPoint",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1264,
         "source": "base-slide-group"
       },
@@ -16980,11 +15511,7 @@
         "source": "proxyable"
       }
     ],
-    "mixins": [
-      "base-item-group",
-      "proxyable",
-      "themeable"
-    ],
+    "mixins": ["base-item-group", "proxyable", "themeable"],
     "events": [
       {
         "name": "change",
@@ -17027,9 +15554,7 @@
         "source": "groupable"
       }
     ],
-    "mixins": [
-      "groupable"
-    ],
+    "mixins": ["groupable"],
     "slots": [
       {
         "name": "default"
@@ -17099,11 +15624,7 @@
         "source": "v-snackbar"
       }
     ],
-    "mixins": [
-      "colorable",
-      "toggleable",
-      "positionable"
-    ],
+    "mixins": ["colorable", "toggleable", "positionable"],
     "events": [
       {
         "name": "input",
@@ -17168,19 +15689,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 75,
         "source": "VSparkline"
       },
       {
         "name": "labelSize",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 7,
         "source": "VSparkline"
       },
@@ -17192,19 +15707,13 @@
       },
       {
         "name": "lineWidth",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 4,
         "source": "VSparkline"
       },
       {
         "name": "padding",
-        "type": [
-          "string",
-          "number"
-        ],
+        "type": ["string", "number"],
         "default": 8,
         "source": "VSparkline"
       },
@@ -17216,11 +15725,7 @@
       },
       {
         "name": "smooth",
-        "type": [
-          "boolean",
-          "number",
-          "string"
-        ],
+        "type": ["boolean", "number", "string"],
         "default": false,
         "source": "VSparkline"
       },
@@ -17238,17 +15743,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 300,
         "source": "VSparkline"
       }
     ],
-    "mixins": [
-      "colorable"
-    ],
+    "mixins": ["colorable"],
     "slots": [
       {
         "name": "label"
@@ -17330,11 +15830,7 @@
         "source": "toggleable"
       }
     ],
-    "mixins": [
-      "positionable",
-      "toggleable",
-      "transitionable"
-    ],
+    "mixins": ["positionable", "toggleable", "transitionable"],
     "slots": [
       {
         "name": "activator"
@@ -17383,11 +15879,7 @@
         "source": "v-stepper"
       }
     ],
-    "mixins": [
-      "registrable-provide",
-      "proxyable",
-      "themeable"
-    ],
+    "mixins": ["registrable-provide", "proxyable", "themeable"],
     "events": [
       {
         "name": "change",
@@ -17404,17 +15896,12 @@
     "props": [
       {
         "name": "step",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-stepper-content"
       }
     ],
-    "mixins": [
-      "registrable-inject"
-    ],
+    "mixins": ["registrable-inject"],
     "slots": [
       {
         "name": "default"
@@ -17467,18 +15954,12 @@
       },
       {
         "name": "step",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-stepper-step"
       }
     ],
-    "mixins": [
-      "colorable",
-      "registrable-inject"
-    ],
+    "mixins": ["colorable", "registrable-inject"],
     "events": [
       {
         "name": "click",
@@ -17530,9 +16011,7 @@
         "source": "themeable"
       }
     ],
-    "mixins": [
-      "themeable"
-    ],
+    "mixins": ["themeable"],
     "slots": [
       {
         "name": "default"
@@ -17586,19 +16065,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -17616,19 +16089,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -17669,19 +16136,13 @@
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -17712,10 +16173,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": true,
         "source": "rippleable"
       },
@@ -17733,10 +16191,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -17864,10 +16319,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-system-bar"
       },
@@ -17890,12 +16342,7 @@
         "source": "v-system-bar"
       }
     ],
-    "mixins": [
-      "applicationable",
-      "positionable",
-      "colorable",
-      "themeable"
-    ]
+    "mixins": ["applicationable", "positionable", "colorable", "themeable"]
   },
   "v-tabs": {
     "props": [
@@ -17955,10 +16402,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-tabs"
       },
@@ -17982,10 +16426,7 @@
       },
       {
         "name": "mobileBreakPoint",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1264,
         "source": "v-tabs"
       },
@@ -18027,10 +16468,7 @@
       },
       {
         "name": "sliderSize",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "v-tabs"
       },
@@ -18047,11 +16485,7 @@
         "source": "v-tabs"
       }
     ],
-    "mixins": [
-      "colorable",
-      "proxyable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "proxyable", "themeable"],
     "events": [
       {
         "name": "change",
@@ -18103,10 +16537,7 @@
       },
       {
         "name": "href",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       },
@@ -18136,10 +16567,7 @@
       },
       {
         "name": "ripple",
-        "type": [
-          "boolean",
-          "object"
-        ],
+        "type": ["boolean", "object"],
         "default": true,
         "source": "routable"
       },
@@ -18157,19 +16585,12 @@
       },
       {
         "name": "to",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "routable"
       }
     ],
-    "mixins": [
-      "routable",
-      "groupable",
-      "themeable"
-    ],
+    "mixins": ["routable", "groupable", "themeable"],
     "events": [
       {
         "name": "change",
@@ -18217,19 +16638,13 @@
       },
       {
         "name": "reverseTransition",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-window-item"
       },
       {
         "name": "transition",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-window-item"
       },
@@ -18240,10 +16655,7 @@
         "source": "v-window-item"
       }
     ],
-    "mixins": [
-      "bootable",
-      "groupable"
-    ],
+    "mixins": ["bootable", "groupable"],
     "slots": [
       {
         "name": "default"
@@ -18284,10 +16696,7 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
@@ -18299,19 +16708,13 @@
       },
       {
         "name": "nextIcon",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "$next",
         "source": "v-window"
       },
       {
         "name": "prevIcon",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "$prev",
         "source": "v-window"
       },
@@ -18358,10 +16761,7 @@
         "source": "v-window"
       }
     ],
-    "mixins": [
-      "proxyable",
-      "themeable"
-    ],
+    "mixins": ["proxyable", "themeable"],
     "events": [
       {
         "name": "change",
@@ -18383,9 +16783,7 @@
         "source": "colorable"
       }
     ],
-    "mixins": [
-      "colorable"
-    ]
+    "mixins": ["colorable"]
   },
   "v-textarea": {
     "props": [
@@ -18439,11 +16837,7 @@
       },
       {
         "name": "counter",
-        "type": [
-          "boolean",
-          "number",
-          "string"
-        ],
+        "type": ["boolean", "number", "string"],
         "default": "undefined",
         "source": "v-text-field"
       },
@@ -18480,19 +16874,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -18516,19 +16904,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -18557,28 +16939,19 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -18645,19 +17018,13 @@
       },
       {
         "name": "rowHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 24,
         "source": "v-textarea"
       },
       {
         "name": "rows",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 5,
         "source": "v-textarea"
       },
@@ -18699,10 +17066,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -18897,11 +17261,7 @@
       },
       {
         "name": "counter",
-        "type": [
-          "boolean",
-          "number",
-          "string"
-        ],
+        "type": ["boolean", "number", "string"],
         "default": "undefined",
         "source": "v-text-field"
       },
@@ -18938,19 +17298,13 @@
       },
       {
         "name": "errorCount",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 1,
         "source": "validatable"
       },
       {
         "name": "errorMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -18974,19 +17328,13 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "v-input"
       },
       {
         "name": "hideDetails",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-input"
       },
@@ -19015,28 +17363,19 @@
       },
       {
         "name": "loaderHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 2,
         "source": "loadable"
       },
       {
         "name": "loading",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": false,
         "source": "v-input"
       },
       {
         "name": "messages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -19133,10 +17472,7 @@
       },
       {
         "name": "successMessages",
-        "type": [
-          "string",
-          "array"
-        ],
+        "type": ["string", "array"],
         "default": [],
         "source": "validatable"
       },
@@ -19340,9 +17676,7 @@
         "source": "v-timeline"
       }
     ],
-    "mixins": [
-      "themeable"
-    ],
+    "mixins": ["themeable"],
     "slots": [
       {
         "name": "default"
@@ -19418,10 +17752,7 @@
         "source": "v-timeline-item"
       }
     ],
-    "mixins": [
-      "colorable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "themeable"],
     "slots": [
       {
         "name": "icon"
@@ -19438,28 +17769,19 @@
     "props": [
       {
         "name": "allowedHours",
-        "type": [
-          "function",
-          "array"
-        ],
+        "type": ["function", "array"],
         "default": "undefined",
         "source": "v-time-picker"
       },
       {
         "name": "allowedMinutes",
-        "type": [
-          "function",
-          "array"
-        ],
+        "type": ["function", "array"],
         "default": "undefined",
         "source": "v-time-picker"
       },
       {
         "name": "allowedSeconds",
-        "type": [
-          "function",
-          "array"
-        ],
+        "type": ["function", "array"],
         "default": "undefined",
         "source": "v-time-picker"
       },
@@ -19561,21 +17883,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 290,
         "source": "picker"
       }
     ],
-    "mixins": [
-      "picker",
-      "colorable",
-      "themeable",
-      "colorable",
-      "colorable"
-    ],
+    "mixins": ["picker", "colorable", "themeable", "colorable", "colorable"],
     "events": [
       {
         "name": "input",
@@ -19701,10 +18014,7 @@
         "source": "v-time-picker-clock"
       }
     ],
-    "mixins": [
-      "colorable",
-      "themeable"
-    ]
+    "mixins": ["colorable", "themeable"]
   },
   "v-time-picker-title": {
     "props": [
@@ -19775,10 +18085,7 @@
         "source": "v-time-picker-title"
       }
     ],
-    "mixins": [
-      "colorable",
-      "colorable"
-    ]
+    "mixins": ["colorable", "colorable"]
   },
   "v-toolbar": {
     "props": [
@@ -19820,10 +18127,7 @@
       },
       {
         "name": "elevation",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "elevatable"
       },
@@ -19835,10 +18139,7 @@
       },
       {
         "name": "extensionHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 48,
         "source": "v-toolbar"
       },
@@ -19856,10 +18157,7 @@
       },
       {
         "name": "height",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -19871,37 +18169,25 @@
       },
       {
         "name": "maxHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minHeight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       },
@@ -19919,10 +18205,7 @@
       },
       {
         "name": "src",
-        "type": [
-          "string",
-          "object"
-        ],
+        "type": ["string", "object"],
         "default": "undefined",
         "source": "v-toolbar"
       },
@@ -19940,20 +18223,12 @@
       },
       {
         "name": "width",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "measurable"
       }
     ],
-    "mixins": [
-      "colorable",
-      "elevatable",
-      "measurable",
-      "themeable"
-    ],
+    "mixins": ["colorable", "elevatable", "measurable", "themeable"],
     "slots": [
       {
         "name": "extension"
@@ -20021,10 +18296,7 @@
       },
       {
         "name": "closeDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -20084,64 +18356,43 @@
       },
       {
         "name": "maxWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "auto",
         "source": "menuable"
       },
       {
         "name": "minWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "menuable"
       },
       {
         "name": "nudgeBottom",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
       {
         "name": "nudgeLeft",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
       {
         "name": "nudgeRight",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
       {
         "name": "nudgeTop",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
       {
         "name": "nudgeWidth",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "menuable"
       },
@@ -20153,10 +18404,7 @@
       },
       {
         "name": "openDelay",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": 0,
         "source": "delayable"
       },
@@ -20449,10 +18697,7 @@
         "source": "v-treeview"
       }
     ],
-    "mixins": [
-      "registrable-provide",
-      "themeable"
-    ],
+    "mixins": ["registrable-provide", "themeable"],
     "slots": [
       {
         "name": "append",
@@ -20638,10 +18883,7 @@
         "source": "v-treeview-node"
       }
     ],
-    "mixins": [
-      "colorable",
-      "registrable-inject"
-    ]
+    "mixins": ["colorable", "registrable-inject"]
   },
   "v-window": {
     "props": [
@@ -20677,10 +18919,7 @@
       },
       {
         "name": "max",
-        "type": [
-          "number",
-          "string"
-        ],
+        "type": ["number", "string"],
         "default": "undefined",
         "source": "base-item-group"
       },
@@ -20692,19 +18931,13 @@
       },
       {
         "name": "nextIcon",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "$next",
         "source": "v-window"
       },
       {
         "name": "prevIcon",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "$prev",
         "source": "v-window"
       },
@@ -20755,10 +18988,7 @@
         "source": "v-window"
       }
     ],
-    "mixins": [
-      "proxyable",
-      "themeable"
-    ],
+    "mixins": ["proxyable", "themeable"],
     "events": [
       {
         "name": "change",
@@ -20792,19 +19022,13 @@
       },
       {
         "name": "reverseTransition",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-window-item"
       },
       {
         "name": "transition",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "default": "undefined",
         "source": "v-window-item"
       },
@@ -20815,10 +19039,7 @@
         "source": "v-window-item"
       }
     ],
-    "mixins": [
-      "bootable",
-      "groupable"
-    ],
+    "mixins": ["bootable", "groupable"],
     "slots": [
       {
         "name": "default"

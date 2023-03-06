@@ -1,3 +1,3 @@
-import './public-path';
+import "./public-path";
 
-export * from './nodepsEmbed';
+export * from "./nodepsEmbed";

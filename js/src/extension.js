@@ -4,16 +4,16 @@
 
 // Configure requirejs
 if (window.require) {
-    window.require.config({
-        map: {
-            '*': {
-                'jupyter-vuetify': 'nbextensions/jupyter-vuetify/index',
-            },
-        },
-    });
+  window.require.config({
+    map: {
+      "*": {
+        "jupyter-vuetify": "nbextensions/jupyter-vuetify/index",
+      },
+    },
+  });
 }
 
 // Export the required load_ipython_extension
 module.exports = {
-    load_ipython_extension() {},
+  load_ipython_extension() {},
 };
