@@ -1,9 +1,9 @@
 Jupyter widgets based on vuetify UI components
 
-Package Install
----------------
+## Package Install
 
 **Prerequisites**
+
 - [node](http://nodejs.org/)
 
 ```bash

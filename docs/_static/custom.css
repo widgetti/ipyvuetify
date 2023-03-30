@@ -1,7 +1,7 @@
 .vuetify-styles .v-text-field input {
-    box-shadow: unset;
+  box-shadow: unset;
 }
 
 div.jupyter_container.docutils {
-    padding: .4em;
+  padding: 0.4em;
 }
