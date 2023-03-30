@@ -210,11 +210,11 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
     ],
-    extras_require= {
-        'doc': [
-            'sphinx',
-            'jupyter-sphinx',
-            'sphinx-rtd-theme',
+    extras_require={
+        "doc": [
+            "sphinx",
+            "jupyter-sphinx",
+            "sphinx-rtd-theme",
         ]
-    }
+    },
 )
