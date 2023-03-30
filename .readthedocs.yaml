@@ -12,7 +12,7 @@ build:
     nodejs: "16"
   jobs:
     pre_install:
-      - pip install jupyterlab
+      - pip install jupyter
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
