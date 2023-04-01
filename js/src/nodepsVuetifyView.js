@@ -1,5 +1,6 @@
 import { DOMWidgetView } from "@jupyter-widgets/base";
 import { vueRender, createViewContext } from "jupyter-vue";
+import vuetify from "./plugins/nodepsVuetify";
 
 export class VuetifyView extends DOMWidgetView {
     remove() {
@@ -17,7 +18,7 @@ export class VuetifyView extends DOMWidgetView {
             const view = this;
 
             this.vueApp = new Vue({
-                // TODO: should we pass in vuetify here?
+                vuetify,
                 el: vueEl,
                 provide: {
                     viewCtx: createViewContext(this),
