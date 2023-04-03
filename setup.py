@@ -181,7 +181,7 @@ setup(
     install_requires=[
         "ipyvue>=1.5,<2",
     ],
-    packages=find_packages(exclude=["generate_source"]),
+    packages=find_packages(),
     zip_safe=False,
     cmdclass={
         "build_py": js_prerelease(build_py),
