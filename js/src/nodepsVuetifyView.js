@@ -24,14 +24,22 @@ export class VuetifyView extends DOMWidgetView {
                     viewCtx: createViewContext(this),
                 },
                 render(createElement) {
-                    return view.vueRender(createElement);
+                    // see VuetifyView.js
+                    if (!view.ipyvuetifyApp) {
+                        view.ipyvuetifyApp =
+                            createElement("v-app", [
+                                vueRender(createElement, view.model, view),
+                            ]);
+                    }
+                    return view.ipyvuetifyApp;
                 },
             });
         });
     }
 
+
     vueRender(createElement) {
-        return createElement({
+       return createElement({
           provide: {
             viewCtx: createViewContext(this),
           },
@@ -41,3 +49,5 @@ export class VuetifyView extends DOMWidgetView {
         });
     }
 }
+
+
