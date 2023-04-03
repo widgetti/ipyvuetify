@@ -1,6 +1,6 @@
 name: Build
 
-on: 
+on:
   - push
   - pull_request
   - workflow_dispatch
@@ -34,4 +34,6 @@ jobs:
       - name: Install
         run: pip install dist/*.whl
       - name: Import
-        run: python -c "from ipyvuetify import Btn"
+        # do the import in a subdirectory, as after installation, files in de current directory are also imported
+        run: |
+          (mkdir test-install; cd test-install; python -c "from ipyvuetify import Btn")
