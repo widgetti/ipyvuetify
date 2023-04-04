@@ -38,6 +38,6 @@ jobs:
           name: dist
           path: dist
       - name: Install
-        run: pip install dist/*.whl
+        run: pip install `find dist -name "*whl" |head -n1`
       - name: Import
         run: python -c "from ipyvuetify import Btn"
