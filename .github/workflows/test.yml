@@ -41,3 +41,5 @@ jobs:
         run: pip install `find dist -name "*whl" |head -n1`
       - name: Import
         run: python -c "from ipyvuetify import Btn"
+      - name: Set-up to fail
+        run: python -c "from ipyvuetify import Btnn"
