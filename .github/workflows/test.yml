@@ -30,6 +30,7 @@ jobs:
           pip install twine wheel jupyter-packaging jupyterlab
       - name: Build
         run: |
+          python setup.py generate_source
           python setup.py bdist_wheel
       - name: Install
         run: pip install dist/*.whl
