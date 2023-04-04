@@ -1,6 +1,6 @@
 name: Build
 
-on: 
+on:
   - push
   - pull_request
   - workflow_dispatch
@@ -30,7 +30,7 @@ jobs:
           pip install twine wheel jupyter-packaging jupyterlab
       - name: Build
         run: |
-          python setup.py bdist_wheel
+          python setup.py sdist bdist_wheel
       - name: Install
         run: pip install dist/*.whl
       - name: Import
