@@ -1,4 +1,4 @@
-from ._version import __version__, version_info  # noqa: F401
+from ._version import __version__  # noqa: F401
 from .generated import *  # noqa: F401, F403
 from .Html import Html  # noqa: F401
 from .Themes import theme  # noqa: F401
