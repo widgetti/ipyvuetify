@@ -32,8 +32,9 @@ jobs:
       - name: Build
         run: |
           python setup.py sdist bdist_wheel
-      - name: Import
-        run: python -c "from ipyvuetify import Btn"
+      - name: Import b4
+        run: pwd; python -c "from ipyvuetify import Btn"
+        continue-on-error: true
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
@@ -41,8 +42,10 @@ jobs:
           path: dist
       - name: Install
         run: pip install `find dist -name "*whl" |head -n1`
+      - name: check
+        run: which python; which pip
       - name: Import
-        run: python -c "from ipyvuetify import Btn"
+        run: (mkdir bla; cd bla; pwd; python -c "from ipyvuetify import Btn")
       - name: show wheel
         run: unzip -l `find dist -name "*whl" |head -n1`
       - name: Set-up to fail
