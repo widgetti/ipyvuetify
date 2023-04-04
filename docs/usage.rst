@@ -310,7 +310,7 @@ properties can be set by separating them with a semicolon :code:`;`.
     v.Select(label='Fruit', style_='width: 75px; opacity: 0.7')
 
 With the :code:`class_` attribute predefined Vuetify styles can be set. Predefined styles of note are
-`spacing <https://vuetifyjs.com/styles/spacing/>`_ and `colors <https://vuetifyjs.com/styles/colors/>`. More can be
+`spacing <https://vuetifyjs.com/styles/spacing/>`__ and `colors <https://vuetifyjs.com/styles/colors/>`__. More can be
 found in the section 'Styles and animations' of the Vuetify documentation. Multiple classes can be applied by separating
 them with a space.
 
