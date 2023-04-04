@@ -12,7 +12,7 @@ build:
     nodejs: "14"
   jobs:
     pre_install:
-      - pip install jupyter
+      - python -m pip install jupyter
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
