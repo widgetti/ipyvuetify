@@ -1,3 +1,3 @@
-import { Vue } from 'jupyter-vue';
+import { Vue } from "jupyter-vue";
 
 export default Vue;

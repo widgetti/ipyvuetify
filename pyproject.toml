@@ -1,0 +1,15 @@
+[tool.ruff]
+exclude = [
+    '.git',
+    'dist',
+    '.eggs',
+    '**/node_modules',
+    '**/generated',
+]
+ignore = [
+    "E501", # line too long | Black take care of it
+    #"W503", # line break before binary operator | Black takes care of it
+    #"E203", # whitespace before ':' | Black take care of it
+]
+line-length = 100
+select = ["E", "W", "F", "Q", "I"]
