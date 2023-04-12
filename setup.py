@@ -27,6 +27,24 @@ npm_path = os.pathsep.join(
 LONG_DESCRIPTION = "Jupyter widgets based on vuetify UI components"
 
 
+def get_data_files():
+    return [
+        (
+            "share/jupyter/nbextensions/jupyter-vuetify",
+            glob.glob("ipyvuetify/nbextension/*"),
+        ),
+        (
+            "share/jupyter/labextensions/jupyter-vuetify",
+            glob.glob("ipyvuetify/labextension/package.json"),
+        ),
+        (
+            "share/jupyter/labextensions/jupyter-vuetify/static",
+            glob.glob("ipyvuetify/labextension/static/*"),
+        ),
+        ("etc/jupyter/nbconfig/notebook.d", ["jupyter-vuetify.json"]),
+    ]
+
+
 def js_prerelease(command, strict=False):
     """decorator for building minified js/css prior to another command"""
 
@@ -60,7 +78,7 @@ def js_prerelease(command, strict=False):
 def update_package_data(distribution):
     """update package_data to catch changes during setup"""
     build_py = distribution.get_command_obj("build_py")
-    # distribution.package_data = find_package_data()
+    distribution.data_files = get_data_files()
     # re-init build_py options which load package_data
     build_py.finalize_options()
 
@@ -163,23 +181,9 @@ setup(
     description="Jupyter widgets based on vuetify UI components",
     long_description=LONG_DESCRIPTION,
     include_package_data=True,
-    data_files=[
-        (
-            "share/jupyter/nbextensions/jupyter-vuetify",
-            glob.glob("ipyvuetify/nbextension/*"),
-        ),
-        (
-            "share/jupyter/labextensions/jupyter-vuetify",
-            glob.glob("ipyvuetify/labextension/package.json"),
-        ),
-        (
-            "share/jupyter/labextensions/jupyter-vuetify/static",
-            glob.glob("ipyvuetify/labextension/static/*"),
-        ),
-        ("etc/jupyter/nbconfig/notebook.d", ["jupyter-vuetify.json"]),
-    ],
-    install_requires = [
-        'ipyvue>=1.7,<2',
+    data_files=get_data_files(),
+    install_requires=[
+        "ipyvue>=1.7,<2",
     ],
     packages=find_packages(exclude=["generate_source"]),
     zip_safe=False,
