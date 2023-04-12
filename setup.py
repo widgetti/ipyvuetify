@@ -215,6 +215,8 @@ setup(
             "sphinx",
             "jupyter-sphinx",
             "sphinx-rtd-theme",
+            "jupyter-packaging",
+            "jupyterlab",
         ]
     },
 )
