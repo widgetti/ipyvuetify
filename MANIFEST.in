@@ -1,6 +1,5 @@
 include LICENSE
 recursive-include ipyvuetify/nbextension *.*
 recursive-include ipyvuetify/labextension *.*
-recursive-include ipyvuetify/generated *.*
 include jupyter-vuetify.json
 recursive-include ipyvuetify/extra *.vue
