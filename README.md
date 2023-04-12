@@ -20,7 +20,6 @@ A small selection of widgets:
 To install use pip:
 
     $ pip install ipyvuetify
-    $ jupyter nbextension enable --py --sys-prefix ipyvuetify
 
     # for Jupyter Lab < 3
     $ jupyter labextension install jupyter-vuetify
