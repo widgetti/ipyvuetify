@@ -65,3 +65,30 @@ jobs:
         # do the import in a subdirectory, as after installation, files in de current directory are also imported
         run: |
           (mkdir test-install; cd test-install; python -c "from ipyvuetify import Btn")
+
+  ui-test:
+    needs: [build]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: ipyvuetify-dist-${{ github.run_number }}
+          path: ./dist
+
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install vuetify and test deps
+        run: |
+          wheel=(dist/*.whl)
+          pip install ${wheel}[test]
+
+      - name: Install playwright browsers
+        run: playwright install chromium
+
+      - name: Run ui-tests
+        run: pytest ui-tests
