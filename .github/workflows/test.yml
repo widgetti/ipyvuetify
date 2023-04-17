@@ -85,13 +85,20 @@ jobs:
       - name: Install vuetify and test deps
         run: |
           wheel=(dist/*.whl)
-          pip install ${wheel}[test]
+          pip install ${wheel}[test] "jupyter_server<2"
 
       - name: Install playwright browsers
         run: playwright install chromium
 
       - name: Run ui-tests
-        run: pytest ui-tests
+        run: pytest tests/ui/ --video=retain-on-failure --solara-update-snapshots-ci -s
+
+      - name: Upload Test artifacts
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: ipyvuetify-test-results
+          path: test-results
 
   release:
     if: startsWith(github.event.ref, 'refs/tags/v')

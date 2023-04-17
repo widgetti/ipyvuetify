@@ -187,11 +187,7 @@ setup(
     ],
     extras_require={
         "test": [
-            "solara @ https://github.com/widgetti/solara/archive/refs/heads/feat_test_ipywidgets.zip",
-            "playwright; python_version > '3.6'",
-            "pytest-playwright; python_version > '3.6'",
-            "voila",
-            "jupyterlab>=3.0.0",
+            "solara[pytest] @ https://github.com/widgetti/solara/archive/refs/heads/feat_test_ipywidgets.zip",
         ]
     },
     packages=find_packages(exclude=["generate_source"]),
