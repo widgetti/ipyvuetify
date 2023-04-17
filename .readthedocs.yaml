@@ -10,10 +10,6 @@ build:
   tools:
     python: "3.10"
     nodejs: "14"
-  jobs:
-    pre_install:
-      - python -m pip install jupyter jupyter-packaging jupyterlab jupyter_core
-      - printf "import jupyter_core\nprint(jupyter_core.__version__)" | python
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
