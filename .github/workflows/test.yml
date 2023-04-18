@@ -32,11 +32,18 @@ jobs:
           python setup.py generate_source
           python setup.py sdist bdist_wheel
 
+      - name: Build
+        run: |
+          cd js
+          npm pack
+
       - name: Upload builds
         uses: actions/upload-artifact@v3
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
-          path: ./dist
+          path: |
+            ./dist
+            ./js/*.tgz
 
   test:
     needs: [build]
@@ -51,7 +58,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
-          path: ./dist
 
       - name: Install Python
         uses: actions/setup-python@v2
@@ -75,7 +81,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
-          path: ./dist
 
       - name: Install Python
         uses: actions/setup-python@v2
@@ -102,13 +107,12 @@ jobs:
 
   release:
     if: startsWith(github.event.ref, 'refs/tags/v')
-    needs: [test, ui-test]
+    needs: [test]
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/download-artifact@v3
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
-          path: ./dist
 
       - name: Install node
         uses: actions/setup-node@v1
@@ -137,7 +141,7 @@ jobs:
           cd js
           echo $PRE_RELEASE
           if [[ $PRE_RELEASE == "true" ]]; then export TAG="next"; else export TAG="latest"; fi
-          npm publish --tag ${TAG} --access public
+          npm publish --tag ${TAG} --access public *.tgz
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           PRE_RELEASE: ${{ github.event.release.prerelease }}
