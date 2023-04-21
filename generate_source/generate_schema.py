@@ -1,6 +1,7 @@
 import json
 import re
 from itertools import chain
+from pathlib import Path
 
 sizes = ["xs", "sm", "md", "lg", "xl"]
 
@@ -92,8 +93,8 @@ def make_type(api_type):
             "oneOf": list(filter(identity, map(make_type, api_type))),
         }
 
+    # Not supported
     if api_type == "function":
-        # Not supported
         return None
 
     print(f"Unknown type: {api_type}")
@@ -150,8 +151,8 @@ def make_widget(data):
     name, attributes = data
     widget_name = kebab_to_camel(name)
 
+    # Widgets without props are directives, internationalization or $vuetify
     if "props" not in attributes.keys():
-        # Widgets without props are directives, internationalization or $vuetify
         return None
 
     properties = chain(*filter(identity, map(make_properties, attributes["props"])))
@@ -166,14 +167,16 @@ def make_widget(data):
 
 
 def generate_schema(
-    vuetify_api_file_name, base_schema_file_name, schema_output_file_name
+    vuetify_api_file_name: Path,
+    base_schema_file_name: Path,
+    schema_output_file_name: Path,
 ):
-    api_data = json.loads(open(vuetify_api_file_name).read())
-    base_schema = json.loads(open(base_schema_file_name).read())
+    api_data = json.loads(vuetify_api_file_name.read_text())
+    base_schema = json.loads(base_schema_file_name.read_text())
 
     widgets = filter(identity, map(make_widget, api_data.items()))
 
     schema = {"widgets": {**base_schema["widgets"], **dict(widgets)}}
 
-    with open(schema_output_file_name, "w") as outfile:
+    with schema_output_file_name.open("w") as outfile:
         json.dump(schema, outfile)
