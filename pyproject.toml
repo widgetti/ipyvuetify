@@ -57,6 +57,9 @@ find = {}
     "jupyter-vuetify.json"
 ]
 
+[tool.distutils.bdist_wheel]
+universal = true
+
 [tool.ruff]
 exclude = [
     '.git',

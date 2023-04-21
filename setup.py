@@ -29,7 +29,7 @@ def js_prerelease(command: Command, strict: bool = False) -> None:
 
         def run(self):
             """Run the command"""
-            # self.distribution.run_command("generate_source")
+            self.distribution.run_command("generate_source")
             self.distribution.run_command("jsdeps")
             command.run(self)
             update_package_data(self.distribution)
