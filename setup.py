@@ -7,7 +7,7 @@ import sys
 from distutils import log
 from subprocess import CalledProcessError, check_call
 
-from setuptools import Command, find_packages, setup
+from setuptools import Command, setup
 from setuptools.command.build_py import build_py
 from setuptools.command.egg_info import egg_info
 from setuptools.command.sdist import sdist
@@ -171,28 +171,8 @@ class GenerateSource(Command):
         generate()
 
 
-version_ns = {}
-with open(os.path.join(here, "ipyvuetify", "_version.py")) as f:
-    exec(f.read(), {}, version_ns)
-
 setup(
-    name="ipyvuetify",
-    version=version_ns["__version__"],
-    description="Jupyter widgets based on vuetify UI components",
-    long_description=LONG_DESCRIPTION,
-    include_package_data=True,
     data_files=get_data_files(),
-    install_requires=[
-        "ipyvue>=1.7,<2",
-    ],
-    # we need to use the released version
-    # extras_require={
-    #     "test": [
-    #         "solara[pytest] @ https://github.com/widgetti/solara/archive/refs/heads/feat_test_ipywidgets.zip",
-    #     ]
-    # },
-    packages=find_packages(exclude=["generate_source"]),
-    zip_safe=False,
     cmdclass={
         "build_py": js_prerelease(build_py),
         "egg_info": js_prerelease(egg_info),
@@ -200,24 +180,4 @@ setup(
         "jsdeps": NPM,
         "generate_source": GenerateSource,
     },
-    author="Mario Buikhuizen, Maarten Breddels",
-    author_email="mbuikhuizen@gmail.com, maartenbreddels@gmail.com",
-    url="https://github.com/widgetti/ipyvuetify",
-    keywords=[
-        "ipython",
-        "jupyter",
-        "widgets",
-    ],
-    classifiers=[
-        "Development Status :: 5 - Production/Stable",
-        "Framework :: IPython",
-        "Intended Audience :: Developers",
-        "Intended Audience :: Science/Research",
-        "Topic :: Multimedia :: Graphics",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
-    ],
 )
