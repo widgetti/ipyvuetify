@@ -46,8 +46,9 @@ doc = ["sphinx"]
 include-package-data = true
 license-files = ["LICENSE"]
 
-[tool.setuptools.packages]
-find = {}
+[tool.setuptools.packages.find]
+include = ["ipyvuetify*"]
+exclude = ["docs*", "tests*"]
 
 [tool.setuptools.package-data]
 "ipyvuetify" = [
