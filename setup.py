@@ -1,6 +1,5 @@
-from __future__ import print_function
-
 import glob
+import sys
 from pathlib import Path
 
 from pynpm import NPMPackage
@@ -9,7 +8,9 @@ from setuptools.command.build_py import build_py
 from setuptools.command.egg_info import egg_info
 from setuptools.command.sdist import sdist
 
-from generate_source import generate
+sys.path.append(str(Path(__file__).parent))
+
+from generate_source import generate_source  # noqa
 
 ROOT = Path(__file__).parent
 
@@ -29,7 +30,7 @@ def js_prerelease(command: Command, strict: bool = False) -> None:
 
         def run(self):
             """Run the command"""
-            # self.distribution.run_command("generate_source")
+            self.distribution.run_command("generate_source")
             self.distribution.run_command("jsdeps")
             command.run(self)
             update_package_data(self.distribution)
@@ -65,22 +66,22 @@ class GenerateSource(Command):
 
     def run(self):
 
-        generate()
+        generate_source.generate()
 
 
 def get_data_files():
     return [
         (
             "share/jupyter/nbextensions/jupyter-vuetify",
-            glob.glob("ipyvuetify/nbextension/*"),
+            [str(f) for f in glob.glob("ipyvuetify/nbextension/*")],
         ),
         (
             "share/jupyter/labextensions/jupyter-vuetify",
-            glob.glob("ipyvuetify/labextension/package.json"),
+            [str(f) for f in glob.glob("ipyvuetify/labextension/package.json")],
         ),
         (
             "share/jupyter/labextensions/jupyter-vuetify/static",
-            glob.glob("ipyvuetify/labextension/static/*"),
+            [str(f) for f in glob.glob("ipyvuetify/labextension/static/*")],
         ),
         ("etc/jupyter/nbconfig/notebook.d", ["jupyter-vuetify.json"]),
     ]

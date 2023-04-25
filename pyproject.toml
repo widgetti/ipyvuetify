@@ -61,6 +61,7 @@ find = {}
 universal = true
 
 [tool.ruff]
+fix = true
 exclude = [
     '.git',
     'dist',
