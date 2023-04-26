@@ -47,16 +47,8 @@ include-package-data = true
 license-files = ["LICENSE"]
 
 [tool.setuptools.packages.find]
-include = ["ipyvuetify*"]
+include = ["ipyvuetify*", "generate_source*", "js*"]
 exclude = ["docs*", "tests*"]
-
-[tool.setuptools.package-data]
-"ipyvuetify" = [
-    "ipyvuetify/nbextension/*",
-    "ipyvuetify/labextension/package.json",
-    "ipyvuetify/labextension/static/*",
-    "jupyter-vuetify.json"
-]
 
 [tool.distutils.bdist_wheel]
 universal = true
