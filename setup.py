@@ -38,10 +38,15 @@ def js_prerelease(command: Command) -> None:
 def get_data_files():
     """files that need to be installed in specific locations upon installation."""
 
-    nbext = [str(f) for f in ROOT.glob("ipyvuetify/nbextension/*")]
-    labext_package = [str(f) for f in ROOT.glob("ipyvuetify/labextension/package.json")]
-    labext_static = [str(f) for f in ROOT.glob("ipyvuetify/labextension/static/*")]
-    nbconfig = [str(ROOT / "jupyter-vuetify.json")]
+    nbext = [str(f.relative_to(ROOT)) for f in ROOT.glob("ipyvuetify/nbextension/*")]
+    labext_package = [
+        str(f.relative_to(ROOT))
+        for f in ROOT.glob("ipyvuetify/labextension/package.json")
+    ]
+    labext_static = [
+        str(f.relative_to(ROOT)) for f in ROOT.glob("ipyvuetify/labextension/static/*")
+    ]
+    nbconfig = [str(f.relative_to(ROOT)) for f in ROOT.glob("jupyter-vuetify.json")]
 
     return [
         ("share/jupyter/nbextensions/jupyter-vuetify", nbext),
