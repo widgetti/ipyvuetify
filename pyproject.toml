@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ipyvuetify"
 version = "1.8.10"
 description="Jupyter widgets based on vuetify UI components"
-requires-python = ">=3.6.9"
+requires-python = ">=3.7"
 dependencies = ["ipyvue>=1.7,<2"]
 keywords=["ipython", "jupyter", "widgets"]
 authors = [
@@ -20,7 +20,6 @@ classifiers=[
     "Intended Audience :: Science/Research",
     "Topic :: Multimedia :: Graphics",
     "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
