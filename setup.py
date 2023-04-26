@@ -185,12 +185,11 @@ setup(
     install_requires=[
         "ipyvue>=1.7,<2",
     ],
-    # we need to use the released version
-    # extras_require={
-    #     "test": [
-    #         "solara[pytest] @ https://github.com/widgetti/solara/archive/refs/heads/feat_test_ipywidgets.zip",
-    #     ]
-    # },
+    extras_require={
+        "test": [
+            "solara[pytest]",
+        ]
+    },
     packages=find_packages(exclude=["generate_source"]),
     zip_safe=False,
     cmdclass={
