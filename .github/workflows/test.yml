@@ -21,6 +21,12 @@ jobs:
         run: python -m pip install --find-links dist/ ipyvuetify
       - name: test import
         run: (mkdir test-install; cd test-install; python -c "from ipyvuetify import Btn")
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ipyvuetify-dist-${{ github.run_number }}
+          path: |
+            ./dist
+            ./js/*.tgz
 
   test:
     runs-on: ubuntu-latest
@@ -52,7 +58,8 @@ jobs:
       - name: Run ui-tests
         run: pytest tests/ui/ --video=retain-on-failure --solara-update-snapshots-ci -s
       - name: Upload Test artifacts
-        uses: actions/upload-artifact@v2
+        if: always()
+        uses: actions/upload-artifact@v3
         with:
           name: ipyvuetify-test-results
           path: test-results
