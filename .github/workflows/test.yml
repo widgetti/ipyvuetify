@@ -5,6 +5,9 @@ on:
   - pull_request
   - workflow_dispatch
 
+env:
+  NODE_OPTIONS: --openssl-legacy-provider
+
 jobs:
   lint:
     runs-on: ubuntu-latest
