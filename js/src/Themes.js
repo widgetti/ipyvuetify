@@ -30,7 +30,7 @@ export class ThemeModel extends WidgetModel {
         if (this.get("dark") === null) {
           vuetify.framework.theme.dark =
             document.body.dataset.jpThemeLight === "false";
-          this.set('dark_jlab', vuetify.framework.theme.dark);
+          this.set("dark_jlab", vuetify.framework.theme.dark);
           this.save_changes();
         }
       }, this);
@@ -41,14 +41,14 @@ export class ThemeModel extends WidgetModel {
     } else if (document.body.dataset.jpThemeLight) {
       vuetify.framework.theme.dark =
         document.body.dataset.jpThemeLight === "false";
-      this.set('dark_jlab', vuetify.framework.theme.dark);
+      this.set("dark_jlab", vuetify.framework.theme.dark);
       this.save_changes();
-    } else if (document.body.classList.contains('theme-dark')) {
+    } else if (document.body.classList.contains("theme-dark")) {
       vuetify.framework.theme.dark = true;
-      this.set('dark', true);
+      this.set("dark", true);
       this.save_changes();
-    } else if (document.body.classList.contains('theme-light')) {
-      this.set('dark', false);
+    } else if (document.body.classList.contains("theme-light")) {
+      this.set("dark", false);
       this.save_changes();
     }
     this.on("change:dark", () => {
