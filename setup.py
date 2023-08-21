@@ -188,7 +188,14 @@ setup(
     extras_require={
         "test": [
             "solara[pytest]",
-        ]
+        ],
+        "doc": [
+            "sphinx",
+            "jupyter-sphinx",
+            "sphinx-rtd-theme",
+            "jupyter-packaging",
+            "jupyterlab",
+        ],
     },
     packages=find_packages(exclude=["generate_source"]),
     zip_safe=False,
@@ -219,13 +226,4 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
     ],
-    extras_require={
-        "doc": [
-            "sphinx",
-            "jupyter-sphinx",
-            "sphinx-rtd-theme",
-            "jupyter-packaging",
-            "jupyterlab",
-        ]
-    },
 )
