@@ -185,6 +185,11 @@ setup(
     install_requires=[
         "ipyvue>=1.7,<2",
     ],
+    extras_require={
+        "test": [
+            "solara[pytest]",
+        ]
+    },
     packages=find_packages(exclude=["generate_source"]),
     zip_safe=False,
     cmdclass={
