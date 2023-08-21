@@ -53,7 +53,7 @@ jobs:
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
-        run: python -m pip install "$(find dist -name *.whl)[test]"
+        run: python -m pip install "$(find dist -name *.whl)"
       - name: test import
         run: (mkdir test-install; cd test-install; python -c "from ipyvuetify import Btn")
 
