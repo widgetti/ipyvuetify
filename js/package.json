@@ -1,13 +1,13 @@
 {
   "name": "jupyter-vuetify",
-  "version": "1.8.4",
+  "version": "1.8.10",
   "description": "Jupyter widgets based on vuetify UI components",
   "license": "MIT",
   "author": "Mario Buikhuizen, Maarten Breddels",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mariobuikhuizen/ipyvuetify.git"
+    "url": "https://github.com/widgetti/ipyvuetify.git"
   },
   "keywords": [
     "jupyter",
