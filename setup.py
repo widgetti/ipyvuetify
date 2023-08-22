@@ -1,222 +1,58 @@
-from __future__ import print_function
-
-import glob
-import os
-import platform
 import sys
-from distutils import log
-from subprocess import CalledProcessError, check_call
+from pathlib import Path
 
-from setuptools import Command, find_packages, setup
-from setuptools.command.build_py import build_py
+from pynpm import NPMPackage
+from setuptools import Command, setup
 from setuptools.command.egg_info import egg_info
-from setuptools.command.sdist import sdist
 
-here = os.path.dirname(os.path.abspath(__file__))
-node_root = os.path.join(here, "js")
-is_repo = os.path.exists(os.path.join(here, ".git"))
+ROOT = Path(__file__).parent
+sys.path.append(str(ROOT))
 
-npm_path = os.pathsep.join(
-    [
-        os.path.join(node_root, "node_modules", ".bin"),
-        os.environ.get("PATH", os.defpath),
-    ]
-)
+from generate_source import generate_source  # noqa
 
 
-LONG_DESCRIPTION = "Jupyter widgets based on vuetify UI components"
+def update_package_data(distribution) -> None:
+    """Update package_data to catch changes during setup"""
+    distribution.data_files = get_data_files()
+    distribution.get_command_obj("build_py").finalize_options()
 
 
-def get_data_files():
-    return [
-        (
-            "share/jupyter/nbextensions/jupyter-vuetify",
-            glob.glob("ipyvuetify/nbextension/*"),
-        ),
-        (
-            "share/jupyter/labextensions/jupyter-vuetify",
-            glob.glob("ipyvuetify/labextension/package.json"),
-        ),
-        (
-            "share/jupyter/labextensions/jupyter-vuetify/static",
-            glob.glob("ipyvuetify/labextension/static/*"),
-        ),
-        ("etc/jupyter/nbconfig/notebook.d", ["jupyter-vuetify.json"]),
-    ]
+def rel(f: Path) -> str:
+    """give the relative path of f with respect to ROOT"""
+    # make sure the relative links are ok even when build in the isolated directory
+    return str(f.relative_to(ROOT))
 
 
-def js_prerelease(command, strict=False):
-    """decorator for building minified js/css prior to another command"""
+def js_prerelease(command: Command) -> None:
+    """Decorator for building minified js/css prior to another command"""
 
     class DecoratedCommand(command):
-        def run(self):
-            jsdeps = self.distribution.get_command_obj("jsdeps")
-            if not is_repo and all(os.path.exists(t) for t in jsdeps.targets):
-                # sdist, nothing to do
-                command.run(self)
-                return
+        """Decorated command to install jsdeps first."""
 
-            try:
-                self.distribution.run_command("generate_source")
-                self.distribution.run_command("jsdeps")
-            except Exception as e:
-                missing = [t for t in jsdeps.targets if not os.path.exists(t)]
-                if strict or missing:
-                    log.warn("rebuilding js and css failed")
-                    if missing:
-                        log.error("missing files: %s" % missing)
-                    raise e
-                else:
-                    log.warn("rebuilding js and css failed (not a problem)")
-                    log.warn(str(e))
+        def run(self):
+            """Run the command"""
+            NPMPackage(ROOT / "js" / "package.json").install()
+            generate_source.generate()
+            self.distribution.data_files = get_data_files()
             command.run(self)
-            update_package_data(self.distribution)
 
     return DecoratedCommand
 
 
-def update_package_data(distribution):
-    """update package_data to catch changes during setup"""
-    build_py = distribution.get_command_obj("build_py")
-    distribution.data_files = get_data_files()
-    # re-init build_py options which load package_data
-    build_py.finalize_options()
+def get_data_files():
+    """files that need to be installed in specific locations upon installation."""
 
+    nbext = [rel(f) for f in ROOT.glob("ipyvuetify/nbextension/*")]
+    package = [rel(f) for f in ROOT.glob("ipyvuetify/labextension/package.json")]
+    labext = [rel(f) for f in ROOT.glob("ipyvuetify/labextension/static/*")]
+    nbconfig = [rel(f) for f in ROOT.glob("jupyter-vuetify.json")]
 
-class NPM(Command):
-    description = "install package.json dependencies using npm"
-
-    user_options = []
-
-    node_modules = os.path.join(node_root, "node_modules")
-
-    targets = [
-        os.path.join(here, "ipyvuetify", "nbextension", "extension.js"),
-        os.path.join(here, "ipyvuetify", "nbextension", "index.js"),
+    return [
+        ("share/jupyter/nbextensions/jupyter-vuetify", nbext),
+        ("share/jupyter/labextensions/jupyter-vuetify", package),
+        ("share/jupyter/labextensions/jupyter-vuetify/static", labext),
+        ("etc/jupyter/nbconfig/notebook.d", nbconfig),
     ]
 
-    def initialize_options(self):
-        pass
 
-    def finalize_options(self):
-        pass
-
-    def get_npm_name(self):
-        npmName = "npm"
-        if platform.system() == "Windows":
-            npmName = "npm.cmd"
-
-        return npmName
-
-    def has_npm(self):
-        npmName = self.get_npm_name()
-        try:
-            check_call([npmName, "--version"])
-            return True
-        except CalledProcessError:
-            return False
-
-    def should_run_npm_install(self):
-        return self.has_npm()
-
-    def run(self):
-        has_npm = self.has_npm()
-        if not has_npm:
-            log.error(
-                "`npm` unavailable. If you're running this command using sudo, "
-                "make sure `npm` is available to sudo"
-            )
-
-        env = os.environ.copy()
-        env["PATH"] = npm_path
-
-        if self.should_run_npm_install():
-            log.info(
-                "Installing build dependencies with npm.  This may take a while..."
-            )
-            npmName = self.get_npm_name()
-            check_call(
-                [npmName, "install"],
-                cwd=node_root,
-                stdout=sys.stdout,
-                stderr=sys.stderr,
-            )
-            os.utime(self.node_modules, None)
-
-        for t in self.targets:
-            if not os.path.exists(t):
-                msg = "Missing file: %s" % t
-                if not has_npm:
-                    msg += "\nnpm is required to build a development version of a widget extension"
-                raise ValueError(msg)
-
-        # update package data in case this created new files
-        update_package_data(self.distribution)
-
-
-class GenerateSource(Command):
-    description = "Generate source from api specification"
-
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        from generate_source import generate
-
-        generate()
-
-
-version_ns = {}
-with open(os.path.join(here, "ipyvuetify", "_version.py")) as f:
-    exec(f.read(), {}, version_ns)
-
-setup(
-    name="ipyvuetify",
-    version=version_ns["__version__"],
-    description="Jupyter widgets based on vuetify UI components",
-    long_description=LONG_DESCRIPTION,
-    include_package_data=True,
-    data_files=get_data_files(),
-    install_requires=[
-        "ipyvue>=1.7,<2",
-    ],
-    extras_require={
-        "test": [
-            "solara[pytest]",
-        ]
-    },
-    packages=find_packages(exclude=["generate_source"]),
-    zip_safe=False,
-    cmdclass={
-        "build_py": js_prerelease(build_py),
-        "egg_info": js_prerelease(egg_info),
-        "sdist": js_prerelease(sdist, strict=True),
-        "jsdeps": NPM,
-        "generate_source": GenerateSource,
-    },
-    author="Mario Buikhuizen, Maarten Breddels",
-    author_email="mbuikhuizen@gmail.com, maartenbreddels@gmail.com",
-    url="https://github.com/widgetti/ipyvuetify",
-    keywords=[
-        "ipython",
-        "jupyter",
-        "widgets",
-    ],
-    classifiers=[
-        "Development Status :: 5 - Production/Stable",
-        "Framework :: IPython",
-        "Intended Audience :: Developers",
-        "Intended Audience :: Science/Research",
-        "Topic :: Multimedia :: Graphics",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
-    ],
-)
+setup(cmdclass={"egg_info": js_prerelease(egg_info)})
