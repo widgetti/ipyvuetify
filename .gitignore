@@ -19,6 +19,9 @@ ipyvuetify/labextension/
 ipyvuetify/nbextension/
 js/lib
 
+# Unit test / coverage reports
+.nox
+
 # Sphinx documentation
 docs/_build/
 
