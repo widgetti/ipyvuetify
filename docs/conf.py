@@ -30,7 +30,7 @@ release = "1.2.2"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["jupyter_sphinx", "sphinx_rtd_theme"]
+extensions = ["jupyter_sphinx", "sphinx_rtd_theme", "autoapi.extension"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -59,3 +59,9 @@ master_doc = "index"
 html_css_files = [
     "custom.css",
 ]
+
+# -- Options for autosummary/autodoc output ------------------------------------
+autodoc_typehints = "description"
+autoapi_dirs = ["../ipyvuetify"]
+autoapi_python_class_content = "init"
+autoapi_member_order = "groupwise"
