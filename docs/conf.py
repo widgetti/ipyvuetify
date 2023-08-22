@@ -22,7 +22,7 @@ copyright = "2020, Mario Buikhuizen"
 author = "Mario Buikhuizen"
 
 # The full version, including alpha/beta/rc tags
-release = "1.2.2"
+release = "1.8.10"
 
 
 # -- General configuration -----------------------------------------------------
