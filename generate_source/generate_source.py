@@ -20,7 +20,7 @@ python_template = here / "python.njk"
 
 project_dir = here.parent
 destination_js = project_dir / "js" / "src" / "generated"
-destination_python = project_dir / "ipyvuetify" / "generated"
+destination_python = project_dir / "ipyvuetify" / "_generated"
 
 
 def reset_dir(name: Path):

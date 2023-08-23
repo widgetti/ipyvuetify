@@ -55,6 +55,7 @@ exclude = ["docs*", "tests*"]
 universal = true
 
 [tool.ruff]
+ignore-init-module-imports = true
 fix = true
 exclude = [
     '.git',
