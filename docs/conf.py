@@ -65,3 +65,21 @@ autodoc_typehints = "description"
 autoapi_dirs = ["../ipyvuetify"]
 autoapi_python_class_content = "init"
 autoapi_member_order = "groupwise"
+autoapi_options = [
+    "members",
+    "undoc-members",
+    "show-inheritance",
+    "show-module-summary",
+    "special-members",
+    "imported-members",
+]
+
+
+def skip_submodules(app, what, name, obj, skip, options):
+    if what == "module" and name in ["Html"]:
+        skip = True
+    return skip
+
+
+def setup(sphinx):
+    sphinx.connect("autoapi-skip-member", skip_submodules)
