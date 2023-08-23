@@ -72,13 +72,3 @@ autoapi_options = [
     "show-module-summary",
     "imported-members",
 ]
-
-
-def skip_submodules(app, what, name, obj, skip, options):
-    if what == "module" and name in ["Html"]:
-        skip = True
-    return skip
-
-
-def setup(sphinx):
-    sphinx.connect("autoapi-skip-member", skip_submodules)
