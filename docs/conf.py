@@ -70,7 +70,6 @@ autoapi_options = [
     "undoc-members",
     "show-inheritance",
     "show-module-summary",
-    "special-members",
     "imported-members",
 ]
 
