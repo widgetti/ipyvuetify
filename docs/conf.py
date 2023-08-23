@@ -63,7 +63,6 @@ html_css_files = [
 # -- Options for autosummary/autodoc output ------------------------------------
 autodoc_typehints = "description"
 autoapi_dirs = ["../ipyvuetify"]
-autoapi_python_class_content = "init"
 autoapi_member_order = "groupwise"
 autoapi_options = [
     "members",
