@@ -11,7 +11,7 @@ build/
 
 # generated code
 generate_source/build
-ipyvuetify/_generated
+ipyvuetify/generated
 js/src/generated
 
 # Compiled javascript
