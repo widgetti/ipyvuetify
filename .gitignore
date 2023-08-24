@@ -1,10 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
 *.egg-info/
 .eggs/
-.ipynb_checkpoints/
 dist/
 build/
-*.py[cod]
-**/node_modules/
 
 # generated code
 generate_source/build
@@ -16,6 +19,17 @@ ipyvuetify/labextension/
 ipyvuetify/nbextension/
 js/lib
 
-# readthedocs
-_build/
+# Unit test / coverage reports
+.nox
 
+# Sphinx documentation
+docs/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Unit test / coverage reports
+.ruff_cache
+
+# node installed dependencies
+**/node_modules/

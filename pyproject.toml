@@ -1,8 +1,61 @@
 [build-system]
-requires = ["jupyter_packaging~=0.7.9", "jupyterlab~=3.0", "setuptools>=40.8.0", "wheel"]
+requires = ["jupyter_packaging~=0.7.9", "jupyterlab~=3.0", "setuptools>=40.8.0", "wheel", "pynpm"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "ipyvuetify"
+version = "1.8.10"
+description="Jupyter widgets based on vuetify UI components"
+requires-python = ">=3.6"
+dependencies = ["ipyvue>=1.7,<2"]
+keywords=["ipython", "jupyter", "widgets"]
+authors = [
+    {name = "Mario Buikhuizen", email = "mbuikhuizen@gmail.com"},
+    {name = "Maarten Breddels", email = "maartenbreddels@gmail.com"},
+]
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: IPython",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Multimedia :: Graphics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[project.urls]
+repository = "https://github.com/widgetti/ipyvuetify"
+
+[project.license]
+text = "MIT"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.optional-dependencies]
+dev = ["nox", "pre-commit", "mypy"]
+test = ["pytest", "pytest-playwright", "jupyterlab<4", "solara[pytest]"]
+doc = ["sphinx<7", "jupyter-sphinx", "ipykernel"]
+
+[tool.setuptools]
+include-package-data = true
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+include = ["ipyvuetify*"]
+exclude = ["docs*", "tests*"]
+
+[tool.distutils.bdist_wheel]
+universal = true
+
 [tool.ruff]
+fix = true
 exclude = [
     '.git',
     'dist',
