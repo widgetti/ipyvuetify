@@ -79,7 +79,7 @@ def skip_submodules(app, what, name, obj, skip, options):
     Only necessary for those that are not using a leading underscore
     """
     privates = {
-        "ipyvuetify.Html": "modules",
+        "ipyvuetify.Html": "module",
         "ipyvuetify.VuetifyTemplate": "module",
         "ipyvuetify.generated": "package",
     }
