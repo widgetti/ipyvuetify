@@ -71,3 +71,22 @@ autoapi_options = [
     "show-module-summary",
     "imported-members",
 ]
+
+
+def skip_submodules(app, what, name, obj, skip, options):
+    """Ignore the modules and packages taht are private
+
+    Only necessary for those that are not using a leading underscore
+    """
+    privates = {
+        "ipyvuetify.Html": "modules",
+        "ipyvuetify.VuetifyTemplate": "module",
+        "ipyvuetify.generated": "package",
+    }
+    if any([what == t and name == m for m, t in privates.items()]):
+        skip = True
+    return skip
+
+
+def setup(sphinx):
+    sphinx.connect("autoapi-skip-member", skip_submodules)
