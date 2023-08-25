@@ -1,8 +1,8 @@
-from ._version import __version__  # noqa: F401
-from .generated import *  # noqa: F401, F403
-from .Html import Html  # noqa: F401
-from .Themes import theme  # noqa: F401
-from .VuetifyTemplate import VuetifyTemplate  # noqa: F401
+from ._version import __version__
+from .generated import *  # noqa: F403
+from .Html import Html
+from .Themes import theme
+from .VuetifyTemplate import VuetifyTemplate
 
 
 def _jupyter_labextension_paths():
