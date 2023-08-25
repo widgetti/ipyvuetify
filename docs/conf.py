@@ -78,14 +78,14 @@ def skip_submodules(app, what, name, obj, skip, options):
 
     Only necessary for those that are not using a leading underscore
     """
-    privates = {
-        "ipyvuetify.Html": "module",
-        "ipyvuetify.VuetifyTemplate": "module",
-        "ipyvuetify.generated": "package",
-    }
-    if any([what == t and name == m for m, t in privates.items()]):
-        skip = True
-    return skip
+    privates = [
+        ("module", "ipyvuetify.Html"),
+        ("module", "ipyvuetify.VuetifyTemplate"),
+        ("package", "ipyvuetify.generated"),
+    ]
+
+    # return `skip` when nothing is catch to keep skipping the private members
+    return any([what == t and name == m for t, m in privates]) or skip
 
 
 def setup(sphinx):
