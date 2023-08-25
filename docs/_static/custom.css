@@ -6,6 +6,30 @@ div.jupyter_container.docutils {
   padding: 0.4em;
 }
 
+/* Hero from Homepage */
+#hero {
+  display: flex;
+  flex-direction: row;
+  min-height: min(calc(80vh), 1100px);
+}
+
+#hero img {
+  border: 1px solid var(--pst-color-border);
+  border-radius: 0.25em;
+}
+
+#hero-left {
+  max-width: 476px;
+  width: 40%;
+  margin: auto 1em;
+}
+
+#hero-right {
+  min-width: 476px;
+  width: 60%;
+  margin: auto 1em;
+}
+
 /* customize primary color to align with the vuetify website */
 html[data-theme="light"] {
   --pst-color-primary: #1867c0;
