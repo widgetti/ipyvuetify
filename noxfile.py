@@ -17,6 +17,5 @@ def lint(session):
 @nox.session(reuse_venv=True)
 def docs(session):
     """Build the documentation."""
-    session.install("jupyter-packaging", "jupyterlab")
     session.install(".[doc]")
     session.run("sphinx-build", "-v", "-b", "html", "docs", "docs/_build/html")
