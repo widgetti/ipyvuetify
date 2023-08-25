@@ -1,8 +1,8 @@
-from ._version import __version__ as __version__
+from ._version import __version__
 from .generated import *  # noqa: F403
-from .Html import Html as Html
-from .Themes import theme as theme
-from .VuetifyTemplate import VuetifyTemplate as VuetifyTemplate
+from .Html import Html
+from .Themes import theme
+from .VuetifyTemplate import VuetifyTemplate
 
 
 def _jupyter_labextension_paths():

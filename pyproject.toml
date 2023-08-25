@@ -71,3 +71,6 @@ ignore = [
 ]
 line-length = 100
 select = ["E", "W", "F", "Q", "I"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]

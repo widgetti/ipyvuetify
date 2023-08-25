@@ -1,1 +1,1 @@
-from .file_input import FileInput as FileInput
+from .file_input import FileInput
