@@ -5,3 +5,12 @@
 div.jupyter_container.docutils {
   padding: 0.4em;
 }
+
+/* customize primary color to align with the vuetify website */
+html[data-theme="light"] {
+  --pst-color-primary: #1867c0;
+}
+
+html[data-theme="dark"] {
+  --pst-color-primary: #1697f6;
+}
