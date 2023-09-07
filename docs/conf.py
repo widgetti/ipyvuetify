@@ -4,11 +4,12 @@ This file only contains a selection of the most common options. For a full
 list see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
+from datetime import datetime
 
 # -- Project information -----------------------------------------------------
 
 project = "ipyvuetify"
-copyright = "2020, Mario Buikhuizen"
+copyright = f"2019-{datetime.now().year}, Mario Buikhuizen"
 author = "Mario Buikhuizen"
 release = "1.8.10"
 
