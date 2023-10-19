@@ -31,3 +31,14 @@ To explore which widgets are available and how to use them we defer to the
 `Vuetify documentation <https://vuetifyjs.com/nl-NL/components/buttons/>`_. You can browse examples on the left-hand
 side and see the source code by clicking on '< >' on the top right-hand side of the example. By reading :doc:`usage` you
 will be able to translate the examples to ipyvuetify.
+
+.. raw:: html
+
+   <h2>Sponsors</h2>
+--------
+
+Project ipyvuetify receives direct funding from the following sources:
+
+.. image:: images/msd-logo.svg
+    :target: https://www.msd.com/
+    :alt: MSD
