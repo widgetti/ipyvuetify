@@ -8,8 +8,6 @@ from setuptools.command.egg_info import egg_info
 ROOT = Path(__file__).parent
 sys.path.append(str(ROOT))
 
-from generate_source import generate_source  # noqa
-
 
 def update_package_data(distribution) -> None:
     """Update package_data to catch changes during setup"""
@@ -32,7 +30,6 @@ def js_prerelease(command: Command) -> None:
         def run(self):
             """Run the command"""
             NPMPackage(ROOT / "js" / "package.json").install()
-            generate_source.generate()
             self.distribution.data_files = get_data_files()
             command.run(self)
 

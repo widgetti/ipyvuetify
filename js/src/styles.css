@@ -1,23 +1,28 @@
 html {
+  /* TODO: prevent scopify of prefixing this */
+
   /* font sizes in vuetify are in rem units. To get the correct font size, the html tag has to have a font size of 
      * 16px */
   font-size: 16px;
 }
 
-.vuetify-styles div.v-application--wrap {
-  /* disable min-height: 100vh set by vuetify */
-  min-height: unset;
-}
-
 .vuetify-styles {
-  /* Rules set on the html element in the vuetify styles are no longer applied after prefixing all selectors, so copy
-     * them here. */
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  --v-theme-overlay-multiplier: 1;
+  --v-scrollbar-offset: 0px;
+}
 
-  /* From _reset.scss */
-  box-sizing: border-box;
+/* iOS Safari hack to allow click events on body */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* TODO: prevent scopify of prefixing this */
+    cursor: pointer;
+  }
 }

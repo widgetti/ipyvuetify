@@ -23,7 +23,7 @@
 </template>
 
 <script>
-modules.export = {
+export default {
   created() {
     this.chunk_size = 2 * 1024 * 1024;
   },
