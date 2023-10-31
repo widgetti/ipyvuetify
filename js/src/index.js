@@ -4,10 +4,9 @@ import "@mdi/font/css/materialdesignicons.css";
 import "./styles.css";
 
 export { VuetifyView } from "./VuetifyView";
-export * from "./generated";
+export * from "./Widgets";
 export { HtmlModel } from "./Html";
 export { VuetifyTemplateModel } from "./VuetifyTemplate";
 export { ThemeModel, ThemeColorsModel } from "./Themes";
-export { Vue, Vuetify } from "./plugins/vuetify";
 
 export const { version } = require("../package.json"); // eslint-disable-line global-require

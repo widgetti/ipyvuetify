@@ -1,7 +1,7 @@
 from ._version import __version__
-from .generated import *  # noqa: F403
 from .Html import Html
 from .Themes import theme
+from .vuetify_widgets import *  # noqa: F403
 from .VuetifyTemplate import VuetifyTemplate
 
 

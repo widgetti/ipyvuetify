@@ -1,8 +1,7 @@
 /* eslint camelcase: off */
 import { WidgetModel } from "@jupyter-widgets/base";
-import Vue from "vue";
-import colors from "@mariobuikhuizen/vuetify/lib/util/colors";
-import vuetify from "./plugins/vuetify";
+// import colors from "@mariobuikhuizen/vuetify/lib/util/colors";
+// import vuetify from "./plugins/vuetify";
 
 export class ThemeModel extends WidgetModel {
   defaults() {
@@ -22,70 +21,39 @@ export class ThemeModel extends WidgetModel {
   constructor(...args) {
     super(...args);
 
-    if (!vuetify) {
-      return;
-    }
+    // if (!vuetify) {
+    //   return;
+    // }
 
-    if (ThemeModel.themeManager) {
-      ThemeModel.themeManager.themeChanged.connect(() => {
-        if (this.get("dark") === null) {
-          this.setTheme();
-        }
-      }, this);
-    }
-    this.setTheme();
-
-    this.on("change:dark", () => {
-      this.setTheme();
-    });
-
-    new Vue({
-      vuetify,
-      watch: {
-        "$vuetify.theme.dark": (newValue) => {
-          this.vuetifyThemeChange();
-        },
-      },
-    });
-  }
-
-  setTheme() {
-    if (this.get("dark") !== null) {
-      vuetify.framework.theme.dark = this.get("dark");
-    } else if (document.body.dataset.jpThemeLight) {
-      vuetify.framework.theme.dark =
-        document.body.dataset.jpThemeLight === "false";
-    } else if (document.body.classList.contains("theme-dark")) {
-      vuetify.framework.theme.dark = true;
-    } else if (document.body.classList.contains("theme-light")) {
-      vuetify.framework.theme.dark = false;
-    } else if (window.Jupyter) {
-      // Special case for Jupyter Notebook
-      vuetify.framework.theme.dark = false;
-    } else if (document.body.dataset.vscodeThemeKind === "vscode-dark") {
-      // Special case for VS Code
-      vuetify.framework.theme.dark = true;
-    } else if (document.body.dataset.vscodeThemeKind === "vscode-light") {
-      vuetify.framework.theme.dark = false;
-    } else if (document.documentElement.matches("[theme=dark]")) {
-      // Special case for Colab
-      vuetify.framework.theme.dark = true;
-    } else if (document.documentElement.matches("[theme=light]")) {
-      vuetify.framework.theme.dark = false;
-    }
-    this.set("dark_effective", vuetify.framework.theme.dark);
-    this.save_changes();
-  }
-
-  vuetifyThemeChange() {
-    if (
-      this.get("dark") !== null &&
-      this.get("dark") !== vuetify.framework.theme.dark
-    ) {
-      this.set("dark", vuetify.framework.theme.dark);
-    }
-    this.set("dark_effective", vuetify.framework.theme.dark);
-    this.save_changes();
+    // if (ThemeModel.themeManager) {
+    //   ThemeModel.themeManager.themeChanged.connect(() => {
+    //     if (this.get("dark") === null) {
+    //       vuetify.framework.theme.dark =
+    //         document.body.dataset.jpThemeLight === "false";
+    //       this.set("dark_jlab", vuetify.framework.theme.dark);
+    //       this.save_changes();
+    //     }
+    //   }, this);
+    // }
+    //
+    // if (this.get("dark") !== null) {
+    //   vuetify.framework.theme.dark = this.get("dark");
+    // } else if (document.body.dataset.jpThemeLight) {
+    //   vuetify.framework.theme.dark =
+    //     document.body.dataset.jpThemeLight === "false";
+    //   this.set("dark_jlab", vuetify.framework.theme.dark);
+    //   this.save_changes();
+    // } else if (document.body.classList.contains("theme-dark")) {
+    //   vuetify.framework.theme.dark = true;
+    //   this.set("dark", true);
+    //   this.save_changes();
+    // } else if (document.body.classList.contains("theme-light")) {
+    //   this.set("dark", false);
+    //   this.save_changes();
+    // }
+    // this.on("change:dark", () => {
+    //   vuetify.framework.theme.dark = this.get("dark");
+    // });
   }
 }
 
@@ -118,24 +86,24 @@ export class ThemeColorsModel extends WidgetModel {
   constructor(...args) {
     super(...args);
 
-    if (!vuetify) {
-      return;
-    }
+    // if (!vuetify) {
+    //   return;
+    // }
 
     const themeName = this.get("_theme_name");
 
-    this.keys()
-      .filter((prop) => !prop.startsWith("_"))
-      .forEach((prop) => {
-        vuetify.framework.theme.themes[themeName][prop] = convertColor(
-          this.get(prop)
-        );
-        this.on(`change:${prop}`, () => {
-          vuetify.framework.theme.themes[themeName][prop] = convertColor(
-            this.get(prop)
-          );
-        });
-      });
+    // this.keys()
+    //   .filter((prop) => !prop.startsWith("_"))
+    //   .forEach((prop) => {
+    //     vuetify.framework.theme.themes[themeName][prop] = convertColor(
+    //       this.get(prop)
+    //     );
+    //     this.on(`change:${prop}`, () => {
+    //       vuetify.framework.theme.themes[themeName][prop] = convertColor(
+    //         this.get(prop)
+    //       );
+    //     });
+    //   });
   }
 }
 
