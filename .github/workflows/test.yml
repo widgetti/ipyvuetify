@@ -26,16 +26,38 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
+
       - name: install build
         run: python -m pip install build
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install "reacton[generate]" ipyvue
+
       - name: build wheel
         run: python -m build
-      - uses: actions/upload-artifact@v3
+
+      - name: Build component file
+        run: |
+          cp ipyvuetify/components.py ipyvuetify/components-previous.py
+          python -m ipyvuetify.components
+          diff ipyvuetify/components.py ipyvuetify/components-previous.py
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
           path: |
             ./dist
             ./js/*.tgz
+
+      - name: Upload components
+        uses: actions/upload-artifact@v3
+        with:
+          name: ipyvuetify-components-${{ github.run_number }}
+          path: |
+            ./ipyvuetify/components.py
 
   test:
     needs: [lint, build]
