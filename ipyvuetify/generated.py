@@ -1,7 +1,25 @@
+from ipyvue import VueWidget
 from traitlets import Any, Bool, Dict, Float, Unicode, Union
 from traitlets import List as TList
 
-from .vuetify_widget import VuetifyWidget
+from ._version import semver
+
+
+class VuetifyWidget(VueWidget):
+
+    _model_name = Unicode("VuetifyWidgetModel").tag(sync=True)
+
+    _view_name = Unicode("VuetifyView").tag(sync=True)
+
+    _view_module = Unicode("jupyter-vuetify").tag(sync=True)
+
+    _model_module = Unicode("jupyter-vuetify").tag(sync=True)
+
+    _view_module_version = Unicode(semver).tag(sync=True)
+
+    _model_module_version = Unicode(semver).tag(sync=True)
+
+    _metadata = Dict(default_value=None, allow_none=True).tag(sync=True)
 
 
 class Alert(VuetifyWidget):
@@ -6705,6 +6723,7 @@ class WindowItem(VuetifyWidget):
 
 
 __all__ = [
+    "VuetifyWidget",
     "Alert",
     "AlertTitle",
     "App",

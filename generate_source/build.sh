@@ -9,4 +9,4 @@ if ! test -d "vuetify"; then
   cd ..
 fi
 python generate_code.py
-pre-commit run  --files ../ipyvuetify/vuetify_widgets.py ../js/src/Widgets.js
+pre-commit run  --files ../ipyvuetify/generated.py ../js/src/Widgets.js
