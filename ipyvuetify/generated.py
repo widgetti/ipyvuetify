@@ -35,9 +35,9 @@ class Alert(VuetifyWidget):
 
     closable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    close_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    close_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     close_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -45,33 +45,21 @@ class Alert(VuetifyWidget):
 
     density = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     icon = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -79,9 +67,9 @@ class Alert(VuetifyWidget):
 
     prominent = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -95,9 +83,7 @@ class Alert(VuetifyWidget):
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class AlertTitle(VuetifyWidget):
@@ -121,9 +107,7 @@ class AppBar(VuetifyWidget):
 
     absolute = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     collapse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -131,23 +115,19 @@ class AppBar(VuetifyWidget):
 
     density = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     extended = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    extension_height = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    extension_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     floating = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     image = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -157,21 +137,19 @@ class AppBar(VuetifyWidget):
 
     name = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
-
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
 
     scroll_behavior = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     scroll_target = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    scroll_threshold = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    scroll_threshold = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -185,15 +163,13 @@ class AppBarNavIcon(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     block = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -201,63 +177,47 @@ class AppBarNavIcon(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     exact = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     href = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     icon = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     replace = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     ripple = Union([Bool(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     stacked = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -273,9 +233,7 @@ class AppBarNavIcon(VuetifyWidget):
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class AppBarTitle(VuetifyWidget):
@@ -291,13 +249,13 @@ class Autocomplete(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    auto_select_first = Union(
-        [Bool(), Unicode()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    auto_select_first = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     autofocus = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -309,9 +267,9 @@ class Autocomplete(VuetifyWidget):
 
     chips = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    clear_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    clear_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     clearable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -321,9 +279,9 @@ class Autocomplete(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    counter = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    counter = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     counter_value = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -341,13 +299,13 @@ class Autocomplete(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    filter_keys = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    filter_keys = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     filter_mode = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -355,9 +313,7 @@ class Autocomplete(VuetifyWidget):
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_no_data = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -381,23 +337,15 @@ class Autocomplete(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     menu = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    menu_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    menu_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -425,13 +373,13 @@ class Autocomplete(VuetifyWidget):
 
     prefix = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    prepend_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -441,9 +389,9 @@ class Autocomplete(VuetifyWidget):
 
     role = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     rules = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -455,9 +403,7 @@ class Autocomplete(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     type = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -477,19 +423,15 @@ class Avatar(VuetifyWidget):
 
     end = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     image = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
+
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     start = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -507,17 +449,13 @@ class Badge(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    content = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    content = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     dot = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     floating = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     inline = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -525,23 +463,17 @@ class Badge(VuetifyWidget):
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    offset_x = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    offset_x = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    offset_y = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
-
-    offset_y = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -557,51 +489,35 @@ class Banner(VuetifyWidget):
 
     avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     density = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     lines = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     stacked = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -613,9 +529,7 @@ class Banner(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class BannerActions(VuetifyWidget):
@@ -641,9 +555,7 @@ class BottomNavigation(VuetifyWidget):
 
     bg_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -651,19 +563,13 @@ class BottomNavigation(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     grow = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     max = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -675,13 +581,11 @@ class BottomNavigation(VuetifyWidget):
 
     name = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
-
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -699,13 +603,9 @@ class BottomSheet(VuetifyWidget):
 
     activator_props = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     close_on_back = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -723,9 +623,7 @@ class BottomSheet(VuetifyWidget):
 
     fullscreen = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     inset = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -733,33 +631,23 @@ class BottomSheet(VuetifyWidget):
 
     location_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     no_click_animation = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    offset = Union(
-        [Unicode(), Float(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    offset = Union([Unicode(), Float(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
+
+    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     open_on_click = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -773,9 +661,7 @@ class BottomSheet(VuetifyWidget):
 
     retain_focus = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     scroll_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -783,17 +669,11 @@ class BottomSheet(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Breadcrumbs(VuetifyWidget):
@@ -813,15 +693,13 @@ class Breadcrumbs(VuetifyWidget):
 
     divider = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     items = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -829,9 +707,7 @@ class Breadcrumbs(VuetifyWidget):
 class BreadcrumbsDivider(VuetifyWidget):
     _model_name = Unicode("BreadcrumbsDividerModel").tag(sync=True)
 
-    divider = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    divider = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class BreadcrumbsItem(VuetifyWidget):
@@ -863,15 +739,13 @@ class Btn(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     block = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -879,63 +753,47 @@ class Btn(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     exact = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     href = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     icon = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     replace = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     ripple = Union([Bool(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     stacked = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -951,17 +809,13 @@ class Btn(VuetifyWidget):
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class BtnGroup(VuetifyWidget):
     _model_name = Unicode("BtnGroupModel").tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -969,13 +823,11 @@ class BtnGroup(VuetifyWidget):
 
     divided = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
-
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -987,9 +839,7 @@ class BtnGroup(VuetifyWidget):
 class BtnToggle(VuetifyWidget):
     _model_name = Unicode("BtnToggleModel").tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -999,13 +849,9 @@ class BtnToggle(VuetifyWidget):
 
     divided = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     max = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1013,9 +859,9 @@ class BtnToggle(VuetifyWidget):
 
     multiple = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1031,13 +877,11 @@ class Card(VuetifyWidget):
 
     append_avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1045,17 +889,13 @@ class Card(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     exact = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hover = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1065,43 +905,33 @@ class Card(VuetifyWidget):
 
     link = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     prepend_avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     replace = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     ripple = Union([Bool(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     subtitle = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1115,9 +945,7 @@ class Card(VuetifyWidget):
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class CardActions(VuetifyWidget):
@@ -1129,17 +957,17 @@ class CardItem(VuetifyWidget):
 
     append_avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     density = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     prepend_avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     subtitle = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1173,51 +1001,37 @@ class Carousel(VuetifyWidget):
 
     cycle = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    delimiter_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    delimiter_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     direction = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_delimiter_background = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     hide_delimiters = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    interval = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    interval = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
-    next_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    next_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    prev_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prev_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    progress = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    progress = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1235,9 +1049,7 @@ class CarouselItem(VuetifyWidget):
 
     alt = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    aspect_ratio = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    aspect_ratio = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     content_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1249,35 +1061,25 @@ class CarouselItem(VuetifyWidget):
 
     gradient = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     inline = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     lazy_src = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     options = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    reverse_transition = Union(
-        [Unicode(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    reverse_transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1287,23 +1089,19 @@ class CarouselItem(VuetifyWidget):
 
     srcset = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     value = Any().tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Checkbox(VuetifyWidget):
     _model_name = Unicode("CheckboxModel").tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1319,21 +1117,19 @@ class Checkbox(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    false_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    false_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     false_value = Any().tag(sync=True)
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1341,19 +1137,15 @@ class Checkbox(VuetifyWidget):
 
     indeterminate = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    indeterminate_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    label = Unicode(default_value=None, allow_none=True).tag(sync=True)
-
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    indeterminate_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    label = Unicode(default_value=None, allow_none=True).tag(sync=True)
+
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -1363,9 +1155,9 @@ class Checkbox(VuetifyWidget):
 
     persistent_hint = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1375,9 +1167,7 @@ class Checkbox(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    true_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    true_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     true_value = Any().tag(sync=True)
 
@@ -1405,9 +1195,9 @@ class CheckboxBtn(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    false_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    false_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     false_value = Any().tag(sync=True)
 
@@ -1415,9 +1205,9 @@ class CheckboxBtn(VuetifyWidget):
 
     indeterminate = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    indeterminate_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    indeterminate_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     inline = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1435,9 +1225,7 @@ class CheckboxBtn(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    true_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    true_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     true_value = Any().tag(sync=True)
 
@@ -1455,19 +1243,17 @@ class Chip(VuetifyWidget):
 
     append_avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     closable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    close_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    close_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     close_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1479,9 +1265,7 @@ class Chip(VuetifyWidget):
 
     draggable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     exact = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1501,23 +1285,21 @@ class Chip(VuetifyWidget):
 
     prepend_avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     replace = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     ripple = Union([Bool(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1541,9 +1323,7 @@ class ChipGroup(VuetifyWidget):
 
     filter = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     max = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1565,9 +1345,7 @@ class ChipGroup(VuetifyWidget):
 class ClassIcon(VuetifyWidget):
     _model_name = Unicode("ClassIconModel").tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1583,103 +1361,59 @@ class Col(VuetifyWidget):
 
     align_self = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    cols = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    cols = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    lg = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    lg = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    md = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    md = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    offset = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    offset = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    offset_lg = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    offset_lg = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    offset_md = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    offset_md = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    offset_sm = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    offset_sm = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    offset_xl = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    offset_xl = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    offset_xxl = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    offset_xxl = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    order_lg = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    order_lg = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    order_md = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    order_md = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    order_sm = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    order_sm = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    order_xl = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    order_xl = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    order_xxl = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    order_xxl = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    sm = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    sm = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    xl = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    xl = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    xxl = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    xxl = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class ColorPicker(VuetifyWidget):
     _model_name = Unicode("ColorPickerModel").tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    canvas_height = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    canvas_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    dot_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    dot_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_canvas = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1695,25 +1429,23 @@ class ColorPicker(VuetifyWidget):
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     show_swatches = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     swatches = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    swatches_max_height = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    swatches_max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Combobox(VuetifyWidget):
@@ -1721,13 +1453,13 @@ class Combobox(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    auto_select_first = Union(
-        [Bool(), Unicode()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    auto_select_first = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     autofocus = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1739,9 +1471,9 @@ class Combobox(VuetifyWidget):
 
     chips = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    clear_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    clear_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     clearable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1751,9 +1483,9 @@ class Combobox(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    counter = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    counter = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     counter_value = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1773,13 +1505,13 @@ class Combobox(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    filter_keys = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    filter_keys = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     filter_mode = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1787,9 +1519,7 @@ class Combobox(VuetifyWidget):
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_no_data = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1813,23 +1543,15 @@ class Combobox(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     menu = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    menu_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    menu_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -1857,13 +1579,13 @@ class Combobox(VuetifyWidget):
 
     prefix = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    prepend_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1873,9 +1595,9 @@ class Combobox(VuetifyWidget):
 
     role = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     rules = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -1885,9 +1607,7 @@ class Combobox(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     type = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1901,9 +1621,7 @@ class Combobox(VuetifyWidget):
 class ComponentIcon(VuetifyWidget):
     _model_name = Unicode("ComponentIconModel").tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1921,17 +1639,11 @@ class Counter(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class DataIterator(VuetifyWidget):
@@ -1945,9 +1657,9 @@ class DataIterator(VuetifyWidget):
 
     expanded = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    filter_keys = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    filter_keys = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     filter_mode = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1959,9 +1671,7 @@ class DataIterator(VuetifyWidget):
 
     items = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    items_per_page = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    items_per_page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     loading = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -1973,9 +1683,7 @@ class DataIterator(VuetifyWidget):
 
     no_filter = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     return_object = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2009,9 +1717,9 @@ class DataTable(VuetifyWidget):
 
     expanded = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    filter_keys = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    filter_keys = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     filter_mode = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2027,9 +1735,7 @@ class DataTable(VuetifyWidget):
 
     headers = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_no_data = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2041,13 +1747,9 @@ class DataTable(VuetifyWidget):
 
     items = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    items_per_page = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    items_per_page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    items_per_page_options = TList(Any(), default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    items_per_page_options = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
     items_per_page_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2055,9 +1757,7 @@ class DataTable(VuetifyWidget):
 
     last_page_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     loading_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2075,9 +1775,7 @@ class DataTable(VuetifyWidget):
 
     no_filter = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     page_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2099,15 +1797,15 @@ class DataTable(VuetifyWidget):
 
     show_select = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    sort_asc_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    sort_asc_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     sort_by = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    sort_desc_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    sort_desc_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     sticky = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2117,9 +1815,7 @@ class DataTable(VuetifyWidget):
 
     value_comparator = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class DataTableFooter(VuetifyWidget):
@@ -2141,9 +1837,7 @@ class DataTableRows(VuetifyWidget):
 
     items = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     loading_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2175,9 +1869,7 @@ class DataTableServer(VuetifyWidget):
 
     headers = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_no_data = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2189,17 +1881,11 @@ class DataTableServer(VuetifyWidget):
 
     items = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    items_length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    items_length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    items_per_page = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    items_per_page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    items_per_page_options = TList(Any(), default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    items_per_page_options = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
     items_per_page_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2207,9 +1893,7 @@ class DataTableServer(VuetifyWidget):
 
     last_page_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     loading_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2225,9 +1909,7 @@ class DataTableServer(VuetifyWidget):
 
     no_data_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    page = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     page_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2249,15 +1931,15 @@ class DataTableServer(VuetifyWidget):
 
     show_select = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    sort_asc_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    sort_asc_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     sort_by = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    sort_desc_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    sort_desc_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     sticky = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2267,9 +1949,7 @@ class DataTableServer(VuetifyWidget):
 
     value_comparator = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class DataTableVirtual(VuetifyWidget):
@@ -2287,9 +1967,9 @@ class DataTableVirtual(VuetifyWidget):
 
     expanded = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    filter_keys = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    filter_keys = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     filter_mode = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2301,17 +1981,13 @@ class DataTableVirtual(VuetifyWidget):
 
     headers = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_no_data = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     hover = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    item_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    item_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     item_selectable = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2319,9 +1995,7 @@ class DataTableVirtual(VuetifyWidget):
 
     items = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     loading_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2347,15 +2021,15 @@ class DataTableVirtual(VuetifyWidget):
 
     show_select = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    sort_asc_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    sort_asc_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     sort_by = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    sort_desc_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    sort_desc_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     sticky = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2365,9 +2039,7 @@ class DataTableVirtual(VuetifyWidget):
 
     value_comparator = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class DateCard(VuetifyWidget):
@@ -2379,17 +2051,15 @@ class DateCard(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    disabled = Union(
-        [Unicode(), Bool(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    disabled = Union([Unicode(), Bool(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     display_date = Any().tag(sync=True)
 
     format = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_actions = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2399,13 +2069,9 @@ class DateCard(VuetifyWidget):
 
     input_mode = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     mode_icon = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2425,9 +2091,7 @@ class DateCard(VuetifyWidget):
 
     side = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2441,9 +2105,7 @@ class DatePicker(VuetifyWidget):
 
     bg_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     calendar_icon = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2451,23 +2113,19 @@ class DatePicker(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    disabled = Union(
-        [Unicode(), Bool(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    disabled = Union([Unicode(), Bool(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     display_date = Any().tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     format = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     header = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_actions = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2487,29 +2145,17 @@ class DatePicker(VuetifyWidget):
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     mode_icon = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2525,9 +2171,9 @@ class DatePicker(VuetifyWidget):
 
     prev_icon = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     show_adjacent_months = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2545,17 +2191,15 @@ class DatePicker(VuetifyWidget):
 
     view_mode = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class DatePickerControls(VuetifyWidget):
     _model_name = Unicode("DatePickerControlsModel").tag(sync=True)
 
-    disabled = Union(
-        [Unicode(), Bool(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    disabled = Union([Unicode(), Bool(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     display_date = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2597,13 +2241,9 @@ class DatePickerMonth(VuetifyWidget):
 
     hover_date = Any().tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -2623,17 +2263,11 @@ class DatePickerYears(VuetifyWidget):
 
     display_date = Any().tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class DefaultsProvider(VuetifyWidget):
@@ -2643,13 +2277,9 @@ class DefaultsProvider(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    reset = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    reset = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    root = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    root = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     scoped = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2663,13 +2293,9 @@ class Dialog(VuetifyWidget):
 
     activator_props = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     close_on_back = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2687,41 +2313,29 @@ class Dialog(VuetifyWidget):
 
     fullscreen = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     location_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     no_click_animation = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    offset = Union(
-        [Unicode(), Float(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    offset = Union([Unicode(), Float(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
+
+    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     open_on_click = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2735,9 +2349,7 @@ class Dialog(VuetifyWidget):
 
     retain_focus = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     scroll_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2745,17 +2357,11 @@ class Dialog(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class DialogBottomTransition(VuetifyWidget):
@@ -2803,15 +2409,11 @@ class Divider(VuetifyWidget):
 
     inset = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    thickness = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    thickness = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     vertical = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2837,9 +2439,9 @@ class ExpansionPanel(VuetifyWidget):
 
     bg_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    collapse_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    collapse_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2847,13 +2449,11 @@ class ExpansionPanel(VuetifyWidget):
 
     eager = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    expand_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
-
-    expand_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
 
     hide_actions = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2861,9 +2461,9 @@ class ExpansionPanel(VuetifyWidget):
 
     ripple = Union([Bool(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2885,15 +2485,15 @@ class ExpansionPanelText(VuetifyWidget):
 class ExpansionPanelTitle(VuetifyWidget):
     _model_name = Unicode("ExpansionPanelTitleModel").tag(sync=True)
 
-    collapse_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    collapse_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    expand_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    expand_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     hide_actions = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2909,9 +2509,7 @@ class ExpansionPanels(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     max = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2967,9 +2565,9 @@ class Field(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     base_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2977,9 +2575,9 @@ class Field(VuetifyWidget):
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    clear_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    clear_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     clearable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -2999,21 +2597,19 @@ class Field(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     persistent_clear = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     single_line = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3033,13 +2629,13 @@ class FileInput(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    append_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     base_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3049,9 +2645,9 @@ class FileInput(VuetifyWidget):
 
     chips = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    clear_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    clear_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     clearable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3073,17 +2669,15 @@ class FileInput(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3091,17 +2685,11 @@ class FileInput(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -3113,27 +2701,27 @@ class FileInput(VuetifyWidget):
 
     persistent_hint = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    prepend_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     rules = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    show_size = Union(
-        [Bool(), Float(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    show_size = Union([Bool(), Float(), Float()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     single_line = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3153,29 +2741,21 @@ class Footer(VuetifyWidget):
 
     app = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     name = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
-
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3199,17 +2779,13 @@ class Form(VuetifyWidget):
 class Hover(VuetifyWidget):
     _model_name = Unicode("HoverModel").tag(sync=True)
 
-    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Icon(VuetifyWidget):
@@ -3219,13 +2795,9 @@ class Icon(VuetifyWidget):
 
     end = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     start = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3239,9 +2811,7 @@ class Img(VuetifyWidget):
 
     alt = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    aspect_ratio = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    aspect_ratio = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     content_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3251,29 +2821,19 @@ class Img(VuetifyWidget):
 
     gradient = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     inline = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     lazy_src = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     options = Dict(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3285,9 +2845,7 @@ class Img(VuetifyWidget):
 
     transition = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class InfiniteScroll(VuetifyWidget):
@@ -3299,31 +2857,19 @@ class InfiniteScroll(VuetifyWidget):
 
     empty_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     load_more_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    margin = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    margin = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     mode = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3331,17 +2877,15 @@ class InfiniteScroll(VuetifyWidget):
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Input(VuetifyWidget):
     _model_name = Unicode("InputModel").tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3353,15 +2897,13 @@ class Input(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3369,13 +2911,9 @@ class Input(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -3383,9 +2921,9 @@ class Input(VuetifyWidget):
 
     persistent_hint = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3411,9 +2949,7 @@ class ItemGroup(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     max = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3461,39 +2997,25 @@ class LayoutItem(VuetifyWidget):
 
     name = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Lazy(VuetifyWidget):
     _model_name = Unicode("LazyModel").tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3503,17 +3025,13 @@ class Lazy(VuetifyWidget):
 
     transition = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class LigatureIcon(VuetifyWidget):
     _model_name = Unicode("LigatureIconModel").tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3529,9 +3047,7 @@ class List(VuetifyWidget):
 
     bg_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3539,13 +3055,9 @@ class List(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     item_children = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3565,21 +3077,13 @@ class List(VuetifyWidget):
 
     mandatory = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     nav = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3591,9 +3095,9 @@ class List(VuetifyWidget):
 
     return_object = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     select_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3607,9 +3111,7 @@ class List(VuetifyWidget):
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class ListGroup(VuetifyWidget):
@@ -3617,27 +3119,27 @@ class ListGroup(VuetifyWidget):
 
     active_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     base_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    collapse_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    collapse_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    expand_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    expand_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     fluid = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     subgroup = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3665,15 +3167,13 @@ class ListItem(VuetifyWidget):
 
     append_avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     base_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3681,15 +3181,11 @@ class ListItem(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     exact = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     href = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3697,57 +3193,45 @@ class ListItem(VuetifyWidget):
 
     link = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     nav = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     prepend_avatar = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     replace = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     ripple = Union([Bool(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    subtitle = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    subtitle = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    title = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    title = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     value = Any().tag(sync=True)
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class ListItemAction(VuetifyWidget):
@@ -3821,13 +3305,9 @@ class Menu(VuetifyWidget):
 
     activator_props = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     close_on_back = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3843,9 +3323,7 @@ class Menu(VuetifyWidget):
 
     eager = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     id = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3853,33 +3331,23 @@ class Menu(VuetifyWidget):
 
     location_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     no_click_animation = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    offset = Union(
-        [Unicode(), Float(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    offset = Union([Unicode(), Float(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
+
+    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     open_on_click = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3891,25 +3359,17 @@ class Menu(VuetifyWidget):
 
     persistent = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     scroll_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Messages(VuetifyWidget):
@@ -3919,13 +3379,9 @@ class Messages(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class NavigationDrawer(VuetifyWidget):
@@ -3933,9 +3389,7 @@ class NavigationDrawer(VuetifyWidget):
 
     absolute = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3943,9 +3397,7 @@ class NavigationDrawer(VuetifyWidget):
 
     disable_route_watcher = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     expand_on_hover = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3959,25 +3411,19 @@ class NavigationDrawer(VuetifyWidget):
 
     name = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     permanent = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     rail = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rail_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    rail_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     sticky = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -3989,9 +3435,7 @@ class NavigationDrawer(VuetifyWidget):
 
     touchless = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class NoSsr(VuetifyWidget):
@@ -4019,45 +3463,29 @@ class OtpInput(VuetifyWidget):
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     placeholder = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4065,9 +3493,7 @@ class OtpInput(VuetifyWidget):
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Overlay(VuetifyWidget):
@@ -4079,13 +3505,9 @@ class Overlay(VuetifyWidget):
 
     activator_props = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     close_on_back = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4101,41 +3523,29 @@ class Overlay(VuetifyWidget):
 
     eager = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     location_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     no_click_animation = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    offset = Union(
-        [Unicode(), Float(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    offset = Union([Unicode(), Float(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
+
+    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     open_on_click = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4147,9 +3557,7 @@ class Overlay(VuetifyWidget):
 
     persistent = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     scroll_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4157,13 +3565,9 @@ class Overlay(VuetifyWidget):
 
     transition = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Pagination(VuetifyWidget):
@@ -4173,79 +3577,59 @@ class Pagination(VuetifyWidget):
 
     aria_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    current_page_aria_label = Unicode(default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    current_page_aria_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     density = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     ellipsis = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     first_aria_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    first_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    first_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     last_aria_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    last_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    last_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Float(default_value=None, allow_none=True).tag(sync=True)
 
     next_aria_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    next_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    next_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     page_aria_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prev_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prev_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     previous_aria_label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     show_first_last_page = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    start = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    start = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    total_visible = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    total_visible = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4253,9 +3637,7 @@ class Pagination(VuetifyWidget):
 class Parallax(VuetifyWidget):
     _model_name = Unicode("ParallaxModel").tag(sync=True)
 
-    scale = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    scale = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Picker(VuetifyWidget):
@@ -4263,45 +3645,31 @@ class Picker(VuetifyWidget):
 
     bg_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     landscape = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4309,9 +3677,7 @@ class Picker(VuetifyWidget):
 
     title = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class PickerTitle(VuetifyWidget):
@@ -4327,29 +3693,19 @@ class ProgressCircular(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    indeterminate = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    indeterminate = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
-    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    rotate = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    rotate = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class ProgressLinear(VuetifyWidget):
@@ -4361,39 +3717,29 @@ class ProgressLinear(VuetifyWidget):
 
     bg_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    bg_opacity = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    bg_opacity = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    buffer_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    buffer_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     clickable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     indeterminate = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     rounded_bar = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4419,9 +3765,9 @@ class Radio(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    false_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    false_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     false_value = Any().tag(sync=True)
 
@@ -4443,9 +3789,7 @@ class Radio(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    true_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    true_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     true_value = Any().tag(sync=True)
 
@@ -4459,9 +3803,9 @@ class Radio(VuetifyWidget):
 class RadioGroup(VuetifyWidget):
     _model_name = Unicode("RadioGroupModel").tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4477,23 +3821,19 @@ class RadioGroup(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    false_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    false_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4503,13 +3843,9 @@ class RadioGroup(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -4517,9 +3853,9 @@ class RadioGroup(VuetifyWidget):
 
     persistent_hint = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4529,9 +3865,7 @@ class RadioGroup(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    true_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    true_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     type = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4545,9 +3879,9 @@ class RadioGroup(VuetifyWidget):
 class RangeSlider(VuetifyWidget):
     _model_name = Unicode("RangeSliderModel").tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4559,21 +3893,17 @@ class RangeSlider(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4581,21 +3911,13 @@ class RangeSlider(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -4603,43 +3925,33 @@ class RangeSlider(VuetifyWidget):
 
     persistent_hint = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     rules = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    show_ticks = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    show_ticks = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
-    step = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    step = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     strict = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     thumb_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    thumb_label = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    thumb_label = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
-    thumb_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    thumb_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    tick_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    tick_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     ticks = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -4647,9 +3959,7 @@ class RangeSlider(VuetifyWidget):
 
     track_fill_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    track_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    track_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     validate_on = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4669,13 +3979,11 @@ class Rating(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    empty_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    empty_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    full_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    full_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     half_increments = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4687,13 +3995,9 @@ class Rating(VuetifyWidget):
 
     item_labels = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    length = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     name = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4701,9 +4005,7 @@ class Rating(VuetifyWidget):
 
     ripple = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4713,37 +4015,23 @@ class Rating(VuetifyWidget):
 class Responsive(VuetifyWidget):
     _model_name = Unicode("ResponsiveModel").tag(sync=True)
 
-    aspect_ratio = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    aspect_ratio = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     content_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     inline = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Row(VuetifyWidget):
@@ -4877,9 +4165,9 @@ class Select(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     autofocus = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4891,9 +4179,9 @@ class Select(VuetifyWidget):
 
     chips = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    clear_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    clear_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     clearable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4903,9 +4191,9 @@ class Select(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    counter = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    counter = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     counter_value = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4919,17 +4207,15 @@ class Select(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_no_data = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -4953,23 +4239,15 @@ class Select(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     menu = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    menu_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    menu_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -4995,13 +4273,13 @@ class Select(VuetifyWidget):
 
     prefix = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    prepend_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5011,9 +4289,9 @@ class Select(VuetifyWidget):
 
     role = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     rules = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -5023,9 +4301,7 @@ class Select(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
     type = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5049,9 +4325,9 @@ class SelectionControl(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    false_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    false_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     false_value = Any().tag(sync=True)
 
@@ -5071,9 +4347,7 @@ class SelectionControl(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    true_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    true_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     true_value = Any().tag(sync=True)
 
@@ -5097,9 +4371,9 @@ class SelectionControlGroup(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    false_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    false_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     id = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5117,9 +4391,7 @@ class SelectionControlGroup(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    true_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    true_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     type = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5129,51 +4401,35 @@ class SelectionControlGroup(VuetifyWidget):
 class Sheet(VuetifyWidget):
     _model_name = Unicode("SheetModel").tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class SkeletonLoader(VuetifyWidget):
@@ -5183,41 +4439,27 @@ class SkeletonLoader(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     loading = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     loading_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     type = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class SlideGroup(VuetifyWidget):
@@ -5229,9 +4471,7 @@ class SlideGroup(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     max = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5239,19 +4479,13 @@ class SlideGroup(VuetifyWidget):
 
     multiple = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    next_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    next_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    prev_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prev_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     symbol = Any().tag(sync=True)
 
@@ -5335,9 +4569,9 @@ class SlideYTransition(VuetifyWidget):
 class Slider(VuetifyWidget):
     _model_name = Unicode("SliderModel").tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5349,21 +4583,17 @@ class Slider(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5371,65 +4601,45 @@ class Slider(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    model_value = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     name = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     persistent_hint = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     rules = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    show_ticks = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    show_ticks = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
-    step = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    step = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     thumb_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    thumb_label = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    thumb_label = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
-    thumb_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    thumb_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    tick_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    tick_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     ticks = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -5437,9 +4647,7 @@ class Slider(VuetifyWidget):
 
     track_fill_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    track_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    track_size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     validate_on = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5455,13 +4663,9 @@ class Snackbar(VuetifyWidget):
 
     activator_props = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     close_on_back = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5479,41 +4683,29 @@ class Snackbar(VuetifyWidget):
 
     eager = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
     location_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     multi_line = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    offset = Union(
-        [Unicode(), Float(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    offset = Union([Unicode(), Float(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
+
+    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     open_on_click = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5525,15 +4717,13 @@ class Snackbar(VuetifyWidget):
 
     position = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    timeout = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    timeout = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     transition = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5541,13 +4731,9 @@ class Snackbar(VuetifyWidget):
 
     vertical = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Spacer(VuetifyWidget):
@@ -5563,9 +4749,7 @@ class Stepper(VuetifyWidget):
 
     bg_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5573,15 +4757,11 @@ class Stepper(VuetifyWidget):
 
     editable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_actions = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5593,27 +4773,17 @@ class Stepper(VuetifyWidget):
 
     location = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     max = Float(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     mobile = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5629,9 +4799,9 @@ class Stepper(VuetifyWidget):
 
     prev_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5639,9 +4809,7 @@ class Stepper(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class StepperActions(VuetifyWidget):
@@ -5649,9 +4817,9 @@ class StepperActions(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    disabled = Union(
-        [Bool(), Unicode(), Unicode()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    disabled = Union([Bool(), Unicode(), Unicode()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     next_text = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5707,27 +4875,19 @@ class StepperWindow(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
-    next_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    next_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    prev_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prev_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5743,15 +4903,13 @@ class StepperWindowItem(VuetifyWidget):
 
     eager = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    reverse_transition = Union(
-        [Unicode(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    reverse_transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     value = Any().tag(sync=True)
 
@@ -5759,9 +4917,7 @@ class StepperWindowItem(VuetifyWidget):
 class SvgIcon(VuetifyWidget):
     _model_name = Unicode("SvgIconModel").tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5769,9 +4925,9 @@ class SvgIcon(VuetifyWidget):
 class Switch(VuetifyWidget):
     _model_name = Unicode("SwitchModel").tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5787,13 +4943,13 @@ class Switch(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    false_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    false_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     false_value = Any().tag(sync=True)
 
@@ -5801,9 +4957,7 @@ class Switch(VuetifyWidget):
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5817,17 +4971,11 @@ class Switch(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -5837,9 +4985,9 @@ class Switch(VuetifyWidget):
 
     persistent_hint = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5849,9 +4997,7 @@ class Switch(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    true_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    true_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     true_value = Any().tag(sync=True)
 
@@ -5873,23 +5019,17 @@ class SystemBar(VuetifyWidget):
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     name = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    order = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
-
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5901,13 +5041,11 @@ class SystemBar(VuetifyWidget):
 class Tab(VuetifyWidget):
     _model_name = Unicode("TabModel").tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5917,17 +5055,13 @@ class Tab(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     exact = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     fixed = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_slider = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5935,43 +5069,31 @@ class Tab(VuetifyWidget):
 
     icon = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
+
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
-
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
 
     replace = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     ripple = Union([Bool(), Dict()], default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     slider_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -5987,9 +5109,7 @@ class Tab(VuetifyWidget):
 
     variant = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Table(VuetifyWidget):
@@ -6001,9 +5121,7 @@ class Table(VuetifyWidget):
 
     fixed_header = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hover = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6033,17 +5151,13 @@ class Tabs(VuetifyWidget):
 
     grow = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_slider = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     items = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     max = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6051,19 +5165,13 @@ class Tabs(VuetifyWidget):
 
     multiple = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    next_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    next_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    prev_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prev_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     slider_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6079,13 +5187,13 @@ class TextField(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    append_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     autofocus = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6095,17 +5203,17 @@ class TextField(VuetifyWidget):
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    clear_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    clear_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     clearable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    counter = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    counter = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     counter_value = Float(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6119,17 +5227,15 @@ class TextField(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6137,17 +5243,11 @@ class TextField(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -6165,13 +5265,13 @@ class TextField(VuetifyWidget):
 
     prefix = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    prepend_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6179,9 +5279,9 @@ class TextField(VuetifyWidget):
 
     role = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     rules = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -6205,13 +5305,13 @@ class Textarea(VuetifyWidget):
 
     active = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    append_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    append_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    append_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     auto_grow = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6223,17 +5323,17 @@ class Textarea(VuetifyWidget):
 
     center_affix = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    clear_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    clear_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     clearable = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    counter = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    counter = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     counter_value = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6247,17 +5347,15 @@ class Textarea(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     hint = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6265,21 +5363,13 @@ class Textarea(VuetifyWidget):
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    loading = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_rows = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_rows = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -6299,25 +5389,23 @@ class Textarea(VuetifyWidget):
 
     prefix = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    prepend_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
-    prepend_inner_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prepend_inner_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     readonly = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    rows = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
+
+    rows = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     rules = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
@@ -6357,13 +5445,9 @@ class Timeline(VuetifyWidget):
 
     line_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    line_inset = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    line_inset = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    line_thickness = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    line_thickness = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     side = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6381,59 +5465,39 @@ class TimelineItem(VuetifyWidget):
 
     dot_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     fill_dot = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     hide_dot = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     hide_opposite = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     icon_color = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    line_inset = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    line_inset = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
         sync=True
     )
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
-
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    size = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Toolbar(VuetifyWidget):
@@ -6441,9 +5505,7 @@ class Toolbar(VuetifyWidget):
 
     absolute = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    border = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    border = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     collapse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6451,29 +5513,25 @@ class Toolbar(VuetifyWidget):
 
     density = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    elevation = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     extended = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    extension_height = Union(
-        [Unicode(), Float()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    extension_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     flat = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     floating = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     image = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    rounded = Union(
-        [Unicode(), Float(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    rounded = Union([Unicode(), Float(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6505,13 +5563,9 @@ class Tooltip(VuetifyWidget):
 
     activator_props = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    attach = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    close_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     close_on_back = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6527,9 +5581,7 @@ class Tooltip(VuetifyWidget):
 
     eager = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     id = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6537,33 +5589,23 @@ class Tooltip(VuetifyWidget):
 
     location_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     no_click_animation = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    offset = Union(
-        [Unicode(), Float(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
-
-    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
+    offset = Union([Unicode(), Float(), TList(Any())], default_value=None, allow_none=True).tag(
         sync=True
     )
+
+    open_delay = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     open_on_click = Bool(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6573,9 +5615,7 @@ class Tooltip(VuetifyWidget):
 
     origin = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    scrim = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     scroll_strategy = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6583,17 +5623,11 @@ class Tooltip(VuetifyWidget):
 
     theme = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    z_index = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Validation(VuetifyWidget):
@@ -6603,17 +5637,15 @@ class Validation(VuetifyWidget):
 
     error = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    error_messages = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     focused = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     label = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_errors = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
@@ -6631,37 +5663,23 @@ class Validation(VuetifyWidget):
 class VirtualScroll(VuetifyWidget):
     _model_name = Unicode("VirtualScrollModel").tag(sync=True)
 
-    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    item_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    item_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     items = TList(Any(), default_value=None, allow_none=True).tag(sync=True)
 
-    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    max_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_height = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
-    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    min_width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
     renderless = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    width = Union([Unicode(), Float()], default_value=None, allow_none=True).tag(sync=True)
 
 
 class Window(VuetifyWidget):
@@ -6673,27 +5691,19 @@ class Window(VuetifyWidget):
 
     disabled = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    mandatory = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
     model_value = Any().tag(sync=True)
 
-    next_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    next_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
-    prev_icon = Union(
-        [Unicode(), TList(Any())], default_value=None, allow_none=True
-    ).tag(sync=True)
+    prev_icon = Union([Unicode(), TList(Any())], default_value=None, allow_none=True).tag(sync=True)
 
     reverse = Bool(default_value=None, allow_none=True).tag(sync=True)
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    show_arrows = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     tag = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
@@ -6709,15 +5719,13 @@ class WindowItem(VuetifyWidget):
 
     eager = Bool(default_value=None, allow_none=True).tag(sync=True)
 
-    reverse_transition = Union(
-        [Unicode(), Bool()], default_value=None, allow_none=True
-    ).tag(sync=True)
+    reverse_transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     selected_class = Unicode(default_value=None, allow_none=True).tag(sync=True)
 
-    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(
-        sync=True
-    )
+    transition = Union([Unicode(), Bool()], default_value=None, allow_none=True).tag(sync=True)
 
     value = Any().tag(sync=True)
 
