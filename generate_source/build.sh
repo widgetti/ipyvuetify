@@ -3,7 +3,7 @@ if ! test -d "vuetify"; then
   git clone https://github.com/vuetifyjs/vuetify.git
   cd vuetify
   git checkout v3.3.22
-  pm install -g yarn
+  npm install -g yarn
   yarn
   yarn build
   cd ..
