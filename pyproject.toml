@@ -46,7 +46,7 @@ test = [
     "pixelmatch>=0.3.0,<0.4",
     "nbformat<5.10",
     "jupyterlab<4",
-    "solara[pytest]",
+    "solara[pytest] @ https://github.com/widgetti/solara/archive/refs/heads/11-01-feat_support_for_ipyvue_and_ipyvuetify_v3.zip",
     "starlette<1",
 ]
 doc = [
