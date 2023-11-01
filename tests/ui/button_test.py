@@ -2,9 +2,7 @@ import playwright.sync_api
 from IPython.display import display
 
 
-def test_button(
-    ipywidgets_runner, page_session: playwright.sync_api.Page, assert_solara_snapshot
-):
+def test_button(ipywidgets_runner, page_session: playwright.sync_api.Page, assert_solara_snapshot):
     def kernel_code():
         import ipyvuetify as v
 

@@ -2,10 +2,7 @@ import ipyvuetify as v
 
 lorum_ipsum = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."""
 
-items = [
-    v.ListItem(children=[v.ListItemTitle(children=[f"Click me {i}"])])
-    for i in range(1, 5)
-]
+items = [v.ListItem(children=[v.ListItemTitle(children=[f"Click me {i}"])]) for i in range(1, 5)]
 
 menu = v.Menu(
     offset_y=True,
@@ -29,9 +26,7 @@ dialog = v.Dialog(
         {
             "name": "activator",
             "variable": "x",
-            "children": v.Btn(
-                v_on="x.on", color="success", dark=True, children=["Open dialog"]
-            ),
+            "children": v.Btn(v_on="x.on", color="success", dark=True, children=["Open dialog"]),
         }
     ],
     children=[
@@ -60,12 +55,8 @@ v.Container(
         v.Row(
             children=[
                 v.Btn(class_="ma-2", color="primary", children=["button"]),
-                v.Btn(
-                    class_="ma-2", color="primary", outlined=True, children=["button"]
-                ),
-                v.Btn(
-                    class_="ma-2", color="primary", rounded=True, children=["button"]
-                ),
+                v.Btn(class_="ma-2", color="primary", outlined=True, children=["button"]),
+                v.Btn(class_="ma-2", color="primary", rounded=True, children=["button"]),
                 v.Btn(
                     class_="ma-2",
                     color="primary",
@@ -87,9 +78,7 @@ v.Container(
         ),
         v.Row(
             children=[
-                v.Btn(
-                    class_="ma-2", color="primary", x_small=True, children=["button"]
-                ),
+                v.Btn(class_="ma-2", color="primary", x_small=True, children=["button"]),
                 v.Btn(
                     class_="ma-2",
                     color="primary",

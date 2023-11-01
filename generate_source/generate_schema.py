@@ -62,9 +62,7 @@ def property_to_snake_case(name):
 
 def make_grid_props(prefix, start):
     return [
-        (f"{prefix}{size}{columns}", boolean_type)
-        for size in sizes
-        for columns in range(start, 13)
+        (f"{prefix}{size}{columns}", boolean_type) for size in sizes for columns in range(start, 13)
     ]
 
 
