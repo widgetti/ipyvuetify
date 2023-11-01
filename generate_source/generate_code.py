@@ -104,9 +104,28 @@ def generate_python_class(name: str, path: Path):
 def generate_python():
     code = textwrap.dedent(
         """\
-        from traitlets import Unicode, Union, Float, List as TList, Dict, Bool, Any
+        from ipyvue import VueWidget
+        from traitlets import Any, Bool, Dict, Float, Unicode, Union
+        from traitlets import List as TList
+        
+        from ._version import semver
 
-        from .vuetify_widget import VuetifyWidget
+
+        class VuetifyWidget(VueWidget):
+        
+            _model_name = Unicode("VuetifyWidgetModel").tag(sync=True)
+        
+            _view_name = Unicode("VuetifyView").tag(sync=True)
+        
+            _view_module = Unicode("jupyter-vuetify").tag(sync=True)
+        
+            _model_module = Unicode("jupyter-vuetify").tag(sync=True)
+        
+            _view_module_version = Unicode(semver).tag(sync=True)
+        
+            _model_module_version = Unicode(semver).tag(sync=True)
+        
+            _metadata = Dict(default_value=None, allow_none=True).tag(sync=True)
 
 
     """
@@ -117,7 +136,7 @@ def generate_python():
 
     code += textwrap.dedent(
         f"""\
-        __all__ = ["{'", "'.join([name[1:] for name, _ in components])}"]
+        __all__ = ["VuetifyWidget", "{'", "'.join([name[1:] for name, _ in components])}"]
     """
     )
 
@@ -184,7 +203,7 @@ def generate_js():
     return code
 
 
-with open("../ipyvuetify/vuetify_widgets.py", "w") as f:
+with open("../ipyvuetify/generated.py", "w") as f:
     f.write(generate_python())
 
 with open("../js/src/Widgets.js", "w") as f:
