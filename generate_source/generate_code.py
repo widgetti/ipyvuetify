@@ -10,9 +10,7 @@ def dedent_with_offset(text, offset):
 
     # Add the desired offset (indentation) back to the string
     offset_spaces = " " * offset
-    indented_text = "\n".join(
-        offset_spaces + line for line in dedented_text.splitlines()
-    )
+    indented_text = "\n".join(offset_spaces + line for line in dedented_text.splitlines())
 
     return indented_text
 
@@ -57,12 +55,8 @@ def generate_traitlet(prop: dict):
         sub = [get_sub(e) for e in prop["items"] if get_sub(e) is not None]
         if len(set(sub)) == 1:
             if sub[0] == "TList(Any())":
-                return (
-                    "TList(Any(), default_value=None, allow_none=True).tag(sync=True)\n"
-                )
-            return sub[0].replace(
-                "()", "(default_value=None, allow_none=True).tag(sync=True)\n"
-            )
+                return "TList(Any(), default_value=None, allow_none=True).tag(sync=True)\n"
+            return sub[0].replace("()", "(default_value=None, allow_none=True).tag(sync=True)\n")
         return f"Union([{', '.join(sub)}], default_value=None, allow_none=True).tag(sync=True)\n"
     if prop["type"] == "boolean":
         return "Bool(default_value=None, allow_none=True).tag(sync=True)\n"
