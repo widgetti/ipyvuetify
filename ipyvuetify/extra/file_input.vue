@@ -9,7 +9,7 @@
       clearable
       chips
       :counter="multiple"
-      @change="setFiles"
+      @update:modelValue="setFiles"
       :webkitdirectory="directory"
       :directory="directory"
       :accept="accept"
@@ -24,6 +24,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      myfiles: undefined,
+    };
+  },
   created() {
     this.chunk_size = 2 * 1024 * 1024;
   },
