@@ -26,7 +26,7 @@ def get_component_files():
     for file_path in Path("vuetify/packages/api-generator/dist/api").glob("V*.json"):
         component_files.append((file_path.stem, file_path))
 
-    return component_files
+    return sorted(component_files)
 
 
 def get_sub(prop: dict):
@@ -87,7 +87,7 @@ def generate_python_class(name: str, path: Path):
     with open(path) as f:
         data = json.load(f)
         props = data["props"]
-        for prop_name, prop in props.items():
+        for prop_name, prop in sorted(props.items()):
             if prop["type"] in ["record", "unknown"]:
                 continue
 
