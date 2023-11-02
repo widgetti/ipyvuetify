@@ -83,15 +83,6 @@ module.exports = [
       "vuetify",
     ],
     mode: "production",
-    resolve: {
-      alias: {
-        "./VuetifyView$": path.resolve(__dirname, "src/nodepsVuetifyView.js"),
-        "./plugins/vuetify$": path.resolve(
-          __dirname,
-          "src/plugins/nodepsVuetify.js"
-        ),
-      },
-    },
   },
   {
     entry: "./lib/nodepsEmbed.js",
@@ -116,15 +107,6 @@ module.exports = [
       "vuetify",
     ],
     mode: "production",
-    resolve: {
-      alias: {
-        "./VuetifyView$": path.resolve(__dirname, "src/nodepsVuetifyView.js"),
-        "./plugins/vuetify$": path.resolve(
-          __dirname,
-          "src/plugins/nodepsVuetify.js"
-        ),
-      },
-    },
   },
   {
     // Embeddable jupyter-vuetify bundle
