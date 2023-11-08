@@ -1,5 +1,5 @@
 import * as Vue from "vue"; // eslint-disable-line import/no-extraneous-dependencies
-import { VueView } from "jupyter-vue";
+import { VueView, createViewContext, vueRender } from "jupyter-vue";
 import "vuetify/styles";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
@@ -37,5 +37,17 @@ export class VuetifyView extends VueView {
     this.el.classList.add("vuetify-styles");
     document.querySelector("html").style.fontSize = "16px";
     vueApp.use(vuetify);
+  }
+
+  /* used in pages using nodeps */
+  vueRender() {
+    return Vue.h({
+      provide: {
+        viewCtx: createViewContext(this),
+      },
+      render: () => {
+        return vueRender(this.model, this);
+      },
+    });
   }
 }
