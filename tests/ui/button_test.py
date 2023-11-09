@@ -7,7 +7,8 @@ def test_button(ipywidgets_runner, page_session: playwright.sync_api.Page, asser
         import ipyvuetify as v
 
         button = v.Btn(
-            children=[v.Icon(children=["mdi-check"]), "Click Me!"],
+            prepend_icon="mdi-check",
+            children=["Click Me!"],
             class_="snapshot-button",
         )
         container = v.Container(
