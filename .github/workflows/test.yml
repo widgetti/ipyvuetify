@@ -97,7 +97,7 @@ jobs:
       - name: Install chromium
         run: playwright install chromium
       - name: Run ui-tests
-        run: pytest tests/ui/ --video=retain-on-failure --solara-update-snapshots-ci -s
+        run: pytest tests/ui/ --video=retain-on-failure -s
       - name: Upload Test artifacts
         if: always()
         uses: actions/upload-artifact@v3
