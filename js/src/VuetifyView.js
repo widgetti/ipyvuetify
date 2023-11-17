@@ -11,7 +11,6 @@ import { ThemeColorsModel, ThemeModel } from "./Themes";
 const observer = new MutationObserver((mutationList, observer) => {
   for (const mutation of mutationList) {
     if (mutation.type === "childList") {
-      console.log("A child node has been added or removed.", mutation);
       const overlay = document.querySelector(".v-overlay-container");
       if (overlay) {
         overlay.classList.add("vuetify-styles");
