@@ -10,8 +10,8 @@ export class VuetifyTemplateModel extends VueTemplateModel {
         _view_name: "VuetifyView",
         _view_module: "jupyter-vuetify",
         _model_module: "jupyter-vuetify",
-        _view_module_version: "3.0.0-dev.0",
-        _model_module_version: "3.0.0-dev.0",
+        _view_module_version: "3.0.0-alpha.0",
+        _model_module_version: "3.0.0-alpha.0",
       },
     };
   }
