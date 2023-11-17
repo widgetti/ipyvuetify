@@ -7,7 +7,7 @@ name = "ipyvuetify"
 version = "3.0.0.dev0"
 description="Jupyter widgets based on vuetify UI components"
 requires-python = ">=3.6"
-dependencies = ["ipyvue>=3.0.0.dev0"]
+dependencies = ["ipyvue==3.0.0.alpha1"]
 keywords=["ipython", "jupyter", "widgets"]
 authors = [
     {name = "Mario Buikhuizen", email = "mbuikhuizen@gmail.com"},
@@ -40,7 +40,7 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 dev = ["nox", "pre-commit", "mypy"]
-test = ["pytest", "pytest-playwright", "jupyterlab<4", "solara[pytest] @ https://github.com/widgetti/solara/archive/refs/heads/11-01-feat_support_for_ipyvue_and_ipyvuetify_v3.zip"]
+test = ["pytest", "pytest-playwright", "jupyterlab<4", "solara[pytest]"]
 doc = ["sphinx<7", "jupyter-sphinx", "ipykernel", "pydata-sphinx-theme"]
 
 [tool.setuptools]
