@@ -1,25 +1,22 @@
 <template>
-  <div>
-    <v-file-input
-      v-model="myfiles"
-      :disabled="disabled"
-      :multiple="multiple"
-      show-size
-      show-counter
-      clearable
-      chips
-      :counter="multiple"
-      @change="setFiles"
-      :webkitdirectory="directory"
-      :directory="directory"
-      :accept="accept"
-    />
-    <v-progress-linear
-      v-if="(total_progress > 0 || progress_indeterminate) && show_progress"
-      :indeterminate="progress_indeterminate"
-      :value="progress_indeterminate ? 0 : total_progress"
-    />
-  </div>
+  <v-file-input
+    :class="class_ || []"
+    :style="style_ || {}"
+    v-bind="props"
+    @change="setFiles"
+  >
+    <template v-slot:progress>
+      <v-progress-linear
+        absolute
+        :color="(loading === true || loading === '') ? (color || 'primary') : loading"
+        :height="loader_height || 4"
+        :indeterminate="progress_indeterminate"
+        :value="total_progress" />
+    </template>
+    <template v-for="slot in v_slots" :key="slot.name" v-slot:[slot.name]>
+      <jupyter-widget :widget="slot.children" />
+    </template>
+  </v-file-input>
 </template>
 
 <script>
@@ -27,15 +24,88 @@ modules.export = {
   created() {
     this.chunk_size = 2 * 1024 * 1024;
   },
+  computed: {
+    props: function () {
+      const keys = [
+        "append_icon",
+        "append_outer_icon",
+        "autofocus",
+        "background_color",
+        "chips",
+        "clear_icon",
+        "clearable",
+        "color",
+        "counter",
+        "counter_size_string",
+        "counter_string",
+        "dark",
+        "dense",
+        "disabled",
+        "error",
+        "error_count",
+        "error_messages",
+        "filled",
+        "flat",
+        "full_width",
+        "height",
+        "hide_details",
+        "hide_input",
+        "hint",
+        "id",
+        "label",
+        "light",
+        "loader_height",
+        "loading",
+        "messages",
+        "multiple",
+        "outlined",
+        "persistent_hint",
+        "persistent_placeholder",
+        "placeholder",
+        "prefix",
+        "prepend_icon",
+        "prepend_inner_icon",
+        "readonly",
+        "reverse",
+        "rounded",
+        "rules",
+        "shaped",
+        "show_size",
+        "single_line",
+        "small_chips",
+        "solo",
+        "solo_inverted",
+        "success",
+        "success_messages",
+        "suffix",
+        "truncate_length",
+        "type",
+        "validate_on_blur",
+        "value"
+      ];
+
+      const useAsAttr = key => this.$data[key] !== null
+          && !key.startsWith('_')
+          && !['attributes', 'v_slots', 'v_on', 'layout', 'children', 'slot', 'v_model', 'style_', 'class_'].includes(key);
+
+      const attributes = this.$data["attributes"] || {};
+
+      return keys.filter(useAsAttr)
+          .reduce((result, key) => {
+              result[key.replace(/_$/g, '').replace(/_/g, '-')] = this.$data[key];
+              return result;
+          }, { ...attributes });
+    }
+  },
   methods: {
     setFiles(e) {
       if (!e) {
         this.native_file_info = [];
-        this.file_info = [];
+        this.v_model = [];
         return;
       }
       this.native_file_info = e instanceof File ? [e] : e;
-      this.file_info = this.native_file_info.map(
+      this.v_model = this.native_file_info.map(
         ({ name, size, lastModified, type }) => ({
           name,
           size,
@@ -45,8 +115,8 @@ modules.export = {
       );
     },
     jupyter_clear() {
-      this.myfiles = undefined;
-      this.setFiles(false);
+      this.native_file_info = [];
+      this.v_model = [];
     },
     jupyter_read(chunk) {
       const { id, file_index, offset, length } = chunk;
