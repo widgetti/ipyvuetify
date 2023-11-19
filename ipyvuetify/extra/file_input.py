@@ -330,14 +330,29 @@ class FileInput(v.VuetifyTemplate):
         if kernel.implementation == "ipython":
             nest_asyncio.apply()
 
-    # @property
-    # def file_info(self):
-    #     warnings.warn("file_info is deprecated, use v_model instead", DeprecationWarning)
-    #     return self.v_model
+    @property
+    def accept(self):
+        warnings.warn("accept is deprecated, use attributes dictionary instead", DeprecationWarning)
+        if "accept" in self.attributes:
+            return self.attributes["accept"]
+        return ""
 
-    # @file_info.setter
-    # def file_info(self, _):
-    #     warnings.warn("file_info is deprecated and cannot be set on FileInput")
+    @accept.setter
+    def accept(self, value):
+        warnings.warn("accept is deprecated, use attributes dictionary instead", DeprecationWarning)
+        self.attributes = {**self.attributes, "accept": value}
+
+    @property
+    def directory(self):
+        warnings.warn("directory is deprecated, use attributes dictionary instead", DeprecationWarning)
+        if "directory" in self.attributes:
+            return self.attributes["directory"]
+        return False
+
+    @directory.setter
+    def directory(self, value):
+        warnings.warn("directory is deprecated, use attributes dictionary instead", DeprecationWarning)
+        self.attributes = {**self.attributes, "directory": value}
 
     @property
     def show_progress(self):
