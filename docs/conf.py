@@ -15,7 +15,7 @@ release = "1.8.10"
 
 # -- General configuration ---------------------------------------------------
 
-extensions = ["jupyter_sphinx", "sphinx_rtd_theme"]
+extensions = ["jupyter_sphinx"]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
