@@ -22,18 +22,13 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-      # https://github.com/webpack/webpack/issues/14532
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
-
-      - name: install build
-        run: python -m pip install build
-
+          node-version: 18.x
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "reacton[generate]" ipyvue
+          pip install "reacton[generate]" ipyvue "jupyterlab<4"  build
 
       - name: build wheel
         run: python -m build
@@ -43,7 +38,8 @@ jobs:
           cp ipyvuetify/components.py ipyvuetify/components-previous.py
           python -m ipyvuetify.components
           diff ipyvuetify/components.py ipyvuetify/components-previous.py
-
+      - name: Package js
+        run: (cd js && npm pack)
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -75,7 +71,9 @@ jobs:
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
-        run: python -m pip install "$(find dist -name *.whl)"
+        run: |
+          pip install jupyter_core jupyter-packaging "jupyterlab<4"
+          python -m pip install https://github.com/widgetti/ipyvue/archive/refs/heads/vue3.zip "$(find dist -name *.whl)"
       - name: test import
         run: (mkdir test-install; cd test-install; python -c "from ipyvuetify import Btn")
 
@@ -91,11 +89,13 @@ jobs:
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
-        run: python -m pip install "$(find dist -name *.whl)[test]"
+        run: |
+          pip install jupyter_core jupyter-packaging "jupyterlab<4"
+          python -m pip install https://github.com/widgetti/ipyvue/archive/refs/heads/vue3.zip "$(find dist -name *.whl)[test]"
       - name: Install chromium
         run: playwright install chromium
       - name: Run ui-tests
-        run: pytest tests/ui/ --video=retain-on-failure --solara-update-snapshots-ci -s
+        run: pytest tests/ui/ --video=retain-on-failure -s
       - name: Upload Test artifacts
         if: always()
         uses: actions/upload-artifact@v3
@@ -103,8 +103,7 @@ jobs:
           name: ipyvuetify-test-results
           path: test-results
 
-  release:
-    if: startsWith(github.event.ref, 'refs/tags/v')
+  release-dry-run:
     needs: [test]
     runs-on: ubuntu-20.04
     steps:
@@ -113,9 +112,35 @@ jobs:
           name: ipyvuetify-dist-${{ github.run_number }}
 
       - name: Install node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: "14.x"
+          node-version: "18.x"
+          registry-url: "https://registry.npmjs.org"
+      #      No --dry-run available for twine
+      #      - name: Publish the Python package
+      - name: Publish the NPM package
+        run: |
+          cd js
+          echo $PRE_RELEASE
+          if [[ $PRE_RELEASE == "true" ]]; then export TAG="next"; else export TAG="latest"; fi
+          npm publish --dry-run --tag ${TAG} --access public *.tgz
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          PRE_RELEASE: ${{ github.event.release.prerelease }}
+
+  release:
+    if: startsWith(github.event.ref, 'refs/tags/v')
+    needs: [release-dry-run]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: ipyvuetify-dist-${{ github.run_number }}
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Python

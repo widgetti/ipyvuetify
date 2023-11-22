@@ -4,10 +4,13 @@ var version = require("./package.json").version;
 // Custom webpack rules are generally the same for all webpack bundles, hence
 // stored in a separate local variable.
 var rules = [
-  { test: /\.css$/, use: ["style-loader", "css-loader"] },
+  {
+    test: /\.css$/,
+    use: ["style-loader", "css-loader", "postcss-loader"],
+  },
   {
     test: /\.(woff|woff2|eot|ttf|otf)$/,
-    loader: "file-loader",
+    type: "asset/resource",
   },
 ];
 
@@ -80,15 +83,6 @@ module.exports = [
       "vuetify",
     ],
     mode: "production",
-    resolve: {
-      alias: {
-        "./VuetifyView$": path.resolve(__dirname, "src/nodepsVuetifyView.js"),
-        "./plugins/vuetify$": path.resolve(
-          __dirname,
-          "src/plugins/nodepsVuetify.js"
-        ),
-      },
-    },
   },
   {
     entry: "./lib/nodepsEmbed.js",
@@ -113,15 +107,6 @@ module.exports = [
       "vuetify",
     ],
     mode: "production",
-    resolve: {
-      alias: {
-        "./VuetifyView$": path.resolve(__dirname, "src/nodepsVuetifyView.js"),
-        "./plugins/vuetify$": path.resolve(
-          __dirname,
-          "src/plugins/nodepsVuetify.js"
-        ),
-      },
-    },
   },
   {
     // Embeddable jupyter-vuetify bundle

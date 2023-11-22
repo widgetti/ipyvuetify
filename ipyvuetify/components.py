@@ -33,42 +33,42 @@ if __name__ == "__main__":
 
 def _Alert(
     attributes: dict = {},
-    border: str = None,
+    border: typing.Union[bool, str, str, str, str] = None,
+    border_color: str = None,
     children: list = [],
     class_: str = None,
+    closable: bool = None,
+    close_icon: typing.Union[str, list] = None,
     close_label: str = None,
     color: str = None,
-    colored_border: bool = None,
-    dark: bool = None,
-    dense: bool = None,
-    dismissible: bool = None,
-    elevation: typing.Union[float, str] = None,
-    height: typing.Union[float, str] = None,
-    icon: typing.Union[bool, str] = None,
+    density: str = None,
+    elevation: typing.Union[str, float] = None,
+    height: typing.Union[str, float] = None,
+    icon: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    mode: str = None,
-    origin: str = None,
-    outlined: bool = None,
+    location: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: bool = None,
+    position: str = None,
     prominent: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    text: bool = None,
-    tile: bool = None,
+    text: str = None,
+    theme: str = None,
+    title: str = None,
     tooltip: str = None,
-    transition: str = None,
     type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: bool = None,
-    width: typing.Union[float, str] = None,
+    variant: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Alert, Any]:
     """
@@ -90,17 +90,51 @@ def Alert(**kwargs):
 del _Alert
 
 
+def _AlertTitle(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.AlertTitle, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_AlertTitle)
+def AlertTitle(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.AlertTitle
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _AlertTitle
+
+
 def _App(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
-    id: str = None,
+    full_height: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
+    overlaps: list = [],
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -128,53 +162,39 @@ del _App
 
 def _AppBar(
     absolute: bool = None,
-    app: bool = None,
     attributes: dict = {},
-    bottom: bool = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
-    clipped_left: bool = None,
-    clipped_right: bool = None,
     collapse: bool = None,
-    collapse_on_scroll: bool = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    elevate_on_scroll: bool = None,
-    elevation: typing.Union[float, str] = None,
+    density: str = None,
+    elevation: typing.Union[str, float] = None,
     extended: bool = None,
-    extension_height: typing.Union[float, str] = None,
-    fade_img_on_scroll: bool = None,
-    fixed: bool = None,
+    extension_height: typing.Union[str, float] = None,
     flat: bool = None,
     floating: bool = None,
-    height: typing.Union[float, str] = None,
-    hide_on_scroll: bool = None,
-    inverted_scroll: bool = None,
+    height: typing.Union[str, float] = None,
+    image: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    prominent: bool = None,
-    scroll_off_screen: bool = None,
+    location: str = None,
+    model_value: bool = None,
+    name: str = None,
+    order: typing.Union[str, float] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    scroll_behavior: str = None,
     scroll_target: str = None,
     scroll_threshold: typing.Union[str, float] = None,
-    short: bool = None,
-    shrink_on_scroll: bool = None,
     slot: str = None,
-    src: typing.Union[str, dict] = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    tile: bool = None,
+    theme: str = None,
+    title: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: bool = None,
-    width: typing.Union[float, str] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.AppBar, Any]:
     """
@@ -197,17 +217,51 @@ del _AppBar
 
 
 def _AppBarNavIcon(
+    active: bool = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
+    block: bool = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
+    color: str = None,
+    density: str = None,
+    disabled: bool = None,
+    elevation: typing.Union[str, float] = None,
+    exact: bool = None,
+    flat: bool = None,
+    height: typing.Union[str, float] = None,
+    href: str = None,
+    icon: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    loading: typing.Union[str, bool] = None,
+    location: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    position: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    replace: bool = None,
+    ripple: typing.Union[bool, dict] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    selected_class: str = None,
+    size: typing.Union[str, float] = None,
     slot: str = None,
+    stacked: bool = None,
     style_: str = None,
+    symbol: Any = None,
     tabbable: bool = None,
+    tag: str = None,
+    text: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
+    value: Any = None,
+    variant: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.AppBarNavIcon, Any]:
     """
@@ -229,87 +283,127 @@ def AppBarNavIcon(**kwargs):
 del _AppBarNavIcon
 
 
-def _Autocomplete(
-    allow_overflow: bool = None,
-    append_icon: str = None,
-    append_outer_icon: str = None,
-    attach: Any = None,
+def _AppBarTitle(
     attributes: dict = {},
-    auto_select_first: bool = None,
+    children: list = [],
+    class_: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    text: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.AppBarTitle, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_AppBarTitle)
+def AppBarTitle(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.AppBarTitle
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _AppBarTitle
+
+
+def _Autocomplete(
+    active: bool = None,
+    append_icon: typing.Union[str, list] = None,
+    attributes: dict = {},
+    auto_select_first: typing.Union[bool, str] = None,
     autofocus: bool = None,
-    background_color: str = None,
-    cache_items: bool = None,
+    base_color: str = None,
+    bg_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     chips: bool = None,
     class_: str = None,
-    clear_icon: str = None,
+    clear_icon: typing.Union[str, list] = None,
     clearable: bool = None,
+    closable_chips: bool = None,
+    close_text: str = None,
     color: str = None,
-    counter: typing.Union[bool, float, str] = None,
-    dark: bool = None,
-    deletable_chips: bool = None,
-    dense: bool = None,
-    disable_lookup: bool = None,
+    counter: typing.Union[str, float, bool] = None,
+    counter_value: float = None,
+    custom_filter: str = None,
+    custom_key_filter: dict = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
     eager: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    filled: bool = None,
+    filter_keys: typing.Union[str, list] = None,
+    filter_mode: str = None,
     flat: bool = None,
-    full_width: bool = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hide_no_data: bool = None,
     hide_selected: bool = None,
     hint: str = None,
     id: str = None,
+    item_children: str = None,
     item_color: str = None,
-    item_disabled: typing.Union[str, list] = None,
-    item_text: typing.Union[str, list] = None,
-    item_value: typing.Union[str, list] = None,
+    item_props: str = None,
+    item_title: str = None,
+    item_value: str = None,
     items: list = [],
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
-    menu_props: typing.Union[str, list, dict] = None,
+    loading: typing.Union[str, bool] = None,
+    max_errors: typing.Union[str, float] = None,
+    menu: bool = None,
+    menu_icon: typing.Union[str, list] = None,
     messages: typing.Union[str, list] = None,
+    model_value: Any = None,
     multiple: bool = None,
+    name: str = None,
     no_data_text: str = None,
     no_filter: bool = None,
     open_on_clear: bool = None,
-    outlined: bool = None,
+    open_text: str = None,
+    persistent_clear: bool = None,
+    persistent_counter: bool = None,
     persistent_hint: bool = None,
+    persistent_placeholder: bool = None,
     placeholder: str = None,
     prefix: str = None,
-    prepend_icon: str = None,
-    prepend_inner_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    prepend_inner_icon: typing.Union[str, list] = None,
     readonly: bool = None,
     return_object: bool = None,
     reverse: bool = None,
-    rounded: bool = None,
+    role: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     rules: list = [],
-    search_input: str = None,
-    shaped: bool = None,
+    search: str = None,
     single_line: bool = None,
     slot: str = None,
-    small_chips: bool = None,
-    solo: bool = None,
-    solo_inverted: bool = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     suffix: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
+    transition: typing.Union[str, bool] = None,
     type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
+    validate_on: str = None,
+    value_comparator: str = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Autocomplete, Any]:
     """
@@ -336,24 +430,24 @@ def _Avatar(
     children: list = [],
     class_: str = None,
     color: str = None,
-    height: typing.Union[float, str] = None,
+    density: str = None,
+    end: bool = None,
+    icon: typing.Union[str, list] = None,
+    image: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    right: bool = None,
-    size: typing.Union[float, str] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    size: typing.Union[str, float] = None,
     slot: str = None,
+    start: bool = None,
     style_: str = None,
     tabbable: bool = None,
-    tile: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Avatar, Any]:
     """
@@ -377,36 +471,34 @@ del _Avatar
 
 def _Badge(
     attributes: dict = {},
-    avatar: bool = None,
     bordered: bool = None,
-    bottom: bool = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    content: Any = None,
-    dark: bool = None,
+    content: typing.Union[str, float] = None,
     dot: bool = None,
-    icon: str = None,
+    floating: bool = None,
+    icon: typing.Union[str, list] = None,
     inline: bool = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    light: bool = None,
-    mode: str = None,
-    offset_x: typing.Union[float, str] = None,
-    offset_y: typing.Union[float, str] = None,
-    origin: str = None,
-    overlap: bool = None,
+    location: str = None,
+    max: typing.Union[str, float] = None,
+    model_value: bool = None,
+    offset_x: typing.Union[str, float] = None,
+    offset_y: typing.Union[str, float] = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
-    tile: bool = None,
+    tag: str = None,
+    text_color: str = None,
+    theme: str = None,
     tooltip: str = None,
     transition: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Badge, Any]:
     """
@@ -429,36 +521,38 @@ del _Badge
 
 
 def _Banner(
-    app: bool = None,
     attributes: dict = {},
+    avatar: str = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    elevation: typing.Union[float, str] = None,
-    height: typing.Union[float, str] = None,
-    icon: str = None,
-    icon_color: str = None,
+    density: str = None,
+    elevation: typing.Union[str, float] = None,
+    height: typing.Union[str, float] = None,
+    icon: typing.Union[str, list] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    mobile_break_point: typing.Union[float, str] = None,
-    single_line: bool = None,
+    lines: str = None,
+    location: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    position: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
+    stacked: bool = None,
     sticky: bool = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    tile: bool = None,
+    text: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: bool = None,
-    width: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Banner, Any]:
     """
@@ -480,32 +574,13 @@ def Banner(**kwargs):
 del _Banner
 
 
-def _BottomNavigation(
-    absolute: bool = None,
-    active_class: str = None,
-    app: bool = None,
+def _BannerActions(
     attributes: dict = {},
-    background_color: str = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    fixed: bool = None,
-    grow: bool = None,
-    height: typing.Union[float, str] = None,
-    hide_on_scroll: bool = None,
-    horizontal: bool = None,
-    input_value: bool = None,
+    density: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    scroll_target: str = None,
-    scroll_threshold: typing.Union[str, float] = None,
-    shift: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -513,8 +588,94 @@ def _BottomNavigation(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    width: typing.Union[float, str] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.BannerActions, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_BannerActions)
+def BannerActions(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.BannerActions
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _BannerActions
+
+
+def _BannerText(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.BannerText, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_BannerText)
+def BannerText(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.BannerText
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _BannerText
+
+
+def _BottomNavigation(
+    absolute: bool = None,
+    active: bool = None,
+    attributes: dict = {},
+    bg_color: str = None,
+    border: typing.Union[str, float, bool] = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    density: str = None,
+    disabled: bool = None,
+    elevation: typing.Union[str, float] = None,
+    grow: bool = None,
+    height: typing.Union[str, float] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    mandatory: typing.Union[bool, str] = None,
+    max: float = None,
+    mode: str = None,
+    model_value: Any = None,
+    multiple: bool = None,
+    name: str = None,
+    order: typing.Union[str, float] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    selected_class: str = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.BottomNavigation, Any]:
     """
@@ -537,43 +698,55 @@ del _BottomNavigation
 
 
 def _BottomSheet(
-    activator: Any = None,
-    attach: Any = None,
+    absolute: bool = None,
+    activator: str = None,
+    activator_props: dict = None,
+    attach: typing.Union[str, bool] = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    close_delay: typing.Union[float, str] = None,
-    content_class: str = None,
-    dark: bool = None,
+    close_delay: typing.Union[str, float] = None,
+    close_on_back: bool = None,
+    close_on_content_click: bool = None,
+    contained: bool = None,
+    content_class: Any = None,
+    content_props: Any = None,
     disabled: bool = None,
     eager: bool = None,
     fullscreen: bool = None,
-    hide_overlay: bool = None,
+    height: typing.Union[str, float] = None,
     inset: bool = None,
-    internal_activator: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
+    location: str = None,
+    location_strategy: str = None,
+    max_height: typing.Union[str, float] = None,
     max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: bool = None,
     no_click_animation: bool = None,
-    open_delay: typing.Union[float, str] = None,
+    offset: typing.Union[str, float, list] = None,
+    open_delay: typing.Union[str, float] = None,
+    open_on_click: bool = None,
+    open_on_focus: bool = None,
     open_on_hover: bool = None,
     origin: str = None,
-    overlay_color: str = None,
-    overlay_opacity: typing.Union[float, str] = None,
     persistent: bool = None,
     retain_focus: bool = None,
-    return_value: Any = None,
+    scrim: typing.Union[str, bool] = None,
+    scroll_strategy: str = None,
     scrollable: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
-    transition: str = None,
+    transition: typing.Union[str, dict] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
     width: typing.Union[str, float] = None,
+    z_index: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.BottomSheet, Any]:
     """
@@ -596,18 +769,24 @@ del _BottomSheet
 
 
 def _Breadcrumbs(
+    active_class: str = None,
+    active_color: str = None,
     attributes: dict = {},
+    bg_color: str = None,
     children: list = [],
     class_: str = None,
-    dark: bool = None,
+    color: str = None,
+    density: str = None,
+    disabled: bool = None,
     divider: str = None,
+    icon: typing.Union[str, list] = None,
     items: list = [],
-    large: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -637,6 +816,7 @@ def _BreadcrumbsDivider(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    divider: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     slot: str = None,
     style_: str = None,
@@ -667,26 +847,23 @@ del _BreadcrumbsDivider
 
 
 def _BreadcrumbsItem(
+    active: bool = None,
     active_class: str = None,
-    append: bool = None,
+    active_color: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    color: str = None,
     disabled: bool = None,
     exact: bool = None,
-    exact_active_class: str = None,
-    href: typing.Union[str, dict] = None,
+    href: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    link: bool = None,
-    nuxt: bool = None,
     replace: bool = None,
-    ripple: typing.Union[bool, dict] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    target: str = None,
-    to: typing.Union[str, dict] = None,
+    title: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -713,63 +890,51 @@ del _BreadcrumbsItem
 
 
 def _Btn(
-    absolute: bool = None,
-    active_class: str = None,
-    append: bool = None,
+    active: bool = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
     block: bool = None,
-    bottom: bool = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    depressed: bool = None,
+    density: str = None,
     disabled: bool = None,
-    elevation: typing.Union[float, str] = None,
+    elevation: typing.Union[str, float] = None,
     exact: bool = None,
-    exact_active_class: str = None,
-    fab: bool = None,
-    fixed: bool = None,
-    height: typing.Union[float, str] = None,
-    href: typing.Union[str, dict] = None,
+    flat: bool = None,
+    height: typing.Union[str, float] = None,
+    href: str = None,
     icon: bool = None,
-    input_value: Any = None,
-    large: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    light: bool = None,
-    link: bool = None,
-    loading: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    nuxt: bool = None,
-    outlined: bool = None,
+    loading: typing.Union[str, bool] = None,
+    location: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    position: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     replace: bool = None,
-    retain_focus_on_click: bool = None,
-    right: bool = None,
     ripple: typing.Union[bool, dict] = None,
-    rounded: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
+    selected_class: str = None,
+    size: typing.Union[str, float] = None,
     slot: str = None,
-    small: bool = None,
+    stacked: bool = None,
     style_: str = None,
+    symbol: Any = None,
     tabbable: bool = None,
     tag: str = None,
-    target: str = None,
-    text: bool = None,
-    tile: bool = None,
-    to: typing.Union[str, dict] = None,
+    text: str = None,
+    theme: str = None,
     tooltip: str = None,
-    top: bool = None,
-    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
     value: Any = None,
-    width: typing.Union[float, str] = None,
-    x_large: bool = None,
-    x_small: bool = None,
+    variant: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Btn, Any]:
     """
@@ -791,33 +956,75 @@ def Btn(**kwargs):
 del _Btn
 
 
-def _BtnToggle(
-    active_class: str = None,
+def _BtnGroup(
     attributes: dict = {},
-    background_color: str = None,
-    borderless: bool = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    group: bool = None,
+    density: str = None,
+    divided: bool = None,
+    elevation: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
-    multiple: bool = None,
-    rounded: bool = None,
-    shaped: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
-    tile: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
+    variant: str = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.BtnGroup, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_BtnGroup)
+def BtnGroup(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.BtnGroup
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _BtnGroup
+
+
+def _BtnToggle(
+    attributes: dict = {},
+    border: typing.Union[str, float, bool] = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    density: str = None,
+    disabled: bool = None,
+    divided: bool = None,
+    elevation: typing.Union[str, float] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    mandatory: typing.Union[bool, str] = None,
+    max: float = None,
+    model_value: Any = None,
+    multiple: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
+    selected_class: str = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.BtnToggle, Any]:
     """
@@ -839,260 +1046,51 @@ def BtnToggle(**kwargs):
 del _BtnToggle
 
 
-def _Calendar(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    end: str = None,
-    event_color: str = None,
-    event_end: str = None,
-    event_height: float = None,
-    event_margin_bottom: float = None,
-    event_more: bool = None,
-    event_more_text: str = None,
-    event_name: str = None,
-    event_overlap_mode: str = None,
-    event_overlap_threshold: typing.Union[str, float] = None,
-    event_ripple: typing.Union[bool, dict] = None,
-    event_start: str = None,
-    event_text_color: str = None,
-    events: list = [],
-    first_interval: typing.Union[float, str] = None,
-    hide_header: bool = None,
-    interval_count: typing.Union[float, str] = None,
-    interval_height: typing.Union[float, str] = None,
-    interval_minutes: typing.Union[float, str] = None,
-    interval_width: typing.Union[float, str] = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    locale: str = None,
-    max_days: float = None,
-    min_weeks: Any = None,
-    now: str = None,
-    short_intervals: bool = None,
-    short_months: bool = None,
-    short_weekdays: bool = None,
-    show_month_on_first: bool = None,
-    slot: str = None,
-    start: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    type: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: str = None,
-    weekdays: typing.Union[list, str] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.Calendar, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_Calendar)
-def Calendar(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.Calendar
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _Calendar
-
-
-def _CalendarDaily(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    end: str = None,
-    first_interval: typing.Union[float, str] = None,
-    hide_header: bool = None,
-    interval_count: typing.Union[float, str] = None,
-    interval_height: typing.Union[float, str] = None,
-    interval_minutes: typing.Union[float, str] = None,
-    interval_width: typing.Union[float, str] = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    locale: str = None,
-    max_days: float = None,
-    now: str = None,
-    short_intervals: bool = None,
-    short_weekdays: bool = None,
-    slot: str = None,
-    start: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    weekdays: typing.Union[list, str] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.CalendarDaily, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_CalendarDaily)
-def CalendarDaily(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.CalendarDaily
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _CalendarDaily
-
-
-def _CalendarMonthly(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    end: str = None,
-    hide_header: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    locale: str = None,
-    min_weeks: Any = None,
-    now: str = None,
-    short_months: bool = None,
-    short_weekdays: bool = None,
-    show_month_on_first: bool = None,
-    slot: str = None,
-    start: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    weekdays: typing.Union[list, str] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.CalendarMonthly, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_CalendarMonthly)
-def CalendarMonthly(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.CalendarMonthly
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _CalendarMonthly
-
-
-def _CalendarWeekly(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    end: str = None,
-    hide_header: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    locale: str = None,
-    min_weeks: Any = None,
-    now: str = None,
-    short_months: bool = None,
-    short_weekdays: bool = None,
-    show_month_on_first: bool = None,
-    slot: str = None,
-    start: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    weekdays: typing.Union[list, str] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.CalendarWeekly, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_CalendarWeekly)
-def CalendarWeekly(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.CalendarWeekly
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _CalendarWeekly
-
-
 def _Card(
-    active_class: str = None,
-    append: bool = None,
+    append_avatar: str = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
+    density: str = None,
     disabled: bool = None,
-    elevation: typing.Union[float, str] = None,
+    elevation: typing.Union[str, float] = None,
     exact: bool = None,
-    exact_active_class: str = None,
     flat: bool = None,
-    height: typing.Union[float, str] = None,
+    height: typing.Union[str, float] = None,
     hover: bool = None,
-    href: typing.Union[str, dict] = None,
-    img: str = None,
+    href: str = None,
+    image: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
     link: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    nuxt: bool = None,
-    outlined: bool = None,
-    raised: bool = None,
+    loading: typing.Union[str, bool] = None,
+    location: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    position: str = None,
+    prepend_avatar: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     replace: bool = None,
     ripple: typing.Union[bool, dict] = None,
-    shaped: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
+    subtitle: str = None,
     tabbable: bool = None,
     tag: str = None,
-    target: str = None,
-    tile: bool = None,
-    to: typing.Union[str, dict] = None,
+    text: str = None,
+    theme: str = None,
+    title: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
+    variant: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Card, Any]:
     """
@@ -1147,6 +1145,46 @@ def CardActions(**kwargs):
 del _CardActions
 
 
+def _CardItem(
+    append_avatar: str = None,
+    append_icon: typing.Union[str, list] = None,
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    density: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    prepend_avatar: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    slot: str = None,
+    style_: str = None,
+    subtitle: str = None,
+    tabbable: bool = None,
+    title: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.CardItem, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_CardItem)
+def CardItem(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.CardItem
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _CardItem
+
+
 def _CardSubtitle(
     attributes: dict = {},
     children: list = [],
@@ -1155,6 +1193,7 @@ def _CardSubtitle(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -1188,6 +1227,7 @@ def _CardText(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -1221,6 +1261,7 @@ def _CardTitle(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -1247,42 +1288,39 @@ del _CardTitle
 
 
 def _Carousel(
-    active_class: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    color: str = None,
     continuous: bool = None,
     cycle: bool = None,
-    dark: bool = None,
-    delimiter_icon: str = None,
-    height: typing.Union[float, str] = None,
+    delimiter_icon: typing.Union[str, list] = None,
+    direction: str = None,
+    disabled: bool = None,
+    height: typing.Union[str, float] = None,
     hide_delimiter_background: bool = None,
     hide_delimiters: bool = None,
-    interval: typing.Union[float, str] = None,
+    interval: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
-    multiple: bool = None,
-    next_icon: typing.Union[bool, str] = None,
-    prev_icon: typing.Union[bool, str] = None,
-    progress: bool = None,
-    progress_color: str = None,
+    mandatory: typing.Union[bool, str] = None,
+    model_value: Any = None,
+    next_icon: typing.Union[str, list] = None,
+    prev_icon: typing.Union[str, list] = None,
+    progress: typing.Union[str, bool] = None,
     reverse: bool = None,
-    show_arrows: bool = None,
-    show_arrows_on_hover: bool = None,
+    selected_class: str = None,
+    show_arrows: typing.Union[str, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
-    touch: dict = None,
-    touchless: bool = None,
+    touch: Any = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    vertical: bool = None,
-    vertical_delimiters: str = None,
+    vertical_delimiters: typing.Union[bool, str, str] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Carousel, Any]:
     """
@@ -1305,34 +1343,40 @@ del _Carousel
 
 
 def _CarouselItem(
-    active_class: str = None,
-    append: bool = None,
+    alt: str = None,
+    aspect_ratio: typing.Union[str, float] = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    content_class: str = None,
+    cover: bool = None,
     disabled: bool = None,
     eager: bool = None,
-    exact: bool = None,
-    exact_active_class: str = None,
-    href: typing.Union[str, dict] = None,
+    gradient: str = None,
+    height: typing.Union[str, float] = None,
+    inline: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    link: bool = None,
-    nuxt: bool = None,
-    replace: bool = None,
-    reverse_transition: typing.Union[bool, str] = None,
-    ripple: typing.Union[bool, dict] = None,
+    lazy_src: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    options: dict = None,
+    reverse_transition: typing.Union[str, bool] = None,
+    selected_class: str = None,
+    sizes: str = None,
     slot: str = None,
+    src: typing.Union[str, dict] = None,
+    srcset: str = None,
     style_: str = None,
     tabbable: bool = None,
-    tag: str = None,
-    target: str = None,
-    to: typing.Union[str, dict] = None,
     tooltip: str = None,
-    transition: typing.Union[bool, str] = None,
+    transition: typing.Union[str, bool] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
     value: Any = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.CarouselItem, Any]:
     """
@@ -1354,128 +1398,54 @@ def CarouselItem(**kwargs):
 del _CarouselItem
 
 
-def _CarouselReverseTransition(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    group: bool = None,
-    hide_on_leave: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    leave_absolute: bool = None,
-    mode: str = None,
-    origin: str = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.CarouselReverseTransition, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_CarouselReverseTransition)
-def CarouselReverseTransition(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.CarouselReverseTransition
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _CarouselReverseTransition
-
-
-def _CarouselTransition(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    group: bool = None,
-    hide_on_leave: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    leave_absolute: bool = None,
-    mode: str = None,
-    origin: str = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.CarouselTransition, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_CarouselTransition)
-def CarouselTransition(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.CarouselTransition
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _CarouselTransition
-
-
 def _Checkbox(
-    append_icon: str = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
-    background_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
+    defaults_target: str = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
+    false_icon: typing.Union[str, list] = None,
     false_value: Any = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
     indeterminate: bool = None,
-    indeterminate_icon: str = None,
-    input_value: Any = None,
+    indeterminate_icon: typing.Union[str, list] = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loading: bool = None,
+    max_errors: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
+    model_value: Any = None,
     multiple: bool = None,
-    off_icon: str = None,
-    on_icon: str = None,
+    name: str = None,
     persistent_hint: bool = None,
-    prepend_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     readonly: bool = None,
-    ripple: typing.Union[bool, dict] = None,
+    ripple: bool = None,
     rules: list = [],
     slot: str = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
+    true_icon: typing.Union[str, list] = None,
     true_value: Any = None,
+    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
+    validate_on: str = None,
+    validation_value: Any = None,
     value: Any = None,
+    value_comparator: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Checkbox, Any]:
     """
@@ -1497,50 +1467,106 @@ def Checkbox(**kwargs):
 del _Checkbox
 
 
-def _Chip(
-    active: bool = None,
-    active_class: str = None,
-    append: bool = None,
+def _CheckboxBtn(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    close_: bool = None,
-    close_icon: str = None,
     color: str = None,
-    dark: bool = None,
+    defaults_target: str = None,
+    density: str = None,
+    disabled: bool = None,
+    error: bool = None,
+    false_icon: typing.Union[str, list] = None,
+    false_value: Any = None,
+    id: str = None,
+    indeterminate: bool = None,
+    indeterminate_icon: typing.Union[str, list] = None,
+    inline: bool = None,
+    label: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    model_value: Any = None,
+    multiple: bool = None,
+    name: str = None,
+    readonly: bool = None,
+    ripple: bool = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    theme: str = None,
+    tooltip: str = None,
+    true_icon: typing.Union[str, list] = None,
+    true_value: Any = None,
+    type: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    value: Any = None,
+    value_comparator: str = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.CheckboxBtn, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_CheckboxBtn)
+def CheckboxBtn(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.CheckboxBtn
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _CheckboxBtn
+
+
+def _Chip(
+    active_class: str = None,
+    append_avatar: str = None,
+    append_icon: typing.Union[str, list] = None,
+    attributes: dict = {},
+    border: typing.Union[str, float, bool] = None,
+    children: list = [],
+    class_: str = None,
+    closable: bool = None,
+    close_icon: typing.Union[str, list] = None,
+    close_label: str = None,
+    color: str = None,
+    density: str = None,
     disabled: bool = None,
     draggable: bool = None,
+    elevation: typing.Union[str, float] = None,
     exact: bool = None,
-    exact_active_class: str = None,
     filter: bool = None,
     filter_icon: str = None,
-    href: typing.Union[str, dict] = None,
-    input_value: Any = None,
+    href: str = None,
     label: bool = None,
-    large: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
     link: bool = None,
-    nuxt: bool = None,
-    outlined: bool = None,
+    model_value: bool = None,
     pill: bool = None,
+    prepend_avatar: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     replace: bool = None,
     ripple: typing.Union[bool, dict] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    selected_class: str = None,
+    size: typing.Union[str, float] = None,
     slot: str = None,
-    small: bool = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    target: str = None,
-    text_color: str = None,
-    to: typing.Union[str, dict] = None,
+    text: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
     value: Any = None,
-    x_large: bool = None,
-    x_small: bool = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Chip, Any]:
     """
@@ -1563,31 +1589,30 @@ del _Chip
 
 
 def _ChipGroup(
-    active_class: str = None,
     attributes: dict = {},
-    center_active: bool = None,
     children: list = [],
     class_: str = None,
     color: str = None,
     column: bool = None,
-    dark: bool = None,
+    disabled: bool = None,
+    filter: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
-    mobile_break_point: typing.Union[float, str] = None,
+    mandatory: typing.Union[bool, str] = None,
+    max: float = None,
+    model_value: Any = None,
     multiple: bool = None,
-    next_icon: str = None,
-    prev_icon: str = None,
-    show_arrows: bool = None,
+    selected_class: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
+    value_comparator: str = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ChipGroup, Any]:
     """
@@ -1609,27 +1634,13 @@ def ChipGroup(**kwargs):
 del _ChipGroup
 
 
-def _Col(
-    align_self: str = None,
+def _ClassIcon(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    cols: typing.Union[bool, str, float] = None,
+    icon: typing.Union[str, list] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    lg: typing.Union[bool, str, float] = None,
-    md: typing.Union[bool, str, float] = None,
-    offset: typing.Union[str, float] = None,
-    offset_lg: typing.Union[str, float] = None,
-    offset_md: typing.Union[str, float] = None,
-    offset_sm: typing.Union[str, float] = None,
-    offset_xl: typing.Union[str, float] = None,
-    order: typing.Union[str, float] = None,
-    order_lg: typing.Union[str, float] = None,
-    order_md: typing.Union[str, float] = None,
-    order_sm: typing.Union[str, float] = None,
-    order_xl: typing.Union[str, float] = None,
     slot: str = None,
-    sm: typing.Union[bool, str, float] = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
@@ -1637,7 +1648,93 @@ def _Col(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    xl: typing.Union[bool, str, float] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.ClassIcon, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_ClassIcon)
+def ClassIcon(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.ClassIcon
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _ClassIcon
+
+
+def _Code(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.Code, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_Code)
+def Code(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.Code
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _Code
+
+
+def _Col(
+    align_self: str = None,
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    cols: typing.Union[str, float, bool] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    lg: typing.Union[str, float, bool] = None,
+    md: typing.Union[str, float, bool] = None,
+    offset: typing.Union[str, float] = None,
+    offset_lg: typing.Union[str, float] = None,
+    offset_md: typing.Union[str, float] = None,
+    offset_sm: typing.Union[str, float] = None,
+    offset_xl: typing.Union[str, float] = None,
+    offset_xxl: typing.Union[str, float] = None,
+    order: typing.Union[str, float] = None,
+    order_lg: typing.Union[str, float] = None,
+    order_md: typing.Union[str, float] = None,
+    order_sm: typing.Union[str, float] = None,
+    order_xl: typing.Union[str, float] = None,
+    order_xxl: typing.Union[str, float] = None,
+    slot: str = None,
+    sm: typing.Union[str, float, bool] = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    xl: typing.Union[str, float, bool] = None,
+    xxl: typing.Union[str, float, bool] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Col, Any]:
     """
@@ -1661,31 +1758,36 @@ del _Col
 
 def _ColorPicker(
     attributes: dict = {},
+    border: typing.Union[str, float, bool] = None,
     canvas_height: typing.Union[str, float] = None,
     children: list = [],
     class_: str = None,
-    dark: bool = None,
+    color: str = None,
     disabled: bool = None,
-    dot_size: typing.Union[float, str] = None,
-    flat: bool = None,
+    dot_size: typing.Union[str, float] = None,
+    elevation: typing.Union[str, float] = None,
     hide_canvas: bool = None,
     hide_inputs: bool = None,
-    hide_mode_switch: bool = None,
+    hide_sliders: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
     mode: str = None,
+    model_value: str = None,
+    modes: list = [],
+    position: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     show_swatches: bool = None,
     slot: str = None,
     style_: str = None,
     swatches: list = [],
-    swatches_max_height: typing.Union[float, str] = None,
+    swatches_max_height: typing.Union[str, float] = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: typing.Union[dict, str] = None,
-    width: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ColorPicker, Any]:
     """
@@ -1707,165 +1809,92 @@ def ColorPicker(**kwargs):
 del _ColorPicker
 
 
-def _ColorPickerCanvas(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: dict = None,
-    disabled: bool = None,
-    dot_size: typing.Union[float, str] = None,
-    height: typing.Union[float, str] = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    width: typing.Union[float, str] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ColorPickerCanvas, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_ColorPickerCanvas)
-def ColorPickerCanvas(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ColorPickerCanvas
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _ColorPickerCanvas
-
-
-def _ColorPickerSwatches(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: dict = None,
-    dark: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    slot: str = None,
-    style_: str = None,
-    swatches: list = [],
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ColorPickerSwatches, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_ColorPickerSwatches)
-def ColorPickerSwatches(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ColorPickerSwatches
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _ColorPickerSwatches
-
-
 def _Combobox(
-    allow_overflow: bool = None,
-    append_icon: str = None,
-    append_outer_icon: str = None,
-    attach: Any = None,
+    active: bool = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
-    auto_select_first: bool = None,
+    auto_select_first: typing.Union[bool, str] = None,
     autofocus: bool = None,
-    background_color: str = None,
-    cache_items: bool = None,
+    base_color: str = None,
+    bg_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     chips: bool = None,
     class_: str = None,
-    clear_icon: str = None,
+    clear_icon: typing.Union[str, list] = None,
     clearable: bool = None,
+    closable_chips: bool = None,
+    close_text: str = None,
     color: str = None,
-    counter: typing.Union[bool, float, str] = None,
-    dark: bool = None,
-    deletable_chips: bool = None,
+    counter: typing.Union[str, float, bool] = None,
+    counter_value: float = None,
+    custom_filter: str = None,
+    custom_key_filter: dict = None,
     delimiters: list = [],
-    dense: bool = None,
-    disable_lookup: bool = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
     eager: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    filled: bool = None,
+    filter_keys: typing.Union[str, list] = None,
+    filter_mode: str = None,
     flat: bool = None,
-    full_width: bool = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hide_no_data: bool = None,
     hide_selected: bool = None,
     hint: str = None,
     id: str = None,
+    item_children: str = None,
     item_color: str = None,
-    item_disabled: typing.Union[str, list] = None,
-    item_text: typing.Union[str, list] = None,
-    item_value: typing.Union[str, list] = None,
+    item_props: str = None,
+    item_title: str = None,
+    item_value: str = None,
     items: list = [],
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
-    menu_props: typing.Union[str, list, dict] = None,
+    loading: typing.Union[str, bool] = None,
+    max_errors: typing.Union[str, float] = None,
+    menu: bool = None,
+    menu_icon: typing.Union[str, list] = None,
     messages: typing.Union[str, list] = None,
+    model_value: Any = None,
     multiple: bool = None,
+    name: str = None,
     no_data_text: str = None,
     no_filter: bool = None,
     open_on_clear: bool = None,
-    outlined: bool = None,
+    open_text: str = None,
+    persistent_clear: bool = None,
+    persistent_counter: bool = None,
     persistent_hint: bool = None,
+    persistent_placeholder: bool = None,
     placeholder: str = None,
     prefix: str = None,
-    prepend_icon: str = None,
-    prepend_inner_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    prepend_inner_icon: typing.Union[str, list] = None,
     readonly: bool = None,
     return_object: bool = None,
     reverse: bool = None,
-    rounded: bool = None,
+    role: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     rules: list = [],
-    search_input: str = None,
-    shaped: bool = None,
     single_line: bool = None,
     slot: str = None,
-    small_chips: bool = None,
-    solo: bool = None,
-    solo_inverted: bool = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     suffix: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
+    transition: typing.Union[str, bool] = None,
     type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
+    validate_on: str = None,
+    value_comparator: str = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Combobox, Any]:
     """
@@ -1887,111 +1916,47 @@ def Combobox(**kwargs):
 del _Combobox
 
 
+def _ComponentIcon(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    icon: typing.Union[str, list] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.ComponentIcon, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_ComponentIcon)
+def ComponentIcon(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.ComponentIcon
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _ComponentIcon
+
+
 def _Container(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     fluid: bool = None,
-    id: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    ma_0: bool = None,
-    ma_1: bool = None,
-    ma_2: bool = None,
-    ma_3: bool = None,
-    ma_4: bool = None,
-    ma_5: bool = None,
-    ma_auto: bool = None,
-    mb_0: bool = None,
-    mb_1: bool = None,
-    mb_2: bool = None,
-    mb_3: bool = None,
-    mb_4: bool = None,
-    mb_5: bool = None,
-    mb_auto: bool = None,
-    ml_0: bool = None,
-    ml_1: bool = None,
-    ml_2: bool = None,
-    ml_3: bool = None,
-    ml_4: bool = None,
-    ml_5: bool = None,
-    ml_auto: bool = None,
-    mr_0: bool = None,
-    mr_1: bool = None,
-    mr_2: bool = None,
-    mr_3: bool = None,
-    mr_4: bool = None,
-    mr_5: bool = None,
-    mr_auto: bool = None,
-    mt_0: bool = None,
-    mt_1: bool = None,
-    mt_2: bool = None,
-    mt_3: bool = None,
-    mt_4: bool = None,
-    mt_5: bool = None,
-    mt_auto: bool = None,
-    mx_0: bool = None,
-    mx_1: bool = None,
-    mx_2: bool = None,
-    mx_3: bool = None,
-    mx_4: bool = None,
-    mx_5: bool = None,
-    mx_auto: bool = None,
-    my_0: bool = None,
-    my_1: bool = None,
-    my_2: bool = None,
-    my_3: bool = None,
-    my_4: bool = None,
-    my_5: bool = None,
-    my_auto: bool = None,
-    pa_0: bool = None,
-    pa_1: bool = None,
-    pa_2: bool = None,
-    pa_3: bool = None,
-    pa_4: bool = None,
-    pa_5: bool = None,
-    pa_auto: bool = None,
-    pb_0: bool = None,
-    pb_1: bool = None,
-    pb_2: bool = None,
-    pb_3: bool = None,
-    pb_4: bool = None,
-    pb_5: bool = None,
-    pb_auto: bool = None,
-    pl_0: bool = None,
-    pl_1: bool = None,
-    pl_2: bool = None,
-    pl_3: bool = None,
-    pl_4: bool = None,
-    pl_5: bool = None,
-    pl_auto: bool = None,
-    pr_0: bool = None,
-    pr_1: bool = None,
-    pr_2: bool = None,
-    pr_3: bool = None,
-    pr_4: bool = None,
-    pr_5: bool = None,
-    pr_auto: bool = None,
-    pt_0: bool = None,
-    pt_1: bool = None,
-    pt_2: bool = None,
-    pt_3: bool = None,
-    pt_4: bool = None,
-    pt_5: bool = None,
-    pt_auto: bool = None,
-    px_0: bool = None,
-    px_1: bool = None,
-    px_2: bool = None,
-    px_3: bool = None,
-    px_4: bool = None,
-    px_5: bool = None,
-    px_auto: bool = None,
-    py_0: bool = None,
-    py_1: bool = None,
-    py_2: bool = None,
-    py_3: bool = None,
-    py_4: bool = None,
-    py_5: bool = None,
-    py_auto: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -2021,154 +1986,22 @@ def Container(**kwargs):
 del _Container
 
 
-def _Content(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    ma_0: bool = None,
-    ma_1: bool = None,
-    ma_2: bool = None,
-    ma_3: bool = None,
-    ma_4: bool = None,
-    ma_5: bool = None,
-    ma_auto: bool = None,
-    mb_0: bool = None,
-    mb_1: bool = None,
-    mb_2: bool = None,
-    mb_3: bool = None,
-    mb_4: bool = None,
-    mb_5: bool = None,
-    mb_auto: bool = None,
-    ml_0: bool = None,
-    ml_1: bool = None,
-    ml_2: bool = None,
-    ml_3: bool = None,
-    ml_4: bool = None,
-    ml_5: bool = None,
-    ml_auto: bool = None,
-    mr_0: bool = None,
-    mr_1: bool = None,
-    mr_2: bool = None,
-    mr_3: bool = None,
-    mr_4: bool = None,
-    mr_5: bool = None,
-    mr_auto: bool = None,
-    mt_0: bool = None,
-    mt_1: bool = None,
-    mt_2: bool = None,
-    mt_3: bool = None,
-    mt_4: bool = None,
-    mt_5: bool = None,
-    mt_auto: bool = None,
-    mx_0: bool = None,
-    mx_1: bool = None,
-    mx_2: bool = None,
-    mx_3: bool = None,
-    mx_4: bool = None,
-    mx_5: bool = None,
-    mx_auto: bool = None,
-    my_0: bool = None,
-    my_1: bool = None,
-    my_2: bool = None,
-    my_3: bool = None,
-    my_4: bool = None,
-    my_5: bool = None,
-    my_auto: bool = None,
-    pa_0: bool = None,
-    pa_1: bool = None,
-    pa_2: bool = None,
-    pa_3: bool = None,
-    pa_4: bool = None,
-    pa_5: bool = None,
-    pa_auto: bool = None,
-    pb_0: bool = None,
-    pb_1: bool = None,
-    pb_2: bool = None,
-    pb_3: bool = None,
-    pb_4: bool = None,
-    pb_5: bool = None,
-    pb_auto: bool = None,
-    pl_0: bool = None,
-    pl_1: bool = None,
-    pl_2: bool = None,
-    pl_3: bool = None,
-    pl_4: bool = None,
-    pl_5: bool = None,
-    pl_auto: bool = None,
-    pr_0: bool = None,
-    pr_1: bool = None,
-    pr_2: bool = None,
-    pr_3: bool = None,
-    pr_4: bool = None,
-    pr_5: bool = None,
-    pr_auto: bool = None,
-    pt_0: bool = None,
-    pt_1: bool = None,
-    pt_2: bool = None,
-    pt_3: bool = None,
-    pt_4: bool = None,
-    pt_5: bool = None,
-    pt_auto: bool = None,
-    px_0: bool = None,
-    px_1: bool = None,
-    px_2: bool = None,
-    px_3: bool = None,
-    px_4: bool = None,
-    px_5: bool = None,
-    px_auto: bool = None,
-    py_0: bool = None,
-    py_1: bool = None,
-    py_2: bool = None,
-    py_3: bool = None,
-    py_4: bool = None,
-    py_5: bool = None,
-    py_auto: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tag: str = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.Content, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_Content)
-def Content(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.Content
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _Content
-
-
 def _Counter(
+    active: bool = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max: typing.Union[float, str] = None,
+    max: typing.Union[str, float] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
+    transition: typing.Union[str, dict] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: typing.Union[float, str] = None,
+    value: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Counter, Any]:
     """
@@ -2190,145 +2023,43 @@ def Counter(**kwargs):
 del _Counter
 
 
-def _Data(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    disable_filtering: bool = None,
-    disable_pagination: bool = None,
-    disable_sort: bool = None,
-    group_by: typing.Union[str, list] = None,
-    group_desc: typing.Union[bool, list] = None,
-    items: list = [],
-    items_per_page: float = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    locale: str = None,
-    multi_sort: bool = None,
-    must_sort: bool = None,
-    options: dict = None,
-    page: float = None,
-    search: str = None,
-    server_items_length: float = None,
-    slot: str = None,
-    sort_by: typing.Union[str, list] = None,
-    sort_desc: typing.Union[bool, list] = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.Data, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_Data)
-def Data(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.Data
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _Data
-
-
-def _DataFooter(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    disable_items_per_page: bool = None,
-    disable_pagination: bool = None,
-    first_icon: str = None,
-    items_per_page_all_text: str = None,
-    items_per_page_options: list = [],
-    items_per_page_text: str = None,
-    last_icon: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    next_icon: str = None,
-    options: dict = None,
-    page_text: str = None,
-    pagination: dict = None,
-    prev_icon: str = None,
-    show_current_page: bool = None,
-    show_first_last_page: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.DataFooter, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_DataFooter)
-def DataFooter(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.DataFooter
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _DataFooter
-
-
 def _DataIterator(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
-    disable_filtering: bool = None,
-    disable_pagination: bool = None,
-    disable_sort: bool = None,
+    custom_filter: str = None,
+    custom_key_filter: dict = None,
+    expand_on_click: bool = None,
     expanded: list = [],
-    footer_props: dict = None,
-    group_by: typing.Union[str, list] = None,
-    group_desc: typing.Union[bool, list] = None,
-    hide_default_footer: bool = None,
-    item_key: str = None,
+    filter_keys: typing.Union[str, list] = None,
+    filter_mode: str = None,
+    group_by: list = [],
+    item_selectable: str = None,
+    item_value: str = None,
     items: list = [],
-    items_per_page: float = None,
+    items_per_page: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loading: typing.Union[bool, str] = None,
-    loading_text: str = None,
-    locale: str = None,
-    mobile_breakpoint: typing.Union[float, str] = None,
+    loading: bool = None,
+    model_value: list = [],
     multi_sort: bool = None,
     must_sort: bool = None,
-    no_data_text: str = None,
-    no_results_text: str = None,
-    options: dict = None,
-    page: float = None,
+    no_filter: bool = None,
+    page: typing.Union[str, float] = None,
+    return_object: bool = None,
     search: str = None,
-    selectable_key: str = None,
-    server_items_length: float = None,
-    single_expand: bool = None,
-    single_select: bool = None,
+    select_strategy: str = None,
+    show_expand: bool = None,
+    show_select: bool = None,
     slot: str = None,
-    sort_by: typing.Union[str, list] = None,
-    sort_desc: typing.Union[bool, list] = None,
+    sort_by: list = [],
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: list = [],
+    value_comparator: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.DataIterator, Any]:
     """
@@ -2352,60 +2083,69 @@ del _DataIterator
 
 def _DataTable(
     attributes: dict = {},
-    calculate_widths: bool = None,
-    caption: str = None,
     children: list = [],
     class_: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    disable_filtering: bool = None,
-    disable_pagination: bool = None,
-    disable_sort: bool = None,
-    expand_icon: str = None,
+    color: str = None,
+    custom_filter: str = None,
+    custom_key_filter: dict = None,
+    density: str = None,
+    expand_on_click: bool = None,
     expanded: list = [],
+    filter_keys: typing.Union[str, list] = None,
+    filter_mode: str = None,
+    first_icon: str = None,
+    first_page_label: str = None,
+    fixed_footer: bool = None,
     fixed_header: bool = None,
-    footer_props: dict = None,
-    group_by: typing.Union[str, list] = None,
-    group_desc: typing.Union[bool, list] = None,
-    header_props: dict = None,
-    headers: list = [],
-    headers_length: float = None,
-    height: typing.Union[float, str] = None,
-    hide_default_footer: bool = None,
-    hide_default_header: bool = None,
-    item_key: str = None,
+    group_by: list = [],
+    headers: str = None,
+    height: typing.Union[str, float] = None,
+    hide_no_data: bool = None,
+    hover: bool = None,
+    item_selectable: str = None,
+    item_value: str = None,
     items: list = [],
-    items_per_page: float = None,
+    items_per_page: typing.Union[str, float] = None,
+    items_per_page_options: list = [],
+    items_per_page_text: str = None,
+    last_icon: str = None,
+    last_page_label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loading: typing.Union[bool, str] = None,
+    loading: typing.Union[str, bool] = None,
     loading_text: str = None,
-    locale: str = None,
-    mobile_breakpoint: typing.Union[float, str] = None,
+    model_value: list = [],
     multi_sort: bool = None,
     must_sort: bool = None,
+    next_icon: str = None,
+    next_page_label: str = None,
     no_data_text: str = None,
-    no_results_text: str = None,
-    options: dict = None,
-    page: float = None,
+    no_filter: bool = None,
+    page: typing.Union[str, float] = None,
+    page_text: str = None,
+    prev_icon: str = None,
+    prev_page_label: str = None,
+    return_object: bool = None,
+    row_height: float = None,
     search: str = None,
-    selectable_key: str = None,
-    server_items_length: float = None,
+    select_strategy: str = None,
+    show_current_page: bool = None,
     show_expand: bool = None,
-    show_group_by: bool = None,
     show_select: bool = None,
-    single_expand: bool = None,
-    single_select: bool = None,
     slot: str = None,
-    sort_by: typing.Union[str, list] = None,
-    sort_desc: typing.Union[bool, list] = None,
+    sort_asc_icon: typing.Union[str, list] = None,
+    sort_by: list = [],
+    sort_desc_icon: typing.Union[str, list] = None,
+    sticky: bool = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: list = [],
+    value_comparator: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.DataTable, Any]:
     """
@@ -2427,12 +2167,11 @@ def DataTable(**kwargs):
 del _DataTable
 
 
-def _DataTableHeader(
+def _DataTableFooter(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    mobile: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -2441,7 +2180,7 @@ def _DataTableHeader(
     v_on: str = None,
     v_slots: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.DataTableHeader, Any]:
+) -> ValueElement[ipyvuetify.generated.DataTableFooter, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -2449,60 +2188,361 @@ def _DataTableHeader(
     ...
 
 
-@implements(_DataTableHeader)
-def DataTableHeader(**kwargs):
+@implements(_DataTableFooter)
+def DataTableFooter(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.DataTableHeader
+    widget_cls = ipyvuetify.generated.DataTableFooter
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _DataTableHeader
+del _DataTableFooter
 
 
-def _DatePicker(
+def _DataTableRow(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    disabled: bool = None,
-    event_color: typing.Union[list, dict, str] = None,
-    events: typing.Union[list, dict] = None,
-    first_day_of_week: typing.Union[str, float] = None,
-    full_width: bool = None,
-    header_color: str = None,
-    landscape: bool = None,
+    index: float = None,
+    item: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    locale: str = None,
-    locale_first_day_of_year: typing.Union[str, float] = None,
-    max: str = None,
-    min: str = None,
-    multiple: bool = None,
-    next_icon: str = None,
-    no_title: bool = None,
-    picker_date: str = None,
-    prev_icon: str = None,
-    range: bool = None,
-    reactive: bool = None,
-    readonly: bool = None,
-    scrollable: bool = None,
-    selected_items_text: str = None,
-    show_current: typing.Union[bool, str] = None,
-    show_week: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
-    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: typing.Union[list, str] = None,
-    width: typing.Union[float, str] = None,
-    year_icon: str = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.DataTableRow, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_DataTableRow)
+def DataTableRow(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.DataTableRow
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _DataTableRow
+
+
+def _DataTableRows(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    hide_no_data: bool = None,
+    items: list = [],
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    loading: typing.Union[str, bool] = None,
+    loading_text: str = None,
+    no_data_text: str = None,
+    row_height: float = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.DataTableRows, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_DataTableRows)
+def DataTableRows(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.DataTableRows
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _DataTableRows
+
+
+def _DataTableServer(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    density: str = None,
+    expand_on_click: bool = None,
+    expanded: list = [],
+    first_icon: str = None,
+    first_page_label: str = None,
+    fixed_footer: bool = None,
+    fixed_header: bool = None,
+    group_by: list = [],
+    headers: str = None,
+    height: typing.Union[str, float] = None,
+    hide_no_data: bool = None,
+    hover: bool = None,
+    item_selectable: str = None,
+    item_value: str = None,
+    items: list = [],
+    items_length: typing.Union[str, float] = None,
+    items_per_page: typing.Union[str, float] = None,
+    items_per_page_options: list = [],
+    items_per_page_text: str = None,
+    last_icon: str = None,
+    last_page_label: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    loading: typing.Union[str, bool] = None,
+    loading_text: str = None,
+    model_value: list = [],
+    multi_sort: bool = None,
+    must_sort: bool = None,
+    next_icon: str = None,
+    next_page_label: str = None,
+    no_data_text: str = None,
+    page: typing.Union[str, float] = None,
+    page_text: str = None,
+    prev_icon: str = None,
+    prev_page_label: str = None,
+    return_object: bool = None,
+    row_height: float = None,
+    search: str = None,
+    select_strategy: str = None,
+    show_current_page: bool = None,
+    show_expand: bool = None,
+    show_select: bool = None,
+    slot: str = None,
+    sort_asc_icon: typing.Union[str, list] = None,
+    sort_by: list = [],
+    sort_desc_icon: typing.Union[str, list] = None,
+    sticky: bool = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    value_comparator: str = None,
+    width: typing.Union[str, float] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.DataTableServer, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_DataTableServer)
+def DataTableServer(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.DataTableServer
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _DataTableServer
+
+
+def _DataTableVirtual(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    custom_filter: str = None,
+    custom_key_filter: dict = None,
+    density: str = None,
+    expand_on_click: bool = None,
+    expanded: list = [],
+    filter_keys: typing.Union[str, list] = None,
+    filter_mode: str = None,
+    fixed_footer: bool = None,
+    fixed_header: bool = None,
+    group_by: list = [],
+    headers: str = None,
+    height: typing.Union[str, float] = None,
+    hide_no_data: bool = None,
+    hover: bool = None,
+    item_height: typing.Union[str, float] = None,
+    item_selectable: str = None,
+    item_value: str = None,
+    items: list = [],
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    loading: typing.Union[str, bool] = None,
+    loading_text: str = None,
+    model_value: list = [],
+    multi_sort: bool = None,
+    must_sort: bool = None,
+    no_data_text: str = None,
+    no_filter: bool = None,
+    return_object: bool = None,
+    row_height: float = None,
+    search: str = None,
+    select_strategy: str = None,
+    show_expand: bool = None,
+    show_select: bool = None,
+    slot: str = None,
+    sort_asc_icon: typing.Union[str, list] = None,
+    sort_by: list = [],
+    sort_desc_icon: typing.Union[str, list] = None,
+    sticky: bool = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    value_comparator: str = None,
+    width: typing.Union[str, float] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.DataTableVirtual, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_DataTableVirtual)
+def DataTableVirtual(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.DataTableVirtual
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _DataTableVirtual
+
+
+def _DateCard(
+    allowed_dates: list = [],
+    attributes: dict = {},
+    cancel_text: str = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    disabled: typing.Union[str, bool, list] = None,
+    display_date: Any = None,
+    format: str = None,
+    height: typing.Union[str, float] = None,
+    hide_actions: bool = None,
+    hide_weekdays: bool = None,
+    hover_date: Any = None,
+    input_mode: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    max: typing.Union[str, float] = None,
+    min: typing.Union[str, float] = None,
+    mode_icon: str = None,
+    model_value: list = [],
+    multiple: bool = None,
+    next_icon: str = None,
+    ok_text: str = None,
+    prev_icon: str = None,
+    show_adjacent_months: bool = None,
+    show_week: bool = None,
+    side: str = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tooltip: str = None,
+    transition: typing.Union[str, dict] = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    variant: str = None,
+    view_mode: str = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.DateCard, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_DateCard)
+def DateCard(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.DateCard
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _DateCard
+
+
+def _DatePicker(
+    allowed_dates: list = [],
+    attributes: dict = {},
+    bg_color: str = None,
+    border: typing.Union[str, float, bool] = None,
+    calendar_icon: str = None,
+    cancel_text: str = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    disabled: typing.Union[str, bool, list] = None,
+    display_date: Any = None,
+    elevation: typing.Union[str, float] = None,
+    format: str = None,
+    header: str = None,
+    height: typing.Union[str, float] = None,
+    hide_actions: bool = None,
+    hide_weekdays: bool = None,
+    hover_date: Any = None,
+    input_mode: str = None,
+    input_placeholder: str = None,
+    input_text: str = None,
+    keyboard_icon: str = None,
+    landscape: bool = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    location: str = None,
+    max: typing.Union[str, float] = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    mode_icon: str = None,
+    model_value: list = [],
+    multiple: bool = None,
+    next_icon: str = None,
+    ok_text: str = None,
+    position: str = None,
+    prev_icon: str = None,
+    rounded: typing.Union[str, float, bool] = None,
+    show_adjacent_months: bool = None,
+    show_week: bool = None,
+    side: str = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    title: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    variant: str = None,
+    view_mode: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.DatePicker, Any]:
     """
@@ -2524,38 +2564,27 @@ def DatePicker(**kwargs):
 del _DatePicker
 
 
-def _DatePickerDateTable(
+def _DatePickerControls(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
-    current: str = None,
-    dark: bool = None,
-    disabled: bool = None,
-    event_color: typing.Union[list, dict, str] = None,
-    events: typing.Union[list, dict] = None,
-    first_day_of_week: typing.Union[str, float] = None,
+    disabled: typing.Union[str, bool, list] = None,
+    display_date: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    locale: str = None,
-    locale_first_day_of_year: typing.Union[str, float] = None,
-    max: str = None,
-    min: str = None,
-    range: bool = None,
-    readonly: bool = None,
-    scrollable: bool = None,
-    show_week: bool = None,
+    mode_icon: str = None,
+    next_icon: str = None,
+    prev_icon: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
-    table_date: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: typing.Union[str, list] = None,
+    variant: str = None,
+    view_mode: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.DatePickerDateTable, Any]:
+) -> ValueElement[ipyvuetify.generated.DatePickerControls, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -2563,41 +2592,34 @@ def _DatePickerDateTable(
     ...
 
 
-@implements(_DatePickerDateTable)
-def DatePickerDateTable(**kwargs):
+@implements(_DatePickerControls)
+def DatePickerControls(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.DatePickerDateTable
+    widget_cls = ipyvuetify.generated.DatePickerControls
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _DatePickerDateTable
+del _DatePickerControls
 
 
 def _DatePickerHeader(
+    append_icon: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    disabled: bool = None,
+    header: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    locale: str = None,
-    max: str = None,
-    min: str = None,
-    next_icon: str = None,
-    prev_icon: str = None,
-    readonly: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
+    transition: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: typing.Union[float, str] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.DatePickerHeader, Any]:
     """
@@ -2619,64 +2641,24 @@ def DatePickerHeader(**kwargs):
 del _DatePickerHeader
 
 
-def _DatePickerMonthTable(
+def _DatePickerMonth(
+    allowed_dates: list = [],
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     color: str = None,
-    current: str = None,
-    dark: bool = None,
-    disabled: bool = None,
-    event_color: typing.Union[list, dict, str] = None,
-    events: typing.Union[list, dict] = None,
+    display_date: Any = None,
+    format: str = None,
+    hide_weekdays: bool = None,
+    hover_date: Any = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    locale: str = None,
-    max: str = None,
-    min: str = None,
-    range: bool = None,
-    readonly: bool = None,
-    scrollable: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    table_date: str = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: typing.Union[str, list] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.DatePickerMonthTable, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_DatePickerMonthTable)
-def DatePickerMonthTable(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.DatePickerMonthTable
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _DatePickerMonthTable
-
-
-def _DatePickerTitle(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    date: str = None,
-    disabled: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    readonly: bool = None,
-    selecting_year: bool = None,
+    max: typing.Union[str, float] = None,
+    min: typing.Union[str, float] = None,
+    model_value: list = [],
+    multiple: bool = None,
+    show_adjacent_months: bool = None,
+    show_week: bool = None,
+    side: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -2684,11 +2666,8 @@ def _DatePickerTitle(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: str = None,
-    year: typing.Union[float, str] = None,
-    year_icon: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.DatePickerTitle, Any]:
+) -> ValueElement[ipyvuetify.generated.DatePickerMonth, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -2696,16 +2675,16 @@ def _DatePickerTitle(
     ...
 
 
-@implements(_DatePickerTitle)
-def DatePickerTitle(**kwargs):
+@implements(_DatePickerMonth)
+def DatePickerMonth(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.DatePickerTitle
+    widget_cls = ipyvuetify.generated.DatePickerMonth
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _DatePickerTitle
+del _DatePickerMonth
 
 
 def _DatePickerYears(
@@ -2713,11 +2692,11 @@ def _DatePickerYears(
     children: list = [],
     class_: str = None,
     color: str = None,
+    display_date: Any = None,
+    height: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    locale: str = None,
-    max: typing.Union[float, str] = None,
-    min: typing.Union[float, str] = None,
-    readonly: bool = None,
+    max: typing.Union[str, float] = None,
+    min: typing.Union[str, float] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -2725,7 +2704,6 @@ def _DatePickerYears(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: typing.Union[float, str] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.DatePickerYears, Any]:
     """
@@ -2747,43 +2725,93 @@ def DatePickerYears(**kwargs):
 del _DatePickerYears
 
 
-def _Dialog(
-    activator: Any = None,
-    attach: Any = None,
+def _DefaultsProvider(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    close_delay: typing.Union[float, str] = None,
-    content_class: str = None,
-    dark: bool = None,
+    defaults: dict = None,
     disabled: bool = None,
-    eager: bool = None,
-    fullscreen: bool = None,
-    hide_overlay: bool = None,
-    internal_activator: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_width: typing.Union[str, float] = None,
-    no_click_animation: bool = None,
-    open_delay: typing.Union[float, str] = None,
-    open_on_hover: bool = None,
-    origin: str = None,
-    overlay_color: str = None,
-    overlay_opacity: typing.Union[float, str] = None,
-    persistent: bool = None,
-    retain_focus: bool = None,
-    return_value: Any = None,
-    scrollable: bool = None,
+    reset: typing.Union[str, float] = None,
+    root: typing.Union[str, bool] = None,
+    scoped: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
-    transition: typing.Union[str, bool] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.DefaultsProvider, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_DefaultsProvider)
+def DefaultsProvider(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.DefaultsProvider
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _DefaultsProvider
+
+
+def _Dialog(
+    absolute: bool = None,
+    activator: str = None,
+    activator_props: dict = None,
+    attach: typing.Union[str, bool] = None,
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    close_delay: typing.Union[str, float] = None,
+    close_on_back: bool = None,
+    close_on_content_click: bool = None,
+    contained: bool = None,
+    content_class: Any = None,
+    content_props: Any = None,
+    disabled: bool = None,
+    eager: bool = None,
+    fullscreen: bool = None,
+    height: typing.Union[str, float] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    location: str = None,
+    location_strategy: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: bool = None,
+    no_click_animation: bool = None,
+    offset: typing.Union[str, float, list] = None,
+    open_delay: typing.Union[str, float] = None,
+    open_on_click: bool = None,
+    open_on_focus: bool = None,
+    open_on_hover: bool = None,
+    origin: str = None,
+    persistent: bool = None,
+    retain_focus: bool = None,
+    scrim: typing.Union[str, bool] = None,
+    scroll_strategy: str = None,
+    scrollable: bool = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    theme: str = None,
+    tooltip: str = None,
+    transition: typing.Union[str, dict] = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
     width: typing.Union[str, float] = None,
+    z_index: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Dialog, Any]:
     """
@@ -2809,6 +2837,7 @@ def _DialogBottomTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -2843,10 +2872,11 @@ def DialogBottomTransition(**kwargs):
 del _DialogBottomTransition
 
 
-def _DialogTransition(
+def _DialogTopTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -2856,6 +2886,40 @@ def _DialogTransition(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.DialogTopTransition, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_DialogTopTransition)
+def DialogTopTransition(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.DialogTopTransition
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _DialogTopTransition
+
+
+def _DialogTransition(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    target: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -2885,13 +2949,15 @@ def _Divider(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
+    color: str = None,
     inset: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
+    length: typing.Union[str, float] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    theme: str = None,
+    thickness: typing.Union[str, float] = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -2918,52 +2984,11 @@ def Divider(**kwargs):
 del _Divider
 
 
-def _EditDialog(
-    attributes: dict = {},
-    cancel_text: Any = None,
-    children: list = [],
-    class_: str = None,
-    dark: bool = None,
-    eager: bool = None,
-    large: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    persistent: bool = None,
-    return_value: Any = None,
-    save_text: Any = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    transition: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.EditDialog, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_EditDialog)
-def EditDialog(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.EditDialog
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _EditDialog
-
-
 def _ExpandTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     mode: str = None,
     slot: str = None,
@@ -2998,6 +3023,7 @@ def _ExpandXTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     mode: str = None,
     slot: str = None,
@@ -3029,20 +3055,33 @@ del _ExpandXTransition
 
 
 def _ExpansionPanel(
-    active_class: str = None,
     attributes: dict = {},
+    bg_color: str = None,
     children: list = [],
     class_: str = None,
+    collapse_icon: typing.Union[str, list] = None,
+    color: str = None,
     disabled: bool = None,
+    eager: bool = None,
+    elevation: typing.Union[str, float] = None,
+    expand_icon: typing.Union[str, list] = None,
+    hide_actions: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     readonly: bool = None,
+    ripple: typing.Union[bool, dict] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    selected_class: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    text: str = None,
+    title: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
+    value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ExpansionPanel, Any]:
     """
@@ -3064,11 +3103,10 @@ def ExpansionPanel(**kwargs):
 del _ExpansionPanel
 
 
-def _ExpansionPanelContent(
+def _ExpansionPanelText(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
     eager: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     slot: str = None,
@@ -3079,7 +3117,7 @@ def _ExpansionPanelContent(
     v_on: str = None,
     v_slots: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ExpansionPanelContent, Any]:
+) -> ValueElement[ipyvuetify.generated.ExpansionPanelText, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -3087,27 +3125,28 @@ def _ExpansionPanelContent(
     ...
 
 
-@implements(_ExpansionPanelContent)
-def ExpansionPanelContent(**kwargs):
+@implements(_ExpansionPanelText)
+def ExpansionPanelText(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ExpansionPanelContent
+    widget_cls = ipyvuetify.generated.ExpansionPanelText
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _ExpansionPanelContent
+del _ExpansionPanelText
 
 
-def _ExpansionPanelHeader(
+def _ExpansionPanelTitle(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    collapse_icon: typing.Union[str, list] = None,
     color: str = None,
-    disable_icon_rotate: bool = None,
-    expand_icon: str = None,
+    expand_icon: typing.Union[str, list] = None,
     hide_actions: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    readonly: bool = None,
     ripple: typing.Union[bool, dict] = None,
     slot: str = None,
     style_: str = None,
@@ -3117,7 +3156,7 @@ def _ExpansionPanelHeader(
     v_on: str = None,
     v_slots: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ExpansionPanelHeader, Any]:
+) -> ValueElement[ipyvuetify.generated.ExpansionPanelTitle, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -3125,46 +3164,41 @@ def _ExpansionPanelHeader(
     ...
 
 
-@implements(_ExpansionPanelHeader)
-def ExpansionPanelHeader(**kwargs):
+@implements(_ExpansionPanelTitle)
+def ExpansionPanelTitle(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ExpansionPanelHeader
+    widget_cls = ipyvuetify.generated.ExpansionPanelTitle
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _ExpansionPanelHeader
+del _ExpansionPanelTitle
 
 
 def _ExpansionPanels(
-    accordion: bool = None,
-    active_class: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
+    color: str = None,
     disabled: bool = None,
-    flat: bool = None,
-    focusable: bool = None,
-    hover: bool = None,
-    inset: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
+    mandatory: typing.Union[bool, str] = None,
+    max: float = None,
+    model_value: Any = None,
     multiple: bool = None,
-    popout: bool = None,
     readonly: bool = None,
+    selected_class: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
-    tile: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ExpansionPanels, Any]:
     """
@@ -3190,6 +3224,7 @@ def _FabTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -3228,6 +3263,7 @@ def _FadeTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -3262,71 +3298,153 @@ def FadeTransition(**kwargs):
 del _FadeTransition
 
 
-def _FileInput(
-    append_icon: str = None,
-    append_outer_icon: str = None,
+def _Field(
+    active: bool = None,
+    append_inner_icon: typing.Union[str, list] = None,
     attributes: dict = {},
-    autofocus: bool = None,
-    background_color: str = None,
+    base_color: str = None,
+    bg_color: str = None,
+    center_affix: bool = None,
+    children: list = [],
+    class_: str = None,
+    clear_icon: typing.Union[str, list] = None,
+    clearable: bool = None,
+    color: str = None,
+    dirty: bool = None,
+    disabled: bool = None,
+    error: bool = None,
+    flat: bool = None,
+    focused: bool = None,
+    id: str = None,
+    label: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    loading: typing.Union[str, bool] = None,
+    persistent_clear: bool = None,
+    prepend_inner_icon: typing.Union[str, list] = None,
+    reverse: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
+    single_line: bool = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    theme: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    variant: str = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.Field, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_Field)
+def Field(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.Field
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _Field
+
+
+def _FieldLabel(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    floating: bool = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.FieldLabel, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_FieldLabel)
+def FieldLabel(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.FieldLabel
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _FieldLabel
+
+
+def _FileInput(
+    active: bool = None,
+    append_icon: typing.Union[str, list] = None,
+    append_inner_icon: typing.Union[str, list] = None,
+    attributes: dict = {},
+    base_color: str = None,
+    bg_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     chips: bool = None,
     class_: str = None,
-    clear_icon: str = None,
+    clear_icon: typing.Union[str, list] = None,
     clearable: bool = None,
     color: str = None,
-    counter: typing.Union[bool, float, str] = None,
+    counter: bool = None,
     counter_size_string: str = None,
     counter_string: str = None,
-    dark: bool = None,
-    dense: bool = None,
+    density: str = None,
+    direction: str = None,
+    dirty: bool = None,
     disabled: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    filled: bool = None,
     flat: bool = None,
-    full_width: bool = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
+    loading: typing.Union[str, bool] = None,
+    max_errors: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
+    model_value: list = [],
     multiple: bool = None,
-    outlined: bool = None,
+    name: str = None,
+    persistent_clear: bool = None,
     persistent_hint: bool = None,
-    placeholder: str = None,
-    prefix: str = None,
-    prepend_icon: str = None,
-    prepend_inner_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    prepend_inner_icon: typing.Union[str, list] = None,
     readonly: bool = None,
     reverse: bool = None,
-    rounded: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
     rules: list = [],
-    shaped: bool = None,
-    show_size: typing.Union[bool, float] = None,
+    show_size: typing.Union[bool, float, float] = None,
     single_line: bool = None,
     slot: str = None,
-    small_chips: bool = None,
-    solo: bool = None,
-    solo_inverted: bool = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
-    suffix: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
-    truncate_length: typing.Union[float, str] = None,
-    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
+    validate_on: str = None,
+    validation_value: Any = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.FileInput, Any]:
     """
@@ -3348,311 +3466,29 @@ def FileInput(**kwargs):
 del _FileInput
 
 
-def _Flex(
-    align_self_baseline: bool = None,
-    align_self_center: bool = None,
-    align_self_end: bool = None,
-    align_self_start: bool = None,
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    grow: bool = None,
-    id: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    lg1: bool = None,
-    lg10: bool = None,
-    lg11: bool = None,
-    lg12: bool = None,
-    lg2: bool = None,
-    lg3: bool = None,
-    lg4: bool = None,
-    lg5: bool = None,
-    lg6: bool = None,
-    lg7: bool = None,
-    lg8: bool = None,
-    lg9: bool = None,
-    ma_0: bool = None,
-    ma_1: bool = None,
-    ma_2: bool = None,
-    ma_3: bool = None,
-    ma_4: bool = None,
-    ma_5: bool = None,
-    ma_auto: bool = None,
-    mb_0: bool = None,
-    mb_1: bool = None,
-    mb_2: bool = None,
-    mb_3: bool = None,
-    mb_4: bool = None,
-    mb_5: bool = None,
-    mb_auto: bool = None,
-    md1: bool = None,
-    md10: bool = None,
-    md11: bool = None,
-    md12: bool = None,
-    md2: bool = None,
-    md3: bool = None,
-    md4: bool = None,
-    md5: bool = None,
-    md6: bool = None,
-    md7: bool = None,
-    md8: bool = None,
-    md9: bool = None,
-    ml_0: bool = None,
-    ml_1: bool = None,
-    ml_2: bool = None,
-    ml_3: bool = None,
-    ml_4: bool = None,
-    ml_5: bool = None,
-    ml_auto: bool = None,
-    mr_0: bool = None,
-    mr_1: bool = None,
-    mr_2: bool = None,
-    mr_3: bool = None,
-    mr_4: bool = None,
-    mr_5: bool = None,
-    mr_auto: bool = None,
-    mt_0: bool = None,
-    mt_1: bool = None,
-    mt_2: bool = None,
-    mt_3: bool = None,
-    mt_4: bool = None,
-    mt_5: bool = None,
-    mt_auto: bool = None,
-    mx_0: bool = None,
-    mx_1: bool = None,
-    mx_2: bool = None,
-    mx_3: bool = None,
-    mx_4: bool = None,
-    mx_5: bool = None,
-    mx_auto: bool = None,
-    my_0: bool = None,
-    my_1: bool = None,
-    my_2: bool = None,
-    my_3: bool = None,
-    my_4: bool = None,
-    my_5: bool = None,
-    my_auto: bool = None,
-    offset_lg0: bool = None,
-    offset_lg1: bool = None,
-    offset_lg10: bool = None,
-    offset_lg11: bool = None,
-    offset_lg12: bool = None,
-    offset_lg2: bool = None,
-    offset_lg3: bool = None,
-    offset_lg4: bool = None,
-    offset_lg5: bool = None,
-    offset_lg6: bool = None,
-    offset_lg7: bool = None,
-    offset_lg8: bool = None,
-    offset_lg9: bool = None,
-    offset_md0: bool = None,
-    offset_md1: bool = None,
-    offset_md10: bool = None,
-    offset_md11: bool = None,
-    offset_md12: bool = None,
-    offset_md2: bool = None,
-    offset_md3: bool = None,
-    offset_md4: bool = None,
-    offset_md5: bool = None,
-    offset_md6: bool = None,
-    offset_md7: bool = None,
-    offset_md8: bool = None,
-    offset_md9: bool = None,
-    offset_sm0: bool = None,
-    offset_sm1: bool = None,
-    offset_sm10: bool = None,
-    offset_sm11: bool = None,
-    offset_sm12: bool = None,
-    offset_sm2: bool = None,
-    offset_sm3: bool = None,
-    offset_sm4: bool = None,
-    offset_sm5: bool = None,
-    offset_sm6: bool = None,
-    offset_sm7: bool = None,
-    offset_sm8: bool = None,
-    offset_sm9: bool = None,
-    offset_xl0: bool = None,
-    offset_xl1: bool = None,
-    offset_xl10: bool = None,
-    offset_xl11: bool = None,
-    offset_xl12: bool = None,
-    offset_xl2: bool = None,
-    offset_xl3: bool = None,
-    offset_xl4: bool = None,
-    offset_xl5: bool = None,
-    offset_xl6: bool = None,
-    offset_xl7: bool = None,
-    offset_xl8: bool = None,
-    offset_xl9: bool = None,
-    offset_xs0: bool = None,
-    offset_xs1: bool = None,
-    offset_xs10: bool = None,
-    offset_xs11: bool = None,
-    offset_xs12: bool = None,
-    offset_xs2: bool = None,
-    offset_xs3: bool = None,
-    offset_xs4: bool = None,
-    offset_xs5: bool = None,
-    offset_xs6: bool = None,
-    offset_xs7: bool = None,
-    offset_xs8: bool = None,
-    offset_xs9: bool = None,
-    order_lg1: bool = None,
-    order_lg10: bool = None,
-    order_lg11: bool = None,
-    order_lg12: bool = None,
-    order_lg2: bool = None,
-    order_lg3: bool = None,
-    order_lg4: bool = None,
-    order_lg5: bool = None,
-    order_lg6: bool = None,
-    order_lg7: bool = None,
-    order_lg8: bool = None,
-    order_lg9: bool = None,
-    order_md1: bool = None,
-    order_md10: bool = None,
-    order_md11: bool = None,
-    order_md12: bool = None,
-    order_md2: bool = None,
-    order_md3: bool = None,
-    order_md4: bool = None,
-    order_md5: bool = None,
-    order_md6: bool = None,
-    order_md7: bool = None,
-    order_md8: bool = None,
-    order_md9: bool = None,
-    order_sm1: bool = None,
-    order_sm10: bool = None,
-    order_sm11: bool = None,
-    order_sm12: bool = None,
-    order_sm2: bool = None,
-    order_sm3: bool = None,
-    order_sm4: bool = None,
-    order_sm5: bool = None,
-    order_sm6: bool = None,
-    order_sm7: bool = None,
-    order_sm8: bool = None,
-    order_sm9: bool = None,
-    order_xl1: bool = None,
-    order_xl10: bool = None,
-    order_xl11: bool = None,
-    order_xl12: bool = None,
-    order_xl2: bool = None,
-    order_xl3: bool = None,
-    order_xl4: bool = None,
-    order_xl5: bool = None,
-    order_xl6: bool = None,
-    order_xl7: bool = None,
-    order_xl8: bool = None,
-    order_xl9: bool = None,
-    order_xs1: bool = None,
-    order_xs10: bool = None,
-    order_xs11: bool = None,
-    order_xs12: bool = None,
-    order_xs2: bool = None,
-    order_xs3: bool = None,
-    order_xs4: bool = None,
-    order_xs5: bool = None,
-    order_xs6: bool = None,
-    order_xs7: bool = None,
-    order_xs8: bool = None,
-    order_xs9: bool = None,
-    pa_0: bool = None,
-    pa_1: bool = None,
-    pa_2: bool = None,
-    pa_3: bool = None,
-    pa_4: bool = None,
-    pa_5: bool = None,
-    pa_auto: bool = None,
-    pb_0: bool = None,
-    pb_1: bool = None,
-    pb_2: bool = None,
-    pb_3: bool = None,
-    pb_4: bool = None,
-    pb_5: bool = None,
-    pb_auto: bool = None,
-    pl_0: bool = None,
-    pl_1: bool = None,
-    pl_2: bool = None,
-    pl_3: bool = None,
-    pl_4: bool = None,
-    pl_5: bool = None,
-    pl_auto: bool = None,
-    pr_0: bool = None,
-    pr_1: bool = None,
-    pr_2: bool = None,
-    pr_3: bool = None,
-    pr_4: bool = None,
-    pr_5: bool = None,
-    pr_auto: bool = None,
-    pt_0: bool = None,
-    pt_1: bool = None,
-    pt_2: bool = None,
-    pt_3: bool = None,
-    pt_4: bool = None,
-    pt_5: bool = None,
-    pt_auto: bool = None,
-    px_0: bool = None,
-    px_1: bool = None,
-    px_2: bool = None,
-    px_3: bool = None,
-    px_4: bool = None,
-    px_5: bool = None,
-    px_auto: bool = None,
-    py_0: bool = None,
-    py_1: bool = None,
-    py_2: bool = None,
-    py_3: bool = None,
-    **kwargs
-) -> ValueElement[ipyvuetify.generated.Flex, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_Flex)
-def Flex(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.Flex
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _Flex
-
-
 def _Footer(
     absolute: bool = None,
     app: bool = None,
     attributes: dict = {},
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    elevation: typing.Union[float, str] = None,
-    fixed: bool = None,
-    height: typing.Union[float, str] = None,
-    inset: bool = None,
+    elevation: typing.Union[str, float] = None,
+    height: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    padless: bool = None,
+    name: str = None,
+    order: typing.Union[str, float] = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    tile: bool = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Footer, Any]:
     """
@@ -3678,8 +3514,11 @@ def _Form(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
+    fast_fail: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    lazy_validation: bool = None,
+    model_value: bool = None,
+    readonly: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -3687,7 +3526,7 @@ def _Form(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: bool = None,
+    validate_on: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Form, Any]:
     """
@@ -3713,10 +3552,11 @@ def _Hover(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    close_delay: typing.Union[float, str] = None,
+    close_delay: typing.Union[str, float] = None,
     disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    open_delay: typing.Union[float, str] = None,
+    model_value: bool = None,
+    open_delay: typing.Union[str, float] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -3724,7 +3564,6 @@ def _Hover(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: bool = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Hover, Any]:
     """
@@ -3785,26 +3624,20 @@ def _Icon(
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    disabled: bool = None,
-    large: bool = None,
+    end: bool = None,
+    icon: typing.Union[str, list] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    light: bool = None,
-    right: bool = None,
-    size: typing.Union[float, str] = None,
+    size: typing.Union[str, float] = None,
     slot: str = None,
-    small: bool = None,
+    start: bool = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    x_large: bool = None,
-    x_small: bool = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Icon, Any]:
     """
@@ -3832,18 +3665,19 @@ def _Img(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    contain: bool = None,
+    content_class: str = None,
+    cover: bool = None,
     eager: bool = None,
     gradient: str = None,
-    height: typing.Union[float, str] = None,
+    height: typing.Union[str, float] = None,
+    inline: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     lazy_src: str = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
     options: dict = None,
-    position: str = None,
     sizes: str = None,
     slot: str = None,
     src: typing.Union[str, dict] = None,
@@ -3851,11 +3685,11 @@ def _Img(
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
-    transition: typing.Union[bool, str] = None,
+    transition: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Img, Any]:
     """
@@ -3877,43 +3711,87 @@ def Img(**kwargs):
 del _Img
 
 
-def _Input(
-    append_icon: str = None,
+def _InfiniteScroll(
     attributes: dict = {},
-    background_color: str = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
+    direction: str = None,
+    empty_text: str = None,
+    height: typing.Union[str, float] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    load_more_text: str = None,
+    margin: typing.Union[str, float] = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    mode: str = None,
+    side: str = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    width: typing.Union[str, float] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.InfiniteScroll, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_InfiniteScroll)
+def InfiniteScroll(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.InfiniteScroll
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _InfiniteScroll
+
+
+def _Input(
+    append_icon: typing.Union[str, list] = None,
+    attributes: dict = {},
+    center_affix: bool = None,
+    children: list = [],
+    class_: str = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loading: bool = None,
+    max_errors: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
+    model_value: Any = None,
+    name: str = None,
     persistent_hint: bool = None,
-    prepend_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     readonly: bool = None,
     rules: list = [],
     slot: str = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     tabbable: bool = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
+    validate_on: str = None,
+    validation_value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Input, Any]:
     """
@@ -3936,12 +3814,12 @@ del _Input
 
 
 def _Item(
-    active_class: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    selected_class: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -3972,24 +3850,25 @@ del _Item
 
 
 def _ItemGroup(
-    active_class: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
+    disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
+    mandatory: typing.Union[bool, str] = None,
+    max: float = None,
+    model_value: Any = None,
     multiple: bool = None,
+    selected_class: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ItemGroup, Any]:
     """
@@ -4011,28 +3890,55 @@ def ItemGroup(**kwargs):
 del _ItemGroup
 
 
-def _Label(
-    absolute: bool = None,
+def _Kbd(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    disabled: bool = None,
-    focused: bool = None,
-    for_: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: typing.Union[float, str] = None,
-    light: bool = None,
-    right: typing.Union[float, str] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: bool = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.Kbd, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_Kbd)
+def Kbd(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.Kbd
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _Kbd
+
+
+def _Label(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    clickable: bool = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    text: str = None,
+    theme: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Label, Any]:
     """
@@ -4055,159 +3961,19 @@ del _Label
 
 
 def _Layout(
-    align_baseline: bool = None,
-    align_center: bool = None,
-    align_content_center: bool = None,
-    align_content_end: bool = None,
-    align_content_space_around: bool = None,
-    align_content_space_between: bool = None,
-    align_content_start: bool = None,
-    align_end: bool = None,
-    align_start: bool = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    column: bool = None,
-    d_block: bool = None,
-    d_contents: bool = None,
-    d_flex: bool = None,
-    d_grid: bool = None,
-    d_inherit: bool = None,
-    d_initial: bool = None,
-    d_inline: bool = None,
-    d_inline_block: bool = None,
-    d_inline_flex: bool = None,
-    d_inline_grid: bool = None,
-    d_inline_table: bool = None,
-    d_list_item: bool = None,
-    d_none: bool = None,
-    d_run_in: bool = None,
-    d_table: bool = None,
-    d_table_caption: bool = None,
-    d_table_cell: bool = None,
-    d_table_column: bool = None,
-    d_table_column_group: bool = None,
-    d_table_footer_group: bool = None,
-    d_table_header_group: bool = None,
-    d_table_row: bool = None,
-    d_table_row_group: bool = None,
-    fill_height: bool = None,
-    id: str = None,
-    justify_center: bool = None,
-    justify_end: bool = None,
-    justify_space_around: bool = None,
-    justify_space_between: bool = None,
-    justify_start: bool = None,
+    full_height: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    ma_0: bool = None,
-    ma_1: bool = None,
-    ma_2: bool = None,
-    ma_3: bool = None,
-    ma_4: bool = None,
-    ma_5: bool = None,
-    ma_auto: bool = None,
-    mb_0: bool = None,
-    mb_1: bool = None,
-    mb_2: bool = None,
-    mb_3: bool = None,
-    mb_4: bool = None,
-    mb_5: bool = None,
-    mb_auto: bool = None,
-    ml_0: bool = None,
-    ml_1: bool = None,
-    ml_2: bool = None,
-    ml_3: bool = None,
-    ml_4: bool = None,
-    ml_5: bool = None,
-    ml_auto: bool = None,
-    mr_0: bool = None,
-    mr_1: bool = None,
-    mr_2: bool = None,
-    mr_3: bool = None,
-    mr_4: bool = None,
-    mr_5: bool = None,
-    mr_auto: bool = None,
-    mt_0: bool = None,
-    mt_1: bool = None,
-    mt_2: bool = None,
-    mt_3: bool = None,
-    mt_4: bool = None,
-    mt_5: bool = None,
-    mt_auto: bool = None,
-    mx_0: bool = None,
-    mx_1: bool = None,
-    mx_2: bool = None,
-    mx_3: bool = None,
-    mx_4: bool = None,
-    mx_5: bool = None,
-    mx_auto: bool = None,
-    my_0: bool = None,
-    my_1: bool = None,
-    my_2: bool = None,
-    my_3: bool = None,
-    my_4: bool = None,
-    my_5: bool = None,
-    my_auto: bool = None,
-    pa_0: bool = None,
-    pa_1: bool = None,
-    pa_2: bool = None,
-    pa_3: bool = None,
-    pa_4: bool = None,
-    pa_5: bool = None,
-    pa_auto: bool = None,
-    pb_0: bool = None,
-    pb_1: bool = None,
-    pb_2: bool = None,
-    pb_3: bool = None,
-    pb_4: bool = None,
-    pb_5: bool = None,
-    pb_auto: bool = None,
-    pl_0: bool = None,
-    pl_1: bool = None,
-    pl_2: bool = None,
-    pl_3: bool = None,
-    pl_4: bool = None,
-    pl_5: bool = None,
-    pl_auto: bool = None,
-    pr_0: bool = None,
-    pr_1: bool = None,
-    pr_2: bool = None,
-    pr_3: bool = None,
-    pr_4: bool = None,
-    pr_5: bool = None,
-    pr_auto: bool = None,
-    pt_0: bool = None,
-    pt_1: bool = None,
-    pt_2: bool = None,
-    pt_3: bool = None,
-    pt_4: bool = None,
-    pt_5: bool = None,
-    pt_auto: bool = None,
-    px_0: bool = None,
-    px_1: bool = None,
-    px_2: bool = None,
-    px_3: bool = None,
-    px_4: bool = None,
-    px_5: bool = None,
-    px_auto: bool = None,
-    py_0: bool = None,
-    py_1: bool = None,
-    py_2: bool = None,
-    py_3: bool = None,
-    py_4: bool = None,
-    py_5: bool = None,
-    py_auto: bool = None,
-    reverse: bool = None,
-    row: bool = None,
+    overlaps: list = [],
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
-    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    wrap: bool = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Layout, Any]:
     """
@@ -4229,12 +3995,56 @@ def Layout(**kwargs):
 del _Layout
 
 
-def _Lazy(
+def _LayoutItem(
+    absolute: bool = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    min_height: typing.Union[float, str] = None,
+    model_value: bool = None,
+    name: str = None,
+    order: typing.Union[str, float] = None,
+    position: str = None,
+    size: typing.Union[str, float] = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.LayoutItem, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_LayoutItem)
+def LayoutItem(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.LayoutItem
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _LayoutItem
+
+
+def _Lazy(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    height: typing.Union[str, float] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: bool = None,
     options: dict = None,
     slot: str = None,
     style_: str = None,
@@ -4245,7 +4055,7 @@ def _Lazy(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Lazy, Any]:
     """
@@ -4267,40 +4077,87 @@ def Lazy(**kwargs):
 del _Lazy
 
 
-def _List(
+def _LigatureIcon(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    disabled: bool = None,
-    elevation: typing.Union[float, str] = None,
-    expand: bool = None,
-    flat: bool = None,
-    height: typing.Union[float, str] = None,
+    icon: typing.Union[str, list] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    nav: bool = None,
-    rounded: bool = None,
-    shaped: bool = None,
     slot: str = None,
     style_: str = None,
-    subheader: bool = None,
     tabbable: bool = None,
     tag: str = None,
-    three_line: bool = None,
-    tile: bool = None,
     tooltip: str = None,
-    two_line: bool = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.LigatureIcon, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_LigatureIcon)
+def LigatureIcon(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.LigatureIcon
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _LigatureIcon
+
+
+def _List(
+    active_class: str = None,
+    active_color: str = None,
+    attributes: dict = {},
+    base_color: str = None,
+    bg_color: str = None,
+    border: typing.Union[str, float, bool] = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    density: str = None,
+    disabled: bool = None,
+    elevation: typing.Union[str, float] = None,
+    height: typing.Union[str, float] = None,
+    item_children: str = None,
+    item_props: str = None,
+    item_title: str = None,
+    item_type: str = None,
+    item_value: str = None,
+    items: list = [],
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    lines: typing.Union[bool, str, str, str] = None,
+    mandatory: bool = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    nav: bool = None,
+    open_strategy: typing.Union[str, str, str, dict] = None,
+    opened: list = [],
+    return_object: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
+    select_strategy: str = None,
+    selected: list = [],
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    value_comparator: str = None,
+    variant: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.List, Any]:
     """
@@ -4323,23 +4180,24 @@ del _List
 
 
 def _ListGroup(
-    active_class: str = None,
-    append_icon: str = None,
+    active_color: str = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
+    base_color: str = None,
     children: list = [],
     class_: str = None,
+    collapse_icon: typing.Union[str, list] = None,
     color: str = None,
-    disabled: bool = None,
-    eager: bool = None,
-    group: str = None,
+    expand_icon: typing.Union[str, list] = None,
+    fluid: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    no_action: bool = None,
-    prepend_icon: str = None,
-    ripple: typing.Union[bool, dict] = None,
+    prepend_icon: typing.Union[str, list] = None,
     slot: str = None,
     style_: str = None,
-    sub_group: bool = None,
+    subgroup: bool = None,
     tabbable: bool = None,
+    tag: str = None,
+    title: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -4366,41 +4224,85 @@ def ListGroup(**kwargs):
 del _ListGroup
 
 
-def _ListItem(
-    active_class: str = None,
-    append: bool = None,
+def _ListImg(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    disabled: bool = None,
-    exact: bool = None,
-    exact_active_class: str = None,
-    href: typing.Union[str, dict] = None,
-    inactive: bool = None,
-    input_value: Any = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    link: bool = None,
-    nuxt: bool = None,
-    replace: bool = None,
-    ripple: typing.Union[bool, dict] = None,
-    selectable: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    target: str = None,
-    three_line: bool = None,
-    to: typing.Union[str, dict] = None,
     tooltip: str = None,
-    two_line: bool = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.ListImg, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_ListImg)
+def ListImg(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.ListImg
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _ListImg
+
+
+def _ListItem(
+    active: bool = None,
+    active_class: str = None,
+    active_color: str = None,
+    append_avatar: str = None,
+    append_icon: typing.Union[str, list] = None,
+    attributes: dict = {},
+    base_color: str = None,
+    border: typing.Union[str, float, bool] = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    density: str = None,
+    disabled: bool = None,
+    elevation: typing.Union[str, float] = None,
+    exact: bool = None,
+    height: typing.Union[str, float] = None,
+    href: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    lines: str = None,
+    link: bool = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    nav: bool = None,
+    prepend_avatar: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    replace: bool = None,
+    ripple: typing.Union[bool, dict] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    slot: str = None,
+    style_: str = None,
+    subtitle: typing.Union[str, float, bool] = None,
+    tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    title: typing.Union[str, float, bool] = None,
+    tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
     value: Any = None,
+    variant: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ListItem, Any]:
     """
@@ -4426,10 +4328,13 @@ def _ListItemAction(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    end: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     slot: str = None,
+    start: bool = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -4455,20 +4360,23 @@ def ListItemAction(**kwargs):
 del _ListItemAction
 
 
-def _ListItemActionText(
+def _ListItemMedia(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    end: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     slot: str = None,
+    start: bool = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ListItemActionText, Any]:
+) -> ValueElement[ipyvuetify.generated.ListItemMedia, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -4476,168 +4384,16 @@ def _ListItemActionText(
     ...
 
 
-@implements(_ListItemActionText)
-def ListItemActionText(**kwargs):
+@implements(_ListItemMedia)
+def ListItemMedia(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ListItemActionText
+    widget_cls = ipyvuetify.generated.ListItemMedia
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _ListItemActionText
-
-
-def _ListItemAvatar(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    height: typing.Union[float, str] = None,
-    horizontal: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    right: bool = None,
-    size: typing.Union[float, str] = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tile: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    width: typing.Union[float, str] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ListItemAvatar, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_ListItemAvatar)
-def ListItemAvatar(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ListItemAvatar
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _ListItemAvatar
-
-
-def _ListItemContent(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ListItemContent, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_ListItemContent)
-def ListItemContent(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ListItemContent
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _ListItemContent
-
-
-def _ListItemGroup(
-    active_class: str = None,
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
-    multiple: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: Any = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ListItemGroup, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_ListItemGroup)
-def ListItemGroup(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ListItemGroup
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _ListItemGroup
-
-
-def _ListItemIcon(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.ListItemIcon, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_ListItemIcon)
-def ListItemIcon(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.ListItemIcon
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _ListItemIcon
+del _ListItemMedia
 
 
 def _ListItemSubtitle(
@@ -4648,6 +4404,7 @@ def _ListItemSubtitle(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -4681,6 +4438,7 @@ def _ListItemTitle(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -4706,59 +4464,161 @@ def ListItemTitle(**kwargs):
 del _ListItemTitle
 
 
-def _Menu(
-    absolute: bool = None,
-    activator: Any = None,
-    allow_overflow: bool = None,
-    attach: Any = None,
+def _ListSubheader(
     attributes: dict = {},
-    auto: bool = None,
-    bottom: bool = None,
     children: list = [],
     class_: str = None,
-    close_delay: typing.Union[float, str] = None,
-    close_on_click: bool = None,
-    close_on_content_click: bool = None,
-    content_class: str = None,
-    dark: bool = None,
-    disable_keys: bool = None,
-    disabled: bool = None,
-    eager: bool = None,
-    fixed: bool = None,
-    internal_activator: bool = None,
+    color: str = None,
+    inset: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    nudge_bottom: typing.Union[float, str] = None,
-    nudge_left: typing.Union[float, str] = None,
-    nudge_right: typing.Union[float, str] = None,
-    nudge_top: typing.Union[float, str] = None,
-    nudge_width: typing.Union[float, str] = None,
-    offset_overflow: bool = None,
-    offset_x: bool = None,
-    offset_y: bool = None,
-    open_delay: typing.Union[float, str] = None,
-    open_on_click: bool = None,
-    open_on_hover: bool = None,
-    origin: str = None,
-    position_x: float = None,
-    position_y: float = None,
-    return_value: Any = None,
-    right: bool = None,
+    slot: str = None,
+    sticky: bool = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    title: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.ListSubheader, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_ListSubheader)
+def ListSubheader(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.ListSubheader
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _ListSubheader
+
+
+def _LocaleProvider(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    fallback_locale: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    locale: str = None,
+    rtl: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
-    top: bool = None,
-    transition: typing.Union[bool, str] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    z_index: typing.Union[float, str] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.LocaleProvider, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_LocaleProvider)
+def LocaleProvider(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.LocaleProvider
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _LocaleProvider
+
+
+def _Main(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    scrollable: bool = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.Main, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_Main)
+def Main(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.Main
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _Main
+
+
+def _Menu(
+    activator: str = None,
+    activator_props: dict = None,
+    attach: typing.Union[str, bool] = None,
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    close_delay: typing.Union[str, float] = None,
+    close_on_back: bool = None,
+    close_on_content_click: bool = None,
+    contained: bool = None,
+    content_class: Any = None,
+    content_props: Any = None,
+    disabled: bool = None,
+    eager: bool = None,
+    height: typing.Union[str, float] = None,
+    id: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    location: str = None,
+    location_strategy: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: bool = None,
+    no_click_animation: bool = None,
+    offset: typing.Union[str, float, list] = None,
+    open_delay: typing.Union[str, float] = None,
+    open_on_click: bool = None,
+    open_on_focus: bool = None,
+    open_on_hover: bool = None,
+    origin: str = None,
+    persistent: bool = None,
+    scrim: typing.Union[str, bool] = None,
+    scroll_strategy: str = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    theme: str = None,
+    tooltip: str = None,
+    transition: typing.Union[str, dict] = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    width: typing.Union[str, float] = None,
+    z_index: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Menu, Any]:
     """
@@ -4780,60 +4640,22 @@ def Menu(**kwargs):
 del _Menu
 
 
-def _MenuTransition(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    group: bool = None,
-    hide_on_leave: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    leave_absolute: bool = None,
-    mode: str = None,
-    origin: str = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.MenuTransition, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_MenuTransition)
-def MenuTransition(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.MenuTransition
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _MenuTransition
-
-
 def _Messages(
+    active: bool = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
+    messages: typing.Union[str, list] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
+    transition: typing.Union[str, dict] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Messages, Any]:
     """
@@ -4857,44 +4679,40 @@ del _Messages
 
 def _NavigationDrawer(
     absolute: bool = None,
-    app: bool = None,
     attributes: dict = {},
-    bottom: bool = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
-    clipped: bool = None,
     color: str = None,
-    dark: bool = None,
     disable_resize_watcher: bool = None,
     disable_route_watcher: bool = None,
+    elevation: typing.Union[str, float] = None,
     expand_on_hover: bool = None,
-    fixed: bool = None,
     floating: bool = None,
-    height: typing.Union[float, str] = None,
-    hide_overlay: bool = None,
+    image: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mini_variant: bool = None,
-    mini_variant_width: typing.Union[float, str] = None,
-    mobile_break_point: typing.Union[float, str] = None,
-    overlay_color: str = None,
-    overlay_opacity: typing.Union[float, str] = None,
+    location: str = None,
+    model_value: bool = None,
+    name: str = None,
+    order: typing.Union[str, float] = None,
     permanent: bool = None,
-    right: bool = None,
+    rail: bool = None,
+    rail_width: typing.Union[str, float] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    scrim: typing.Union[str, bool] = None,
     slot: str = None,
-    src: typing.Union[str, dict] = None,
-    stateless: bool = None,
+    sticky: bool = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
     temporary: bool = None,
+    theme: str = None,
     tooltip: str = None,
     touchless: bool = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    width: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.NavigationDrawer, Any]:
     """
@@ -4916,91 +4734,20 @@ def NavigationDrawer(**kwargs):
 del _NavigationDrawer
 
 
-def _OverflowBtn(
-    allow_overflow: bool = None,
-    append_icon: str = None,
-    append_outer_icon: str = None,
-    attach: Any = None,
+def _NoSsr(
     attributes: dict = {},
-    auto_select_first: bool = None,
-    autofocus: bool = None,
-    background_color: str = None,
-    cache_items: bool = None,
     children: list = [],
-    chips: bool = None,
     class_: str = None,
-    clear_icon: str = None,
-    clearable: bool = None,
-    color: str = None,
-    counter: typing.Union[bool, float, str] = None,
-    dark: bool = None,
-    deletable_chips: bool = None,
-    dense: bool = None,
-    disable_lookup: bool = None,
-    disabled: bool = None,
-    eager: bool = None,
-    editable: bool = None,
-    error: bool = None,
-    error_count: typing.Union[float, str] = None,
-    error_messages: typing.Union[str, list] = None,
-    filled: bool = None,
-    flat: bool = None,
-    full_width: bool = None,
-    height: typing.Union[float, str] = None,
-    hide_details: typing.Union[bool, str] = None,
-    hide_no_data: bool = None,
-    hide_selected: bool = None,
-    hint: str = None,
-    id: str = None,
-    item_color: str = None,
-    item_disabled: typing.Union[str, list] = None,
-    item_text: typing.Union[str, list] = None,
-    item_value: typing.Union[str, list] = None,
-    items: list = [],
-    label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
-    menu_props: typing.Union[str, list, dict] = None,
-    messages: typing.Union[str, list] = None,
-    multiple: bool = None,
-    no_data_text: str = None,
-    no_filter: bool = None,
-    open_on_clear: bool = None,
-    outlined: bool = None,
-    persistent_hint: bool = None,
-    placeholder: str = None,
-    prefix: str = None,
-    prepend_icon: str = None,
-    prepend_inner_icon: str = None,
-    readonly: bool = None,
-    return_object: bool = None,
-    reverse: bool = None,
-    rounded: bool = None,
-    rules: list = [],
-    search_input: str = None,
-    segmented: bool = None,
-    shaped: bool = None,
-    single_line: bool = None,
     slot: str = None,
-    small_chips: bool = None,
-    solo: bool = None,
-    solo_inverted: bool = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
-    suffix: str = None,
     tabbable: bool = None,
     tooltip: str = None,
-    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.OverflowBtn, Any]:
+) -> ValueElement[ipyvuetify.generated.NoSsr, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -5008,37 +4755,121 @@ def _OverflowBtn(
     ...
 
 
-@implements(_OverflowBtn)
-def OverflowBtn(**kwargs):
+@implements(_NoSsr)
+def NoSsr(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.OverflowBtn
+    widget_cls = ipyvuetify.generated.NoSsr
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _OverflowBtn
+del _NoSsr
+
+
+def _OtpInput(
+    attributes: dict = {},
+    autofocus: bool = None,
+    base_color: str = None,
+    bg_color: str = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    disabled: bool = None,
+    divider: str = None,
+    error: bool = None,
+    focus_all: bool = None,
+    focused: bool = None,
+    height: typing.Union[str, float] = None,
+    label: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    length: typing.Union[str, float] = None,
+    loading: typing.Union[str, bool] = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: typing.Union[str, float] = None,
+    placeholder: str = None,
+    rounded: typing.Union[str, float, bool] = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    theme: str = None,
+    tooltip: str = None,
+    type: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    variant: str = None,
+    width: typing.Union[str, float] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.OtpInput, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_OtpInput)
+def OtpInput(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.OtpInput
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _OtpInput
 
 
 def _Overlay(
     absolute: bool = None,
+    activator: str = None,
+    activator_props: dict = None,
+    attach: typing.Union[str, bool] = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
-    dark: bool = None,
+    close_delay: typing.Union[str, float] = None,
+    close_on_back: bool = None,
+    close_on_content_click: bool = None,
+    contained: bool = None,
+    content_class: Any = None,
+    content_props: Any = None,
+    disabled: bool = None,
+    eager: bool = None,
+    height: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    opacity: typing.Union[float, str] = None,
+    location: str = None,
+    location_strategy: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: bool = None,
+    no_click_animation: bool = None,
+    offset: typing.Union[str, float, list] = None,
+    open_delay: typing.Union[str, float] = None,
+    open_on_click: bool = None,
+    open_on_focus: bool = None,
+    open_on_hover: bool = None,
+    origin: str = None,
+    persistent: bool = None,
+    scrim: typing.Union[str, bool] = None,
+    scroll_strategy: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
+    transition: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    z_index: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
+    z_index: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Overlay, Any]:
     """
@@ -5061,27 +4892,45 @@ del _Overlay
 
 
 def _Pagination(
+    active_color: str = None,
+    aria_label: str = None,
     attributes: dict = {},
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
-    circle: bool = None,
     class_: str = None,
     color: str = None,
-    dark: bool = None,
+    current_page_aria_label: str = None,
+    density: str = None,
     disabled: bool = None,
+    elevation: typing.Union[str, float] = None,
+    ellipsis: str = None,
+    first_aria_label: str = None,
+    first_icon: typing.Union[str, list] = None,
+    last_aria_label: str = None,
+    last_icon: typing.Union[str, list] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    length: float = None,
-    light: bool = None,
-    next_icon: str = None,
-    prev_icon: str = None,
+    length: typing.Union[str, float] = None,
+    model_value: float = None,
+    next_aria_label: str = None,
+    next_icon: typing.Union[str, list] = None,
+    page_aria_label: str = None,
+    prev_icon: typing.Union[str, list] = None,
+    previous_aria_label: str = None,
+    rounded: typing.Union[str, float, bool] = None,
+    show_first_last_page: bool = None,
+    size: typing.Union[str, float] = None,
     slot: str = None,
+    start: typing.Union[str, float] = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
-    total_visible: typing.Union[float, str] = None,
+    total_visible: typing.Union[str, float] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: float = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Pagination, Any]:
     """
@@ -5104,14 +4953,12 @@ del _Pagination
 
 
 def _Parallax(
-    alt: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    height: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    scale: typing.Union[str, float] = None,
     slot: str = None,
-    src: str = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
@@ -5141,24 +4988,33 @@ del _Parallax
 
 def _Picker(
     attributes: dict = {},
+    bg_color: str = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    full_width: bool = None,
+    elevation: typing.Union[str, float] = None,
+    height: typing.Union[str, float] = None,
     landscape: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    no_title: bool = None,
+    location: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    position: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    title: str = None,
     tooltip: str = None,
-    transition: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Picker, Any]:
     """
@@ -5180,25 +5036,61 @@ def Picker(**kwargs):
 del _Picker
 
 
-def _ProgressCircular(
+def _PickerTitle(
     attributes: dict = {},
-    button: bool = None,
     children: list = [],
     class_: str = None,
-    color: str = None,
-    indeterminate: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    rotate: typing.Union[float, str] = None,
-    size: typing.Union[float, str] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: typing.Union[float, str] = None,
-    width: typing.Union[float, str] = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.PickerTitle, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_PickerTitle)
+def PickerTitle(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.PickerTitle
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _PickerTitle
+
+
+def _ProgressCircular(
+    attributes: dict = {},
+    bg_color: str = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    indeterminate: typing.Union[bool, str] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    model_value: typing.Union[str, float] = None,
+    rotate: typing.Union[str, float] = None,
+    size: typing.Union[str, float] = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ProgressCircular, Any]:
     """
@@ -5224,32 +5116,33 @@ def _ProgressLinear(
     absolute: bool = None,
     active: bool = None,
     attributes: dict = {},
-    background_color: str = None,
-    background_opacity: typing.Union[float, str] = None,
-    bottom: bool = None,
-    buffer_value: typing.Union[float, str] = None,
+    bg_color: str = None,
+    bg_opacity: typing.Union[str, float] = None,
+    buffer_value: typing.Union[str, float] = None,
     children: list = [],
     class_: str = None,
+    clickable: bool = None,
     color: str = None,
-    dark: bool = None,
-    fixed: bool = None,
-    height: typing.Union[float, str] = None,
+    height: typing.Union[str, float] = None,
     indeterminate: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    query: bool = None,
-    rounded: bool = None,
+    location: str = None,
+    max: typing.Union[str, float] = None,
+    model_value: typing.Union[str, float] = None,
+    reverse: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
+    rounded_bar: bool = None,
     slot: str = None,
     stream: bool = None,
     striped: bool = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
-    top: bool = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: typing.Union[float, str] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ProgressLinear, Any]:
     """
@@ -5272,30 +5165,38 @@ del _ProgressLinear
 
 
 def _Radio(
-    active_class: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
+    defaults_target: str = None,
+    density: str = None,
     disabled: bool = None,
+    error: bool = None,
+    false_icon: typing.Union[str, list] = None,
+    false_value: Any = None,
     id: str = None,
+    inline: bool = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
+    model_value: Any = None,
+    multiple: bool = None,
     name: str = None,
-    off_icon: str = None,
-    on_icon: str = None,
     readonly: bool = None,
-    ripple: typing.Union[bool, dict] = None,
+    ripple: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
+    true_icon: typing.Union[str, list] = None,
+    true_value: Any = None,
+    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
     value: Any = None,
+    value_comparator: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Radio, Any]:
     """
@@ -5318,49 +5219,49 @@ del _Radio
 
 
 def _RadioGroup(
-    active_class: str = None,
-    append_icon: str = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
-    background_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    column: bool = None,
-    dark: bool = None,
-    dense: bool = None,
+    defaults_target: str = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    height: typing.Union[float, str] = None,
+    false_icon: typing.Union[str, list] = None,
+    focused: bool = None,
+    height: typing.Union[str, float] = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
+    inline: bool = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loading: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
+    max_errors: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
-    multiple: bool = None,
+    model_value: Any = None,
     name: str = None,
     persistent_hint: bool = None,
-    prepend_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     readonly: bool = None,
-    row: bool = None,
+    ripple: bool = None,
     rules: list = [],
     slot: str = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
+    true_icon: typing.Union[str, list] = None,
+    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
+    validate_on: str = None,
+    validation_value: Any = None,
+    value_comparator: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.RadioGroup, Any]:
     """
@@ -5383,56 +5284,56 @@ del _RadioGroup
 
 
 def _RangeSlider(
-    append_icon: str = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
-    background_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
+    elevation: typing.Union[str, float] = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
-    inverse_label: bool = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
-    max: typing.Union[float, str] = None,
+    max: typing.Union[str, float] = None,
+    max_errors: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
-    min: typing.Union[float, str] = None,
+    min: typing.Union[str, float] = None,
+    model_value: list = [],
+    name: str = None,
     persistent_hint: bool = None,
-    prepend_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     readonly: bool = None,
+    reverse: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
     rules: list = [],
+    show_ticks: typing.Union[bool, str] = None,
     slot: str = None,
-    step: typing.Union[float, str] = None,
+    step: typing.Union[str, float] = None,
+    strict: bool = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     tabbable: bool = None,
     thumb_color: str = None,
     thumb_label: typing.Union[bool, str] = None,
-    thumb_size: typing.Union[float, str] = None,
-    tick_labels: list = [],
-    tick_size: typing.Union[float, str] = None,
-    ticks: typing.Union[bool, str] = None,
+    thumb_size: typing.Union[str, float] = None,
+    tick_size: typing.Union[str, float] = None,
+    ticks: list = [],
     tooltip: str = None,
     track_color: str = None,
     track_fill_color: str = None,
+    track_size: typing.Union[str, float] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
-    vertical: bool = None,
+    validate_on: str = None,
+    validation_value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.RangeSlider, Any]:
     """
@@ -5455,39 +5356,37 @@ del _RangeSlider
 
 
 def _Rating(
+    active_color: str = None,
     attributes: dict = {},
-    background_color: str = None,
     children: list = [],
     class_: str = None,
     clearable: bool = None,
-    close_delay: typing.Union[float, str] = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    empty_icon: str = None,
-    full_icon: str = None,
-    half_icon: str = None,
+    density: str = None,
+    disabled: bool = None,
+    empty_icon: typing.Union[str, list] = None,
+    full_icon: typing.Union[str, list] = None,
     half_increments: bool = None,
     hover: bool = None,
-    large: bool = None,
+    item_aria_label: str = None,
+    item_label_position: str = None,
+    item_labels: list = [],
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    length: typing.Union[float, str] = None,
-    light: bool = None,
-    open_delay: typing.Union[float, str] = None,
+    length: typing.Union[str, float] = None,
+    model_value: typing.Union[str, float] = None,
+    name: str = None,
     readonly: bool = None,
-    ripple: typing.Union[bool, dict] = None,
-    size: typing.Union[float, str] = None,
+    ripple: bool = None,
+    size: typing.Union[str, float] = None,
     slot: str = None,
-    small: bool = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: float = None,
-    x_large: bool = None,
-    x_small: bool = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Rating, Any]:
     """
@@ -5514,12 +5413,14 @@ def _Responsive(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    height: typing.Union[float, str] = None,
+    content_class: str = None,
+    height: typing.Union[str, float] = None,
+    inline: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -5527,7 +5428,7 @@ def _Responsive(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Responsive, Any]:
     """
@@ -5556,10 +5457,12 @@ def _Row(
     align_content_md: str = None,
     align_content_sm: str = None,
     align_content_xl: str = None,
+    align_content_xxl: str = None,
     align_lg: str = None,
     align_md: str = None,
     align_sm: str = None,
     align_xl: str = None,
+    align_xxl: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
@@ -5569,6 +5472,7 @@ def _Row(
     justify_md: str = None,
     justify_sm: str = None,
     justify_xl: str = None,
+    justify_xxl: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     no_gutters: bool = None,
     slot: str = None,
@@ -5604,6 +5508,7 @@ def _ScaleTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -5642,6 +5547,7 @@ def _ScrollXReverseTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -5680,6 +5586,7 @@ def _ScrollXTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -5718,6 +5625,7 @@ def _ScrollYReverseTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -5756,6 +5664,7 @@ def _ScrollYTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -5791,81 +5700,84 @@ del _ScrollYTransition
 
 
 def _Select(
-    append_icon: str = None,
-    append_outer_icon: str = None,
-    attach: Any = None,
+    active: bool = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
     autofocus: bool = None,
-    background_color: str = None,
-    cache_items: bool = None,
+    base_color: str = None,
+    bg_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     chips: bool = None,
     class_: str = None,
-    clear_icon: str = None,
+    clear_icon: typing.Union[str, list] = None,
     clearable: bool = None,
+    closable_chips: bool = None,
+    close_text: str = None,
     color: str = None,
-    counter: typing.Union[bool, float, str] = None,
-    dark: bool = None,
-    deletable_chips: bool = None,
-    dense: bool = None,
-    disable_lookup: bool = None,
+    counter: typing.Union[str, float, bool] = None,
+    counter_value: float = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
     eager: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    filled: bool = None,
     flat: bool = None,
-    full_width: bool = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
+    hide_no_data: bool = None,
     hide_selected: bool = None,
     hint: str = None,
     id: str = None,
+    item_children: str = None,
     item_color: str = None,
-    item_disabled: typing.Union[str, list] = None,
-    item_text: typing.Union[str, list] = None,
-    item_value: typing.Union[str, list] = None,
+    item_props: str = None,
+    item_title: str = None,
+    item_value: str = None,
     items: list = [],
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
-    menu_props: typing.Union[str, list, dict] = None,
+    loading: typing.Union[str, bool] = None,
+    max_errors: typing.Union[str, float] = None,
+    menu: bool = None,
+    menu_icon: typing.Union[str, list] = None,
     messages: typing.Union[str, list] = None,
+    model_value: Any = None,
     multiple: bool = None,
+    name: str = None,
     no_data_text: str = None,
     open_on_clear: bool = None,
-    outlined: bool = None,
+    open_text: str = None,
+    persistent_clear: bool = None,
+    persistent_counter: bool = None,
     persistent_hint: bool = None,
+    persistent_placeholder: bool = None,
     placeholder: str = None,
     prefix: str = None,
-    prepend_icon: str = None,
-    prepend_inner_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    prepend_inner_icon: typing.Union[str, list] = None,
     readonly: bool = None,
     return_object: bool = None,
     reverse: bool = None,
-    rounded: bool = None,
+    role: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     rules: list = [],
-    shaped: bool = None,
     single_line: bool = None,
     slot: str = None,
-    small_chips: bool = None,
-    solo: bool = None,
-    solo_inverted: bool = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     suffix: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
+    transition: typing.Union[str, dict] = None,
     type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
+    validate_on: str = None,
+    value_comparator: str = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Select, Any]:
     """
@@ -5887,30 +5799,135 @@ def Select(**kwargs):
 del _Select
 
 
-def _Sheet(
+def _SelectionControl(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    elevation: typing.Union[float, str] = None,
-    height: typing.Union[float, str] = None,
+    defaults_target: str = None,
+    density: str = None,
+    disabled: bool = None,
+    error: bool = None,
+    false_icon: typing.Union[str, list] = None,
+    false_value: Any = None,
+    id: str = None,
+    inline: bool = None,
+    label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
+    multiple: bool = None,
+    name: str = None,
+    readonly: bool = None,
+    ripple: bool = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    theme: str = None,
+    tooltip: str = None,
+    true_icon: typing.Union[str, list] = None,
+    true_value: Any = None,
+    type: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    value: Any = None,
+    value_comparator: str = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.SelectionControl, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_SelectionControl)
+def SelectionControl(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.SelectionControl
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _SelectionControl
+
+
+def _SelectionControlGroup(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    defaults_target: str = None,
+    density: str = None,
+    disabled: bool = None,
+    error: bool = None,
+    false_icon: typing.Union[str, list] = None,
+    id: str = None,
+    inline: bool = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    model_value: Any = None,
+    multiple: bool = None,
+    name: str = None,
+    readonly: bool = None,
+    ripple: bool = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    theme: str = None,
+    tooltip: str = None,
+    true_icon: typing.Union[str, list] = None,
+    type: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    value_comparator: str = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.SelectionControlGroup, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_SelectionControlGroup)
+def SelectionControlGroup(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.SelectionControlGroup
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _SelectionControlGroup
+
+
+def _Sheet(
+    attributes: dict = {},
+    border: typing.Union[str, float, bool] = None,
+    children: list = [],
+    class_: str = None,
+    color: str = None,
+    elevation: typing.Union[str, float] = None,
+    height: typing.Union[str, float] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    location: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    position: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    tile: bool = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Sheet, Any]:
     """
@@ -5932,114 +5949,31 @@ def Sheet(**kwargs):
 del _Sheet
 
 
-def _SimpleCheckbox(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    disabled: bool = None,
-    indeterminate: bool = None,
-    indeterminate_icon: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    off_icon: str = None,
-    on_icon: str = None,
-    ripple: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: bool = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.SimpleCheckbox, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_SimpleCheckbox)
-def SimpleCheckbox(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.SimpleCheckbox
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _SimpleCheckbox
-
-
-def _SimpleTable(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    fixed_header: bool = None,
-    height: typing.Union[float, str] = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.SimpleTable, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_SimpleTable)
-def SimpleTable(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.SimpleTable
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _SimpleTable
-
-
 def _SkeletonLoader(
     attributes: dict = {},
     boilerplate: bool = None,
     children: list = [],
     class_: str = None,
-    dark: bool = None,
-    elevation: typing.Union[float, str] = None,
-    height: typing.Union[float, str] = None,
+    color: str = None,
+    elevation: typing.Union[str, float] = None,
+    height: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
     loading: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
+    loading_text: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
-    tile: bool = None,
+    theme: str = None,
     tooltip: str = None,
-    transition: str = None,
     type: str = None,
-    types: dict = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.SkeletonLoader, Any]:
     """
@@ -6062,29 +5996,30 @@ del _SkeletonLoader
 
 
 def _SlideGroup(
-    active_class: str = None,
     attributes: dict = {},
     center_active: bool = None,
     children: list = [],
     class_: str = None,
-    dark: bool = None,
+    direction: str = None,
+    disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
-    mobile_break_point: typing.Union[float, str] = None,
+    mandatory: typing.Union[bool, str] = None,
+    max: float = None,
+    model_value: Any = None,
     multiple: bool = None,
-    next_icon: str = None,
-    prev_icon: str = None,
-    show_arrows: bool = None,
+    next_icon: typing.Union[str, list] = None,
+    prev_icon: typing.Union[str, list] = None,
+    selected_class: str = None,
+    show_arrows: typing.Union[str, bool] = None,
     slot: str = None,
     style_: str = None,
+    symbol: Any = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.SlideGroup, Any]:
     """
@@ -6106,13 +6041,13 @@ def SlideGroup(**kwargs):
 del _SlideGroup
 
 
-def _SlideItem(
-    active_class: str = None,
+def _SlideGroupItem(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    selected_class: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -6122,7 +6057,7 @@ def _SlideItem(
     v_slots: list = [],
     value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.SlideItem, Any]:
+) -> ValueElement[ipyvuetify.generated.SlideGroupItem, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -6130,22 +6065,23 @@ def _SlideItem(
     ...
 
 
-@implements(_SlideItem)
-def SlideItem(**kwargs):
+@implements(_SlideGroupItem)
+def SlideGroupItem(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.SlideItem
+    widget_cls = ipyvuetify.generated.SlideGroupItem
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _SlideItem
+del _SlideGroupItem
 
 
 def _SlideXReverseTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -6184,6 +6120,7 @@ def _SlideXTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -6222,6 +6159,7 @@ def _SlideYReverseTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -6260,6 +6198,7 @@ def _SlideYTransition(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    disabled: bool = None,
     group: bool = None,
     hide_on_leave: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
@@ -6295,56 +6234,55 @@ del _SlideYTransition
 
 
 def _Slider(
-    append_icon: str = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
-    background_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
+    elevation: typing.Union[str, float] = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
-    inverse_label: bool = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
-    max: typing.Union[float, str] = None,
+    max: typing.Union[str, float] = None,
+    max_errors: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
-    min: typing.Union[float, str] = None,
+    min: typing.Union[str, float] = None,
+    model_value: typing.Union[str, float] = None,
+    name: str = None,
     persistent_hint: bool = None,
-    prepend_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     readonly: bool = None,
+    reverse: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
     rules: list = [],
+    show_ticks: typing.Union[bool, str] = None,
     slot: str = None,
-    step: typing.Union[float, str] = None,
+    step: typing.Union[str, float] = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     tabbable: bool = None,
     thumb_color: str = None,
     thumb_label: typing.Union[bool, str] = None,
-    thumb_size: typing.Union[float, str] = None,
-    tick_labels: list = [],
-    tick_size: typing.Union[float, str] = None,
-    ticks: typing.Union[bool, str] = None,
+    thumb_size: typing.Union[str, float] = None,
+    tick_size: typing.Union[str, float] = None,
+    ticks: list = [],
     tooltip: str = None,
     track_color: str = None,
     track_fill_color: str = None,
+    track_size: typing.Union[str, float] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
-    vertical: bool = None,
+    validate_on: str = None,
+    validation_value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Slider, Any]:
     """
@@ -6368,26 +6306,53 @@ del _Slider
 
 def _Snackbar(
     absolute: bool = None,
+    activator: str = None,
+    activator_props: dict = None,
+    attach: typing.Union[str, bool] = None,
     attributes: dict = {},
-    bottom: bool = None,
     children: list = [],
     class_: str = None,
+    close_delay: typing.Union[str, float] = None,
+    close_on_back: bool = None,
+    close_on_content_click: bool = None,
     color: str = None,
+    contained: bool = None,
+    content_class: Any = None,
+    content_props: Any = None,
+    disabled: bool = None,
+    eager: bool = None,
+    height: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
+    location: str = None,
+    location_strategy: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: bool = None,
     multi_line: bool = None,
-    right: bool = None,
+    offset: typing.Union[str, float, list] = None,
+    open_delay: typing.Union[str, float] = None,
+    open_on_click: bool = None,
+    open_on_focus: bool = None,
+    open_on_hover: bool = None,
+    origin: str = None,
+    position: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
-    timeout: float = None,
+    theme: str = None,
+    timeout: typing.Union[str, float] = None,
     tooltip: str = None,
-    top: bool = None,
+    transition: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
+    variant: str = None,
     vertical: bool = None,
+    width: typing.Union[str, float] = None,
+    z_index: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Snackbar, Any]:
     """
@@ -6417,6 +6382,7 @@ def _Spacer(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -6442,120 +6408,50 @@ def Spacer(**kwargs):
 del _Spacer
 
 
-def _Sparkline(
-    attributes: dict = {},
-    auto_draw: bool = None,
-    auto_draw_duration: float = None,
-    auto_draw_easing: str = None,
-    auto_line_width: bool = None,
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    fill: bool = None,
-    gradient: list = [],
-    gradient_direction: str = None,
-    height: typing.Union[str, float] = None,
-    label_size: typing.Union[float, str] = None,
-    labels: list = [],
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    line_width: typing.Union[str, float] = None,
-    padding: typing.Union[str, float] = None,
-    show_labels: bool = None,
-    slot: str = None,
-    smooth: typing.Union[bool, float, str] = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    type: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: list = [],
-    width: typing.Union[float, str] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.Sparkline, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_Sparkline)
-def Sparkline(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.Sparkline
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _Sparkline
-
-
-def _SpeedDial(
-    absolute: bool = None,
-    attributes: dict = {},
-    bottom: bool = None,
-    children: list = [],
-    class_: str = None,
-    direction: str = None,
-    fixed: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    mode: str = None,
-    open_on_hover: bool = None,
-    origin: str = None,
-    right: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    top: bool = None,
-    transition: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: Any = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.SpeedDial, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_SpeedDial)
-def SpeedDial(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.SpeedDial
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _SpeedDial
-
-
 def _Stepper(
     alt_labels: bool = None,
     attributes: dict = {},
+    bg_color: str = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
-    dark: bool = None,
+    color: str = None,
+    disabled: bool = None,
+    editable: bool = None,
+    elevation: typing.Union[str, float] = None,
+    flat: bool = None,
+    height: typing.Union[str, float] = None,
+    hide_actions: bool = None,
+    item_title: str = None,
+    item_value: str = None,
+    items: list = [],
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
+    location: str = None,
+    mandatory: typing.Union[bool, str] = None,
+    max: float = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    mobile: bool = None,
+    model_value: Any = None,
+    multiple: bool = None,
+    next_text: str = None,
     non_linear: bool = None,
+    position: str = None,
+    prev_text: str = None,
+    rounded: typing.Union[str, float, bool] = None,
+    selected_class: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    vertical: bool = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Stepper, Any]:
     """
@@ -6577,13 +6473,16 @@ def Stepper(**kwargs):
 del _Stepper
 
 
-def _StepperContent(
+def _StepperActions(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    color: str = None,
+    disabled: typing.Union[bool, str, str] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    next_text: str = None,
+    prev_text: str = None,
     slot: str = None,
-    step: typing.Union[float, str] = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
@@ -6591,7 +6490,7 @@ def _StepperContent(
     v_on: str = None,
     v_slots: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.StepperContent, Any]:
+) -> ValueElement[ipyvuetify.generated.StepperActions, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -6599,16 +6498,16 @@ def _StepperContent(
     ...
 
 
-@implements(_StepperContent)
-def StepperContent(**kwargs):
+@implements(_StepperActions)
+def StepperActions(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.StepperContent
+    widget_cls = ipyvuetify.generated.StepperActions
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _StepperContent
+del _StepperActions
 
 
 def _StepperHeader(
@@ -6619,6 +6518,7 @@ def _StepperHeader(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -6644,61 +6544,35 @@ def StepperHeader(**kwargs):
 del _StepperHeader
 
 
-def _StepperItems(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.StepperItems, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_StepperItems)
-def StepperItems(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.StepperItems
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _StepperItems
-
-
-def _StepperStep(
+def _StepperItem(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     color: str = None,
     complete: bool = None,
     complete_icon: str = None,
+    disabled: bool = None,
     edit_icon: str = None,
     editable: bool = None,
+    error: bool = None,
     error_icon: str = None,
+    icon: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    ripple: typing.Union[bool, dict] = None,
     rules: list = [],
+    selected_class: str = None,
     slot: str = None,
-    step: typing.Union[float, str] = None,
     style_: str = None,
+    subtitle: str = None,
     tabbable: bool = None,
+    title: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
+    value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.StepperStep, Any]:
+) -> ValueElement[ipyvuetify.generated.StepperItem, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -6706,35 +6580,45 @@ def _StepperStep(
     ...
 
 
-@implements(_StepperStep)
-def StepperStep(**kwargs):
+@implements(_StepperItem)
+def StepperItem(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.StepperStep
+    widget_cls = ipyvuetify.generated.StepperItem
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _StepperStep
+del _StepperItem
 
 
-def _Subheader(
+def _StepperWindow(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
-    inset: bool = None,
+    continuous: bool = None,
+    direction: str = None,
+    disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
+    mandatory: typing.Union[bool, str] = None,
+    model_value: Any = None,
+    next_icon: typing.Union[str, list] = None,
+    prev_icon: typing.Union[str, list] = None,
+    reverse: bool = None,
+    selected_class: str = None,
+    show_arrows: typing.Union[str, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
+    touch: Any = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.Subheader, Any]:
+) -> ValueElement[ipyvuetify.generated.StepperWindow, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -6742,62 +6626,143 @@ def _Subheader(
     ...
 
 
-@implements(_Subheader)
-def Subheader(**kwargs):
+@implements(_StepperWindow)
+def StepperWindow(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.Subheader
+    widget_cls = ipyvuetify.generated.StepperWindow
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _Subheader
+del _StepperWindow
+
+
+def _StepperWindowItem(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    disabled: bool = None,
+    eager: bool = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    reverse_transition: typing.Union[str, bool] = None,
+    selected_class: str = None,
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tooltip: str = None,
+    transition: typing.Union[str, bool] = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    value: Any = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.StepperWindowItem, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_StepperWindowItem)
+def StepperWindowItem(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.StepperWindowItem
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _StepperWindowItem
+
+
+def _SvgIcon(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    icon: typing.Union[str, list] = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tag: str = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.SvgIcon, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_SvgIcon)
+def SvgIcon(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.SvgIcon
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _SvgIcon
 
 
 def _Switch(
-    append_icon: str = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
-    background_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
+    defaults_target: str = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
+    false_icon: typing.Union[str, list] = None,
     false_value: Any = None,
     flat: bool = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
-    input_value: Any = None,
+    indeterminate: bool = None,
+    inline: bool = None,
     inset: bool = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loading: typing.Union[bool, str] = None,
+    loading: typing.Union[str, bool] = None,
+    max_errors: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
+    model_value: Any = None,
     multiple: bool = None,
+    name: str = None,
     persistent_hint: bool = None,
-    prepend_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
     readonly: bool = None,
-    ripple: typing.Union[bool, dict] = None,
+    ripple: bool = None,
     rules: list = [],
     slot: str = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
+    true_icon: typing.Union[str, list] = None,
     true_value: Any = None,
+    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
+    validate_on: str = None,
+    validation_value: Any = None,
     value: Any = None,
+    value_comparator: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Switch, Any]:
     """
@@ -6821,20 +6786,21 @@ del _Switch
 
 def _SystemBar(
     absolute: bool = None,
-    app: bool = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
-    fixed: bool = None,
-    height: typing.Union[float, str] = None,
+    elevation: typing.Union[str, float] = None,
+    height: typing.Union[str, float] = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    lights_out: bool = None,
+    name: str = None,
+    order: typing.Union[str, float] = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -6862,32 +6828,49 @@ del _SystemBar
 
 
 def _Tab(
-    active_class: str = None,
-    append: bool = None,
+    append_icon: typing.Union[str, list] = None,
     attributes: dict = {},
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
-    dark: bool = None,
+    color: str = None,
+    density: str = None,
+    direction: str = None,
     disabled: bool = None,
+    elevation: typing.Union[str, float] = None,
     exact: bool = None,
-    exact_active_class: str = None,
-    href: typing.Union[str, dict] = None,
+    fixed: bool = None,
+    height: typing.Union[str, float] = None,
+    hide_slider: bool = None,
+    href: str = None,
+    icon: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    link: bool = None,
-    nuxt: bool = None,
+    loading: typing.Union[str, bool] = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    prepend_icon: typing.Union[str, list] = None,
     replace: bool = None,
     ripple: typing.Union[bool, dict] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    selected_class: str = None,
+    size: typing.Union[str, float] = None,
+    slider_color: str = None,
     slot: str = None,
+    stacked: bool = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    target: str = None,
-    to: typing.Union[str, dict] = None,
+    text: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
+    value: Any = None,
+    variant: str = None,
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Tab, Any]:
     """
@@ -6909,27 +6892,27 @@ def Tab(**kwargs):
 del _Tab
 
 
-def _TabItem(
-    active_class: str = None,
+def _Table(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    disabled: bool = None,
-    eager: bool = None,
-    id: str = None,
+    density: str = None,
+    fixed_footer: bool = None,
+    fixed_header: bool = None,
+    height: typing.Union[str, float] = None,
+    hover: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    reverse_transition: typing.Union[bool, str] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
-    transition: typing.Union[bool, str] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TabItem, Any]:
+) -> ValueElement[ipyvuetify.generated.Table, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -6937,162 +6920,54 @@ def _TabItem(
     ...
 
 
-@implements(_TabItem)
-def TabItem(**kwargs):
+@implements(_Table)
+def Table(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TabItem
+    widget_cls = ipyvuetify.generated.Table
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _TabItem
-
-
-def _TabReverseTransition(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    group: bool = None,
-    hide_on_leave: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    leave_absolute: bool = None,
-    mode: str = None,
-    origin: str = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TabReverseTransition, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TabReverseTransition)
-def TabReverseTransition(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TabReverseTransition
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TabReverseTransition
-
-
-def _TabTransition(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    group: bool = None,
-    hide_on_leave: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    leave_absolute: bool = None,
-    mode: str = None,
-    origin: str = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TabTransition, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TabTransition)
-def TabTransition(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TabTransition
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TabTransition
-
-
-def _TableOverflow(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TableOverflow, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TableOverflow)
-def TableOverflow(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TableOverflow
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TableOverflow
+del _Table
 
 
 def _Tabs(
-    active_class: str = None,
-    align_with_title: bool = None,
+    align_tabs: str = None,
     attributes: dict = {},
-    background_color: str = None,
+    bg_color: str = None,
     center_active: bool = None,
-    centered: bool = None,
     children: list = [],
     class_: str = None,
     color: str = None,
-    dark: bool = None,
+    density: str = None,
+    direction: str = None,
+    disabled: bool = None,
     fixed_tabs: bool = None,
     grow: bool = None,
-    height: typing.Union[float, str] = None,
+    height: typing.Union[str, float] = None,
     hide_slider: bool = None,
-    icons_and_text: bool = None,
+    items: list = [],
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mobile_break_point: typing.Union[float, str] = None,
-    next_icon: str = None,
-    optional: bool = None,
-    prev_icon: str = None,
-    right: bool = None,
-    show_arrows: bool = None,
+    mandatory: typing.Union[bool, str] = None,
+    max: float = None,
+    model_value: Any = None,
+    multiple: bool = None,
+    next_icon: typing.Union[str, list] = None,
+    prev_icon: typing.Union[str, list] = None,
+    selected_class: str = None,
+    show_arrows: typing.Union[str, bool] = None,
     slider_color: str = None,
-    slider_size: typing.Union[float, str] = None,
     slot: str = None,
+    stacked: bool = None,
     style_: str = None,
+    symbol: Any = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    vertical: bool = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Tabs, Any]:
     """
@@ -7114,181 +6989,67 @@ def Tabs(**kwargs):
 del _Tabs
 
 
-def _TabsItems(
-    active_class: str = None,
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    continuous: bool = None,
-    dark: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
-    multiple: bool = None,
-    next_icon: typing.Union[bool, str] = None,
-    prev_icon: typing.Union[bool, str] = None,
-    reverse: bool = None,
-    show_arrows: bool = None,
-    show_arrows_on_hover: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    touch: dict = None,
-    touchless: bool = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: Any = None,
-    vertical: bool = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TabsItems, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TabsItems)
-def TabsItems(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TabsItems
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TabsItems
-
-
-def _TabsSlider(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TabsSlider, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TabsSlider)
-def TabsSlider(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TabsSlider
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TabsSlider
-
-
-def _Text(
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: str = "",
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.Text, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_Text)
-def Text(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.Text
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _Text
-
-
 def _TextField(
-    append_icon: str = None,
-    append_outer_icon: str = None,
+    active: bool = None,
+    append_icon: typing.Union[str, list] = None,
+    append_inner_icon: typing.Union[str, list] = None,
     attributes: dict = {},
     autofocus: bool = None,
-    background_color: str = None,
+    base_color: str = None,
+    bg_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     class_: str = None,
-    clear_icon: str = None,
+    clear_icon: typing.Union[str, list] = None,
     clearable: bool = None,
     color: str = None,
-    counter: typing.Union[bool, float, str] = None,
-    dark: bool = None,
-    dense: bool = None,
+    counter: typing.Union[str, float, bool] = None,
+    counter_value: float = None,
+    density: str = None,
+    direction: str = None,
+    dirty: bool = None,
     disabled: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    filled: bool = None,
     flat: bool = None,
-    full_width: bool = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
+    loading: typing.Union[str, bool] = None,
+    max_errors: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
-    outlined: bool = None,
+    model_value: Any = None,
+    name: str = None,
+    persistent_clear: bool = None,
+    persistent_counter: bool = None,
     persistent_hint: bool = None,
+    persistent_placeholder: bool = None,
     placeholder: str = None,
     prefix: str = None,
-    prepend_icon: str = None,
-    prepend_inner_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    prepend_inner_icon: typing.Union[str, list] = None,
     readonly: bool = None,
     reverse: bool = None,
-    rounded: bool = None,
+    role: str = None,
+    rounded: typing.Union[str, float, bool] = None,
     rules: list = [],
-    shaped: bool = None,
     single_line: bool = None,
     slot: str = None,
-    solo: bool = None,
-    solo_inverted: bool = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     suffix: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
     type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
+    validate_on: str = None,
+    validation_value: Any = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.TextField, Any]:
     """
@@ -7311,67 +7072,68 @@ del _TextField
 
 
 def _Textarea(
-    append_icon: str = None,
-    append_outer_icon: str = None,
+    active: bool = None,
+    append_icon: typing.Union[str, list] = None,
+    append_inner_icon: typing.Union[str, list] = None,
     attributes: dict = {},
     auto_grow: bool = None,
     autofocus: bool = None,
-    background_color: str = None,
+    base_color: str = None,
+    bg_color: str = None,
+    center_affix: bool = None,
     children: list = [],
     class_: str = None,
-    clear_icon: str = None,
+    clear_icon: typing.Union[str, list] = None,
     clearable: bool = None,
     color: str = None,
-    counter: typing.Union[bool, float, str] = None,
-    dark: bool = None,
-    dense: bool = None,
+    counter: typing.Union[str, float, bool] = None,
+    counter_value: str = None,
+    density: str = None,
+    direction: str = None,
+    dirty: bool = None,
     disabled: bool = None,
     error: bool = None,
-    error_count: typing.Union[float, str] = None,
     error_messages: typing.Union[str, list] = None,
-    filled: bool = None,
     flat: bool = None,
-    full_width: bool = None,
-    height: typing.Union[float, str] = None,
+    focused: bool = None,
     hide_details: typing.Union[bool, str] = None,
     hint: str = None,
     id: str = None,
     label: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loader_height: typing.Union[float, str] = None,
-    loading: typing.Union[bool, str] = None,
+    loading: typing.Union[str, bool] = None,
+    max_errors: typing.Union[str, float] = None,
+    max_rows: typing.Union[str, float] = None,
     messages: typing.Union[str, list] = None,
+    model_value: Any = None,
+    name: str = None,
     no_resize: bool = None,
-    outlined: bool = None,
+    persistent_clear: bool = None,
+    persistent_counter: bool = None,
     persistent_hint: bool = None,
+    persistent_placeholder: bool = None,
     placeholder: str = None,
     prefix: str = None,
-    prepend_icon: str = None,
-    prepend_inner_icon: str = None,
+    prepend_icon: typing.Union[str, list] = None,
+    prepend_inner_icon: typing.Union[str, list] = None,
     readonly: bool = None,
     reverse: bool = None,
-    rounded: bool = None,
-    row_height: typing.Union[float, str] = None,
-    rows: typing.Union[float, str] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    rows: typing.Union[str, float] = None,
     rules: list = [],
-    shaped: bool = None,
     single_line: bool = None,
     slot: str = None,
-    solo: bool = None,
-    solo_inverted: bool = None,
     style_: str = None,
-    success: bool = None,
-    success_messages: typing.Union[str, list] = None,
     suffix: str = None,
     tabbable: bool = None,
+    theme: str = None,
     tooltip: str = None,
-    type: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    validate_on_blur: bool = None,
-    value: Any = None,
+    validate_on: str = None,
+    validation_value: Any = None,
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Textarea, Any]:
     """
@@ -7397,17 +7159,17 @@ def _ThemeProvider(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    root: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
+    with_background: bool = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ThemeProvider, Any]:
     """
@@ -7429,163 +7191,26 @@ def ThemeProvider(**kwargs):
 del _ThemeProvider
 
 
-def _TimePicker(
-    allowed_hours: list = None,
-    allowed_minutes: list = None,
-    allowed_seconds: list = None,
-    ampm_in_title: bool = None,
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    disabled: bool = None,
-    format: str = None,
-    full_width: bool = None,
-    header_color: str = None,
-    landscape: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max: str = None,
-    min: str = None,
-    no_title: bool = None,
-    readonly: bool = None,
-    scrollable: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    use_seconds: bool = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: Any = None,
-    width: typing.Union[float, str] = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TimePicker, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TimePicker)
-def TimePicker(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TimePicker
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TimePicker
-
-
-def _TimePickerClock(
-    ampm: bool = None,
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    disabled: bool = None,
-    double: bool = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max: float = None,
-    min: float = None,
-    readonly: bool = None,
-    rotate: float = None,
-    scrollable: bool = None,
-    slot: str = None,
-    step: float = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: float = None,
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TimePickerClock, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TimePickerClock)
-def TimePickerClock(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TimePickerClock
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TimePickerClock
-
-
-def _TimePickerTitle(
-    ampm: bool = None,
-    ampm_readonly: bool = None,
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    disabled: bool = None,
-    hour: float = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    minute: float = None,
-    period: str = None,
-    readonly: bool = None,
-    second: float = None,
-    selecting: float = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    use_seconds: bool = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TimePickerTitle, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TimePickerTitle)
-def TimePickerTitle(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TimePickerTitle
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TimePickerTitle
-
-
 def _Timeline(
-    align_top: bool = None,
+    align: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    dark: bool = None,
-    dense: bool = None,
+    density: str = None,
+    direction: str = None,
+    justify: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    reverse: bool = None,
+    line_color: str = None,
+    line_inset: typing.Union[str, float] = None,
+    line_thickness: typing.Union[str, float] = None,
+    side: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
+    truncate_line: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
@@ -7614,25 +7239,32 @@ def _TimelineItem(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
-    dark: bool = None,
+    density: str = None,
+    dot_color: str = None,
+    elevation: typing.Union[str, float] = None,
     fill_dot: bool = None,
+    height: typing.Union[str, float] = None,
     hide_dot: bool = None,
-    icon: str = None,
+    hide_opposite: bool = None,
+    icon: typing.Union[str, list] = None,
     icon_color: str = None,
-    large: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    light: bool = None,
-    right: bool = None,
+    line_inset: typing.Union[str, float] = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    rounded: typing.Union[str, float, bool] = None,
+    size: typing.Union[str, float] = None,
     slot: str = None,
-    small: bool = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.TimelineItem, Any]:
     """
@@ -7657,38 +7289,31 @@ del _TimelineItem
 def _Toolbar(
     absolute: bool = None,
     attributes: dict = {},
-    bottom: bool = None,
+    border: typing.Union[str, float, bool] = None,
     children: list = [],
     class_: str = None,
     collapse: bool = None,
     color: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    elevation: typing.Union[float, str] = None,
+    density: str = None,
+    elevation: typing.Union[str, float] = None,
     extended: bool = None,
-    extension_height: typing.Union[float, str] = None,
+    extension_height: typing.Union[str, float] = None,
     flat: bool = None,
     floating: bool = None,
-    height: typing.Union[float, str] = None,
+    height: typing.Union[str, float] = None,
+    image: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    max_height: typing.Union[float, str] = None,
-    max_width: typing.Union[float, str] = None,
-    min_height: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    prominent: bool = None,
-    short: bool = None,
+    rounded: typing.Union[str, float, bool] = None,
     slot: str = None,
-    src: typing.Union[str, dict] = None,
     style_: str = None,
     tabbable: bool = None,
     tag: str = None,
-    tile: bool = None,
+    theme: str = None,
+    title: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    width: typing.Union[float, str] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Toolbar, Any]:
     """
@@ -7714,6 +7339,7 @@ def _ToolbarItems(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
+    color: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     slot: str = None,
     style_: str = None,
@@ -7722,6 +7348,7 @@ def _ToolbarItems(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
+    variant: str = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.ToolbarItems, Any]:
     """
@@ -7751,6 +7378,8 @@ def _ToolbarTitle(
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    text: str = None,
     tooltip: str = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
@@ -7777,51 +7406,51 @@ del _ToolbarTitle
 
 
 def _Tooltip(
-    absolute: bool = None,
-    activator: Any = None,
-    allow_overflow: bool = None,
-    attach: Any = None,
+    activator: str = None,
+    activator_props: dict = None,
+    attach: typing.Union[str, bool] = None,
     attributes: dict = {},
-    bottom: bool = None,
     children: list = [],
     class_: str = None,
-    close_delay: typing.Union[float, str] = None,
-    color: str = None,
-    content_class: str = None,
-    dark: bool = None,
+    close_delay: typing.Union[str, float] = None,
+    close_on_back: bool = None,
+    close_on_content_click: bool = None,
+    contained: bool = None,
+    content_class: Any = None,
+    content_props: Any = None,
     disabled: bool = None,
     eager: bool = None,
-    fixed: bool = None,
-    internal_activator: bool = None,
+    height: typing.Union[str, float] = None,
+    id: str = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    left: bool = None,
-    light: bool = None,
-    max_width: typing.Union[float, str] = None,
-    min_width: typing.Union[float, str] = None,
-    nudge_bottom: typing.Union[float, str] = None,
-    nudge_left: typing.Union[float, str] = None,
-    nudge_right: typing.Union[float, str] = None,
-    nudge_top: typing.Union[float, str] = None,
-    nudge_width: typing.Union[float, str] = None,
-    offset_overflow: bool = None,
-    open_delay: typing.Union[float, str] = None,
+    location: str = None,
+    location_strategy: str = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    model_value: bool = None,
+    no_click_animation: bool = None,
+    offset: typing.Union[str, float, list] = None,
+    open_delay: typing.Union[str, float] = None,
     open_on_click: bool = None,
+    open_on_focus: bool = None,
     open_on_hover: bool = None,
-    position_x: float = None,
-    position_y: float = None,
-    right: bool = None,
+    origin: str = None,
+    scrim: typing.Union[str, bool] = None,
+    scroll_strategy: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
-    tag: str = None,
+    text: str = None,
+    theme: str = None,
     tooltip: str = None,
-    top: bool = None,
-    transition: str = None,
+    transition: typing.Union[str, bool] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    z_index: Any = None,
+    width: typing.Union[str, float] = None,
+    z_index: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Tooltip, Any]:
     """
@@ -7843,137 +7472,64 @@ def Tooltip(**kwargs):
 del _Tooltip
 
 
-def _Treeview(
-    activatable: bool = None,
-    active: list = [],
-    active_class: str = None,
+def _Validation(
     attributes: dict = {},
     children: list = [],
     class_: str = None,
-    color: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    expand_icon: str = None,
-    hoverable: bool = None,
-    indeterminate_icon: str = None,
-    item_children: str = None,
-    item_disabled: str = None,
-    item_key: str = None,
-    item_text: str = None,
+    disabled: bool = None,
+    error: bool = None,
+    error_messages: typing.Union[str, list] = None,
+    focused: bool = None,
+    label: str = None,
+    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
+    max_errors: typing.Union[str, float] = None,
+    model_value: Any = None,
+    name: str = None,
+    readonly: bool = None,
+    rules: list = [],
+    slot: str = None,
+    style_: str = None,
+    tabbable: bool = None,
+    tooltip: str = None,
+    v_model: Any = "!!disabled!!",
+    v_on: str = None,
+    v_slots: list = [],
+    validate_on: str = None,
+    validation_value: Any = None,
+    on_v_model: typing.Callable[[Any], Any] = None,
+) -> ValueElement[ipyvuetify.generated.Validation, Any]:
+    """
+    :param tabbable: Is widget tabbable?
+    :param tooltip: A tooltip caption.
+    """
+    ...
+
+
+@implements(_Validation)
+def Validation(**kwargs):
+    if isinstance(kwargs.get("layout"), dict):
+        kwargs["layout"] = w.Layout(**kwargs["layout"])
+    widget_cls = ipyvuetify.generated.Validation
+    comp = reacton.core.ComponentWidget(widget=widget_cls)
+    return ValueElement("v_model", comp, kwargs=kwargs)
+
+
+del _Validation
+
+
+def _VirtualScroll(
+    attributes: dict = {},
+    children: list = [],
+    class_: str = None,
+    height: typing.Union[str, float] = None,
+    item_height: typing.Union[str, float] = None,
     items: list = [],
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    loading_icon: str = None,
-    multiple_active: bool = None,
-    off_icon: str = None,
-    on_icon: str = None,
-    open_: list = [],
-    open_all: bool = None,
-    open_on_click: bool = None,
-    return_object: bool = None,
-    rounded: bool = None,
-    search: str = None,
-    selectable: bool = None,
-    selected_color: str = None,
-    selection_type: str = None,
-    shaped: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    transition: bool = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    value: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.Treeview, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_Treeview)
-def Treeview(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.Treeview
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _Treeview
-
-
-def _TreeviewNode(
-    activatable: bool = None,
-    active_class: str = None,
-    attributes: dict = {},
-    children: list = [],
-    class_: str = None,
-    color: str = None,
-    expand_icon: str = None,
-    indeterminate_icon: str = None,
-    item: dict = None,
-    item_children: str = None,
-    item_disabled: str = None,
-    item_key: str = None,
-    item_text: str = None,
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    level: float = None,
-    loading_icon: str = None,
-    off_icon: str = None,
-    on_icon: str = None,
-    open_on_click: bool = None,
-    rounded: bool = None,
-    selectable: bool = None,
-    selected_color: str = None,
-    shaped: bool = None,
-    slot: str = None,
-    style_: str = None,
-    tabbable: bool = None,
-    tooltip: str = None,
-    transition: bool = None,
-    v_model: Any = "!!disabled!!",
-    v_on: str = None,
-    v_slots: list = [],
-    on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.TreeviewNode, Any]:
-    """
-    :param tabbable: Is widget tabbable?
-    :param tooltip: A tooltip caption.
-    """
-    ...
-
-
-@implements(_TreeviewNode)
-def TreeviewNode(**kwargs):
-    if isinstance(kwargs.get("layout"), dict):
-        kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.TreeviewNode
-    comp = reacton.core.ComponentWidget(widget=widget_cls)
-    return ValueElement("v_model", comp, kwargs=kwargs)
-
-
-del _TreeviewNode
-
-
-def _VirtualTable(
-    attributes: dict = {},
-    children: list = [],
-    chunk_size: float = None,
-    class_: str = None,
-    dark: bool = None,
-    dense: bool = None,
-    fixed_header: bool = None,
-    header_height: float = None,
-    height: typing.Union[float, str] = None,
-    items: list = [],
-    layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    row_height: float = None,
+    max_height: typing.Union[str, float] = None,
+    max_width: typing.Union[str, float] = None,
+    min_height: typing.Union[str, float] = None,
+    min_width: typing.Union[str, float] = None,
+    renderless: bool = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
@@ -7981,8 +7537,9 @@ def _VirtualTable(
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
+    width: typing.Union[str, float] = None,
     on_v_model: typing.Callable[[Any], Any] = None,
-) -> ValueElement[ipyvuetify.generated.VirtualTable, Any]:
+) -> ValueElement[ipyvuetify.generated.VirtualScroll, Any]:
     """
     :param tabbable: Is widget tabbable?
     :param tooltip: A tooltip caption.
@@ -7990,16 +7547,16 @@ def _VirtualTable(
     ...
 
 
-@implements(_VirtualTable)
-def VirtualTable(**kwargs):
+@implements(_VirtualScroll)
+def VirtualScroll(**kwargs):
     if isinstance(kwargs.get("layout"), dict):
         kwargs["layout"] = w.Layout(**kwargs["layout"])
-    widget_cls = ipyvuetify.generated.VirtualTable
+    widget_cls = ipyvuetify.generated.VirtualScroll
     comp = reacton.core.ComponentWidget(widget=widget_cls)
     return ValueElement("v_model", comp, kwargs=kwargs)
 
 
-del _VirtualTable
+del _VirtualScroll
 
 
 def _VuetifyTemplate(
@@ -8066,33 +7623,30 @@ del _VuetifyWidget
 
 
 def _Window(
-    active_class: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     continuous: bool = None,
-    dark: bool = None,
+    direction: str = None,
+    disabled: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    light: bool = None,
-    mandatory: bool = None,
-    max: typing.Union[float, str] = None,
-    multiple: bool = None,
-    next_icon: typing.Union[bool, str] = None,
-    prev_icon: typing.Union[bool, str] = None,
+    mandatory: typing.Union[bool, str] = None,
+    model_value: Any = None,
+    next_icon: typing.Union[str, list] = None,
+    prev_icon: typing.Union[str, list] = None,
     reverse: bool = None,
-    show_arrows: bool = None,
-    show_arrows_on_hover: bool = None,
+    selected_class: str = None,
+    show_arrows: typing.Union[str, bool] = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
+    tag: str = None,
+    theme: str = None,
     tooltip: str = None,
-    touch: dict = None,
-    touchless: bool = None,
+    touch: Any = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],
-    value: Any = None,
-    vertical: bool = None,
     on_v_model: typing.Callable[[Any], Any] = None,
 ) -> ValueElement[ipyvuetify.generated.Window, Any]:
     """
@@ -8115,19 +7669,19 @@ del _Window
 
 
 def _WindowItem(
-    active_class: str = None,
     attributes: dict = {},
     children: list = [],
     class_: str = None,
     disabled: bool = None,
     eager: bool = None,
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
-    reverse_transition: typing.Union[bool, str] = None,
+    reverse_transition: typing.Union[str, bool] = None,
+    selected_class: str = None,
     slot: str = None,
     style_: str = None,
     tabbable: bool = None,
     tooltip: str = None,
-    transition: typing.Union[bool, str] = None,
+    transition: typing.Union[str, bool] = None,
     v_model: Any = "!!disabled!!",
     v_on: str = None,
     v_slots: list = [],

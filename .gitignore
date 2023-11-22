@@ -10,7 +10,7 @@ dist/
 build/
 
 # generated code
-generate_source/build
+generate_source/vuetify
 ipyvuetify/generated
 js/src/generated
 
