@@ -8,10 +8,13 @@
     <template v-slot:progress>
       <v-progress-linear
         absolute
-        :color="(loading === true || loading === '') ? (color || 'primary') : loading"
+        :color="
+          loading === true || loading === '' ? color || 'primary' : loading
+        "
         :height="loader_height || 4"
         :indeterminate="progress_indeterminate"
-        :value="total_progress" />
+        :value="total_progress"
+      />
     </template>
     <template v-for="slot in v_slots" :key="slot.name" v-slot:[slot.name]>
       <jupyter-widget :widget="slot.children" />
@@ -81,21 +84,34 @@ modules.export = {
         "truncate_length",
         "type",
         "validate_on_blur",
-        "value"
+        "value",
       ];
 
-      const useAsAttr = key => this.$data[key] !== null
-          && !key.startsWith('_')
-          && !['attributes', 'v_slots', 'v_on', 'layout', 'children', 'slot', 'v_model', 'style_', 'class_'].includes(key);
+      const useAsAttr = (key) =>
+        this.$data[key] !== null &&
+        !key.startsWith("_") &&
+        ![
+          "attributes",
+          "v_slots",
+          "v_on",
+          "layout",
+          "children",
+          "slot",
+          "v_model",
+          "style_",
+          "class_",
+        ].includes(key);
 
       const attributes = this.$data["attributes"] || {};
 
-      return keys.filter(useAsAttr)
-          .reduce((result, key) => {
-              result[key.replace(/_$/g, '').replace(/_/g, '-')] = this.$data[key];
-              return result;
-          }, { ...attributes });
-    }
+      return keys.filter(useAsAttr).reduce(
+        (result, key) => {
+          result[key.replace(/_$/g, "").replace(/_/g, "-")] = this.$data[key];
+          return result;
+        },
+        { ...attributes }
+      );
+    },
   },
   methods: {
     setFiles(e) {

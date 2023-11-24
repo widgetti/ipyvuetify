@@ -167,7 +167,9 @@ class FileInput(v.VuetifyTemplate):
 
     color = Unicode(None, allow_none=True).tag(sync=True)
 
-    counter = Union([Bool(), Float(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
+    counter = Union([Bool(), Float(), Unicode()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     counter_size_string = Unicode(None, allow_none=True).tag(sync=True)
 
@@ -183,7 +185,9 @@ class FileInput(v.VuetifyTemplate):
 
     error_count = Union([Float(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
 
-    error_messages = Union([Unicode(), List(Any())], default_value=None, allow_none=True).tag(sync=True)
+    error_messages = Union([Unicode(), List(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     filled = Bool(None, allow_none=True).tag(sync=True)
 
@@ -249,11 +253,15 @@ class FileInput(v.VuetifyTemplate):
 
     success = Bool(None, allow_none=True).tag(sync=True)
 
-    success_messages = Union([Unicode(), List(Any())], default_value=None, allow_none=True).tag(sync=True)
+    success_messages = Union([Unicode(), List(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     suffix = Unicode(None, allow_none=True).tag(sync=True)
 
-    truncate_length = Union([Float(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
+    truncate_length = Union([Float(), Unicode()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
 
     type = Unicode(None, allow_none=True).tag(sync=True)
 
@@ -300,16 +308,23 @@ class FileInput(v.VuetifyTemplate):
 
         attributes = kwargs.setdefault("attributes", {})
         if "accept" in kwargs:
-            warnings.warn("accept argument is deprecated, use attributes dictionary instead", DeprecationWarning)
+            warnings.warn(
+                "accept argument is deprecated, use attributes dictionary instead",
+                DeprecationWarning,
+            )
             attributes["accept"] = kwargs["accept"]
             del kwargs["accept"]
         if "directory" in kwargs:
-            warnings.warn("directory argument is deprecated, use attributes dictionary instead", DeprecationWarning)
+            warnings.warn(
+                "directory argument is deprecated, use attributes dictionary instead",
+                DeprecationWarning,
+            )
             attributes["directory"] = kwargs["directory"]
             del kwargs["directory"]
         if "show_progress" in kwargs:
             warnings.warn(
-                "show_progress argument is deprecated, use v_slots to change the progress slot", DeprecationWarning
+                "show_progress argument is deprecated, use v_slots to change the progress slot",
+                DeprecationWarning,
             )
             del kwargs["show_progress"]
         if "file_info" in kwargs:
@@ -344,24 +359,34 @@ class FileInput(v.VuetifyTemplate):
 
     @property
     def directory(self):
-        warnings.warn("directory is deprecated, use attributes dictionary instead", DeprecationWarning)
+        warnings.warn(
+            "directory is deprecated, use attributes dictionary instead", DeprecationWarning
+        )
         if "directory" in self.attributes:
             return self.attributes["directory"]
         return False
 
     @directory.setter
     def directory(self, value):
-        warnings.warn("directory is deprecated, use attributes dictionary instead", DeprecationWarning)
+        warnings.warn(
+            "directory is deprecated, use attributes dictionary instead", DeprecationWarning
+        )
         self.attributes = {**self.attributes, "directory": value}
 
     @property
     def show_progress(self):
-        warnings.warn("show_progress is deprecated, use v_slots to change the progress slot", DeprecationWarning)
+        warnings.warn(
+            "show_progress is deprecated, use v_slots to change the progress slot",
+            DeprecationWarning,
+        )
         return True
 
     @show_progress.setter
     def show_progress(self, _):
-        warnings.warn("show_progress is deprecated, use v_slots to change the progress slot", DeprecationWarning)
+        warnings.warn(
+            "show_progress is deprecated, use v_slots to change the progress slot",
+            DeprecationWarning,
+        )
 
     @traitlets.observe("v_model")
     def _v_model_changed(self, _):
