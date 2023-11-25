@@ -3,7 +3,6 @@ import copy
 import io
 import os
 import sys
-import warnings
 
 import IPython
 import nest_asyncio
@@ -308,30 +307,17 @@ class FileInput(v.VuetifyTemplate):
 
         attributes = kwargs.setdefault("attributes", {})
         if "accept" in kwargs:
-            warnings.warn(
-                "accept argument is deprecated, use attributes dictionary instead",
-                DeprecationWarning,
-            )
             attributes["accept"] = kwargs["accept"]
             del kwargs["accept"]
         if "directory" in kwargs:
-            warnings.warn(
-                "directory argument is deprecated, use attributes dictionary instead",
-                DeprecationWarning,
-            )
             attributes["directory"] = kwargs["directory"]
             del kwargs["directory"]
         if "show_progress" in kwargs:
-            warnings.warn(
-                "show_progress argument is deprecated, use v_slots to change the progress slot",
-                DeprecationWarning,
-            )
+            kwargs.setdefault("loading", kwargs["show_progress"])
             del kwargs["show_progress"]
         if "file_info" in kwargs:
-            warnings.warn("file_info cannot be set on FileInput")
             del kwargs["file_info"]
         if "v_model" in kwargs:
-            warnings.warn("v_model cannot be set on FileInput")
             del kwargs["v_model"]
 
         # Maintain backwards compatibility for the file_info
@@ -347,46 +333,33 @@ class FileInput(v.VuetifyTemplate):
 
     @property
     def accept(self):
-        warnings.warn("accept is deprecated, use attributes dictionary instead", DeprecationWarning)
         if "accept" in self.attributes:
             return self.attributes["accept"]
         return ""
 
     @accept.setter
     def accept(self, value):
-        warnings.warn("accept is deprecated, use attributes dictionary instead", DeprecationWarning)
         self.attributes = {**self.attributes, "accept": value}
 
     @property
     def directory(self):
-        warnings.warn(
-            "directory is deprecated, use attributes dictionary instead", DeprecationWarning
-        )
         if "directory" in self.attributes:
             return self.attributes["directory"]
         return False
 
     @directory.setter
     def directory(self, value):
-        warnings.warn(
-            "directory is deprecated, use attributes dictionary instead", DeprecationWarning
-        )
         self.attributes = {**self.attributes, "directory": value}
 
     @property
     def show_progress(self):
-        warnings.warn(
-            "show_progress is deprecated, use v_slots to change the progress slot",
-            DeprecationWarning,
-        )
+        if self.loading is not None:
+            return self.loading
         return True
 
     @show_progress.setter
-    def show_progress(self, _):
-        warnings.warn(
-            "show_progress is deprecated, use v_slots to change the progress slot",
-            DeprecationWarning,
-        )
+    def show_progress(self, value):
+        self.loading = value
 
     @traitlets.observe("v_model")
     def _v_model_changed(self, _):
