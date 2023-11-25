@@ -117,11 +117,11 @@ modules.export = {
     setFiles(e) {
       if (!e) {
         this.native_file_info = [];
-        this.v_model = [];
+        this.file_info = [];
         return;
       }
       this.native_file_info = e instanceof File ? [e] : e;
-      this.v_model = this.native_file_info.map(
+      this.file_info = this.native_file_info.map(
         ({ name, size, lastModified, type }) => ({
           name,
           size,
@@ -132,7 +132,7 @@ modules.export = {
     },
     jupyter_clear() {
       this.native_file_info = [];
-      this.v_model = [];
+      this.file_info = [];
     },
     jupyter_read(chunk) {
       const { id, file_index, offset, length } = chunk;

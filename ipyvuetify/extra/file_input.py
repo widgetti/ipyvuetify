@@ -7,7 +7,7 @@ import sys
 import IPython
 import nest_asyncio
 import traitlets
-from ipywidgets import dlink, widget_serialization
+from ipywidgets import widget_serialization
 from traitlets import Any, Bool, Dict, Float, Int, List, Unicode, Union
 
 import ipyvuetify as v
@@ -54,7 +54,7 @@ class ClientSideFile(io.RawIOBase):
         self.timeout = timeout
         self.valid = True
         self.offset = 0
-        self.size = widget.v_model[file_index]["size"]
+        self.size = widget.file_info[file_index]["size"]
 
         self.chunk_queue = []
 
@@ -270,7 +270,7 @@ class FileInput(v.VuetifyTemplate):
 
     # VueWidget props
 
-    v_model = List(Dict(), allow_none=True).tag(sync=True)
+    v_model = List(Dict(), allow_none=True)
 
     style_ = Unicode(None, allow_none=True).tag(sync=True)
 
@@ -286,13 +286,13 @@ class FileInput(v.VuetifyTemplate):
 
     template = Unicode(load_template("file_input.vue")).tag(sync=True)
 
+    file_info = List(Dict(), allow_none=True).tag(sync=True)
+
     version = Int(0).tag(sync=True)
 
     total_progress = Int(0).tag(sync=True)
 
     progress_indeterminate = Bool(False).tag(sync=True)
-
-    file_info = List(Dict(), allow_none=True)  # Deprecated, use v_model instead
 
     total_progress_inner = 0
     total_size_inner = 0
@@ -319,9 +319,6 @@ class FileInput(v.VuetifyTemplate):
             del kwargs["file_info"]
         if "v_model" in kwargs:
             del kwargs["v_model"]
-
-        # Maintain backwards compatibility for the file_info
-        dlink((self, "v_model"), (self, "file_info"))
 
         super().__init__(*args, **kwargs)
 
@@ -361,10 +358,11 @@ class FileInput(v.VuetifyTemplate):
     def show_progress(self, value):
         self.loading = value
 
-    @traitlets.observe("v_model")
-    def _v_model_changed(self, _):
+    @traitlets.observe("file_info")
+    def _file_info_changed(self, _):
         self.version += 1
         self.reset_stats()
+        self.v_model = self.get_files()
 
     def update_stats(self, file_index, bytes_read):
         self.stats[file_index] += bytes_read
@@ -376,8 +374,8 @@ class FileInput(v.VuetifyTemplate):
 
     def get_files(self, timeout=30):
         files = []
-        for index, file in enumerate(self.v_model):
-            file = copy.deepcopy(self.v_model[index])
+        for index, file in enumerate(self.file_info):
+            file = copy.deepcopy(file)
             file["file_obj"] = ClientSideFile(self, index, timeout=timeout)
             files.append(file)
         return files
@@ -387,10 +385,10 @@ class FileInput(v.VuetifyTemplate):
         self.send({"method": "clear", "args": []})
 
     def reset_stats(self):
-        self.stats = [0 for _ in self.v_model]
+        self.stats = [0 for _ in self.file_info]
         self.total_progress = 0
         self.total_progress_inner = 0
-        self.total_size_inner = sum([f["size"] for f in self.v_model])
+        self.total_size_inner = sum([f["size"] for f in self.file_info])
 
     def vue_upload(self, content, buffers):
         listener_id = content["id"]
