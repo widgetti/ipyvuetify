@@ -9,7 +9,9 @@
       <v-progress-linear
         absolute
         :color="
-          loading === true || loading === '' ? color || 'primary' : loading
+          loading === null || loading === true || loading === ''
+            ? color || 'primary'
+            : loading
         "
         :height="loader_height || 4"
         :indeterminate="progress_indeterminate"
@@ -28,6 +30,12 @@ modules.export = {
     this.chunk_size = 2 * 1024 * 1024;
   },
   computed: {
+    defaultLoading: function () {
+      const { total_progress, progress_indeterminate } = this.$data;
+      return (
+        (!progress_indeterminate || total_progress > 0) && total_progress < 100
+      );
+    },
     props: function () {
       const keys = [
         "append_icon",
@@ -104,13 +112,19 @@ modules.export = {
 
       const attributes = this.$data["attributes"] || {};
 
-      return keys.filter(useAsAttr).reduce(
+      const props = keys.filter(useAsAttr).reduce(
         (result, key) => {
           result[key.replace(/_$/g, "").replace(/_/g, "-")] = this.$data[key];
           return result;
         },
         { ...attributes }
       );
+
+      if (!("loading" in props)) {
+        props["loading"] = this.defaultLoading;
+      }
+
+      return props;
     },
   },
   methods: {
