@@ -1,4 +1,5 @@
 import { VueModel as VueWidgetModel } from "jupyter-vue";
+import { version } from "./version";
 
 export class VuetifyWidgetModel extends VueWidgetModel {
   defaults() {
@@ -9,8 +10,8 @@ export class VuetifyWidgetModel extends VueWidgetModel {
         _view_name: "VuetifyView",
         _view_module: "jupyter-vuetify",
         _model_module: "jupyter-vuetify",
-        _view_module_version: "3.0.0-alpha.0",
-        _model_module_version: "3.0.0-alpha.0",
+        _view_module_version: version,
+        _model_module_version: version,
         _metadata: null,
       },
     };
