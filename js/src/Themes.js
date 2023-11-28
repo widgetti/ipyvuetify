@@ -1,5 +1,6 @@
 /* eslint camelcase: off */
 import { WidgetModel } from "@jupyter-widgets/base";
+import { version } from "./version";
 
 export class ThemeModel extends WidgetModel {
   defaults() {
@@ -8,8 +9,8 @@ export class ThemeModel extends WidgetModel {
       ...{
         _model_name: "ThemeModel",
         _model_module: "jupyter-vuetify",
-        _view_module_version: "3.0.0-alpha.0",
-        _model_module_version: "3.0.0-alpha.0",
+        _view_module_version: version,
+        _model_module_version: version,
         dark: null,
         dark_jlab: null,
       },
@@ -32,8 +33,8 @@ export class ThemeColorsModel extends WidgetModel {
       ...{
         _model_name: "ThemeColorsModel",
         _model_module: "jupyter-vuetify",
-        _view_module_version: "3.0.0-alpha.0",
-        _model_module_version: "3.0.0-alpha.0",
+        _view_module_version: version,
+        _model_module_version: version,
         _theme_name: null,
         background: null,
         surface: null,

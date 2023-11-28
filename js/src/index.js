@@ -9,4 +9,4 @@ export { HtmlModel } from "./Html";
 export { VuetifyTemplateModel } from "./VuetifyTemplate";
 export { ThemeModel, ThemeColorsModel } from "./Themes";
 
-export const { version } = require("../package.json"); // eslint-disable-line global-require
+export { version } from "./version";
