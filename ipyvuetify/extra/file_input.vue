@@ -30,8 +30,9 @@ module.exports = {
     this.chunk_size = 2 * 1024 * 1024;
   },
   computed: {
-    defaultLoading: function () {
-      const { total_progress, progress_indeterminate } = this.$data;
+    computedLoadingValue: function () {
+      const total_progress = this.$data["total_progress"];
+      const progress_indeterminate = this.$data["progress_indeterminate"];
       return (
         (!progress_indeterminate || total_progress > 0) && total_progress < 100
       );
@@ -121,7 +122,7 @@ module.exports = {
       );
 
       if (!("loading" in props)) {
-        props["loading"] = this.defaultLoading;
+        props["loading"] = this.computedLoadingValue;
       }
 
       return props;
