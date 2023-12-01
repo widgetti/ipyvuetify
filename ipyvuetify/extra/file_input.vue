@@ -25,7 +25,7 @@
 </template>
 
 <script>
-modules.export = {
+module.exports = {
   created() {
     this.chunk_size = 2 * 1024 * 1024;
   },
