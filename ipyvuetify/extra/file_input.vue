@@ -4,6 +4,7 @@
     :style="style_ || {}"
     v-bind="props"
     @change="setFiles"
+    @click:clear="clear"
   >
     <template v-slot:progress>
       <v-progress-linear
@@ -129,10 +130,13 @@ module.exports = {
     },
   },
   methods: {
+    clear() {
+      this.native_file_info = [];
+      this.file_info = [];
+    },
     setFiles(value) {
       if (!value) {
-        this.native_file_info = [];
-        this.file_info = [];
+        this.clear();
         return;
       }
       this.native_file_info = value instanceof File ? [value] : value;
@@ -146,8 +150,7 @@ module.exports = {
       );
     },
     jupyter_clear() {
-      this.native_file_info = [];
-      this.file_info = [];
+      this.clear();
     },
     jupyter_read(chunk) {
       const { id, file_index, offset, length } = chunk;
