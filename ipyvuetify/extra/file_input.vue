@@ -32,10 +32,9 @@ module.exports = {
   },
   computed: {
     computedLoadingValue: function () {
-      const total_progress = this.$data["total_progress"];
-      const progress_indeterminate = this.$data["progress_indeterminate"];
       return (
-        (!progress_indeterminate || total_progress > 0) && total_progress < 100
+        (!this.progress_indeterminate || this.total_progress > 0) &&
+        this.total_progress < 100
       );
     },
     props: function () {
@@ -112,14 +111,12 @@ module.exports = {
           "class_",
         ].includes(key);
 
-      const attributes = this.$data["attributes"] || {};
-
       const props = keys.filter(useAsAttr).reduce(
         (result, key) => {
           result[key.replace(/_$/g, "").replace(/_/g, "-")] = this.$data[key];
           return result;
         },
-        { ...attributes }
+        { ...(this.attributes || {}) }
       );
 
       if (!("loading" in props)) {
