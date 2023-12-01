@@ -129,13 +129,13 @@ module.exports = {
     },
   },
   methods: {
-    setFiles(e) {
-      if (!e) {
+    setFiles(value) {
+      if (!value) {
         this.native_file_info = [];
         this.file_info = [];
         return;
       }
-      this.native_file_info = e instanceof File ? [e] : e;
+      this.native_file_info = value instanceof File ? [value] : value;
       this.file_info = this.native_file_info.map(
         ({ name, size, lastModified, type }) => ({
           name,
