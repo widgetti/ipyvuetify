@@ -19,8 +19,8 @@
         :value="total_progress"
       />
     </template>
-    <template v-for="slot in v_slots" :key="slot.name" v-slot:[slot.name]>
-      <jupyter-widget :widget="slot.children" />
+    <template v-for="slot in v_slots" v-slot:[slot.name]>
+      <jupyter-widget :key="slot.name" :widget="slot.children" />
     </template>
   </v-file-input>
 </template>
