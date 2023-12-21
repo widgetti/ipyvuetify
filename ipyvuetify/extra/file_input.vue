@@ -28,6 +28,11 @@
 
 <script>
 module.exports = {
+  data() {
+    return {
+      computedLoadingTimeout: null,
+    };
+  },
   created() {
     this.chunk_size = 2 * 1024 * 1024;
   },
@@ -138,6 +143,19 @@ module.exports = {
     input.addEventListener("drop", dropHandler);
     inputSlot.addEventListener("drop", dropHandler);
   },
+  watch: {
+    total_progress: function (value) {
+      if (this.computedLoadingTimeout !== null) {
+        clearTimeout(this.computedLoadingTimeout);
+        this.computedLoadingTimeout = null;
+      }
+      if (value == 100) {
+        this.computedLoadingTimeout = setTimeout(() => {
+          this.computedLoadingTimeout = null;
+        }, 1000);
+      }
+    },
+  },
   computed: {
     webkitdirectory: function () {
       return "webkitdirectory" in (this.attributes || {});
@@ -145,7 +163,7 @@ module.exports = {
     computedLoadingValue: function () {
       return (
         (!this.progress_indeterminate || this.total_progress > 0) &&
-        this.total_progress < 100
+        (this.total_progress < 100 || this.computedLoadingTimeout !== null)
       );
     },
     props: function () {
