@@ -67,10 +67,8 @@ module.exports = {
       }
     });
 
-    // const supportsFileSystemAccessAPI =
-    //   "getAsFileSystemHandle" in DataTransferItem.prototype;
-
-    const supportsFileSystemAccessAPI = false;
+    const supportsFileSystemAccessAPI =
+      "getAsFileSystemHandle" in DataTransferItem.prototype;
 
     const dropHandler = async (e) => {
       if (e.target !== input) e.preventDefault();
@@ -96,7 +94,7 @@ module.exports = {
             (handle) => handle.kind === "directory"
           );
 
-          getFiles = async () => this.getFileList([]); // FIXME: get FileList from FileSystemHandles
+          getFiles = async () => this.getFileList(fileSystemHandles);
         } else {
           const fileSystemEntries = fileDataTransferItems.map((item) =>
             item.webkitGetAsEntry()
@@ -240,7 +238,7 @@ module.exports = {
     },
   },
   methods: {
-    getFileList: async function (fileEntries) {
+    getFileList: async function (fileEntriesOrHandles) {
       async function readDirectoryEntry(directoryEntry) {
         const directoryReader = directoryEntry.createReader();
         const result = [];
@@ -261,24 +259,34 @@ module.exports = {
         return result;
       }
 
-      const entries = [];
-
-      const queue = [...fileEntries];
-
-      while (queue.length > 0) {
-        let entry = queue.shift();
-        if (entry.isFile) {
-          entries.push(entry);
-        } else if (entry.isDirectory) {
-          queue.push(...(await readDirectoryEntry(entry)));
+      async function readDirectoryHandle(directoryHandle) {
+        const result = [];
+        for await (const handle of directoryHandle.values()) {
+          result.push(handle);
         }
+        return result;
       }
 
-      const files = await Promise.all(
-        entries.map(
-          (e) => new Promise((resolve, reject) => e.file(resolve, reject))
-        )
-      );
+      const files = [];
+
+      const queue = [...fileEntriesOrHandles];
+
+      while (queue.length > 0) {
+        let entryOrHandle = queue.shift();
+        if (entryOrHandle.isFile) {
+          const file = await new Promise((resolve, reject) =>
+            entryOrHandle.file(resolve, reject)
+          );
+          files.push(file);
+        } else if (entryOrHandle.isDirectory) {
+          queue.push(...(await readDirectoryEntry(entryOrHandle)));
+        } else if (entryOrHandle.kind === "file") {
+          const file = await entryOrHandle.getFile();
+          if (file !== null) files.push(file);
+        } else if (entryOrHandle.kind === "directory") {
+          queue.push(...(await readDirectoryHandle(entryOrHandle)));
+        }
+      }
 
       const dt = new DataTransfer();
       files.forEach((file) => {
