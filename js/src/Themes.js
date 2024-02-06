@@ -35,7 +35,7 @@ export class ThemeModel extends WidgetModel {
         }
       }, this);
     }
-
+    
     if (this.get("dark") !== null) {
       vuetify.framework.theme.dark = this.get("dark");
     } else if (document.body.dataset.jpThemeLight) {
@@ -50,9 +50,18 @@ export class ThemeModel extends WidgetModel {
     } else if (document.body.classList.contains("theme-light")) {
       this.set("dark", false);
       this.save_changes();
+    } else if(window.Jupyter) {
+      this.set("dark", false);
+      this.save_changes();
+    } else {
+      // e.g. solara
+      let osPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      this.set("dark_jlab", osPrefersDark);
+      this.save_changes();
     }
     this.on("change:dark", () => {
       vuetify.framework.theme.dark = this.get("dark");
+      // TODO: call the same code as in the constructor
     });
   }
 }
