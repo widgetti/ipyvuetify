@@ -13,7 +13,7 @@ export class ThemeModel extends WidgetModel {
         _view_module_version: "0.1.11",
         _model_module_version: "0.1.11",
         dark: null,
-        dark_jlab: null,
+        dark_effective: null,
       },
     };
   }
@@ -28,20 +28,25 @@ export class ThemeModel extends WidgetModel {
     if (ThemeModel.themeManager) {
       ThemeModel.themeManager.themeChanged.connect(() => {
         if (this.get("dark") === null) {
-          vuetify.framework.theme.dark =
-            document.body.dataset.jpThemeLight === "false";
-          this.set("dark_jlab", vuetify.framework.theme.dark);
+          this.set("dark_effective", vuetify.framework.theme.dark);
           this.save_changes();
         }
       }, this);
     }
+    this.setTheme();
 
+    this.on("change:dark", () => {
+      this.setTheme();
+    });
+  }
+
+  setTheme() {
     if (this.get("dark") !== null) {
       vuetify.framework.theme.dark = this.get("dark");
     } else if (document.body.dataset.jpThemeLight) {
       vuetify.framework.theme.dark =
         document.body.dataset.jpThemeLight === "false";
-      this.set("dark_jlab", vuetify.framework.theme.dark);
+      this.set("dark_effective", vuetify.framework.theme.dark);
       this.save_changes();
     } else if (document.body.classList.contains("theme-dark")) {
       vuetify.framework.theme.dark = true;
@@ -50,10 +55,33 @@ export class ThemeModel extends WidgetModel {
     } else if (document.body.classList.contains("theme-light")) {
       this.set("dark", false);
       this.save_changes();
+    } else if (window.Jupyter) {
+      // Special case for Jupyter Notebook
+      this.set("dark", false);
+      this.save_changes();
+    } else if (document.body.dataset.vscodeThemeKind === "vscode-dark") {
+      // Special case for VS Code
+      vuetify.framework.theme.dark = true;
+      this.set("dark", true);
+      this.save_changes();
+    } else if (document.body.dataset.vscodeThemeKind === "vscode-light") {
+      vuetify.framework.theme.dark = false;
+      this.set("dark", false);
+      this.save_changes();
+    } else if ( document.documentElement.matches("[theme=dark]") ) {
+      vuetify.framework.theme.dark = true;
+      this.set("dark_effective", true);
+      this.save_changes();
+    } else if ( document.documentElement.matches("[theme=light]") ) {
+      vuetify.framework.theme.dark = false;
+      this.set("dark_effective", false);
+      this.save_changes();
+    } else {
+      let osPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      vuetify.framework.theme.dark = osPrefersDark;
+      this.set("dark_effective", osPrefersDark);
+      this.save_changes();
     }
-    this.on("change:dark", () => {
-      vuetify.framework.theme.dark = this.get("dark");
-    });
   }
 }
 
