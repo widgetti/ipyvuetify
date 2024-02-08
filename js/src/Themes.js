@@ -68,16 +68,18 @@ export class ThemeModel extends WidgetModel {
       vuetify.framework.theme.dark = false;
       this.set("dark", false);
       this.save_changes();
-    } else if ( document.documentElement.matches("[theme=dark]") ) {
+    } else if (document.documentElement.matches("[theme=dark]")) {
       vuetify.framework.theme.dark = true;
       this.set("dark_effective", true);
       this.save_changes();
-    } else if ( document.documentElement.matches("[theme=light]") ) {
+    } else if (document.documentElement.matches("[theme=light]")) {
       vuetify.framework.theme.dark = false;
       this.set("dark_effective", false);
       this.save_changes();
     } else {
-      let osPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      let osPrefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
       vuetify.framework.theme.dark = osPrefersDark;
       this.set("dark_effective", osPrefersDark);
       this.save_changes();
