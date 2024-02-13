@@ -38,6 +38,10 @@ export class ThemeModel extends WidgetModel {
     this.on("change:dark", () => {
       this.setTheme();
     });
+
+    setInterval(() => {
+      this.vuetifyThemeChange();
+    }, 1000);
   }
 
   setTheme() {
@@ -66,6 +70,17 @@ export class ThemeModel extends WidgetModel {
     }
     this.set("dark_effective", vuetify.framework.theme.dark);
     this.save_changes();
+  }
+
+  vuetifyThemeChange() {
+    if (
+      this.get("dark") !== null &&
+      this.get("dark") !== vuetify.framework.theme.dark
+    ) {
+      this.set("dark", vuetify.framework.theme.dark);
+      this.set("dark_effective", vuetify.framework.theme.dark);
+      this.save_changes();
+    }
   }
 }
 
