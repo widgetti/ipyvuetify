@@ -39,9 +39,14 @@ export class ThemeModel extends WidgetModel {
       this.setTheme();
     });
 
-    setInterval(() => {
-      this.vuetifyThemeChange();
-    }, 1000);
+    new Vue({
+      vuetify,
+      watch: {
+        "$vuetify.theme.dark": (newValue) => {
+          this.vuetifyThemeChange();
+        },
+      },
+    });
   }
 
   setTheme() {
