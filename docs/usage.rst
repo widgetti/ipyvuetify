@@ -375,8 +375,8 @@ The :code:`class` attribute of a Vuetify DOM elements give access to the built-i
         w.class_list.toggle("blue", "red")
         w
         
-Visiblity
-^^^^^^^^^
+Visibility
+^^^^^^^^^^
 
 ipyvuetify widgets visibility can be changed using the built-in methods :code:`hide()` and :code:`show()`.
 Using :code:`hide` will add the :code:`d-none` class to the widget and :code:`show` will remove it, hiding and showing the widget to the end user without removing it from the notebook. 
