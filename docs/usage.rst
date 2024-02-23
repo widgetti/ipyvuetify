@@ -485,6 +485,18 @@ Available theme properties:
 - warning
 - anchor
 
+If :code:`dark` is set to None (the default), we use the setting from Jupyter Lab, VS Code or Google Colab.
+In Jupyter notebook classic, or other unrecognized systems we always use the light theme.
+When running in `Solara server <https://github.com/widgetti/solara/>`_, dark mode is
+determined by how the `Solara server <https://solara.dev/docs/understanding/solara-server>`_ is configured.
+
+In all cases, the `dark_effective` attribute can be used to know if the dark theme is used.
+
+.. code-block:: python
+
+    if v.theme.dark_effective:
+        ...
+
 Summary
 -------
 
