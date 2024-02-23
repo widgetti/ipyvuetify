@@ -136,7 +136,6 @@ jobs:
 
       - name: Publish the NPM package
         run: |
-          cd js
           echo $PRE_RELEASE
           if [[ $PRE_RELEASE == "true" ]]; then export TAG="next"; else export TAG="latest"; fi
           npm publish --tag ${TAG} --access public *.tgz
