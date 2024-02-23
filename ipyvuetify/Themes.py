@@ -40,7 +40,7 @@ class Theme(Widget):
 
     dark = Bool(None, allow_none=True).tag(sync=True)
 
-    dark_jlab = Bool(None, allow_none=True).tag(sync=True)
+    dark_effective = Bool(None, allow_none=True).tag(sync=True)
 
     def __init__(self):
         super().__init__()
