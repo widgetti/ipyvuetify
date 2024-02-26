@@ -83,9 +83,9 @@ export class ThemeModel extends WidgetModel {
       this.get("dark") !== vuetify.framework.theme.dark
     ) {
       this.set("dark", vuetify.framework.theme.dark);
-      this.set("dark_effective", vuetify.framework.theme.dark);
-      this.save_changes();
     }
+    this.set("dark_effective", vuetify.framework.theme.dark);
+    this.save_changes();
   }
 }
 
