@@ -16,8 +16,7 @@ ipyvuetify/generated
 js/src/generated
 
 # Compiled javascript
-ipyvuetify/labextension/
-ipyvuetify/nbextension/
+prefix/share
 js/lib
 
 # Unit test / coverage reports

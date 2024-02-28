@@ -66,7 +66,7 @@
   },
   "jupyterlab": {
     "extension": "lib/labplugin",
-    "outputDir": "../ipyvuetify/labextension",
+    "outputDir": "../prefix/share/jupyter/labextensions/jupyter-vuetify",
     "webpackConfig": "webpack.config.lab3.js",
     "sharedPackages": {
       "@jupyter-widgets/base": {
