@@ -31,8 +31,10 @@ def js_prerelease(command: Command) -> None:
 
         def run(self):
             """Run the command"""
-            NPMPackage(ROOT / "js" / "package.json").install()
+            npm = NPMPackage(ROOT / "js" / "package.json")
+            npm.install()
             generate_source.generate()
+            npm.run_script("build")
             self.distribution.data_files = get_data_files()
             command.run(self)
 

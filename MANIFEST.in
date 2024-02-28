@@ -3,5 +3,3 @@ recursive-include ipyvuetify/nbextension *.*
 recursive-include ipyvuetify/labextension *.*
 include jupyter-vuetify.json
 recursive-include ipyvuetify/extra *.vue
-recursive-include generate_source/ *.*
-recursive-include js/ *.*
