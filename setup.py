@@ -33,7 +33,7 @@ def js_prerelease(command: Command) -> None:
                 from generate_source import generate_source
 
                 npm = NPMPackage(ROOT / "js" / "package.json")
-                npm.install()
+                npm._run_npm("ci")
                 generate_source.generate()
                 npm.run_script("build")
 
