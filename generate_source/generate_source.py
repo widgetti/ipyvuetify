@@ -34,7 +34,7 @@ def generate():
 
     generate_schema(vuetify_api, base_schema, widget_gen_schema)
 
-    NPMPackage(here / "package.json").install()
+    NPMPackage(here / "package.json")._run_npm("ci")
 
     reset_dir(destination_js)
 

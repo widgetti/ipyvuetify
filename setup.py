@@ -8,8 +8,6 @@ from setuptools.command.egg_info import egg_info
 ROOT = Path(__file__).parent
 sys.path.append(str(ROOT))
 
-from generate_source import generate_source  # noqa
-
 
 def update_package_data(distribution) -> None:
     """Update package_data to catch changes during setup"""
@@ -31,8 +29,14 @@ def js_prerelease(command: Command) -> None:
 
         def run(self):
             """Run the command"""
-            NPMPackage(ROOT / "js" / "package.json").install()
-            generate_source.generate()
+            if sys.argv[1] == "sdist" or sys.argv[1] == "dist_info":
+                from generate_source import generate_source
+
+                npm = NPMPackage(ROOT / "js" / "package.json")
+                npm._run_npm("ci")
+                generate_source.generate()
+                npm.run_script("build")
+
             self.distribution.data_files = get_data_files()
             command.run(self)
 
@@ -41,11 +45,14 @@ def js_prerelease(command: Command) -> None:
 
 def get_data_files():
     """files that need to be installed in specific locations upon installation."""
-
-    nbext = [rel(f) for f in ROOT.glob("ipyvuetify/nbextension/*")]
-    package = [rel(f) for f in ROOT.glob("ipyvuetify/labextension/package.json")]
-    labext = [rel(f) for f in ROOT.glob("ipyvuetify/labextension/static/*")]
-    nbconfig = [rel(f) for f in ROOT.glob("jupyter-vuetify.json")]
+    nbext = [rel(f) for f in ROOT.glob("prefix/share/jupyter/nbextensions/jupyter-vuetify/*")]
+    package = [
+        rel(f) for f in ROOT.glob("prefix/share/jupyter/labextensions/jupyter-vuetify/package.json")
+    ]
+    labext = [
+        rel(f) for f in ROOT.glob("prefix/share/jupyter/labextensions/jupyter-vuetify/static/*")
+    ]
+    nbconfig = [rel(f) for f in ROOT.glob("prefix/etc/nbconfig/notebook.d/jupyter-vuetify.json")]
 
     return [
         ("share/jupyter/nbextensions/jupyter-vuetify", nbext),
