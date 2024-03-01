@@ -1,5 +1,6 @@
 /* eslint camelcase: off */
 import { WidgetModel } from "@jupyter-widgets/base";
+import Vue from "vue";
 import colors from "@mariobuikhuizen/vuetify/lib/util/colors";
 import vuetify from "./plugins/vuetify";
 
