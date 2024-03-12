@@ -1,7 +1,6 @@
 import sys
 from pathlib import Path
 
-from pynpm import NPMPackage
 from setuptools import Command, setup
 from setuptools.command.egg_info import egg_info
 
@@ -29,7 +28,9 @@ def js_prerelease(command: Command) -> None:
 
         def run(self):
             """Run the command"""
-            if sys.argv[1] == "sdist" or sys.argv[1] == "dist_info":
+            if not (ROOT / "prefix/share/jupyter/nbextensions/jupyter-vuetify/index.js").exists():
+                from pynpm import NPMPackage
+
                 from generate_source import generate_source
 
                 npm = NPMPackage(ROOT / "js" / "package.json")
