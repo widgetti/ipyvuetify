@@ -11,7 +11,7 @@ from datetime import datetime
 project = "ipyvuetify"
 copyright = f"2019-{datetime.now().year}, Mario Buikhuizen"
 author = "Mario Buikhuizen"
-release = "1.9.1"
+release = "1.9.2"
 
 # -- General configuration ---------------------------------------------------
 
