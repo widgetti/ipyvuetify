@@ -109,7 +109,7 @@ jobs:
 
   release-dry-run:
     needs: [test, ui-test]
-    if: github.repository == 'widgetti/ipyvuetify'
+    if: github.event.pull_request.head.repo.full_name == 'widgetti/ipyvuetify'
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/download-artifact@v3
