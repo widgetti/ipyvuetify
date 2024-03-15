@@ -15,7 +15,7 @@ release = "1.9.2"
 
 # -- General configuration ---------------------------------------------------
 
-extensions = ["jupyter_sphinx"]
+extensions = ["jupyter_sphinx", "sphinx_rtd_theme", "sphinx_design"]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
@@ -49,6 +49,9 @@ html_theme_options = {
             "icon": "fa-brands fa-python",
         },
     ],
+    "logo": {
+        "text": "ipyvuetify",
+    },
 }
 html_context = {
     "github_user": "widgetti",
