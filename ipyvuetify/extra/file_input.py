@@ -7,6 +7,8 @@ import sys
 import IPython
 import nest_asyncio
 import traitlets
+from ipywidgets import widget_serialization
+from traitlets import Any, Bool, Dict, Float, Int, List, Unicode, Union
 
 import ipyvuetify as v
 
@@ -148,26 +150,177 @@ class ClientSideFile(io.RawIOBase):
 
 
 class FileInput(v.VuetifyTemplate):
-    template = traitlets.Unicode(load_template("file_input.vue")).tag(sync=True)
-    data = traitlets.Unicode("{myfiles: undefined}").tag(sync=True)
+    append_icon = Unicode(None, allow_none=True).tag(sync=True)
 
-    file_info = traitlets.List().tag(sync=True)
-    version = traitlets.Int(0).tag(sync=True)
-    multiple = traitlets.Bool(True).tag(sync=True)
-    disabled = traitlets.Bool(False).tag(sync=True)
-    directory = traitlets.Bool(False).tag(sync=True)
-    accept = traitlets.Unicode().tag(sync=True)
-    total_progress = traitlets.Int(0).tag(sync=True)
-    show_progress = traitlets.Bool(True).tag(sync=True)
-    progress_indeterminate = traitlets.Bool(False).tag(sync=True)
+    append_outer_icon = Unicode(None, allow_none=True).tag(sync=True)
+
+    autofocus = Bool(None, allow_none=True).tag(sync=True)
+
+    background_color = Unicode(None, allow_none=True).tag(sync=True)
+
+    chips = Bool(None, allow_none=True).tag(sync=True)
+
+    clear_icon = Unicode(None, allow_none=True).tag(sync=True)
+
+    clearable = Bool(None, allow_none=True).tag(sync=True)
+
+    color = Unicode(None, allow_none=True).tag(sync=True)
+
+    counter = Union([Bool(), Float(), Unicode()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
+
+    counter_size_string = Unicode(None, allow_none=True).tag(sync=True)
+
+    counter_string = Unicode(None, allow_none=True).tag(sync=True)
+
+    dark = Bool(None, allow_none=True).tag(sync=True)
+
+    dense = Bool(None, allow_none=True).tag(sync=True)
+
+    disabled = Bool(None, allow_none=True).tag(sync=True)
+
+    error = Bool(None, allow_none=True).tag(sync=True)
+
+    error_count = Union([Float(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
+
+    error_messages = Union([Unicode(), List(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
+
+    filled = Bool(None, allow_none=True).tag(sync=True)
+
+    flat = Bool(None, allow_none=True).tag(sync=True)
+
+    full_width = Bool(None, allow_none=True).tag(sync=True)
+
+    height = Union([Float(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
+
+    hide_details = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
+
+    # Missing Vuetify prop: hide-input
+
+    hint = Unicode(None, allow_none=True).tag(sync=True)
+
+    id = Unicode(None, allow_none=True).tag(sync=True)
+
+    label = Unicode(None, allow_none=True).tag(sync=True)
+
+    light = Bool(None, allow_none=True).tag(sync=True)
+
+    loader_height = Union([Float(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
+
+    loading = Union([Bool(), Unicode()], default_value=None, allow_none=True).tag(sync=True)
+
+    messages = Union([Unicode(), List(Any())], default_value=None, allow_none=True).tag(sync=True)
+
+    multiple = Bool(None, allow_none=True).tag(sync=True)
+
+    outlined = Bool(None, allow_none=True).tag(sync=True)
+
+    persistent_hint = Bool(None, allow_none=True).tag(sync=True)
+
+    # Missing Vuetify prop: persistent-placeholder
+
+    placeholder = Unicode(None, allow_none=True).tag(sync=True)
+
+    prefix = Unicode(None, allow_none=True).tag(sync=True)
+
+    prepend_icon = Unicode(None, allow_none=True).tag(sync=True)
+
+    prepend_inner_icon = Unicode(None, allow_none=True).tag(sync=True)
+
+    readonly = Bool(None, allow_none=True).tag(sync=True)
+
+    reverse = Bool(None, allow_none=True).tag(sync=True)
+
+    rounded = Bool(None, allow_none=True).tag(sync=True)
+
+    rules = List(Any(), default_value=None, allow_none=True).tag(sync=True)
+
+    shaped = Bool(None, allow_none=True).tag(sync=True)
+
+    show_size = Union([Bool(), Float()], default_value=None, allow_none=True).tag(sync=True)
+
+    single_line = Bool(None, allow_none=True).tag(sync=True)
+
+    small_chips = Bool(None, allow_none=True).tag(sync=True)
+
+    solo = Bool(None, allow_none=True).tag(sync=True)
+
+    solo_inverted = Bool(None, allow_none=True).tag(sync=True)
+
+    success = Bool(None, allow_none=True).tag(sync=True)
+
+    success_messages = Union([Unicode(), List(Any())], default_value=None, allow_none=True).tag(
+        sync=True
+    )
+
+    suffix = Unicode(None, allow_none=True).tag(sync=True)
+
+    truncate_length = Union([Float(), Unicode()], default_value=None, allow_none=True).tag(
+        sync=True
+    )
+
+    type = Unicode(None, allow_none=True).tag(sync=True)
+
+    validate_on_blur = Bool(None, allow_none=True).tag(sync=True)
+
+    value = Any(None, allow_none=True).tag(sync=True)
+
+    # VueWidget props
+
+    v_model = List(Dict(), allow_none=True)
+
+    style_ = Unicode(None, allow_none=True).tag(sync=True)
+
+    class_ = Unicode(None, allow_none=True).tag(sync=True)
+
+    attributes = Dict(None, allow_none=True).tag(sync=True)
+
+    v_slots = List(Dict()).tag(sync=True, **widget_serialization)
+
+    v_on = Unicode(None, allow_none=True).tag(sync=True)
+
+    # Component-specific props
+
+    template = Unicode(load_template("file_input.vue")).tag(sync=True)
+
+    file_info = List(Dict(), allow_none=True).tag(sync=True)
+
+    version = Int(0).tag(sync=True)
+
+    total_progress = Int(0).tag(sync=True)
+
+    progress_indeterminate = Bool(False).tag(sync=True)
 
     total_progress_inner = 0
     total_size_inner = 0
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         self.chunk_listeners = {}
         self.stats = []
-        super().__init__(**kwargs)
+
+        # Keep default behaviour
+        kwargs.setdefault("multiple", True)
+        kwargs.setdefault("clearable", True)
+
+        attributes = kwargs.setdefault("attributes", {})
+        if "accept" in kwargs:
+            attributes["accept"] = kwargs["accept"]
+            del kwargs["accept"]
+        if "directory" in kwargs:
+            attributes["directory"] = kwargs["directory"]
+            del kwargs["directory"]
+        if "show_progress" in kwargs:
+            kwargs.setdefault("loading", kwargs["show_progress"])
+            del kwargs["show_progress"]
+        if "file_info" in kwargs:
+            del kwargs["file_info"]
+        if "v_model" in kwargs:
+            del kwargs["v_model"]
+
+        super().__init__(*args, **kwargs)
 
         if not hasattr(IPython.get_ipython(), "kernel"):
             return
@@ -175,10 +328,41 @@ class FileInput(v.VuetifyTemplate):
         if kernel.implementation == "ipython":
             nest_asyncio.apply()
 
+    @property
+    def accept(self):
+        if "accept" in self.attributes:
+            return self.attributes["accept"]
+        return ""
+
+    @accept.setter
+    def accept(self, value):
+        self.attributes = {**self.attributes, "accept": value}
+
+    @property
+    def directory(self):
+        if "directory" in self.attributes:
+            return self.attributes["directory"]
+        return False
+
+    @directory.setter
+    def directory(self, value):
+        self.attributes = {**self.attributes, "directory": value}
+
+    @property
+    def show_progress(self):
+        if self.loading is not None:
+            return self.loading
+        return True
+
+    @show_progress.setter
+    def show_progress(self, value):
+        self.loading = value
+
     @traitlets.observe("file_info")
     def _file_info_changed(self, _):
         self.version += 1
         self.reset_stats()
+        self.v_model = self.get_files()
 
     def update_stats(self, file_index, bytes_read):
         self.stats[file_index] += bytes_read
@@ -191,7 +375,7 @@ class FileInput(v.VuetifyTemplate):
     def get_files(self, timeout=30):
         files = []
         for index, file in enumerate(self.file_info):
-            file = copy.deepcopy(self.file_info[index])
+            file = copy.deepcopy(file)
             file["file_obj"] = ClientSideFile(self, index, timeout=timeout)
             files.append(file)
         return files
