@@ -29,8 +29,7 @@ export class ThemeModel extends WidgetModel {
     if (ThemeModel.themeManager) {
       ThemeModel.themeManager.themeChanged.connect(() => {
         if (this.get("dark") === null) {
-          this.set("dark_effective", vuetify.framework.theme.dark);
-          this.save_changes();
+          this.setTheme();
         }
       }, this);
     }
