@@ -149,7 +149,7 @@ jobs:
 
   release:
     if: startsWith(github.event.ref, 'refs/tags/v')
-    needs: [release-dry-run]
+    needs: [test, ui-test]
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/download-artifact@v3
