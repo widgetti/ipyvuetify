@@ -5,7 +5,14 @@ import os
 import sys
 
 import IPython
-import nest_asyncio
+
+try:
+    import nest_asyncio
+
+    has_nest_asyncio = True
+except ModuleNotFoundError:
+    has_nest_asyncio = False
+
 import traitlets
 
 import ipyvuetify as v
@@ -140,6 +147,23 @@ class ClientSideFile(io.RawIOBase):
                 self.widget.update_stats(self.file_index, chunk_size)
                 await process_messages()
 
+        def has_event_loop():
+            try:
+                asyncio.get_event_loop()
+                return True
+            except RuntimeError:
+                return False
+
+        if has_event_loop():
+            # we already have an event loop in this thread, so to be able to call asyncio.run(...)
+            # while also receiving messages from the frontend, we need to use nest_asyncio
+            if not has_nest_asyncio:
+                raise RuntimeError(
+                    "nest_asyncio is required for FileInput when an event loop is already running in the current thread, "
+                    "please run 'pip install nest_asyncio'."
+                )
+            else:
+                nest_asyncio.apply()
         asyncio.run(read_all())
         return size
 
@@ -168,12 +192,6 @@ class FileInput(v.VuetifyTemplate):
         self.chunk_listeners = {}
         self.stats = []
         super().__init__(**kwargs)
-
-        if not hasattr(IPython.get_ipython(), "kernel"):
-            return
-        kernel = IPython.get_ipython().kernel
-        if kernel.implementation == "ipython":
-            nest_asyncio.apply()
 
     @traitlets.observe("file_info")
     def _file_info_changed(self, _):
