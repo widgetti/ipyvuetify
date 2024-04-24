@@ -8,7 +8,7 @@
 [![Black badge](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![conventional commit](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-Jupyter widgets based on [vuetify UI components](https://vuetifyjs.com/) which implement Google's
+Jupyter widgets based on [vuetify UI components](https://v2.vuetifyjs.com/) which implement Google's
 [Material Design Spec](https://material.io/) with the [Vue.js framework](https://vuejs.org/).
 
 A small selection of widgets:
@@ -43,7 +43,7 @@ https://ipyvuetify.readthedocs.io/
 
 For examples see the [example notebook](examples/Examples.ipynb).
 
-The [Vuetify documentation](https://vuetifyjs.com/components/buttons#buttons) can be used to find all available
+The [Vuetify documentation](https://v2.vuetifyjs.com/components/buttons#buttons) can be used to find all available
 components and attributes (in the left side bar or use the search field). Ipyvuetify tries to stay close to the Vue.js
 and Vuetify template syntax, but there are some differences:
 
