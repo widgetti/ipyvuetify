@@ -39,7 +39,7 @@
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
-    "@jupyterlab/builder": "^3",
+    "@jupyterlab/builder": "^3 || ^4",
     "ajv": "^6.10.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
@@ -54,8 +54,8 @@
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
-    "@jupyter-widgets/base": "^1 || ^2 || ^3 || ^4",
-    "@jupyterlab/apputils": "^2 || ^3",
+    "@jupyter-widgets/base": "^1 || ^2 || ^3 || ^4 || ^6",
+    "@jupyterlab/apputils": "^2 || ^3 || ^4",
     "@mariobuikhuizen/vuetify": "2.2.26-rc.0",
     "@mdi/font": "^4.9.95",
     "core-js": "^3.0.1",
