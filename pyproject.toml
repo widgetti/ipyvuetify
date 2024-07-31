@@ -46,7 +46,8 @@ doc = [
     "jupyter-sphinx",
     "ipykernel",
     "pydata-sphinx-theme",
-    "sphinx-design"
+    "sphinx-design",
+    "sphinx_rtd_theme",
 ]
 
 [tool.setuptools]
