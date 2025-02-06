@@ -5,3 +5,4 @@ import "@mariobuikhuizen/vuetify/dist/vuetify.min.css";
 Vue.use(Vuetify);
 
 export default new Vuetify();
+export { Vue, Vuetify };

@@ -4,7 +4,7 @@ html {
   font-size: 16px;
 }
 
-.vuetify-styles div.v-application--wrap {
+:where(.vuetify-styles) div.v-application--wrap {
   /* disable min-height: 100vh set by vuetify */
   min-height: unset;
 }
