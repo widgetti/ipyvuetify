@@ -40,7 +40,7 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 dev = ["nox", "pre-commit", "mypy"]
-test = ["pytest", "pytest-playwright", "nbformat<5.10", "jupyterlab<4", "solara[pytest]"]
+test = ["pytest", "pytest-playwright<0.6", "nbformat<5.10", "jupyterlab<4", "solara[pytest]"]
 doc = [
     "sphinx<7",
     "jupyter-sphinx",
