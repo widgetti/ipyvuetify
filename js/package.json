@@ -59,7 +59,7 @@
   "dependencies": {
     "@jupyter-widgets/base": "^1 || ^2 || ^3 || ^4 || ^6",
     "@jupyterlab/apputils": "^2 || ^3 || ^4",
-    "@mariobuikhuizen/vuetify": "^2.2.26-rc.1",
+    "@mariobuikhuizen/vuetify": "2.2.26-rc.1",
     "@mdi/font": "^7.4.47",
     "core-js": "^3.0.1",
     "jupyter-vue": "^1.11.2",
