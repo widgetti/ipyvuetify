@@ -1,13 +1,14 @@
 var path = require("path");
 var version = require("./package.json").version;
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // Custom webpack rules are generally the same for all webpack bundles, hence
 // stored in a separate local variable.
 var rules = [
-  { test: /\.css$/, use: ["style-loader", "css-loader"] },
+  { test: /\.css$/, use: ["style-loader", "css-loader", "postcss-loader"] },
   {
     test: /\.(woff|woff2|eot|ttf|otf)$/,
-    loader: "file-loader",
+    type: "asset/resource",
   },
 ];
 
@@ -171,8 +172,23 @@ module.exports = [
     },
     devtool: "source-map",
     module: {
-      rules: rules,
+      rules: [
+        {
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          type: "asset/resource",
+        },
+      ],
     },
+    // we extract the CSS to a separate file, since we might want to import it separately for global use
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: "jupyter-vuetify.min.css",
+      }),
+    ],
     externals: ["@jupyter-widgets/base", "@jupyterlab/apputils", "jupyter-vue"],
     resolve: {
       alias: {
