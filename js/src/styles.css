@@ -1,6 +1,4 @@
 html {
-  /* TODO: prevent scopify of prefixing this */
-
   /* font sizes in vuetify are in rem units. To get the correct font size, the html tag has to have a font size of 
      * 16px */
   font-size: 16px;
