@@ -59,7 +59,7 @@
     "@jupyterlab/apputils": "^2 || ^3 || ^4",
     "@mdi/font": "^7.2.96",
     "core-js": "^3.0.1",
-    "jupyter-vue": "^1.0.0",
+    "jupyter-vue": "^3.0.0-alpha.4",
     "lodash": "^4.17.11",
     "material-design-icons-iconfont": "^5.0.1",
     "typeface-roboto": "^1.1.13",
