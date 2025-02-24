@@ -32,6 +32,7 @@
     "watch:webpack": "webpack --mode development --watch",
     "watch": "run-p watch:*",
     "clean": "rimraf lib/ dist/",
+    "build": "run-s build:*",
     "prepare": "run-s build:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
