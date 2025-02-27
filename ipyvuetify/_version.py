@@ -1,2 +1,2 @@
-__version__ = "1.11.0"
+__version__ = "1.11.1"
 semver = "^" + __version__
