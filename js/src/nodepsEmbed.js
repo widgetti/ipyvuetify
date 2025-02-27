@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./ipyvuetify-styles.css";
 
 export { VuetifyView } from "./VuetifyView";
 export * from "./Widgets";
