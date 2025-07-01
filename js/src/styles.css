@@ -21,3 +21,8 @@ html {
   /* From _reset.scss */
   box-sizing: border-box;
 }
+
+/* fix for override from jp-ThemedContainer button */
+button.v-btn--rounded {
+  border-radius: 28px;
+}
