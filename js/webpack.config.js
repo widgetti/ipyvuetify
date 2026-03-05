@@ -96,6 +96,11 @@ module.exports = [
     module: {
       rules: rules,
     },
+    resolve: {
+      alias: {
+        vue$: path.resolve(__dirname, "lib", "vue_alias"),
+      },
+    },
     externals: [
       "@jupyter-widgets/base",
       "@jupyterlab/apputils",
@@ -118,6 +123,11 @@ module.exports = [
     devtool: "source-map",
     module: {
       rules: rules,
+    },
+    resolve: {
+      alias: {
+        vue$: path.resolve(__dirname, "lib", "vue_alias"),
+      },
     },
     externals: [
       "@jupyter-widgets/base",
