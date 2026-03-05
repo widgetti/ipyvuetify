@@ -61,6 +61,8 @@ jobs:
   test:
     needs: [lint, build]
     runs-on: ubuntu-22.04
+    env:
+      GH_TOKEN: ${{ github.token }}
     strategy:
       fail-fast: false
       matrix:
@@ -75,16 +77,17 @@ jobs:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
         run: |
-          pip install jupyter_core jupyter-packaging "jupyterlab<4"
           mkdir -p /tmp/ipyvue-wheel
           gh release download vue3-dev --repo widgetti/ipyvue --pattern "*.whl" --dir /tmp/ipyvue-wheel --clobber
-          python -m pip install /tmp/ipyvue-wheel/*.whl "$(find dist -name '*.whl')"
+          python -m pip install jupyter_core jupyter-packaging "jupyterlab<4" /tmp/ipyvue-wheel/*.whl "$(find dist -name '*.whl')"
       - name: test import
         run: (mkdir test-install; cd test-install; python -c "from ipyvuetify import Btn")
 
   ui-test:
     needs: [lint, build]
     runs-on: ubuntu-22.04
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -95,10 +98,9 @@ jobs:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
         run: |
-          pip install jupyter_core jupyter-packaging "jupyterlab<4"
           mkdir -p /tmp/ipyvue-wheel
           gh release download vue3-dev --repo widgetti/ipyvue --pattern "*.whl" --dir /tmp/ipyvue-wheel --clobber
-          python -m pip install /tmp/ipyvue-wheel/*.whl "$(find dist -name '*.whl')[test]"
+          python -m pip install jupyter_core jupyter-packaging "jupyterlab<4" /tmp/ipyvue-wheel/*.whl "$(find dist -name '*.whl')[test]"
       - name: Install chromium
         run: playwright install chromium
       - name: Run ui-tests
