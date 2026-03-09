@@ -9,8 +9,11 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  PKG_URL: https://nbg1.your-objectstorage.com/ipyvue3-packages/packages
+
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   lint:
@@ -55,6 +58,24 @@ jobs:
             ./dist
             ./js/*.tgz
 
+      - name: Publish dev artifacts to object storage
+        if: github.event_name == 'push' && github.ref == 'refs/heads/vuetify3'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          AWS_REGION: nbg1
+          AWS_ENDPOINT_URL_S3: https://nbg1.your-objectstorage.com
+          S3_BUCKET: ipyvue3-packages
+        run: |
+          python -m pip install --upgrade awscli
+
+          aws s3 cp dist/ "s3://${S3_BUCKET}/packages/ipyvuetify/" \
+            --recursive \
+            --exclude "*" \
+            --include "*.whl" \
+            --endpoint-url "$AWS_ENDPOINT_URL_S3" \
+            --region "$AWS_REGION"
+
       - name: Upload components
         uses: actions/upload-artifact@v4
         with:
@@ -96,7 +117,11 @@ jobs:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
         run: |
-          python -m pip install jupyter_core jupyter-packaging "jupyterlab<4" "$(find dist -name '*.whl')[test]"
+          python -m pip install jupyter_core jupyter-packaging "jupyterlab<4" "$(find dist -name '*.whl')"
+          python -m pip install pytest "pytest-playwright<0.6"
+          python -m pip install "solara-ui[all] @ ${PKG_URL}/solara/solara_ui-1.57.3-py3-none-any.whl"
+          python -m pip install "solara-server[starlette,dev] @ ${PKG_URL}/solara-server/solara_server-1.57.3-py3-none-any.whl"
+          python -m pip install "pytest-ipywidgets[all] @ ${PKG_URL}/pytest-ipywidgets/pytest_ipywidgets-1.57.3-py3-none-any.whl"
       - name: Install chromium
         run: playwright install chromium
       - name: Run ui-tests
@@ -107,22 +132,6 @@ jobs:
         with:
           name: ipyvuetify-test-results
           path: test-results
-
-  release-vue3-dev:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/vuetify3'
-    needs: [lint, test, ui-test]
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: ipyvuetify-dist-${{ github.run_number }}
-
-      - name: Create or update vue3-dev release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release view vue3-dev --repo "${{ github.repository }}" || gh release create vue3-dev --repo "${{ github.repository }}" --title "vue3-dev" --notes "Auto-updated Vue 3 dev builds" --prerelease --target "${{ github.sha }}"
-          gh release upload vue3-dev dist/*.whl js/*.tgz --repo "${{ github.repository }}" --clobber
 
   release-dry-run:
     needs: [test]
