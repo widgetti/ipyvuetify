@@ -120,7 +120,7 @@ jobs:
           python -m pip install jupyter_core jupyter-packaging "jupyterlab<4" "$(find dist -name '*.whl')"
           python -m pip install pytest "pytest-playwright<0.6"
           python -m pip install "solara-ui[all] @ ${PKG_URL}/solara/solara_ui-1.57.3-py3-none-any.whl"
-          python -m pip install "solara-server[starlette,dev] @ ${PKG_URL}/solara-server/solara_server-1.57.3-py3-none-any.whl"
+          python -m pip install "starlette<1" "solara-server[starlette,dev] @ ${PKG_URL}/solara-server/solara_server-1.57.3-py3-none-any.whl"
           python -m pip install "pytest-ipywidgets[all] @ ${PKG_URL}/pytest-ipywidgets/pytest_ipywidgets-1.57.3-py3-none-any.whl"
       - name: Install chromium
         run: playwright install chromium
