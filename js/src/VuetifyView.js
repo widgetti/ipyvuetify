@@ -2,13 +2,32 @@ import * as Vue from "vue"; // eslint-disable-line import/no-extraneous-dependen
 import { VueView, createViewContext, vueRender } from "jupyter-vue";
 import "vuetify/styles";
 import colors from "vuetify/lib/util/colors.mjs";
-import { createVuetify, useTheme } from "vuetify";
+import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 import { VDataTable } from "vuetify/labs/VDataTable";
 import { ThemeColorsModel, ThemeModel } from "./Themes";
 
-const observer = new MutationObserver((mutationList, observer) => {
+// Every widget view gets its own Vue app, but all views for one widget manager
+// should share a single Vuetify plugin and theme state.
+const managerStateByWidgetManager = new WeakMap();
+
+function getManagerState(widgetManager) {
+  let managerState = managerStateByWidgetManager.get(widgetManager);
+  if (!managerState) {
+    managerState = {
+      themeInitialized: false,
+      vuetify: createVuetify({
+        components: { ...components, VDataTable },
+        directives,
+      }),
+    };
+    managerStateByWidgetManager.set(widgetManager, managerState);
+  }
+  return managerState;
+}
+
+const observer = new MutationObserver((mutationList) => {
   for (const mutation of mutationList) {
     if (mutation.type === "childList") {
       const overlay = document.querySelector(".v-overlay-container");
@@ -26,10 +45,7 @@ observer.observe(document.body, { childList: true });
 export class VuetifyView extends VueView {
   addPlugins(vueApp) {
     super.addPlugins(vueApp);
-    const vuetify = createVuetify({
-      components: { ...components, VDataTable },
-      directives,
-    });
+    const { vuetify } = getManagerState(this.model.widget_manager);
     this.el.classList.add("vuetify-styles");
     document.querySelector("html").style.fontSize = "16px";
     vueApp.use(vuetify);
@@ -73,67 +89,75 @@ export class VuetifyView extends VueView {
     if (!this.themeModel) {
       return;
     }
-    this.theme = useTheme();
-
-    if (ThemeModel.themeManager) {
-      const setAutoTheme = () => {
-        if (this.themeModel.get("dark") === null) {
-          const isDark = document.body.dataset.jpThemeLight === "false";
-          this.theme.global.name.value = isDark ? "dark" : "light";
-          this.themeModel.set("dark_jlab", isDark);
-          this.themeModel.save_changes();
-        }
-      };
-      ThemeModel.themeManager.themeChanged.connect(() => {
-        setAutoTheme();
-      }, this);
-      setAutoTheme();
+    const managerState = getManagerState(this.model.widget_manager);
+    if (!managerState.themeInitialized) {
+      initializeTheme(
+        managerState,
+        this.themeModel,
+        this.themeLightModel,
+        this.themeDarkModel
+      );
     }
-
-    const onDark = () => {
-      this.theme.global.name.value = this.themeModel.get("dark")
-        ? "dark"
-        : "light";
-    };
-
-    const onColorsLight = () => {
-      this.theme.themes.value.light.colors = getColors(this.themeLightModel);
-    };
-    onColorsLight();
-
-    const onColorsDark = () => {
-      this.theme.themes.value.dark.colors = getColors(this.themeDarkModel);
-    };
-    onColorsDark();
-
-    if (this.themeModel.get("dark") !== null) {
-      onDark();
-    } else if (document.body.dataset.jpThemeLight) {
-      const isDark = document.body.dataset.jpThemeLight === "false";
-      this.theme.global.name.value = isDark ? "dark" : "light";
-      this.themeModel.set("dark_jlab", isDark);
-      this.themeModel.save_changes();
-    } else if (document.body.classList.contains("theme-dark")) {
-      this.theme.global.name.value = "dark";
-      this.themeModel.set("dark", true);
-      this.themeModel.save_changes();
-    } else if (document.body.classList.contains("theme-light")) {
-      this.themeModel.set("dark", false);
-      this.themeModel.save_changes();
-    }
-
-    Vue.onMounted(() => {
-      this.themeModel.on("change:dark", onDark);
-      this.themeLightModel.on("change", onColorsLight);
-      this.themeDarkModel.on("change", onColorsDark);
-    });
-
-    Vue.onUnmounted(() => {
-      this.themeModel.off("change:dark", onDark);
-      this.themeLightModel.off("change", onColorsLight);
-      this.themeDarkModel.off("change", onColorsDark);
-    });
   }
+}
+
+function initializeTheme(
+  managerState,
+  themeModel,
+  themeLightModel,
+  themeDarkModel
+) {
+  const theme = managerState.vuetify.theme;
+
+  if (ThemeModel.themeManager) {
+    const setAutoTheme = () => {
+      if (themeModel.get("dark") === null) {
+        const isDark = document.body.dataset.jpThemeLight === "false";
+        theme.global.name.value = isDark ? "dark" : "light";
+        themeModel.set("dark_jlab", isDark);
+        themeModel.save_changes();
+      }
+    };
+    ThemeModel.themeManager.themeChanged.connect(() => {
+      setAutoTheme();
+    });
+    setAutoTheme();
+  }
+
+  const onDark = () => {
+    theme.global.name.value = themeModel.get("dark") ? "dark" : "light";
+  };
+
+  const onColorsLight = () => {
+    theme.themes.value.light.colors = getColors(themeLightModel);
+  };
+  onColorsLight();
+
+  const onColorsDark = () => {
+    theme.themes.value.dark.colors = getColors(themeDarkModel);
+  };
+  onColorsDark();
+
+  if (themeModel.get("dark") !== null) {
+    onDark();
+  } else if (document.body.dataset.jpThemeLight) {
+    const isDark = document.body.dataset.jpThemeLight === "false";
+    theme.global.name.value = isDark ? "dark" : "light";
+    themeModel.set("dark_jlab", isDark);
+    themeModel.save_changes();
+  } else if (document.body.classList.contains("theme-dark")) {
+    theme.global.name.value = "dark";
+    themeModel.set("dark", true);
+    themeModel.save_changes();
+  } else if (document.body.classList.contains("theme-light")) {
+    themeModel.set("dark", false);
+    themeModel.save_changes();
+  }
+
+  themeModel.on("change:dark", onDark);
+  themeLightModel.on("change", onColorsLight);
+  themeDarkModel.on("change", onColorsDark);
+  managerState.themeInitialized = true;
 }
 
 function parseColor(colorStr) {
