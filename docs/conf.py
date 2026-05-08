@@ -15,7 +15,7 @@ release = "1.11.3"
 
 # -- General configuration ---------------------------------------------------
 
-extensions = ["jupyter_sphinx", "sphinx_rtd_theme", "sphinx_design"]
+extensions = ["jupyter_sphinx", "sphinx_design"]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
@@ -24,6 +24,9 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
+html_sidebars = {
+    "**": [],
+}
 
 # -- Theme configuration -----------------------------------------------------
 
@@ -34,8 +37,6 @@ html_theme_options = {
     "secondary_sidebar_items": [
         "page-toc.html",
         "searchbox.html",
-        "edit-this-page.html",
-        "sourcelink.html",
     ],
     "icon_links": [
         {

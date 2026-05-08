@@ -30,11 +30,11 @@ Attributes can be changed at a later time by:
     'Banana')`, are not detected by ipywidgets.
 
 What widgets are available and how they look can be found in the
-`Vuetify documentation <https://v2.vuetifyjs.com/components/selects/>`_. Browse the side bar on the left hand side and
-select a widget, then click <> on the right hand side on an example to see the source code for it. The HTML code may
+`Vuetify documentation <https://v2.vuetifyjs.com/components/selects/>`_. Browse the sidebar on the left-hand side and
+select a widget, then click <> on the right-hand side on an example to see the source code for it. The HTML code may
 seem unfamiliar at first, but this documentation will guide you through it. For starters to translate the Vuetify widget
 names, which are starting with :code:`v-`, to ipyvuetify, remove the :code:`v-` prefix and CamelCase the remaining
-name. E.g :code:`v-select` becomes :code:`Select` and :code:`v-list-item` becomes :code:`ListItem`.
+name. For example, :code:`v-select` becomes :code:`Select` and :code:`v-list-item` becomes :code:`ListItem`.
 
 Equivalent Vuetify syntax of the example above:
 
@@ -78,7 +78,7 @@ ipyvuetify:
 
     v.Select(clearable=True, label='Fruits', items=['Apple', 'Pear', 'Cherry'], value='Apple')
 
-Some attribute have naming conflicts with Python or ipywidgets. These are :code:`for`, :code:`open`, :code:`class` and
+Some attributes have naming conflicts with Python or ipywidgets. These are :code:`for`, :code:`open`, :code:`class` and
 :code:`style` and must be suffixed with an underscore. For example :code:`style` becomes :code:`style_`
 
 Vuetify:
@@ -101,7 +101,7 @@ see an example of this. To look at how that variable is initialized you select t
 If it's an expression it's mostly used to set a List or a Dict, as is done with :code:`items` in the examples above.
 This can be the same in ipyvuetify.
 
-for non-vuetify related attributes, the ones from the HTML tag, can be accessed through the :code:`attributes` trait.
+For non-vuetify related attributes, the ones from the HTML tag, can be accessed through the :code:`attributes` trait.
 
 Vuetify: 
 
@@ -256,7 +256,7 @@ All `HTML events <https://www.w3schools.com/tags/ref_eventattributes.asp>`_ can 
 omitted.
 
 Widgets can have custom events, to find out which, the `Vuetify API explorer
-<https://v2.vuetifyjs.com/components/api-explorer/>`_ can be used. Search for a component and on the left-hand side of list
+<https://v2.vuetifyjs.com/components/api-explorer/>`_ can be used. Search for a component and on the left-hand side of the list
 of attributes you will find a tab for the events.
 
 In Vuetify events are defined as attributes with an :code:`@` prefix. The equivalent Vuetify syntax of the example above
@@ -341,7 +341,7 @@ And colors:
 ClassList attribute
 ^^^^^^^^^^^^^^^^^^^
 
-The :code:`class` attribute of a Vuetify DOM elements give access to the built-in styles of the lib. See the `vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to know more about available styling class. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
+The :code:`class` attribute of Vuetify DOM elements gives access to the built-in styles of the library. See the `Vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to learn more about available styling classes. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
 
 -   :code:`add(*args)`: add class elements to the class\_ trait of the widget
     
@@ -378,7 +378,7 @@ The :code:`class` attribute of a Vuetify DOM elements give access to the built-i
 Visibility
 ^^^^^^^^^^
 
-ipyvuetify widgets visibility can be changed using the built-in methods :code:`hide()` and :code:`show()`.
+ipyvuetify widget visibility can be changed using the built-in methods :code:`hide()` and :code:`show()`.
 Using :code:`hide` will add the :code:`d-none` class to the widget and :code:`show` will remove it, hiding and showing the widget to the end user without removing it from the notebook. 
 
 .. jupyter-execute::
@@ -505,11 +505,11 @@ translation from Vuetify examples to ipyvuetify.
 
 - Component names convert to CamelCase and the v- prefix is stripped
 
-  +------------+------------------------+
-  | Vuetify    | ``<v-list-tile .../>`` |
-  +------------+------------------------+
-  | ipyvuetify | ``ListTitle(...)``     |
-  +------------+------------------------+
+  +------------+------------------------------+
+  | Vuetify    | ``<v-list-item-title .../>`` |
+  +------------+------------------------------+
+  | ipyvuetify | ``ListItemTitle(...)``       |
+  +------------+------------------------------+
 
 - Attributes
 
@@ -523,11 +523,11 @@ translation from Vuetify examples to ipyvuetify.
 
   - must have a value
 
-    +------------+------------------------+
-    | Vuetify    | ``<v-btn round ...``   |
-    +------------+------------------------+
-    | ipyvuetify | ``Btn(round=True ...`` |
-    +------------+------------------------+
+    +------------+--------------------------+
+    | Vuetify    | ``<v-btn rounded ...``   |
+    +------------+--------------------------+
+    | ipyvuetify | ``Btn(rounded=True ...`` |
+    +------------+--------------------------+
 
   - with naming conflicts, ``style``, ``class``, ``open`` and ``for``, are suffixed with an ``_``
 
@@ -565,7 +565,7 @@ translation from Vuetify examples to ipyvuetify.
   |            | ``button.on_event('click', some_method)``  |
   +------------+--------------------------------------------+
 
-- Regular HTML tags can made with the Html widget
+- Regular HTML tags can be made with the Html widget
 
   +------------+-------------------------------------+
   | Vuetify    | ``<div>...</div>``                  |
