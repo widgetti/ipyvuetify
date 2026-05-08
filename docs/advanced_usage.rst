@@ -7,7 +7,7 @@ Advanced Usage
 Slots are used to add content at a certain location in a widget. You can find out what slots a widget supports by using
 the Vuetify documentation. If you want to know what slots :code:`Select` has, search for :code:`v-select` on the
 `Vuetify API explorer <https://v2.vuetifyjs.com/components/api-explorer/>`_ or for this example use the `direct link
-<https://v2.vuetifyjs.com/en/components/selects/#api>`_. On the left-hand side of list of attributes you will find a tab
+<https://v2.vuetifyjs.com/en/components/selects/#api>`_. On the left-hand side of the list of attributes you will find a tab
 'slots'.
 
 An example for using the slot 'no-data', which changes what the Select widget shows when it has no items:
@@ -101,7 +101,7 @@ exposes it as the 'on' variable.
 Responsive Layout
 -----------------
 
-When making dashbords with Voilà you can change the layout depending on the users screen size. This is done with a `grid
+When making dashboards with Voilà you can change the layout depending on the user's screen size. This is done with a `grid
 system <https://v2.vuetifyjs.com/en/components/grids/>`_. For example on a laptop (breakpoint md) you could fit two
 elements next to each other while on a smartphone (defined with 'cols' as default) you would want one element to take up
 the full width:

@@ -18,14 +18,16 @@ Using conda
 Jupyter Lab
 -----------
 
-If you're using only the classic notebook, you're done. If you're using Jupyter Lab, the extension has to be installed
-in Jupyter Lab:
+If you're using the classic notebook or JupyterLab 3 and later, you're done after installing the Python package.
+The JupyterLab extension is included in the ``ipyvuetify`` package.
+
+For JupyterLab 1 and 2, install the JupyterLab extension separately:
 
 .. code-block:: bash
 
     $ jupyter labextension install jupyter-vuetify
 
 .. note::
-    ipyvuetify depends on ipywidgets being installed in Jupyter Lab, see the `ipywidgets documentation
-    <https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension>`_ on how to do
-    that.
+    ipyvuetify depends on ipywidgets being available in JupyterLab. If widgets do not display, see the
+    `ipywidgets installation documentation
+    <https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-in-jupyterlab-3-x>`_.

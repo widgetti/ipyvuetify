@@ -55,7 +55,6 @@ doc = [
     "ipykernel",
     "pydata-sphinx-theme",
     "sphinx-design",
-    "sphinx_rtd_theme",
 ]
 
 [tool.setuptools]

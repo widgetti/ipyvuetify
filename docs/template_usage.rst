@@ -5,7 +5,7 @@ First template
 --------------
 
 When building larger UI's it may be convenient to write composite widgets using
-the Vue template syntax. Lets start with a basic example:
+the Vue template syntax. Let's start with a basic example:
 
 .. jupyter-execute::
 
@@ -87,7 +87,7 @@ Template in vue files
 
 Although a powerful feature, programming Vue templates in a string is quite
 cumbersome, since you lose syntax highlighting and other advanced editor
-features. Instead, we can put out Vue template into a ``.vue`` file, and point
+features. Instead, we can put our Vue template into a ``.vue`` file, and point
 our VuetifyTemplate to it.
 
 
@@ -150,7 +150,7 @@ A demonstration in a screen capture:
 
 
 .. note::
-    For this feature we require the watchdog packages. Install it using ``pip install "watchdog>=2.0"`` or ``conda install -c conda-forge "watchdog>=2.0"``
+    For this feature we require the watchdog package. Install it using ``pip install "watchdog>=2.0"`` or ``conda install -c conda-forge "watchdog>=2.0"``
 
 Embed ipywidgets
 ----------------

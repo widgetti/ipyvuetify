@@ -1,11 +1,11 @@
 Introduction
 ============
 
-Ipyvuetify is a widget library for making modern looking GUI's in Jupyter notebooks (classic and lab) and dashboards
+Ipyvuetify is a widget library for making modern-looking GUIs in Jupyter notebooks (classic and lab) and dashboards
 (`Voilà <https://voila.readthedocs.io/en/stable/using.html>`_). It's based on the `Google material design philosophy
 <https://material.io/design/introduction>`_ best known from the Android user interface.
 
-A large set of widgets is provided with many widgets having multiple variants. a few of which are displayed below.
+A large set of widgets is provided, with many widgets having multiple variants. A few of them are displayed below.
 
 .. TODO: fix CSS collisions with rtd_theme
 
@@ -20,7 +20,7 @@ the standard widget library of Jupyter, ipyvuetify has a lot more widgets which 
 composable at the expense of a bit more verbosity in the source code.
 
 Ipyvuetify uses the machinery of `ipywidgets <https://ipywidgets.readthedocs.io/en/stable/examples/Widget%20Basics.html>`_
-as a base, but has different conventions for the API. This is mainly due to the fact the Python API is generated from
+as a base, but has different conventions for the API. This is mainly because the Python API is generated from
 the JavaScript library it is based on: `Vuetify <https://v2.vuetifyjs.com/>`_. This exposes the full power of Vuetify and
 allows us to rely on the extensive documentation and examples of it. Generating code and relying on documentation from
 the underlying library allowed us to expose a lot of widgets to Jupyter in a relatively short amount of time.
