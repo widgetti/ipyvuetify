@@ -8009,6 +8009,8 @@ def _VuetifyTemplate(
     events: list = [],
     layout: Union[Dict[str, Any], Element[ipywidgets.widgets.widget_layout.Layout]] = {},
     methods: str = None,
+    scoped: bool = None,
+    scoped_css_support: bool = False,
     tabbable: bool = None,
     template: typing.Union[Element[ipyvue.Template], str] = None,
     tooltip: str = None,
