@@ -172,14 +172,14 @@ function parseColor(colorStr) {
 }
 
 function getColors(colorModel) {
-  return _.mapKeys(
-    _.mapValues(
-      _.pickBy(
-        { ...colorModel.attributes },
-        (v, k) => !k.startsWith("_") && k !== "accent" && k !== "anchor"
-      ),
-      (v) => (v.startsWith("colors.") ? parseColor(v) : v)
-    ),
-    (v, k) => k.replace(/_/g, "-")
+  return Object.fromEntries(
+    Object.entries(colorModel.attributes)
+      .filter(
+        ([key]) => !key.startsWith("_") && key !== "accent" && key !== "anchor"
+      )
+      .map(([key, value]) => [
+        key.replace(/_/g, "-"),
+        value.startsWith("colors.") ? parseColor(value) : value,
+      ])
   );
 }

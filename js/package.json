@@ -29,6 +29,7 @@
     "build:labextension": "jupyter labextension build .",
     "watch:labextension": "jupyter labextension watch .",
     "build:webpack": "webpack",
+    "build:docs": "npm run build:babel && webpack --config webpack.config.docs.js",
     "watch:webpack": "webpack --mode development --watch",
     "watch": "run-p watch:*",
     "clean": "rimraf lib/ dist/",

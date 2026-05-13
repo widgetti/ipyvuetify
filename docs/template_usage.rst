@@ -76,7 +76,7 @@ available using the normal wrapped Vuetify widgets:
     fruits
 
 In this example we make use of the `list rendering feature of Vue
-<https://vuejs.org/v2/guide/list.html/>`_ so that we only have to synchronize a
+<https://vuejs.org/guide/essentials/list.html>`_ so that we only have to synchronize a
 list of strings, and not create a widget for every fruit we want to display.
 
 .. note::
@@ -95,7 +95,7 @@ our VuetifyTemplate to it.
 Vuetify template ``fruit-selector.vue``:
 
 .. literalinclude:: fruit-selector.vue
-    :language: html
+    :language: vue
 
 
 Python:
@@ -128,8 +128,8 @@ Python:
 In this example we demonstrate a few new features:
 
     * ``vue_add_fruit_python`` can be used as an event handler from the Vue template (exposed without the ``vue_`` prefix)
-    * Vue `Methods <https://vuejs.org/v2/api/#methods>`_.
-    * `Computed properties and watches <https://vuejs.org/v2/guide/computed.html>`_.
+    * Vue `methods <https://vuejs.org/api/options-state.html#methods>`_.
+    * `Computed properties <https://vuejs.org/api/options-state.html#computed>`_ and `watchers <https://vuejs.org/api/options-state.html#watch>`_.
 
 Hot reloading
 -------------

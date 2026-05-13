@@ -16,6 +16,7 @@ var rules = [
 
 module.exports = [
   {
+    name: "extension",
     // Notebook extension
     //
     // This bundle only contains the part of the JavaScript that is run on
@@ -41,6 +42,7 @@ module.exports = [
     mode: "production",
   },
   {
+    name: "notebook",
     // Bundle for the notebook containing the custom widget views and models
     //
     // This bundle contains the implementation for the custom widget views and
@@ -78,6 +80,7 @@ module.exports = [
     },
   },
   {
+    name: "nodeps-notebook",
     entry: "./lib/nodeps.js",
     output: {
       filename: "nodeps.js",
@@ -113,6 +116,7 @@ module.exports = [
     mode: "production",
   },
   {
+    name: "nodeps-embed",
     entry: "./lib/nodepsEmbed.js",
     output: {
       filename: "nodeps.js",
@@ -141,6 +145,7 @@ module.exports = [
     mode: "production",
   },
   {
+    name: "embed",
     // Embeddable jupyter-vuetify bundle
     //
     // This bundle is generally almost identical to the notebook bundle

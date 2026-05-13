@@ -17,5 +17,13 @@ def lint(session):
 @nox.session(reuse_venv=True)
 def docs(session):
     """Build the documentation."""
+    session.chdir("js")
+    session.run("npm", "ci", "--ignore-scripts", external=True)
+    session.run("npm", "run", "build:docs", external=True)
+    session.chdir("..")
+    session.run("mkdir", "-p", "prefix/share/jupyter/nbextensions/jupyter-vuetify", external=True)
+    session.run(
+        "touch", "prefix/share/jupyter/nbextensions/jupyter-vuetify/index.js", external=True
+    )
     session.install(".[doc]")
     session.run("sphinx-build", "-v", "-b", "html", "docs", "docs/_build/html")
