@@ -5,8 +5,8 @@ import colors from "vuetify/lib/util/colors.mjs";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
-import { VDataTable } from "vuetify/labs/VDataTable";
 import { ThemeColorsModel, ThemeModel } from "./Themes";
+import { addApp } from "./VuetifyApp";
 
 // Every widget view gets its own Vue app, but all views for one widget manager
 // should share a single Vuetify plugin and theme state.
@@ -18,7 +18,7 @@ function getManagerState(widgetManager) {
     managerState = {
       themeInitialized: false,
       vuetify: createVuetify({
-        components: { ...components, VDataTable },
+        components,
         directives,
       }),
     };
@@ -49,6 +49,7 @@ export class VuetifyView extends VueView {
     this.el.classList.add("vuetify-styles");
     document.querySelector("html").style.fontSize = "16px";
     vueApp.use(vuetify);
+    addApp(vueApp);
   }
 
   async beforeViewRender() {
