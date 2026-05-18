@@ -1,9 +1,10 @@
-import "./styles.css";
+import "./ipyvuetify-styles.css";
 
 export { VuetifyView } from "./VuetifyView";
-export * from "./generated";
+export * from "./Widgets";
 export { HtmlModel } from "./Html";
 export { VuetifyTemplateModel } from "./VuetifyTemplate";
 export { ThemeModel, ThemeColorsModel } from "./Themes";
+export { addApp } from "./VuetifyApp";
 
-export const { version } = require("../package.json"); // eslint-disable-line global-require
+export { version } from "./version";

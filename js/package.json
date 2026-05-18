@@ -1,6 +1,6 @@
 {
   "name": "jupyter-vuetify",
-  "version": "1.11.3",
+  "version": "3.0.0-alpha.3",
   "description": "Jupyter widgets based on vuetify UI components",
   "license": "MIT",
   "author": "Mario Buikhuizen, Maarten Breddels",
@@ -29,10 +29,12 @@
     "build:labextension": "jupyter labextension build .",
     "watch:labextension": "jupyter labextension watch .",
     "build:webpack": "webpack",
+    "build:docs": "npm run build:babel && webpack --config webpack.config.docs.js",
     "watch:webpack": "webpack --mode development --watch",
     "watch": "run-p watch:*",
     "clean": "rimraf lib/ dist/",
     "build": "run-s build:*",
+    "prepare": "run-s build:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -41,30 +43,27 @@
     "@babel/preset-env": "^7.4.4",
     "@jupyterlab/builder": "^3 || ^4",
     "ajv": "^6.10.0",
-    "autoprefixer": "^10.4.20",
-    "css-loader": "^7.1.2",
+    "autoprefixer": "^10.4.16",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-vue": "^5.2.2",
     "npm-run-all": "^4.1.5",
-    "postcss-loader": "^8.1.1",
+    "postcss-loader": "^7.3.3",
     "postcss-scopify": "^1.0.0",
     "rimraf": "^2.6.3",
-    "style-loader": "^4.0.0",
-    "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1"
+    "webpack": "^5"
   },
   "dependencies": {
     "@jupyter-widgets/base": "^1 || ^2 || ^3 || ^4 || ^6",
     "@jupyterlab/apputils": "^2 || ^3 || ^4",
-    "@mariobuikhuizen/vuetify": "2.2.26-rc.1",
-    "@mdi/font": "^4.9.95",
+    "@mdi/font": "^7.2.96",
     "core-js": "^3.0.1",
-    "jupyter-vue": "^1.11.2",
+    "jupyter-vue": "^3.0.0-alpha.4",
     "lodash": "^4.17.11",
     "material-design-icons-iconfont": "^5.0.1",
-    "typeface-roboto": "^1.1.13"
+    "typeface-roboto": "^1.1.13",
+    "vuetify": "^3.3.17"
   },
   "jupyterlab": {
     "extension": "lib/labplugin",

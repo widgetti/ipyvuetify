@@ -9,9 +9,15 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  PKG_URL: https://nbg1.your-objectstorage.com/ipyvue3-packages/packages
+
+permissions:
+  contents: read
+
 jobs:
   lint:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -20,23 +26,20 @@ jobs:
       - uses: pre-commit/action@v3.0.1
 
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-      # https://github.com/webpack/webpack/issues/14532
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
-      - name: install build
-        run: python -m pip install build
-
+          node-version: 18.x
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "reacton[generate]" ipyvue
+          pip install "reacton[generate]" ipyvue "jupyterlab<4"  build
+
       - name: build wheel
         run: python -m build
 
@@ -45,7 +48,6 @@ jobs:
           cp ipyvuetify/components.py ipyvuetify/components-previous.py
           python -m ipyvuetify.components
           diff ipyvuetify/components.py ipyvuetify/components-previous.py
-
       - name: Package js
         run: (cd js && npm pack)
       - name: Upload build artifacts
@@ -56,6 +58,27 @@ jobs:
             ./dist
             ./js/*.tgz
 
+      - name: Publish dev artifacts to object storage
+        if: >
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.ref == 'vuetify3' &&
+          github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          AWS_REGION: nbg1
+          AWS_ENDPOINT_URL_S3: https://nbg1.your-objectstorage.com
+          S3_BUCKET: ipyvue3-packages
+        run: |
+          python -m pip install --upgrade awscli
+
+          aws s3 cp dist/ "s3://${S3_BUCKET}/packages/ipyvuetify/" \
+            --recursive \
+            --exclude "*" \
+            --include "*.whl" \
+            --endpoint-url "$AWS_ENDPOINT_URL_S3" \
+            --region "$AWS_REGION"
+
       - name: Upload components
         uses: actions/upload-artifact@v4
         with:
@@ -65,11 +88,11 @@ jobs:
 
   test:
     needs: [lint, build]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11"]
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -79,13 +102,14 @@ jobs:
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
-        run: python -m pip install "$(find dist -name *.whl)"
+        run: |
+          python -m pip install jupyter_core jupyter-packaging "jupyterlab<4" "$(find dist -name '*.whl')"
       - name: test import
         run: (mkdir test-install; cd test-install; python -c "from ipyvuetify import Btn")
 
   ui-test:
     needs: [lint, build]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -95,11 +119,16 @@ jobs:
         with:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
-        run: python -m pip install "$(find dist -name *.whl)[test]"
+        run: |
+          python -m pip install jupyter_core jupyter-packaging "jupyterlab<4" "$(find dist -name '*.whl')"
+          python -m pip install pytest "pytest-playwright<0.6"
+          python -m pip install "solara-ui[all] @ ${PKG_URL}/solara/solara_ui-1.57.3-py3-none-any.whl"
+          python -m pip install "starlette<1" "solara-server[starlette,dev] @ ${PKG_URL}/solara-server/solara_server-1.57.3-py3-none-any.whl"
+          python -m pip install "pytest-ipywidgets[all] @ ${PKG_URL}/pytest-ipywidgets/pytest_ipywidgets-1.57.3-py3-none-any.whl"
       - name: Install chromium
         run: playwright install chromium
       - name: Run ui-tests
-        run: pytest tests/ui/ --video=retain-on-failure --solara-update-snapshots-ci -s
+        run: pytest tests/ui/ --video=retain-on-failure -s
       - name: Upload Test artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -108,9 +137,8 @@ jobs:
           path: test-results
 
   release-dry-run:
-    needs: [test, ui-test]
-    if: github.event.pull_request.head.repo.full_name == 'widgetti/ipyvuetify'
-    runs-on: ubuntu-24.04
+    needs: [test]
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -119,38 +147,24 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: "18.x"
           registry-url: "https://registry.npmjs.org"
-
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.8
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install twine
-
-      - name: Publish the Python package
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
-        run: twine upload --skip-existing --repository testpypi dist/*
-
+      #      No --dry-run available for twine
+      #      - name: Publish the Python package
       - name: Publish the NPM package
         run: |
           cd js
           echo $PRE_RELEASE
           if [[ $PRE_RELEASE == "true" ]]; then export TAG="next"; else export TAG="latest"; fi
-          npm publish --dry-run  --tag ${TAG}  --access public *.tgz
+          npm publish --dry-run --tag ${TAG} --access public *.tgz
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           PRE_RELEASE: ${{ github.event.release.prerelease }}
 
   release:
     if: startsWith(github.event.ref, 'refs/tags/v')
-    needs: [test, ui-test]
-    runs-on: ubuntu-24.04
+    needs: [release-dry-run]
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -159,7 +173,7 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: "18.x"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Python

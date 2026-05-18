@@ -1,2 +1,2 @@
-__version__ = "1.11.3"
-semver = "^" + __version__
+__version__ = "3.0.0.alpha3"
+semver = "3.0.0-alpha.3"

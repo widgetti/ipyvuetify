@@ -30,7 +30,7 @@ Attributes can be changed at a later time by:
     'Banana')`, are not detected by ipywidgets.
 
 What widgets are available and how they look can be found in the
-`Vuetify documentation <https://v2.vuetifyjs.com/components/selects/>`_. Browse the sidebar on the left-hand side and
+`Vuetify documentation <https://vuetifyjs.com/en/components/selects/>`_. Browse the sidebar on the left-hand side and
 select a widget, then click <> on the right-hand side on an example to see the source code for it. The HTML code may
 seem unfamiliar at first, but this documentation will guide you through it. For starters to translate the Vuetify widget
 names, which are starting with :code:`v-`, to ipyvuetify, remove the :code:`v-` prefix and CamelCase the remaining
@@ -38,7 +38,7 @@ name. For example, :code:`v-select` becomes :code:`Select` and :code:`v-list-ite
 
 Equivalent Vuetify syntax of the example above:
 
-.. code-block:: html
+.. code-block:: vue
 
     <v-select label="Fruits" :items="['Apple', 'Pear', 'Cherry']" />
 
@@ -70,13 +70,13 @@ Vuetify:
 
 .. code-block:: html
 
-    <v-select clearable label="Fruits" :items="['Apple', 'Pear', 'Cherry']" value="Apple" />
+    <v-select clearable label="Fruits" :items="['Apple', 'Pear', 'Cherry']" v-model="fruit" />
 
 ipyvuetify:
 
 .. jupyter-execute::
 
-    v.Select(clearable=True, label='Fruits', items=['Apple', 'Pear', 'Cherry'], value='Apple')
+    v.Select(clearable=True, label='Fruits', items=['Apple', 'Pear', 'Cherry'], v_model='Apple')
 
 Some attributes have naming conflicts with Python or ipywidgets. These are :code:`for`, :code:`open`, :code:`class` and
 :code:`style` and must be suffixed with an underscore. For example :code:`style` becomes :code:`style_`
@@ -107,7 +107,7 @@ Vuetify:
 
 .. code-block:: html 
 
-    <v-btn class="ma-2" outlined href="file.pdf" download>
+    <v-btn class="ma-2" variant="outlined" href="file.pdf" download>
         Download PDF
     </v-btn>
     
@@ -117,7 +117,7 @@ ipyvuetify:
 
     v.Btn(
         class_="ma-2", 
-        outlined=True, 
+        variant="outlined",
         href="file.pdf", 
         attributes={"download": True}, 
         children=["Download PDF"]
@@ -163,10 +163,6 @@ ipyvuetify:
         color_display
     ])
 
-.. note::
-    ipyvuetify widgets have a :code:`value` attribute, but that's only used for setting the value, it will not change on
-    interactions with the widget.
-
 The children attribute
 ----------------------
 
@@ -200,7 +196,7 @@ Vuetify:
 
     <v-container>
         <v-btn color="primary">
-            <v-icon left>
+            <v-icon start>
                 mdi-email-edit-outline
             </v-icon>
             Click me
@@ -213,7 +209,7 @@ ipyvuetify:
 
     v.Container(children=[
         v.Btn(color='primary', children=[
-            v.Icon(left=True, children=[
+            v.Icon(start=True, children=[
                 'mdi-email-edit-outline'
             ]),
             'Click me'
@@ -256,13 +252,13 @@ All `HTML events <https://www.w3schools.com/tags/ref_eventattributes.asp>`_ can 
 omitted.
 
 Widgets can have custom events, to find out which, the `Vuetify API explorer
-<https://v2.vuetifyjs.com/components/api-explorer/>`_ can be used. Search for a component and on the left-hand side of the list
+<https://vuetifyjs.com/en/api/>`_ can be used. Search for a component and in the list
 of attributes you will find a tab for the events.
 
 In Vuetify events are defined as attributes with an :code:`@` prefix. The equivalent Vuetify syntax of the example above
 is:
 
-.. code-block:: html
+.. code-block:: vue
 
     <v-container>
         <v-btn color="primary" @click="on_click">
@@ -310,7 +306,7 @@ properties can be set by separating them with a semicolon :code:`;`.
     v.Select(label='Fruit', style_='width: 75px; opacity: 0.7')
 
 With the :code:`class_` attribute predefined Vuetify styles can be set. Predefined styles of note are
-`spacing <https://v2.vuetifyjs.com/styles/spacing/>`__ and `colors <https://v2.vuetifyjs.com/styles/colors/>`__. More can be
+`spacing <https://vuetifyjs.com/en/styles/spacing/>`__ and `colors <https://vuetifyjs.com/en/styles/colors/>`__. More can be
 found in the section 'Styles and animations' of the Vuetify documentation. Multiple classes can be applied by separating
 them with a space.
 
@@ -335,13 +331,13 @@ And colors:
 .. jupyter-execute::
 
     v.Container(children=[
-        v.Btn(class_=f'mx-2 indigo lighten-{i+1}', children=[f'Button {i}']) for i in range(3)
+        v.Btn(class_=f'mx-2 bg-indigo-lighten-{i+1}', children=[f'Button {i}']) for i in range(3)
     ])
     
 ClassList attribute
 ^^^^^^^^^^^^^^^^^^^
 
-The :code:`class` attribute of Vuetify DOM elements gives access to the built-in styles of the library. See the `Vuetify site <https://v2.vuetifyjs.com/en/styles/colors/>`__ to learn more about available styling classes. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
+The :code:`class` attribute of Vuetify DOM elements gives access to the built-in styles of the library. See the `Vuetify site <https://vuetifyjs.com/en/styles/colors/>`__ to learn more about available styling classes. As mentioned in the previous section this can be set using the :code:`class_` member of the widget. In addition, ipyvuetify provides a :code:`class_list` member that works the same way as the `MDN classList property <https://developer.mozilla.org/en-US/docs/Web/API/Element/classList>`__. It embeds the following methods:
 
 -   :code:`add(*args)`: add class elements to the class\_ trait of the widget
     
@@ -416,7 +412,7 @@ In ipywidgets you would layout a grid of widgets with HBox and VBox.
     ])
 
 This can be done in ipyvuetify with the help of some classes described in
-`flex helpers <https://v2.vuetifyjs.com/styles/flex/>`_.
+`flex helpers <https://vuetifyjs.com/en/styles/flex/>`_.
 
 .. jupyter-execute::
 
@@ -466,7 +462,7 @@ To customize the themes:
     v.theme.themes.dark.primary = '#a71c1c'
 
 
-Also, the `pre-defined material colors <https://v2.vuetifyjs.com/en/styles/colors/#sass-color-pack>`_  are supported:
+Also, the `pre-defined material colors <https://vuetifyjs.com/en/styles/colors/>`_ are supported:
 
 .. code-block:: python
 
@@ -478,16 +474,18 @@ Available theme properties:
 
 - primary
 - secondary
-- accent
 - error
 - info
 - success
 - warning
-- anchor
+- background
+- surface
+- surface_variant
+- on_surface_variant
 
 If :code:`dark` is set to None (the default), we use the setting from Jupyter Lab, VS Code or Google Colab.
 In Jupyter notebook classic, or other unrecognized systems we always use the light theme.
-When running in `Solara server <https://github.com/widgetti/solara/>`_, dark mode is
+When running in `Solara <https://github.com/widgetti/solara/>`_, dark mode is
 determined by how the `Solara server <https://solara.dev/docs/understanding/solara-server>`_ is configured.
 
 In all cases, the `dark_effective` attribute can be used to know if the dark theme is used.
@@ -515,11 +513,11 @@ translation from Vuetify examples to ipyvuetify.
 
   - convert to snake_case
 
-    +------------+----------------------------+
-    | Vuetify    | ``<v-menu offset-y ...``   |
-    +------------+----------------------------+
-    | ipyvuetify | ``Menu(offset_y=True ...`` |
-    +------------+----------------------------+
+    +------------+--------------------------------------+
+    | Vuetify    | ``<v-select hide-details ...``       |
+    +------------+--------------------------------------+
+    | ipyvuetify | ``Select(hide_details=True ...``     |
+    +------------+--------------------------------------+
 
   - must have a value
 

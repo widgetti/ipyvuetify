@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ipyvuetify"
-version = "1.11.3"
+version = "3.0.0.alpha3"
 description="Jupyter widgets based on vuetify UI components"
 requires-python = ">=3.6"
-dependencies = ["ipyvue>=1.7,<2"]
+dependencies = ["ipyvue @ https://nbg1.your-objectstorage.com/ipyvue3-packages/packages/ipyvue/ipyvue-3.0.0a5-py2.py3-none-any.whl"]
 keywords=["ipython", "jupyter", "widgets"]
 authors = [
     {name = "Mario Buikhuizen", email = "mbuikhuizen@gmail.com"},
@@ -26,6 +26,8 @@ classifiers=[
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 
 [project.urls]
