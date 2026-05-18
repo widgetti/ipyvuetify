@@ -1,4 +1,3 @@
-import * as Vue from "vue"; // eslint-disable-line import/no-extraneous-dependencies
 import { VueView, createViewContext, vueRender } from "jupyter-vue";
 import "vuetify/styles";
 import colors from "vuetify/lib/util/colors.mjs";
@@ -74,16 +73,18 @@ export class VuetifyView extends VueView {
     this.setupTheme();
   }
 
-  /* used in pages using nodeps */
-  vueRender() {
-    return Vue.h({
+  /** @override */
+  vueComponent() {
+    const view = this;
+    return {
       provide: {
-        viewCtx: createViewContext(this),
+        viewCtx: createViewContext(view),
       },
-      render: () => {
-        return vueRender(this.model, this);
+      setup: () => {
+        view.onSetup();
+        return () => vueRender(view.model, view);
       },
-    });
+    };
   }
 
   setupTheme() {
