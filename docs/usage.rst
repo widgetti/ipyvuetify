@@ -473,15 +473,39 @@ Also, the `pre-defined material colors <https://vuetifyjs.com/en/styles/colors/>
 Available theme properties:
 
 - primary
+- primary_darken_1
 - secondary
+- secondary_darken_1
 - error
 - info
 - success
 - warning
 - background
 - surface
+- surface_bright
 - surface_variant
 - on_surface_variant
+
+Additional named colors can be added with :code:`custom_theme_colors`. These
+colors are passed to Vuetify in the same theme colors object as the built-in
+colors, so they can be used by Vuetify components and are also available as
+CSS variables named :code:`--v-theme-<name>`.
+
+.. code-block:: python
+
+    v.theme.themes.light.custom_theme_colors = {
+        'viewer_toolbar': '#205f76',
+    }
+
+    v.theme.themes.dark.custom_theme_colors = {
+        'viewer_toolbar': '#153a4b',
+    }
+
+.. code-block:: css
+
+    .viewer-toolbar {
+        background-color: rgb(var(--v-theme-viewer_toolbar));
+    }
 
 If :code:`dark` is set to None (the default), we use the setting from Jupyter Lab, VS Code or Google Colab.
 In Jupyter notebook classic, or other unrecognized systems we always use the light theme.

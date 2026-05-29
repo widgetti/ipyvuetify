@@ -1,5 +1,5 @@
 from ipywidgets import Widget
-from traitlets import Bool, Unicode
+from traitlets import Bool, Dict, Unicode
 
 from ._version import semver
 
@@ -95,6 +95,7 @@ class ThemeColors(Widget):
     info = Unicode().tag(sync=True)
     success = Unicode().tag(sync=True)
     warning = Unicode().tag(sync=True)
+    custom_theme_colors = Dict(default_value={}).tag(sync=True)
 
 
 theme = Theme()

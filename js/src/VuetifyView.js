@@ -15,7 +15,7 @@ function getManagerState(widgetManager) {
   let managerState = managerStateByWidgetManager.get(widgetManager);
   if (!managerState) {
     managerState = {
-      themeInitialized: false,
+      initializedThemes: new WeakSet(),
       vuetify: createVuetify({
         components,
         directives,
@@ -70,7 +70,7 @@ export class VuetifyView extends VueView {
 
   onSetup() {
     super.onSetup();
-    this.setupTheme();
+    this.setupTheme(Vue.getCurrentInstance());
   }
 
   /** @override */
@@ -87,30 +87,32 @@ export class VuetifyView extends VueView {
     };
   }
 
-  setupTheme() {
+  setupTheme(vueInstance) {
     if (!this.themeModel) {
       return;
     }
     const managerState = getManagerState(this.model.widget_manager);
-    if (!managerState.themeInitialized) {
+    const theme = getVuetifyTheme(vueInstance, managerState);
+    if (!managerState.initializedThemes.has(theme)) {
       initializeTheme(
-        managerState,
+        theme,
         this.themeModel,
         this.themeLightModel,
         this.themeDarkModel
       );
+      managerState.initializedThemes.add(theme);
     }
   }
 }
 
-function initializeTheme(
-  managerState,
-  themeModel,
-  themeLightModel,
-  themeDarkModel
-) {
-  const theme = managerState.vuetify.theme;
+function getVuetifyTheme(vueInstance, managerState) {
+  return (
+    vueInstance?.appContext?.config?.globalProperties?.$vuetify?.theme ||
+    managerState.vuetify.theme
+  );
+}
 
+function initializeTheme(theme, themeModel, themeLightModel, themeDarkModel) {
   if (ThemeModel.themeManager) {
     const setAutoTheme = () => {
       if (themeModel.get("dark") === null) {
@@ -131,12 +133,12 @@ function initializeTheme(
   };
 
   const onColorsLight = () => {
-    theme.themes.value.light.colors = getColors(themeLightModel);
+    mergeThemeColors(theme, "light", getColors(themeLightModel));
   };
   onColorsLight();
 
   const onColorsDark = () => {
-    theme.themes.value.dark.colors = getColors(themeDarkModel);
+    mergeThemeColors(theme, "dark", getColors(themeDarkModel));
   };
   onColorsDark();
 
@@ -159,7 +161,14 @@ function initializeTheme(
   themeModel.on("change:dark", onDark);
   themeLightModel.on("change", onColorsLight);
   themeDarkModel.on("change", onColorsDark);
-  managerState.themeInitialized = true;
+}
+
+function mergeThemeColors(theme, themeName, colors) {
+  const themeConfig = theme.themes.value[themeName];
+  themeConfig.colors = {
+    ...(themeConfig.colors || {}),
+    ...colors,
+  };
 }
 
 function parseColor(colorStr) {
@@ -174,14 +183,20 @@ function parseColor(colorStr) {
 }
 
 function getColors(colorModel) {
-  return Object.fromEntries(
+  const colors = Object.fromEntries(
     Object.entries(colorModel.attributes)
       .filter(
-        ([key]) => !key.startsWith("_") && key !== "accent" && key !== "anchor"
+        ([key]) =>
+          !key.startsWith("_") &&
+          !["accent", "anchor", "custom_theme_colors"].includes(key)
       )
       .map(([key, value]) => [
         key.replace(/_/g, "-"),
         value.startsWith("colors.") ? parseColor(value) : value,
       ])
   );
+  return {
+    ...colors,
+    ...(colorModel.get("custom_theme_colors") || {}),
+  };
 }

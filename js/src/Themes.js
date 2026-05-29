@@ -49,6 +49,7 @@ export class ThemeColorsModel extends WidgetModel {
         info: null,
         success: null,
         warning: null,
+        custom_theme_colors: {},
       },
     };
   }
