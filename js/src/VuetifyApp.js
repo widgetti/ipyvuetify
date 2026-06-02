@@ -1,5 +1,3 @@
-import { VDataTable } from "vuetify/labs/VDataTable";
-
 const appsWithComponents = new WeakSet();
 
 export function addApp(app) {
@@ -7,6 +5,5 @@ export function addApp(app) {
     return;
   }
 
-  app.component("VDataTable", VDataTable);
   appsWithComponents.add(app);
 }

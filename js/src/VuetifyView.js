@@ -3,6 +3,7 @@ import "vuetify/styles";
 import colors from "vuetify/lib/util/colors.mjs";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
+import * as labComponents from "vuetify/labs/components";
 import * as directives from "vuetify/directives";
 import { ThemeColorsModel, ThemeModel } from "./Themes";
 import { addApp } from "./VuetifyApp";
@@ -17,7 +18,10 @@ function getManagerState(widgetManager) {
     managerState = {
       initializedThemes: new WeakSet(),
       vuetify: createVuetify({
-        components,
+        components: {
+          ...components,
+          ...labComponents,
+        },
         directives,
       }),
     };
