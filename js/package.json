@@ -44,10 +44,10 @@
     "@jupyterlab/builder": "^3 || ^4",
     "ajv": "^6.10.0",
     "autoprefixer": "^10.4.16",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-vue": "^5.2.2",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-vue": "^9.33.0",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^7.3.3",
     "postcss-scopify": "^1.0.0",
@@ -63,7 +63,8 @@
     "lodash": "^4.17.11",
     "material-design-icons-iconfont": "^5.0.1",
     "typeface-roboto": "^1.1.13",
-    "vuetify": "^3.3.17"
+    "vue": "^3.5.39",
+    "vuetify": "3.12.9"
   },
   "jupyterlab": {
     "extension": "lib/labplugin",

@@ -38,14 +38,44 @@ def get_sub(prop: dict):
         return "TList(Any())"
     if prop["type"] == "object":
         return "Dict()"
-    if prop["type"] in ["anyOf", "function", "record", "ref"]:
+    if prop["type"] == "record":
+        return "Dict()"
+    if prop["type"] == "ref" and prop.get("ref", "").startswith("RouteLocation"):
+        return "Any()"
+    if prop["type"] == "allOf" and "string & {}" in prop.get("text", ""):
+        return "Unicode()"
+    if prop["type"] == "anyOf":
+        sub = [get_sub(e) for e in prop["items"] if get_sub(e) is not None]
+        if "Any()" in sub:
+            return "Any()"
+        if len(set(sub)) == 1:
+            return sub[0]
+        if sub:
+            return f"Union([{', '.join(sub)}])"
+        return "Any()"
+    if prop["type"] in ["allOf", "constructor", "function", "ref", "UNSUPPORTED"]:
         return None
     raise Exception(f"Unknown sub type {prop['type']}")
 
 
+def supports_record(prop: dict):
+    return "record<" in prop.get("text", "").casefold()
+
+
+def with_default(traitlet: str):
+    if traitlet.startswith("Union("):
+        return traitlet[:-1] + ", default_value=None, allow_none=True).tag(sync=True)\n"
+    return traitlet.replace("()", "(default_value=None, allow_none=True).tag(sync=True)\n")
+
+
 def generate_traitlet(prop: dict):
+    mixed_string_union = (
+        prop["type"] == "anyOf"
+        and "string & {}" in prop["text"]
+        and {item["type"] for item in prop["items"]}.issuperset({"boolean", "number"})
+    )
     if (
-        "string & {}" in prop["text"]
+        ("string & {}" in prop["text"] and not mixed_string_union)
         or prop["type"] == "string"
         or prop["type"] == "ref"
         or prop["type"] == "function"
@@ -53,20 +83,31 @@ def generate_traitlet(prop: dict):
         return "Unicode(default_value=None, allow_none=True).tag(sync=True)\n"
     if prop["type"] == "anyOf":
         sub = [get_sub(e) for e in prop["items"] if get_sub(e) is not None]
+        if "Any()" in sub:
+            return "Any().tag(sync=True)\n"
+        if mixed_string_union:
+            sub.sort(key=lambda traitlet: traitlet != "Bool()")
+            sub = list(dict.fromkeys(sub))
+        if not sub:
+            return "Any().tag(sync=True)\n"
         if len(set(sub)) == 1:
             if sub[0] == "TList(Any())":
                 return "TList(Any(), default_value=None, allow_none=True).tag(sync=True)\n"
-            return sub[0].replace("()", "(default_value=None, allow_none=True).tag(sync=True)\n")
+            return with_default(sub[0])
         return f"Union([{', '.join(sub)}], default_value=None, allow_none=True).tag(sync=True)\n"
     if prop["type"] == "boolean":
         return "Bool(default_value=None, allow_none=True).tag(sync=True)\n"
     if prop["type"] == "array":
+        if supports_record(prop):
+            return "Union([TList(Any()), Dict()], default_value=None, allow_none=True).tag(sync=True)\n"
         return "TList(Any(), default_value=None, allow_none=True).tag(sync=True)\n"
     if prop["type"] == "object":
         return "Dict(default_value=None, allow_none=True).tag(sync=True)\n"
     if prop["type"] == "number":
         return "Float(default_value=None, allow_none=True).tag(sync=True)\n"
     if prop["type"] == "any":
+        return "Any().tag(sync=True)\n"
+    if prop["type"] == "unknown":
         return "Any().tag(sync=True)\n"
     raise Exception(f"Unknown type {prop['type']}")
 
@@ -82,7 +123,7 @@ def generate_python_class(name: str, path: Path):
         data = json.load(f)
         props = data["props"]
         for prop_name, prop in sorted(props.items()):
-            if prop["type"] in ["record", "unknown"]:
+            if prop["type"] == "record":
                 continue
 
             code += dedent_with_offset(
@@ -152,6 +193,9 @@ def generate_js_class(name, path):
 
     with open(path) as f:
         data = json.load(f)
+        component_name = (
+            "IpyvuetifyDatePicker" if data["fileName"] == "VDatePicker" else data["fileName"]
+        )
         props = data["props"]
         for prop_name, prop in props.items():
             if prop["type"] in ["record", "unknown"]:
@@ -170,7 +214,7 @@ def generate_js_class(name, path):
     }}
 
     getVueTag() {{ // eslint-disable-line class-methods-use-this
-        return "{data["fileName"]}";
+        return "{component_name}";
     }}
 }}
 

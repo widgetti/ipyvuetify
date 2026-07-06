@@ -35,11 +35,11 @@ jobs:
           python-version: "3.10"
       - uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: "24"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "reacton[generate]" ipyvue "jupyterlab<4"  build
+          pip install "reacton[generate]" "ipyvue>=3.0.0a9" "jupyterlab<4" build
 
       - name: build wheel
         run: python -m build
