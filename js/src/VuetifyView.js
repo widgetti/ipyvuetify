@@ -1,8 +1,7 @@
 import { VueView, createViewContext, vueRender } from "jupyter-vue";
 import "vuetify/styles";
 import colors from "vuetify/lib/util/colors.mjs";
-import { createVuetify } from "vuetify";
-import * as Vue from "vue";
+import { createVuetify, useTheme } from "vuetify";
 import * as components from "vuetify/components";
 import * as labComponents from "vuetify/labs/components";
 import * as directives from "vuetify/directives";
@@ -75,7 +74,7 @@ export class VuetifyView extends VueView {
 
   onSetup() {
     super.onSetup();
-    this.setupTheme(Vue.getCurrentInstance());
+    this.setupTheme(useTheme());
   }
 
   /** @override */
@@ -92,12 +91,11 @@ export class VuetifyView extends VueView {
     };
   }
 
-  setupTheme(vueInstance) {
+  setupTheme(theme) {
     if (!this.themeModel) {
       return;
     }
     const managerState = getManagerState(this.model.widget_manager);
-    const theme = getVuetifyTheme(vueInstance, managerState);
     if (!managerState.initializedThemes.has(theme)) {
       initializeTheme(
         theme,
@@ -108,13 +106,6 @@ export class VuetifyView extends VueView {
       managerState.initializedThemes.add(theme);
     }
   }
-}
-
-function getVuetifyTheme(vueInstance, managerState) {
-  return (
-    vueInstance?.appContext?.config?.globalProperties?.$vuetify?.theme ||
-    managerState.vuetify.theme
-  );
 }
 
 function initializeTheme(theme, themeModel, themeLightModel, themeDarkModel) {
