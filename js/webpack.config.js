@@ -4,7 +4,10 @@ var version = require("./package.json").version;
 // Custom webpack rules are generally the same for all webpack bundles, hence
 // stored in a separate local variable.
 var rules = [
-  { test: /\.css$/, use: ["style-loader", "css-loader", "postcss-loader"] },
+  {
+    test: /\.css$/,
+    use: ["style-loader", "css-loader", "postcss-loader"],
+  },
   {
     test: /\.(woff|woff2|eot|ttf|otf)$/,
     type: "asset/resource",
@@ -13,6 +16,7 @@ var rules = [
 
 module.exports = [
   {
+    name: "extension",
     // Notebook extension
     //
     // This bundle only contains the part of the JavaScript that is run on
@@ -38,6 +42,7 @@ module.exports = [
     mode: "production",
   },
   {
+    name: "notebook",
     // Bundle for the notebook containing the custom widget views and models
     //
     // This bundle contains the implementation for the custom widget views and
@@ -75,6 +80,7 @@ module.exports = [
     },
   },
   {
+    name: "nodeps-notebook",
     entry: "./lib/nodeps.js",
     output: {
       filename: "nodeps.js",
@@ -93,28 +99,24 @@ module.exports = [
     module: {
       rules: rules,
     },
+    resolve: {
+      alias: {
+        vue$: path.resolve(__dirname, "lib", "vue_alias"),
+      },
+    },
     externals: [
       "@jupyter-widgets/base",
       "@jupyterlab/apputils",
       "jupyter-vue",
-      "@mariobuikhuizen/vuetify/dist/vuetify.min.css",
       "material-design-icons-iconfont",
       "typeface-roboto",
       "@mdi/font",
       "vuetify",
     ],
     mode: "production",
-    resolve: {
-      alias: {
-        "./VuetifyView$": path.resolve(__dirname, "src/nodepsVuetifyView.js"),
-        "./plugins/vuetify$": path.resolve(
-          __dirname,
-          "src/plugins/nodepsVuetify.js"
-        ),
-      },
-    },
   },
   {
+    name: "nodeps-embed",
     entry: "./lib/nodepsEmbed.js",
     output: {
       filename: "nodeps.js",
@@ -126,28 +128,24 @@ module.exports = [
     module: {
       rules: rules,
     },
+    resolve: {
+      alias: {
+        vue$: path.resolve(__dirname, "lib", "vue_alias"),
+      },
+    },
     externals: [
       "@jupyter-widgets/base",
       "@jupyterlab/apputils",
       "jupyter-vue",
-      "@mariobuikhuizen/vuetify/dist/vuetify.min.css",
       "material-design-icons-iconfont",
       "typeface-roboto",
       "@mdi/font",
       "vuetify",
     ],
     mode: "production",
-    resolve: {
-      alias: {
-        "./VuetifyView$": path.resolve(__dirname, "src/nodepsVuetifyView.js"),
-        "./plugins/vuetify$": path.resolve(
-          __dirname,
-          "src/plugins/nodepsVuetify.js"
-        ),
-      },
-    },
   },
   {
+    name: "embed",
     // Embeddable jupyter-vuetify bundle
     //
     // This bundle is generally almost identical to the notebook bundle

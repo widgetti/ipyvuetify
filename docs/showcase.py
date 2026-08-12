@@ -5,15 +5,15 @@ lorum_ipsum = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 items = [v.ListItem(children=[v.ListItemTitle(children=[f"Click me {i}"])]) for i in range(1, 5)]
 
 menu = v.Menu(
-    offset_y=True,
+    location="bottom",
     v_slots=[
         {
             "name": "activator",
             "variable": "menuData",
             "children": v.Btn(
-                v_on="menuData.on",
+                v_on="menuData.props",
                 color="primary",
-                children=["menu", v.Icon(right=True, children=["mdi-menu-down"])],
+                children=["menu", v.Icon(children=["mdi-menu-down"])],
             ),
         }
     ],
@@ -26,15 +26,14 @@ dialog = v.Dialog(
         {
             "name": "activator",
             "variable": "x",
-            "children": v.Btn(v_on="x.on", color="success", dark=True, children=["Open dialog"]),
+            "children": v.Btn(v_on="x.props", color="success", children=["Open dialog"]),
         }
     ],
     children=[
         v.Card(
             children=[
                 v.CardTitle(
-                    class_="headline gray lighten-2",
-                    primary_title=True,
+                    class_="text-h5 bg-grey-lighten-2",
                     children=["Lorem ipsum"],
                 ),
                 v.CardText(
@@ -55,12 +54,13 @@ v.Container(
         v.Row(
             children=[
                 v.Btn(class_="ma-2", color="primary", children=["button"]),
-                v.Btn(class_="ma-2", color="primary", outlined=True, children=["button"]),
+                v.Btn(class_="ma-2", color="primary", variant="outlined", children=["button"]),
                 v.Btn(class_="ma-2", color="primary", rounded=True, children=["button"]),
                 v.Btn(
                     class_="ma-2",
                     color="primary",
-                    fab=True,
+                    icon=True,
+                    size="large",
                     children=[
                         v.Icon(children=["mdi-pencil"]),
                     ],
@@ -73,39 +73,30 @@ v.Container(
                         v.Icon(children=["mdi-pencil"]),
                     ],
                 ),
-                v.Btn(class_="ma-2", color="primary", text=True, children=["button"]),
+                v.Btn(class_="ma-2", color="primary", variant="text", children=["button"]),
             ]
         ),
         v.Row(
             children=[
-                v.Btn(class_="ma-2", color="primary", x_small=True, children=["button"]),
+                v.Btn(class_="ma-2", color="primary", size="x-small", children=["button"]),
                 v.Btn(
                     class_="ma-2",
                     color="primary",
-                    x_small=True,
-                    outlined=True,
+                    size="x-small",
+                    variant="outlined",
                     children=["button"],
                 ),
                 v.Btn(
                     class_="ma-2",
                     color="primary",
-                    x_small=True,
+                    size="x-small",
                     rounded=True,
                     children=["button"],
                 ),
                 v.Btn(
                     class_="ma-2",
                     color="primary",
-                    x_small=True,
-                    fab=True,
-                    children=[
-                        v.Icon(children=["mdi-pencil"]),
-                    ],
-                ),
-                v.Btn(
-                    class_="ma-2",
-                    color="primary",
-                    x_small=True,
+                    size="x-small",
                     icon=True,
                     children=[
                         v.Icon(children=["mdi-pencil"]),
@@ -114,8 +105,17 @@ v.Container(
                 v.Btn(
                     class_="ma-2",
                     color="primary",
-                    x_small=True,
-                    text=True,
+                    size="x-small",
+                    icon=True,
+                    children=[
+                        v.Icon(children=["mdi-pencil"]),
+                    ],
+                ),
+                v.Btn(
+                    class_="ma-2",
+                    color="primary",
+                    size="x-small",
+                    variant="text",
                     children=["button"],
                 ),
             ]
@@ -150,7 +150,7 @@ v.Container(
                         v.Select(
                             label="Fruits",
                             items=["Apple", "Pear", "Cherry"],
-                            outlined=True,
+                            variant="outlined",
                         )
                     ],
                 ),
@@ -160,12 +160,12 @@ v.Container(
             children=[
                 v.Col(cols=4, children=[v.Slider()]),
                 v.Col(cols=4, children=[v.Slider(thumb_label="always")]),
-                v.Col(cols=4, children=[v.RangeSlider(value=[20, 80])]),
+                v.Col(cols=4, children=[v.RangeSlider(v_model=[20, 80])]),
             ]
         ),
         v.Row(
             children=[
-                v.Col(cols=4, children=[v.Switch(label="switch", margin_top="0")]),
+                v.Col(cols=4, children=[v.Switch(label="switch")]),
                 v.Col(cols=4, children=[menu]),
                 v.Col(cols=4, children=[dialog]),
             ]

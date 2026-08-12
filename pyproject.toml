@@ -1,13 +1,13 @@
 [build-system]
-requires = [ "jupyterlab~=4.0", "setuptools>=40.8.0", "wheel", "pynpm"]
+requires = ["jupyter-builder>=1.0.0", "setuptools>=40.8.0", "wheel", "pynpm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "ipyvuetify"
-version = "1.11.3"
+version = "3.0.0.alpha6"
 description="Jupyter widgets based on vuetify UI components"
 requires-python = ">=3.6"
-dependencies = ["ipyvue>=1.7,<2"]
+dependencies = ["ipyvue>=3.0.0"]
 keywords=["ipython", "jupyter", "widgets"]
 authors = [
     {name = "Mario Buikhuizen", email = "mbuikhuizen@gmail.com"},
@@ -26,6 +26,8 @@ classifiers=[
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 
 [project.urls]
@@ -47,7 +49,6 @@ test = [
     "nbformat<5.10",
     "jupyterlab<4",
     "solara[pytest]",
-    "starlette<1",
 ]
 doc = [
     "sphinx<7",

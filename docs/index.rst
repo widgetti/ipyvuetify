@@ -30,7 +30,7 @@ IpyVuetify
 Jupyter widgets based on Vuetify UI components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Ipyvuetify** is a widget library for making modern-looking GUIs in Jupyter notebooks (`classic <https://github.com/jupyter/notebook>`__, `lab <https://github.com/jupyterlab/jupyterlab>`__, `lite <https://github.com/jupyterlite/jupyterlite>`__) and dashboards (`Voilà <https://github.com/voila-dashboards/voila>`__, `Voici <https://github.com/voila-dashboards/voici>`__). Based on the `Vuetify UI <https://v2.vuetifyjs.com/en/>`__ library, it extends the standard Jupyter widget library with additional widgets that are more customizable and composable.
+**Ipyvuetify** is a widget library for making modern-looking GUIs in Jupyter notebooks (`classic <https://github.com/jupyter/notebook>`__, `lab <https://github.com/jupyterlab/jupyterlab>`__, `lite <https://github.com/jupyterlite/jupyterlite>`__) and dashboards (`Voilà <https://github.com/voila-dashboards/voila>`__, `Voici <https://github.com/voila-dashboards/voici>`__). Based on the `Vuetify UI <https://vuetifyjs.com/>`__ library, it extends the standard Jupyter widget library with additional widgets that are more customizable and composable.
 
 .. raw:: html
 

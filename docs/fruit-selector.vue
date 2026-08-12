@@ -18,10 +18,10 @@
         <td>{{ index }}</td>
         <td>{{ fruit }}</td>
         <td class="selected">
-          <v-icon v-if="fruit == selected" left color="green">
+          <v-icon v-if="fruit == selected" start color="green">
             mdi-check
           </v-icon>
-          <v-icon v-if="fruit != selected" left color="grey">
+          <v-icon v-if="fruit != selected" start color="grey">
             mdi-check
           </v-icon>
         </td>
@@ -42,7 +42,7 @@
 }
 </style>
 <script>
-module.exports = {
+export default {
   methods: {
     addBanana() {
       this.fruits.push("Banana");

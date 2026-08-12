@@ -4,6 +4,7 @@ repos:
     hooks:
       - id: black
         stages: [commit]
+        exclude: ^ipyvuetify/components\.py$
   - repo: "https://github.com/commitizen-tools/commitizen"
     rev: "v2.18.0"
     hooks:

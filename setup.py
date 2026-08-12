@@ -31,12 +31,7 @@ def js_prerelease(command: Command) -> None:
             if not (ROOT / "prefix/share/jupyter/nbextensions/jupyter-vuetify/index.js").exists():
                 from pynpm import NPMPackage
 
-                from generate_source import generate_source
-
-                npm = NPMPackage(ROOT / "js" / "package.json")
-                npm._run_npm("ci")
-                generate_source.generate()
-                npm.run_script("build")
+                NPMPackage(ROOT / "js" / "package.json").install()
 
             self.distribution.data_files = get_data_files()
             command.run(self)

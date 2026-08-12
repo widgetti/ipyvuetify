@@ -1,6 +1,6 @@
 var path = require("path");
 
-const rules = [
+var rules = [
   {
     test: /\.css$/,
     use: ["postcss-loader"],
