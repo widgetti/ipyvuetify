@@ -13,7 +13,7 @@ from shutil import copytree
 project = "ipyvuetify"
 copyright = f"2019-{datetime.now().year}, Mario Buikhuizen"
 author = "Mario Buikhuizen"
-release = "3.0.0.dev0"
+release = "3.0.0"
 
 # -- General configuration ---------------------------------------------------
 

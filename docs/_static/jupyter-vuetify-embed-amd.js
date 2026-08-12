@@ -3,8 +3,7 @@ const localVuetify = new URL("_static/jupyter-vuetify/index", document.baseURI)
 
 require.config({
   paths: {
-    "jupyter-vue":
-      "https://cdn.jsdelivr.net/npm/jupyter-vue@3.0.0-alpha.5/dist/index",
+    "jupyter-vue": "https://cdn.jsdelivr.net/npm/jupyter-vue@3.0.0/dist/index",
     "jupyter-vuetify": localVuetify,
   },
 });
