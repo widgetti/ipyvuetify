@@ -8,7 +8,7 @@
 [![Black badge](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![conventional commit](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-Jupyter widgets based on [vuetify UI components](https://v2.vuetifyjs.com/) which implement Google's
+Jupyter widgets based on [vuetify UI components](https://v3.vuetifyjs.com/) which implement Google's
 [Material Design Spec](https://material.io/) with the [Vue.js framework](https://vuejs.org/).
 
 A small selection of widgets:
@@ -43,16 +43,16 @@ https://ipyvuetify.readthedocs.io/
 
 For examples see the [example notebook](examples/Examples.ipynb).
 
-The [Vuetify documentation](https://v2.vuetifyjs.com/components/buttons#buttons) can be used to find all available
+The [Vuetify 3 documentation](https://v3.vuetifyjs.com/en/components/buttons/) can be used to find all available
 components and attributes (in the left side bar or use the search field). Ipyvuetify tries to stay close to the Vue.js
 and Vuetify template syntax, but there are some differences:
 
 | Description                                                             | Vuetify                                 | ipyvuetify                              |
 | ----------------------------------------------------------------------- | --------------------------------------- | --------------------------------------- |
-| Component names are in CamelCase and the v- prefix is stripped          | `<v-list-tile .../>`                    | `ListTile(...)`                         |
+| Component names are in CamelCase and the v- prefix is stripped          | `<v-list-item .../>`                    | `ListItem(...)`                         |
 | Child components and text are defined in the children traitlet          | `<v-btn>text <v-icon .../></v-btn>`     | `Btn(children=['text', Icon(...)])`     |
-| Flag attributes require a boolean value                                 | `<v-btn round ...`                      | `Btn(round=True ...`                    |
-| Attributes are snake_case                                               | `<v-menu offset-y ..`                   | `Menu(offset_y=True ...`                |
+| Flag attributes require a boolean value                                 | `<v-btn rounded ...>`                   | `Btn(rounded=True, ...)`                |
+| Attributes are snake_case                                               | `<v-select append-icon="mdi-menu" ...>` | `Select(append_icon='mdi-menu', ...)`   |
 | The v_model attribute (value in ipywidgets) contains the value directly | `<v-slider v-model="some_property" ...` | `Slider(v_model=25...`                  |
 | Event listeners are defined with on_event                               | `<v-btn @click='someMethod()' ...`      | `button.on_event('click', some_method)` |
 |                                                                         |                                         | `def some_method(widget, event, data):` |
@@ -61,26 +61,26 @@ and Vuetify template syntax, but there are some differences:
 
 ### Advanced usage
 
-#### .sync
+#### v-model arguments
 
-The .sync property modifier functionality can be achieved by using an event named:  
-`update:[propertyNameInCamelCase]`.
+Vue 3 uses `v-model` arguments for two-way bindings on component properties. The same behavior can be achieved in
+ipyvuetify by listening for an event named `update:[propertyNameInCamelCase]`.
 
 ##### Vuetify:
 
 ```HTML
-<v-navigation-drawer :mini-variant.sync=...
+<v-navigation-drawer v-model:rail="someProperty" ...>
 ```
 
 ##### ipyvuetify:
 
 ```python
-drawer = v.NavigationDrawer(mini_variant=True, ...)
+drawer = v.NavigationDrawer(rail=True, ...)
 
-def update_mini(widget, event, data):
-    drawer.mini_variant = data`
+def update_rail(widget, event, data):
+    drawer.rail = data
 
-drawer.on_event('update:miniVariant', update_mini)
+drawer.on_event('update:rail', update_rail)
 ```
 
 ### (scoped) slots
@@ -89,8 +89,8 @@ drawer.on_event('update:miniVariant', update_mini)
 
 ```HTML
 <v-menu>
-  <template slot:activator="{ on }">
-    <v-btn v-on="on">...</v-btn>
+  <template v-slot:activator="{ props }">
+    <v-btn v-bind="props">...</v-btn>
   </template>
   <v-list>
     ...
@@ -104,13 +104,13 @@ drawer.on_event('update:miniVariant', update_mini)
 Menu(v_slots=[{
     'name': 'activator',
     'variable': 'x',
-    'children': Btn(v_on='x.on', children=[...])
+    'children': Btn(v_on='x.props', children=[...])
 }], children=[
     List(...)
 ])
 ```
 
-For non scoped slots `'scope': 'x'` and `v_on` can be omitted.
+For non-scoped slots, `variable` and `v_on` can be omitted.
 
 ### Icons
 
