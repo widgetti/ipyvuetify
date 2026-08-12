@@ -1,5 +1,5 @@
 [build-system]
-requires = [ "jupyterlab~=4.0", "setuptools>=40.8.0", "wheel", "pynpm"]
+requires = ["jupyter-builder>=1.0.0", "setuptools>=40.8.0", "wheel", "pynpm"]
 build-backend = "setuptools.build_meta"
 
 [project]

@@ -26,8 +26,8 @@
   "scripts": {
     "build:babel": "babel src --out-dir lib --copy-files",
     "watch:babel": "babel src --watch --out-dir lib --copy-files --verbose",
-    "build:labextension": "jupyter labextension build .",
-    "watch:labextension": "jupyter labextension watch .",
+    "build:labextension": "jupyter-builder build .",
+    "watch:labextension": "jupyter-builder watch .",
     "build:webpack": "webpack",
     "build:docs": "npm run build:babel && webpack --config webpack.config.docs.js",
     "watch:webpack": "webpack --mode development --watch",
@@ -41,9 +41,10 @@
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
-    "@jupyterlab/builder": "^3 || ^4",
+    "@jupyter/builder": "^1.0.0",
     "ajv": "^6.10.0",
     "autoprefixer": "^10.4.16",
+    "css-loader": "^7.1.4",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.32.0",
@@ -52,7 +53,9 @@
     "postcss-loader": "^7.3.3",
     "postcss-scopify": "^1.0.0",
     "rimraf": "^2.6.3",
-    "webpack": "^5"
+    "style-loader": "^4.0.0",
+    "webpack": "^5",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "@jupyter-widgets/base": "^1 || ^2 || ^3 || ^4 || ^6",
