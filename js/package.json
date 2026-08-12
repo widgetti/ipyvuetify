@@ -69,6 +69,9 @@
     "vue": "^3.5.39",
     "vuetify": "3.12.9"
   },
+  "overrides": {
+    "sanitize-html": "2.17.5"
+  },
   "jupyterlab": {
     "extension": "lib/labplugin",
     "outputDir": "../prefix/share/jupyter/labextensions/jupyter-vuetify",
