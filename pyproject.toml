@@ -7,7 +7,7 @@ name = "ipyvuetify"
 version = "3.0.0.alpha6"
 description="Jupyter widgets based on vuetify UI components"
 requires-python = ">=3.6"
-dependencies = ["ipyvue>=3.0.0.a9"]
+dependencies = ["ipyvue>=3.0.0"]
 keywords=["ipython", "jupyter", "widgets"]
 authors = [
     {name = "Mario Buikhuizen", email = "mbuikhuizen@gmail.com"},
@@ -49,7 +49,6 @@ test = [
     "nbformat<5.10",
     "jupyterlab<4",
     "solara[pytest]",
-    "starlette<1",
 ]
 doc = [
     "sphinx<7",
