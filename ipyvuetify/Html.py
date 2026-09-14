@@ -2,7 +2,7 @@
 # added in the frontend.
 
 from ipyvue import Html as VueHtml
-from traitlets import Unicode
+from traitlets import Unicode, Dict
 
 from ._version import semver
 
@@ -20,6 +20,8 @@ class Html(VueHtml):
     _view_module_version = Unicode(semver).tag(sync=True)
 
     _model_module_version = Unicode(semver).tag(sync=True)
+
+    _metadata = Dict(default_value=None, allow_none=True).tag(sync=True)
 
 
 __all__ = ["Html"]
