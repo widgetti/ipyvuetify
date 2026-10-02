@@ -1,10 +1,7 @@
 import { VueView, createViewContext, vueRender } from "jupyter-vue";
-import "vuetify/styles";
 import colors from "vuetify/lib/util/colors.mjs";
-import { createVuetify, useTheme } from "vuetify";
-import * as components from "vuetify/components";
-import * as labComponents from "vuetify/labs/components";
-import * as directives from "vuetify/directives";
+import { useTheme } from "vuetify";
+import { createVuetifyPlugin } from "./vuetifyPlugin";
 import { ThemeColorsModel, ThemeModel } from "./Themes";
 import { addApp } from "./VuetifyApp";
 
@@ -17,13 +14,7 @@ function getManagerState(widgetManager) {
   if (!managerState) {
     managerState = {
       initializedThemes: new WeakSet(),
-      vuetify: createVuetify({
-        components: {
-          ...components,
-          ...labComponents,
-        },
-        directives,
-      }),
+      vuetify: createVuetifyPlugin(),
     };
     managerStateByWidgetManager.set(widgetManager, managerState);
   }

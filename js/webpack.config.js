@@ -1,4 +1,5 @@
 var path = require("path");
+var webpack = require("webpack");
 var version = require("./package.json").version;
 
 // Custom webpack rules are generally the same for all webpack bundles, hence
@@ -12,6 +13,20 @@ var rules = [
     test: /\.(woff|woff2|eot|ttf|otf)$/,
     type: "asset/resource",
   },
+];
+
+// nodeps.js uses the Vuetify plugin of the host page (Solara), and does not bundle
+// Vuetify's components, directives and css. See src/nodepsVuetifyPlugin.js.
+var nodepsPlugins = [
+  new webpack.NormalModuleReplacementPlugin(
+    /^\.\/vuetifyPlugin$/,
+    "./nodepsVuetifyPlugin"
+  ),
+  new webpack.DefinePlugin({
+    __VUETIFY_VERSION__: JSON.stringify(
+      require("vuetify/package.json").version
+    ),
+  }),
 ];
 
 module.exports = [
@@ -113,6 +128,7 @@ module.exports = [
       "@mdi/font",
       "vuetify",
     ],
+    plugins: nodepsPlugins,
     mode: "production",
   },
   {
@@ -142,6 +158,7 @@ module.exports = [
       "@mdi/font",
       "vuetify",
     ],
+    plugins: nodepsPlugins,
     mode: "production",
   },
   {
