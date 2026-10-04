@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+var TerserPlugin = require("minimizer-webpack-plugin");
 var version = require("./package.json").version;
 
 // Custom webpack rules are generally the same for all webpack bundles, hence
@@ -14,6 +15,24 @@ var rules = [
     type: "asset/resource",
   },
 ];
+
+// webpack's default minimizer (Terser, compress passes 2), plus wrap_func_args (the default
+// before terser 5.43): it keeps a function passed as an argument in parentheses, so the AMD
+// factory becomes define([...],((e,i,o)=>...)). V8 then compiles the factory eagerly with the
+// script, off the main thread when the script streams, instead of lazily on the main thread
+// when require.js calls it.
+function optimization() {
+  return {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: { passes: 2 },
+          format: { wrap_func_args: true },
+        },
+      }),
+    ],
+  };
+}
 
 // nodeps.js uses the Vuetify plugin of the host page (Solara), and does not bundle
 // Vuetify's components, directives and css. See src/nodepsVuetifyPlugin.js.
@@ -55,6 +74,7 @@ module.exports = [
       libraryTarget: "amd",
     },
     mode: "production",
+    optimization: optimization(),
   },
   {
     name: "notebook",
@@ -89,6 +109,7 @@ module.exports = [
       },
     },
     mode: "production",
+    optimization: optimization(),
     performance: {
       maxEntrypointSize: 1400000,
       maxAssetSize: 1400000,
@@ -130,6 +151,7 @@ module.exports = [
     ],
     plugins: nodepsPlugins,
     mode: "production",
+    optimization: optimization(),
   },
   {
     name: "nodeps-embed",
@@ -160,6 +182,7 @@ module.exports = [
     ],
     plugins: nodepsPlugins,
     mode: "production",
+    optimization: optimization(),
   },
   {
     name: "embed",
@@ -195,6 +218,7 @@ module.exports = [
       },
     },
     mode: "production",
+    optimization: optimization(),
     performance: {
       maxEntrypointSize: 1400000,
       maxAssetSize: 1400000,
