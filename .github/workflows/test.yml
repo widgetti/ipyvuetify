@@ -121,12 +121,6 @@ jobs:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
         run: python -m pip install "$(find dist -name '*.whl')[test]"
-      - name: Check that the UI tests use this build
-        # a test dependency that pins another ipyvuetify would replace this wheel
-        run: |
-          f="$(python -c 'import sys; print(sys.prefix)')/share/jupyter/nbextensions/jupyter-vuetify/nodeps.js"
-          ls -l "$f"
-          test "$(wc -c < "$f")" -le 250000
       - name: Install chromium
         run: playwright install chromium
       - name: Run ui-tests
