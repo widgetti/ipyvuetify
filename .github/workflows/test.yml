@@ -32,10 +32,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-      # https://github.com/webpack/webpack/issues/14532
+      # The build backend installs the newest jupyterlab 4.x, whose labextension
+      # builder needs Node.js ^20.19.0 || >=22.12.0.
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 22
       - name: install build
         run: python -m pip install build
 
