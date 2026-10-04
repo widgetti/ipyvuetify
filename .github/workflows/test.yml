@@ -48,6 +48,23 @@ jobs:
       - name: build wheel
         run: python -m build
 
+      - name: Check that nodeps.js does not bundle Vuetify
+        # nodeps.js (Solara) uses the host's Vuetify. With its own copy it was 2.6 MB
+        # (354 KB gzip), and "v-data-table" was in it about 400 times.
+        run: |
+          for f in prefix/share/jupyter/nbextensions/jupyter-vuetify/nodeps.js js/dist/nodeps.js; do
+            size=$(wc -c < "$f")
+            echo "$f: $size bytes"
+            if [ "$size" -gt 250000 ]; then
+              echo "::error file=$f::$f is $size bytes, more than 250000: does it bundle Vuetify again?"
+              exit 1
+            fi
+            if grep -q "v-data-table" "$f"; then
+              echo "::error file=$f::$f contains Vuetify's components or css (v-data-table)"
+              exit 1
+            fi
+          done
+
       - name: Build component file
         run: |
           cp ipyvuetify/components.py ipyvuetify/components-previous.py
@@ -104,6 +121,12 @@ jobs:
           name: ipyvuetify-dist-${{ github.run_number }}
       - name: Install ipyvuetify
         run: python -m pip install "$(find dist -name '*.whl')[test]"
+      - name: Check that the UI tests use this build
+        # a test dependency that pins another ipyvuetify would replace this wheel
+        run: |
+          f="$(python -c 'import sys; print(sys.prefix)')/share/jupyter/nbextensions/jupyter-vuetify/nodeps.js"
+          ls -l "$f"
+          test "$(wc -c < "$f")" -le 250000
       - name: Install chromium
         run: playwright install chromium
       - name: Run ui-tests
