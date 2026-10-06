@@ -27,7 +27,10 @@ const DatePicker = {
   props: ["modelValue"],
   emits: ["update:modelValue"],
   setup(props, { attrs, emit, slots }) {
-    // the app's own VDatePicker: the host's Vuetify in nodeps.js, ipyvuetify's in Jupyter
+    // Use the VDatePicker registered in the app we render in: the host's Vuetify in
+    // nodeps.js (Solara), ipyvuetify's own in Jupyter. Importing it from
+    // "vuetify/components" would bundle VDatePicker and its dependencies into nodeps.js,
+    // a second partial Vuetify that cannot find the host's date setup.
     const VDatePicker = resolveComponent("VDatePicker");
     return () =>
       h(
