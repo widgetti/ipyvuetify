@@ -134,6 +134,13 @@ jobs:
       - name: Publish the NPM package
         run: |
           cd js
+          # npm 11 refuses a dry run for a version that is already on npm, and between
+          # releases package.json holds the last released version: nothing to check then
+          VERSION=$(tar -xOzf *.tgz package/package.json | node -p "JSON.parse(require('fs').readFileSync(0, 'utf8')).version")
+          if npm view "jupyter-vuetify@$VERSION" version > /dev/null 2>&1; then
+            echo "jupyter-vuetify $VERSION is already on npm, so the dry run is skipped until the version bump"
+            exit 0
+          fi
           echo $PRE_RELEASE
           if [[ $PRE_RELEASE == "true" ]]; then export TAG="next"; else export TAG="latest"; fi
           npm publish --dry-run --tag ${TAG} --access public *.tgz
