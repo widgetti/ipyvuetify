@@ -1,3 +1,4 @@
+var webpack = require("webpack");
 var path = require("path");
 var version = require("./package.json").version;
 
@@ -114,6 +115,13 @@ module.exports = [
       "vuetify",
     ],
     mode: "production",
+    // use the host's Vuetify plugin instead of bundling a second Vuetify
+    plugins: [
+      new webpack.NormalModuleReplacementPlugin(
+        /^\.\/vuetifyPlugin$/,
+        "./nodepsVuetifyPlugin"
+      ),
+    ],
   },
   {
     name: "nodeps-embed",
@@ -143,6 +151,13 @@ module.exports = [
       "vuetify",
     ],
     mode: "production",
+    // use the host's Vuetify plugin instead of bundling a second Vuetify
+    plugins: [
+      new webpack.NormalModuleReplacementPlugin(
+        /^\.\/vuetifyPlugin$/,
+        "./nodepsVuetifyPlugin"
+      ),
+    ],
   },
   {
     name: "embed",
