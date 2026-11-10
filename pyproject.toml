@@ -54,6 +54,8 @@ doc = [
     "ipykernel",
     "pydata-sphinx-theme",
     "sphinx-design",
+    "reacton",
+    "markdown-it-py",
 ]
 
 [tool.setuptools]

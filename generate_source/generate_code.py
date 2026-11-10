@@ -1,6 +1,7 @@
 import json
 import re
 import textwrap
+import warnings
 from pathlib import Path
 
 
@@ -17,6 +18,36 @@ def dedent_with_offset(text, offset):
 
 def property_to_snake_case(name):
     return re.sub("(?!^)([A-Z]+)", r"_\1", name).lower()
+
+
+def component_to_kebab_case(name):
+    return re.sub("(?!^)([A-Z])", r"-\1", name).lower()
+
+
+VUETIFY_DOCS_URL = "https://vuetifyjs.com/en"
+
+# Typos in the Vuetify descriptions (packages/api-generator/src/locale/en), still present in v3.13.7
+DESCRIPTION_FIXES = {
+    "The current view mode of the picker.`": "The current view mode of the picker.",
+    "`v-model:selected, `v-model:activated`": "`v-model:selected`, `v-model:activated`",
+}
+applied_description_fixes = set()
+
+
+def get_description(prop: dict, api_url: str):
+    """The (Markdown) description of a prop, with links into the Vuetify docs made absolute."""
+    description = (prop.get("description") or {}).get("en")
+    if not description or description.startswith("MISSING DESCRIPTION"):
+        return None
+    for typo, fix in DESCRIPTION_FIXES.items():
+        if typo in description:
+            description = description.replace(typo, fix)
+            applied_description_fixes.add(typo)
+    if "\\" in description or '"""' in description:
+        # reacton copies the help into a docstring of ipyvuetify/components.py without escaping it
+        warnings.warn(f"Check the docstring in components.py for this description: {description!r}")
+    description = re.sub(r"\]\(/", f"]({VUETIFY_DOCS_URL}/", description.strip())
+    return re.sub(r"\]\(#", f"]({api_url}#", description)
 
 
 def get_component_files():
@@ -68,6 +99,15 @@ def with_default(traitlet: str):
     return traitlet.replace("()", "(default_value=None, allow_none=True).tag(sync=True)\n")
 
 
+def with_help(traitlet: str, description: str):
+    """Add the description as help to a traitlet, e.g. Any().tag(...) -> Any(help="...").tag(...)"""
+    if not description:
+        return traitlet
+    call, tag = traitlet.split(".tag(", 1)
+    separator = "" if call.endswith("()") else ", "
+    return f"{call[:-1]}{separator}help={description!r}).tag({tag}"
+
+
 def generate_traitlet(prop: dict):
     mixed_string_union = (
         prop["type"] == "anyOf"
@@ -113,9 +153,12 @@ def generate_traitlet(prop: dict):
 
 
 def generate_python_class(name: str, path: Path):
+    api_url = f"{VUETIFY_DOCS_URL}/api/{component_to_kebab_case(name)}/"
     code = textwrap.dedent(
         f"""\
         class {name[1:]}(VuetifyWidget):
+            \"\"\"Widget for the Vuetify {component_to_kebab_case(name)} component, see {api_url}\"\"\"
+
             _model_name = Unicode("{name[1:]}Model").tag(sync=True)
     """
     )
@@ -128,7 +171,7 @@ def generate_python_class(name: str, path: Path):
 
             code += dedent_with_offset(
                 f"""
-                {property_to_snake_case(prop_name)} = {generate_traitlet(prop)}
+                {property_to_snake_case(prop_name)} = {with_help(generate_traitlet(prop), get_description(prop, api_url))}
             """,
                 4,
             )
@@ -243,6 +286,11 @@ def generate_js():
 
 with open("../ipyvuetify/generated.py", "w") as f:
     f.write(generate_python())
+
+for typo in DESCRIPTION_FIXES.keys() - applied_description_fixes:
+    warnings.warn(
+        f"DESCRIPTION_FIXES entry no longer matches, it may be fixed in Vuetify: {typo!r}"
+    )
 
 with open("../js/src/Widgets.js", "w") as f:
     f.write(generate_js())
