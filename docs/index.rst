@@ -41,7 +41,7 @@ Jupyter widgets based on Vuetify UI components
             <a href="#" class="btn btn-lg sd-btn-outline-primary">See Gallery</a>
         </div>
         <div class="homepage-button-container-row">
-            <a href="#">See API Reference →</a>
+            <a href="api.html">See API Reference →</a>
         </div>
     </div>
 
@@ -69,3 +69,4 @@ Jupyter widgets based on Vuetify UI components
     usage
     advanced_usage
     template_usage
+    api
